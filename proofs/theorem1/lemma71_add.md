@@ -1,0 +1,13 @@
+
+**Symbolic verification of (7.3).** The coefficient \(E\) was checked exactly in SymPy (script `check_saddle_7_3_sympy.py`), for symbolic \(m\), \(L\) and \(\phi\), independently of the expansion above. The check uses the exact block decomposition of \(F\) along the path (7.1): \(2n\) within-block contrast directions, on which \(R\) acts as \(a\) and the model as \(x\) or \(y\), plus the two-dimensional block-mean subspace, on which \(R=\begin{pmatrix}b&h\\h&b\end{pmatrix}\) and the model is \(\operatorname{diag}(x,y)+m(\alpha,\beta)^T(\alpha,\beta)\). It writes \(L=zN/(n+m\phi)\), so every quantity is rational in \(\sqrt z\). SymPy returns:
+- first derivative at \(\epsilon=0\): \(0\) (stationarity);
+- third derivative at \(\epsilon=0\): \(0\) (block-interchange symmetry, so the remainder is \(O(\epsilon^4)\));
+- \(\tfrac12F''(0)\) minus the closed form in (7.3): \(0\); minus the three-term form in (7.3): \(0\);
+- the identity (7.4): \(0\);
+- at \(\phi=0\): \((2-L)z-L=-L\,(1+(m-1)L)/(2m-1)<0\).
+
+**A shorter argument at \(\phi=0\), avoiding (7.3).** At \(\phi=0\) the block-mean part of \(R\) is \(b\,I_2\), so for \(\Psi=\psi_sI\) the leading eigenvalue of \(B=R/\psi_s\) is \(b/\psi_s\), with the two-dimensional eigenspace spanned by \(e_A=1_A/\sqrt m\) and \(e_B=1_B/\sqrt m\). With \(c^2=2mz\), consider the circle of loadings
+\[
+l(t)=c\,(\cos t\,e_A+\sin t\,e_B),\qquad 0\le t\le\pi/2,\qquad \Psi=\psi_sI,
+\]
+which passes through the symmetric point at \(t=\pi/4\). Because \(\Sigma=\psi_sI+ll^T\), we have \(\log\det\Sigma=p\log\psi_s+\log(1+c^2/\psi_s)\) and \(\operatorname{tr}(\Sigma^{-1}R)=\operatorname{tr}R/\psi_s-l^TRl/(\psi_s(\psi_s+c^2))\), with \(l^TRl=c^2(b+h\sin2t)=c^2b\) at \(\phi=0\). So \(F\) is constant on the circle. Every point of the circle has the optimal loading for \(\Psi=\psi_sI\): a leading eigendirection with the same norm as at the stationary symmetric point. Hence \(\partial F/\partial l=0\) there, and by the computation in Lemma 3.2 the uniqueness gradient is \(\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_s^2\). For \(t\ne\pi/4\) the diagonal entries are \(\psi_s+c^2\cos^2t/m\) on block A and \(\psi_s+c^2\sin^2t/m\) on block B; they cannot both equal one, so the uniqueness gradient is nonzero. A small move of \(\Psi\) then lowers \(F\) strictly below the symmetric value. Points of the circle come arbitrarily close to the symmetric point, so it is not a local minimum. Together with the ascending scaling direction, it is a saddle. (Checked numerically: \(F\) is constant on the circle to \(10^{-15}\), and the uniqueness gradient matches \((\Sigma_{ii}-1)/\psi_s^2\) to \(10^{-15}\).)

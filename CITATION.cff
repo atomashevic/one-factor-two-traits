@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite them as below, together with the article."
+type: software
+title: "Fitting One Factor to Two Traits: reproduction materials"
+version: "1.0"
+date-released: 2026-10-26
+authors:
+  - family-names: "Tomašević"
+    given-names: "Aleksandar"
+    affiliation: "Institute of Physics Belgrade, University of Belgrade, Serbia"
+    orcid: "https://orcid.org/0000-0003-4863-6051"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  Code, archived simulation summaries, portable evidence from the raw simulation
+  output, complete proofs (Online Resources 1-3) and manuscript sources for the
+  article "Fitting One Factor to Two Traits: Population Solutions and Fit
+  Indices", which derives the population one-factor solution and its fit
+  indices when the items measure two correlated traits.
+keywords:
+  - factor analysis
+  - fit indices
+  - unidimensionality
+  - reproducibility
+references:
+  - type: software
+    title: "undeRfactor: What One Factor Measures When the Items Come from Two Traits"
+    version: 0.2.0
+    doi: 10.5281/zenodo.23668208
+    authors:
+      - family-names: "Tomašević"
+        given-names: "Aleksandar"
+        orcid: "https://orcid.org/0000-0003-4863-6051"

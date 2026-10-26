@@ -1,0 +1,43 @@
+2026-10-08 20:57 START run_sim.R --cores 20
+2026-10-08 20:57 cells: 0/1104  RAM used: 3 GB
+2026-10-08 21:07 cells: 47/1104  RAM used: 6 GB
+2026-10-08 21:17 cells: 96/1104  RAM used: 5 GB
+2026-10-08 21:27 cells: 146/1104  RAM used: 6 GB
+2026-10-08 21:37 cells: 197/1104  RAM used: 5 GB
+2026-10-08 21:47 cells: 247/1104  RAM used: 6 GB
+2026-10-08 21:57 cells: 297/1104  RAM used: 5 GB
+2026-10-08 22:07 cells: 337/1104  RAM used: 7 GB
+2026-10-08 22:17 cells: 366/1104  RAM used: 5 GB
+2026-10-08 22:27 cells: 394/1104  RAM used: 7 GB
+2026-10-08 22:37 cells: 423/1104  RAM used: 6 GB
+2026-10-08 22:47 cells: 452/1104  RAM used: 7 GB
+2026-10-08 22:57 cells: 479/1104  RAM used: 7 GB
+2026-10-08 23:07 cells: 508/1104  RAM used: 7 GB
+2026-10-08 23:17 cells: 536/1104  RAM used: 7 GB
+2026-10-08 23:27 cells: 563/1104  RAM used: 7 GB
+2026-10-08 23:37 cells: 592/1104  RAM used: 7 GB
+2026-10-08 23:47 cells: 620/1104  RAM used: 7 GB
+2026-10-08 23:57 cells: 646/1104  RAM used: 7 GB
+2026-10-09 00:07 cells: 671/1104  RAM used: 7 GB
+2026-10-09 00:17 cells: 699/1104  RAM used: 5 GB
+2026-10-09 00:27 cells: 724/1104  RAM used: 6 GB
+2026-10-09 00:37 cells: 749/1104  RAM used: 6 GB
+2026-10-09 00:47 cells: 777/1104  RAM used: 5 GB
+2026-10-09 00:57 cells: 802/1104  RAM used: 6 GB
+2026-10-09 01:07 cells: 827/1104  RAM used: 6 GB
+2026-10-09 01:17 cells: 852/1104  RAM used: 6 GB
+2026-10-09 01:27 cells: 879/1104  RAM used: 6 GB
+2026-10-09 01:37 cells: 904/1104  RAM used: 6 GB
+2026-10-09 01:47 cells: 929/1104  RAM used: 6 GB
+2026-10-09 01:57 cells: 953/1104  RAM used: 7 GB
+2026-10-09 02:07 cells: 970/1104  RAM used: 7 GB
+2026-10-09 02:17 cells: 987/1104  RAM used: 6 GB
+2026-10-09 02:27 cells: 1005/1104  RAM used: 5 GB
+2026-10-09 02:37 cells: 1021/1104  RAM used: 7 GB
+2026-10-09 02:47 cells: 1037/1104  RAM used: 7 GB
+2026-10-09 02:57 cells: 1054/1104  RAM used: 7 GB
+2026-10-09 03:07 cells: 1072/1104  RAM used: 6 GB
+2026-10-09 03:17 cells: 1089/1104  RAM used: 6 GB
+2026-10-09 03:27 run_sim.R exit=0 cells=1104/1104
+2026-10-09 03:28 summarise_sim.R exit=0 ; summary/: fig_acceptance.pdf fig_spurious.pdf fig_tilt.pdf heywood.csv q1_fit.csv q2_tilt.csv q3_minima.csv 
+DONE

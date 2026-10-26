@@ -1,0 +1,1104 @@
+cell    1  A_m4_l50   phi=0.000 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell    2  A_m4_l50   phi=0.000 N= 250 ord_sym  reps= 500  12.7 s wall, 0.50 s/rep
+cell    3  A_m4_l50   phi=0.000 N= 250 ord_skew reps= 500  23.6 s wall, 0.54 s/rep
+cell    4  A_m4_l50   phi=0.000 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell    5  A_m4_l50   phi=0.000 N= 500 ord_sym  reps= 500  13.4 s wall, 0.52 s/rep
+cell    6  A_m4_l50   phi=0.000 N= 500 ord_skew reps= 500  13.5 s wall, 0.53 s/rep
+cell    7  A_m4_l50   phi=0.000 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell    8  A_m4_l50   phi=0.000 N=1000 ord_sym  reps= 500  14.7 s wall, 0.58 s/rep
+cell    9  A_m4_l50   phi=0.000 N=1000 ord_skew reps= 500  14.7 s wall, 0.57 s/rep
+cell   10  A_m4_l50   phi=0.000 N=2000 cont     reps=1000  6.9 s wall, 0.13 s/rep
+cell   11  A_m4_l50   phi=0.000 N=2000 ord_sym  reps= 500  17.6 s wall, 0.69 s/rep
+cell   12  A_m4_l50   phi=0.000 N=2000 ord_skew reps= 500  17.3 s wall, 0.68 s/rep
+cell   13  A_m4_l50   phi=0.062 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   14  A_m4_l50   phi=0.062 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell   15  A_m4_l50   phi=0.062 N= 250 ord_skew reps= 500  14.4 s wall, 0.51 s/rep
+cell   16  A_m4_l50   phi=0.062 N= 500 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell   17  A_m4_l50   phi=0.062 N= 500 ord_sym  reps= 500  13.5 s wall, 0.53 s/rep
+cell   18  A_m4_l50   phi=0.062 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell   19  A_m4_l50   phi=0.062 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   20  A_m4_l50   phi=0.062 N=1000 ord_sym  reps= 500  14.9 s wall, 0.58 s/rep
+cell   21  A_m4_l50   phi=0.062 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell   22  A_m4_l50   phi=0.062 N=2000 cont     reps=1000  7.1 s wall, 0.13 s/rep
+cell   23  A_m4_l50   phi=0.062 N=2000 ord_sym  reps= 500  17.6 s wall, 0.69 s/rep
+cell   24  A_m4_l50   phi=0.062 N=2000 ord_skew reps= 500  17.5 s wall, 0.68 s/rep
+cell   25  A_m4_l50   phi=0.080 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   26  A_m4_l50   phi=0.080 N= 250 ord_sym  reps= 500  12.7 s wall, 0.50 s/rep
+cell   27  A_m4_l50   phi=0.080 N= 250 ord_skew reps= 500  20.1 s wall, 0.52 s/rep
+cell   28  A_m4_l50   phi=0.080 N= 500 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell   29  A_m4_l50   phi=0.080 N= 500 ord_sym  reps= 500  13.3 s wall, 0.52 s/rep
+cell   30  A_m4_l50   phi=0.080 N= 500 ord_skew reps= 500  13.5 s wall, 0.53 s/rep
+cell   31  A_m4_l50   phi=0.080 N=1000 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell   32  A_m4_l50   phi=0.080 N=1000 ord_sym  reps= 500  14.9 s wall, 0.58 s/rep
+cell   33  A_m4_l50   phi=0.080 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell   34  A_m4_l50   phi=0.080 N=2000 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell   35  A_m4_l50   phi=0.080 N=2000 ord_sym  reps= 500  17.9 s wall, 0.70 s/rep
+cell   36  A_m4_l50   phi=0.080 N=2000 ord_skew reps= 500  17.3 s wall, 0.68 s/rep
+cell   37  A_m4_l50   phi=0.100 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell   38  A_m4_l50   phi=0.100 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell   39  A_m4_l50   phi=0.100 N= 250 ord_skew reps= 500  21.4 s wall, 0.53 s/rep
+cell   40  A_m4_l50   phi=0.100 N= 500 cont     reps=1000  7.4 s wall, 0.14 s/rep
+cell   41  A_m4_l50   phi=0.100 N= 500 ord_sym  reps= 500  13.4 s wall, 0.53 s/rep
+cell   42  A_m4_l50   phi=0.100 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell   43  A_m4_l50   phi=0.100 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell   44  A_m4_l50   phi=0.100 N=1000 ord_sym  reps= 500  15.2 s wall, 0.59 s/rep
+cell   45  A_m4_l50   phi=0.100 N=1000 ord_skew reps= 500  14.9 s wall, 0.58 s/rep
+cell   46  A_m4_l50   phi=0.100 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell   47  A_m4_l50   phi=0.100 N=2000 ord_sym  reps= 500  18.0 s wall, 0.70 s/rep
+cell   48  A_m4_l50   phi=0.100 N=2000 ord_skew reps= 500  17.3 s wall, 0.68 s/rep
+cell   49  A_m4_l50   phi=0.125 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell   50  A_m4_l50   phi=0.125 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell   51  A_m4_l50   phi=0.125 N= 250 ord_skew reps= 500  18.2 s wall, 0.52 s/rep
+cell   52  A_m4_l50   phi=0.125 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell   53  A_m4_l50   phi=0.125 N= 500 ord_sym  reps= 500  13.8 s wall, 0.53 s/rep
+cell   54  A_m4_l50   phi=0.125 N= 500 ord_skew reps= 500  14.2 s wall, 0.53 s/rep
+cell   55  A_m4_l50   phi=0.125 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   56  A_m4_l50   phi=0.125 N=1000 ord_sym  reps= 500  15.1 s wall, 0.58 s/rep
+cell   57  A_m4_l50   phi=0.125 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell   58  A_m4_l50   phi=0.125 N=2000 cont     reps=1000  7.4 s wall, 0.14 s/rep
+cell   59  A_m4_l50   phi=0.125 N=2000 ord_sym  reps= 500  17.7 s wall, 0.70 s/rep
+cell   60  A_m4_l50   phi=0.125 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell   61  A_m4_l50   phi=0.200 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   62  A_m4_l50   phi=0.200 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell   63  A_m4_l50   phi=0.200 N= 250 ord_skew reps= 500  15.1 s wall, 0.51 s/rep
+cell   64  A_m4_l50   phi=0.200 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell   65  A_m4_l50   phi=0.200 N= 500 ord_sym  reps= 500  13.5 s wall, 0.53 s/rep
+cell   66  A_m4_l50   phi=0.200 N= 500 ord_skew reps= 500  14.1 s wall, 0.54 s/rep
+cell   67  A_m4_l50   phi=0.200 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell   68  A_m4_l50   phi=0.200 N=1000 ord_sym  reps= 500  15.0 s wall, 0.58 s/rep
+cell   69  A_m4_l50   phi=0.200 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell   70  A_m4_l50   phi=0.200 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell   71  A_m4_l50   phi=0.200 N=2000 ord_sym  reps= 500  17.8 s wall, 0.70 s/rep
+cell   72  A_m4_l50   phi=0.200 N=2000 ord_skew reps= 500  17.2 s wall, 0.68 s/rep
+cell   73  A_m4_l50   phi=0.250 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   74  A_m4_l50   phi=0.250 N= 250 ord_sym  reps= 500  13.2 s wall, 0.50 s/rep
+cell   75  A_m4_l50   phi=0.250 N= 250 ord_skew reps= 500  20.5 s wall, 0.52 s/rep
+cell   76  A_m4_l50   phi=0.250 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell   77  A_m4_l50   phi=0.250 N= 500 ord_sym  reps= 500  13.3 s wall, 0.52 s/rep
+cell   78  A_m4_l50   phi=0.250 N= 500 ord_skew reps= 500  13.5 s wall, 0.53 s/rep
+cell   79  A_m4_l50   phi=0.250 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell   80  A_m4_l50   phi=0.250 N=1000 ord_sym  reps= 500  14.8 s wall, 0.58 s/rep
+cell   81  A_m4_l50   phi=0.250 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell   82  A_m4_l50   phi=0.250 N=2000 cont     reps=1000  7.3 s wall, 0.14 s/rep
+cell   83  A_m4_l50   phi=0.250 N=2000 ord_sym  reps= 500  18.4 s wall, 0.70 s/rep
+cell   84  A_m4_l50   phi=0.250 N=2000 ord_skew reps= 500  17.6 s wall, 0.68 s/rep
+cell   85  A_m4_l50   phi=0.300 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell   86  A_m4_l50   phi=0.300 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell   87  A_m4_l50   phi=0.300 N= 250 ord_skew reps= 500  17.6 s wall, 0.51 s/rep
+cell   88  A_m4_l50   phi=0.300 N= 500 cont     reps=1000  7.1 s wall, 0.13 s/rep
+cell   89  A_m4_l50   phi=0.300 N= 500 ord_sym  reps= 500  13.4 s wall, 0.52 s/rep
+cell   90  A_m4_l50   phi=0.300 N= 500 ord_skew reps= 500  14.1 s wall, 0.53 s/rep
+cell   91  A_m4_l50   phi=0.300 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell   92  A_m4_l50   phi=0.300 N=1000 ord_sym  reps= 500  15.0 s wall, 0.58 s/rep
+cell   93  A_m4_l50   phi=0.300 N=1000 ord_skew reps= 500  14.6 s wall, 0.57 s/rep
+cell   94  A_m4_l50   phi=0.300 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell   95  A_m4_l50   phi=0.300 N=2000 ord_sym  reps= 500  17.6 s wall, 0.70 s/rep
+cell   96  A_m4_l50   phi=0.300 N=2000 ord_skew reps= 500  17.5 s wall, 0.68 s/rep
+cell   97  A_m4_l50   phi=0.400 N= 250 cont     reps=1000  5.1 s wall, 0.10 s/rep
+cell   98  A_m4_l50   phi=0.400 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell   99  A_m4_l50   phi=0.400 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  100  A_m4_l50   phi=0.400 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  101  A_m4_l50   phi=0.400 N= 500 ord_sym  reps= 500  13.4 s wall, 0.53 s/rep
+cell  102  A_m4_l50   phi=0.400 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell  103  A_m4_l50   phi=0.400 N=1000 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  104  A_m4_l50   phi=0.400 N=1000 ord_sym  reps= 500  14.8 s wall, 0.58 s/rep
+cell  105  A_m4_l50   phi=0.400 N=1000 ord_skew reps= 500  15.3 s wall, 0.58 s/rep
+cell  106  A_m4_l50   phi=0.400 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  107  A_m4_l50   phi=0.400 N=2000 ord_sym  reps= 500  17.8 s wall, 0.70 s/rep
+cell  108  A_m4_l50   phi=0.400 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell  109  A_m4_l50   phi=0.500 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  110  A_m4_l50   phi=0.500 N= 250 ord_sym  reps= 500  12.7 s wall, 0.49 s/rep
+cell  111  A_m4_l50   phi=0.500 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  112  A_m4_l50   phi=0.500 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  113  A_m4_l50   phi=0.500 N= 500 ord_sym  reps= 500  13.4 s wall, 0.52 s/rep
+cell  114  A_m4_l50   phi=0.500 N= 500 ord_skew reps= 500  13.5 s wall, 0.52 s/rep
+cell  115  A_m4_l50   phi=0.500 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  116  A_m4_l50   phi=0.500 N=1000 ord_sym  reps= 500  14.7 s wall, 0.58 s/rep
+cell  117  A_m4_l50   phi=0.500 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  118  A_m4_l50   phi=0.500 N=2000 cont     reps=1000  6.9 s wall, 0.13 s/rep
+cell  119  A_m4_l50   phi=0.500 N=2000 ord_sym  reps= 500  18.0 s wall, 0.70 s/rep
+cell  120  A_m4_l50   phi=0.500 N=2000 ord_skew reps= 500  17.6 s wall, 0.68 s/rep
+cell  121  A_m4_l50   phi=0.600 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  122  A_m4_l50   phi=0.600 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell  123  A_m4_l50   phi=0.600 N= 250 ord_skew reps= 500  17.8 s wall, 0.52 s/rep
+cell  124  A_m4_l50   phi=0.600 N= 500 cont     reps=1000  7.3 s wall, 0.14 s/rep
+cell  125  A_m4_l50   phi=0.600 N= 500 ord_sym  reps= 500  13.5 s wall, 0.53 s/rep
+cell  126  A_m4_l50   phi=0.600 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell  127  A_m4_l50   phi=0.600 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  128  A_m4_l50   phi=0.600 N=1000 ord_sym  reps= 500  14.8 s wall, 0.58 s/rep
+cell  129  A_m4_l50   phi=0.600 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  130  A_m4_l50   phi=0.600 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  131  A_m4_l50   phi=0.600 N=2000 ord_sym  reps= 500  17.8 s wall, 0.69 s/rep
+cell  132  A_m4_l50   phi=0.600 N=2000 ord_skew reps= 500  17.0 s wall, 0.67 s/rep
+cell  133  A_m4_l50   phi=0.700 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  134  A_m4_l50   phi=0.700 N= 250 ord_sym  reps= 500  12.7 s wall, 0.50 s/rep
+cell  135  A_m4_l50   phi=0.700 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  136  A_m4_l50   phi=0.700 N= 500 cont     reps=1000  7.3 s wall, 0.13 s/rep
+cell  137  A_m4_l50   phi=0.700 N= 500 ord_sym  reps= 500  13.5 s wall, 0.53 s/rep
+cell  138  A_m4_l50   phi=0.700 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell  139  A_m4_l50   phi=0.700 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  140  A_m4_l50   phi=0.700 N=1000 ord_sym  reps= 500  14.9 s wall, 0.59 s/rep
+cell  141  A_m4_l50   phi=0.700 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell  142  A_m4_l50   phi=0.700 N=2000 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  143  A_m4_l50   phi=0.700 N=2000 ord_sym  reps= 500  17.7 s wall, 0.70 s/rep
+cell  144  A_m4_l50   phi=0.700 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell  145  A_m4_l50   phi=0.800 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  146  A_m4_l50   phi=0.800 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell  147  A_m4_l50   phi=0.800 N= 250 ord_skew reps= 500  12.7 s wall, 0.50 s/rep
+cell  148  A_m4_l50   phi=0.800 N= 500 cont     reps=1000  7.4 s wall, 0.14 s/rep
+cell  149  A_m4_l50   phi=0.800 N= 500 ord_sym  reps= 500  13.5 s wall, 0.52 s/rep
+cell  150  A_m4_l50   phi=0.800 N= 500 ord_skew reps= 500  13.3 s wall, 0.52 s/rep
+cell  151  A_m4_l50   phi=0.800 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  152  A_m4_l50   phi=0.800 N=1000 ord_sym  reps= 500  15.3 s wall, 0.59 s/rep
+cell  153  A_m4_l50   phi=0.800 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  154  A_m4_l50   phi=0.800 N=2000 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell  155  A_m4_l50   phi=0.800 N=2000 ord_sym  reps= 500  18.4 s wall, 0.70 s/rep
+cell  156  A_m4_l50   phi=0.800 N=2000 ord_skew reps= 500  17.7 s wall, 0.68 s/rep
+cell  157  A_m4_l50   phi=0.900 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  158  A_m4_l50   phi=0.900 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  159  A_m4_l50   phi=0.900 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  160  A_m4_l50   phi=0.900 N= 500 cont     reps=1000  7.2 s wall, 0.13 s/rep
+cell  161  A_m4_l50   phi=0.900 N= 500 ord_sym  reps= 500  13.6 s wall, 0.53 s/rep
+cell  162  A_m4_l50   phi=0.900 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell  163  A_m4_l50   phi=0.900 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  164  A_m4_l50   phi=0.900 N=1000 ord_sym  reps= 500  14.6 s wall, 0.57 s/rep
+cell  165  A_m4_l50   phi=0.900 N=1000 ord_skew reps= 500  14.4 s wall, 0.56 s/rep
+cell  166  A_m4_l50   phi=0.900 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  167  A_m4_l50   phi=0.900 N=2000 ord_sym  reps= 500  18.0 s wall, 0.70 s/rep
+cell  168  A_m4_l50   phi=0.900 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell  169  A_m4_l70   phi=0.000 N= 250 cont     reps=1000  5.1 s wall, 0.10 s/rep
+cell  170  A_m4_l70   phi=0.000 N= 250 ord_sym  reps= 500  12.9 s wall, 0.51 s/rep
+cell  171  A_m4_l70   phi=0.000 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  172  A_m4_l70   phi=0.000 N= 500 cont     reps=1000  7.1 s wall, 0.13 s/rep
+cell  173  A_m4_l70   phi=0.000 N= 500 ord_sym  reps= 500  14.0 s wall, 0.53 s/rep
+cell  174  A_m4_l70   phi=0.000 N= 500 ord_skew reps= 500  13.4 s wall, 0.53 s/rep
+cell  175  A_m4_l70   phi=0.000 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  176  A_m4_l70   phi=0.000 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  177  A_m4_l70   phi=0.000 N=1000 ord_skew reps= 500  14.7 s wall, 0.57 s/rep
+cell  178  A_m4_l70   phi=0.000 N=2000 cont     reps=1000  6.9 s wall, 0.13 s/rep
+cell  179  A_m4_l70   phi=0.000 N=2000 ord_sym  reps= 500  17.8 s wall, 0.70 s/rep
+cell  180  A_m4_l70   phi=0.000 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell  181  A_m4_l70   phi=0.062 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  182  A_m4_l70   phi=0.062 N= 250 ord_sym  reps= 500  12.7 s wall, 0.50 s/rep
+cell  183  A_m4_l70   phi=0.062 N= 250 ord_skew reps= 500  12.6 s wall, 0.50 s/rep
+cell  184  A_m4_l70   phi=0.062 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  185  A_m4_l70   phi=0.062 N= 500 ord_sym  reps= 500  13.5 s wall, 0.53 s/rep
+cell  186  A_m4_l70   phi=0.062 N= 500 ord_skew reps= 500  13.9 s wall, 0.53 s/rep
+cell  187  A_m4_l70   phi=0.062 N=1000 cont     reps=1000  5.1 s wall, 0.09 s/rep
+cell  188  A_m4_l70   phi=0.062 N=1000 ord_sym  reps= 500  15.3 s wall, 0.59 s/rep
+cell  189  A_m4_l70   phi=0.062 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  190  A_m4_l70   phi=0.062 N=2000 cont     reps=1000  7.3 s wall, 0.14 s/rep
+cell  191  A_m4_l70   phi=0.062 N=2000 ord_sym  reps= 500  17.7 s wall, 0.70 s/rep
+cell  192  A_m4_l70   phi=0.062 N=2000 ord_skew reps= 500  17.2 s wall, 0.68 s/rep
+cell  193  A_m4_l70   phi=0.100 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  194  A_m4_l70   phi=0.100 N= 250 ord_sym  reps= 500  12.9 s wall, 0.51 s/rep
+cell  195  A_m4_l70   phi=0.100 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  196  A_m4_l70   phi=0.100 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  197  A_m4_l70   phi=0.100 N= 500 ord_sym  reps= 500  13.4 s wall, 0.53 s/rep
+cell  198  A_m4_l70   phi=0.100 N= 500 ord_skew reps= 500  14.0 s wall, 0.53 s/rep
+cell  199  A_m4_l70   phi=0.100 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  200  A_m4_l70   phi=0.100 N=1000 ord_sym  reps= 500  14.8 s wall, 0.58 s/rep
+cell  201  A_m4_l70   phi=0.100 N=1000 ord_skew reps= 500  14.4 s wall, 0.57 s/rep
+cell  202  A_m4_l70   phi=0.100 N=2000 cont     reps=1000  7.2 s wall, 0.13 s/rep
+cell  203  A_m4_l70   phi=0.100 N=2000 ord_sym  reps= 500  18.2 s wall, 0.70 s/rep
+cell  204  A_m4_l70   phi=0.100 N=2000 ord_skew reps= 500  17.3 s wall, 0.67 s/rep
+cell  205  A_m4_l70   phi=0.125 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  206  A_m4_l70   phi=0.125 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  207  A_m4_l70   phi=0.125 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  208  A_m4_l70   phi=0.125 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  209  A_m4_l70   phi=0.125 N= 500 ord_sym  reps= 500  13.6 s wall, 0.54 s/rep
+cell  210  A_m4_l70   phi=0.125 N= 500 ord_skew reps= 500  13.5 s wall, 0.53 s/rep
+cell  211  A_m4_l70   phi=0.125 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  212  A_m4_l70   phi=0.125 N=1000 ord_sym  reps= 500  14.9 s wall, 0.58 s/rep
+cell  213  A_m4_l70   phi=0.125 N=1000 ord_skew reps= 500  15.6 s wall, 0.58 s/rep
+cell  214  A_m4_l70   phi=0.125 N=2000 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell  215  A_m4_l70   phi=0.125 N=2000 ord_sym  reps= 500  18.1 s wall, 0.71 s/rep
+cell  216  A_m4_l70   phi=0.125 N=2000 ord_skew reps= 500  17.2 s wall, 0.67 s/rep
+cell  217  A_m4_l70   phi=0.200 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  218  A_m4_l70   phi=0.200 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell  219  A_m4_l70   phi=0.200 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  220  A_m4_l70   phi=0.200 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  221  A_m4_l70   phi=0.200 N= 500 ord_sym  reps= 500  13.9 s wall, 0.54 s/rep
+cell  222  A_m4_l70   phi=0.200 N= 500 ord_skew reps= 500  13.6 s wall, 0.53 s/rep
+cell  223  A_m4_l70   phi=0.200 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  224  A_m4_l70   phi=0.200 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  225  A_m4_l70   phi=0.200 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  226  A_m4_l70   phi=0.200 N=2000 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  227  A_m4_l70   phi=0.200 N=2000 ord_sym  reps= 500  17.8 s wall, 0.70 s/rep
+cell  228  A_m4_l70   phi=0.200 N=2000 ord_skew reps= 500  17.0 s wall, 0.67 s/rep
+cell  229  A_m4_l70   phi=0.300 N= 250 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  230  A_m4_l70   phi=0.300 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  231  A_m4_l70   phi=0.300 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  232  A_m4_l70   phi=0.300 N= 500 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell  233  A_m4_l70   phi=0.300 N= 500 ord_sym  reps= 500  13.3 s wall, 0.52 s/rep
+cell  234  A_m4_l70   phi=0.300 N= 500 ord_skew reps= 500  13.4 s wall, 0.52 s/rep
+cell  235  A_m4_l70   phi=0.300 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  236  A_m4_l70   phi=0.300 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  237  A_m4_l70   phi=0.300 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell  238  A_m4_l70   phi=0.300 N=2000 cont     reps=1000  6.9 s wall, 0.13 s/rep
+cell  239  A_m4_l70   phi=0.300 N=2000 ord_sym  reps= 500  17.8 s wall, 0.70 s/rep
+cell  240  A_m4_l70   phi=0.300 N=2000 ord_skew reps= 500  17.4 s wall, 0.68 s/rep
+cell  241  A_m4_l70   phi=0.400 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  242  A_m4_l70   phi=0.400 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  243  A_m4_l70   phi=0.400 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  244  A_m4_l70   phi=0.400 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  245  A_m4_l70   phi=0.400 N= 500 ord_sym  reps= 500  14.1 s wall, 0.54 s/rep
+cell  246  A_m4_l70   phi=0.400 N= 500 ord_skew reps= 500  13.7 s wall, 0.53 s/rep
+cell  247  A_m4_l70   phi=0.400 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  248  A_m4_l70   phi=0.400 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  249  A_m4_l70   phi=0.400 N=1000 ord_skew reps= 500  14.7 s wall, 0.57 s/rep
+cell  250  A_m4_l70   phi=0.400 N=2000 cont     reps=1000  7.1 s wall, 0.13 s/rep
+cell  251  A_m4_l70   phi=0.400 N=2000 ord_sym  reps= 500  17.7 s wall, 0.70 s/rep
+cell  252  A_m4_l70   phi=0.400 N=2000 ord_skew reps= 500  17.3 s wall, 0.67 s/rep
+cell  253  A_m4_l70   phi=0.409 N= 250 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  254  A_m4_l70   phi=0.409 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell  255  A_m4_l70   phi=0.409 N= 250 ord_skew reps= 500  13.2 s wall, 0.51 s/rep
+cell  256  A_m4_l70   phi=0.409 N= 500 cont     reps=1000  6.9 s wall, 0.13 s/rep
+cell  257  A_m4_l70   phi=0.409 N= 500 ord_sym  reps= 500  13.9 s wall, 0.54 s/rep
+cell  258  A_m4_l70   phi=0.409 N= 500 ord_skew reps= 500  13.5 s wall, 0.53 s/rep
+cell  259  A_m4_l70   phi=0.409 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  260  A_m4_l70   phi=0.409 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  261  A_m4_l70   phi=0.409 N=1000 ord_skew reps= 500  15.2 s wall, 0.58 s/rep
+cell  262  A_m4_l70   phi=0.409 N=2000 cont     reps=1000  7.1 s wall, 0.14 s/rep
+cell  263  A_m4_l70   phi=0.409 N=2000 ord_sym  reps= 500  18.2 s wall, 0.71 s/rep
+cell  264  A_m4_l70   phi=0.409 N=2000 ord_skew reps= 500  17.3 s wall, 0.68 s/rep
+cell  265  A_m4_l70   phi=0.500 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  266  A_m4_l70   phi=0.500 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  267  A_m4_l70   phi=0.500 N= 250 ord_skew reps= 500  12.9 s wall, 0.51 s/rep
+cell  268  A_m4_l70   phi=0.500 N= 500 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  269  A_m4_l70   phi=0.500 N= 500 ord_sym  reps= 500  13.6 s wall, 0.53 s/rep
+cell  270  A_m4_l70   phi=0.500 N= 500 ord_skew reps= 500  13.4 s wall, 0.52 s/rep
+cell  271  A_m4_l70   phi=0.500 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  272  A_m4_l70   phi=0.500 N=1000 ord_sym  reps= 500  14.9 s wall, 0.59 s/rep
+cell  273  A_m4_l70   phi=0.500 N=1000 ord_skew reps= 500  14.5 s wall, 0.57 s/rep
+cell  274  A_m4_l70   phi=0.500 N=2000 cont     reps=1000  7.2 s wall, 0.13 s/rep
+cell  275  A_m4_l70   phi=0.500 N=2000 ord_sym  reps= 500  17.9 s wall, 0.70 s/rep
+cell  276  A_m4_l70   phi=0.500 N=2000 ord_skew reps= 500  17.3 s wall, 0.68 s/rep
+cell  277  A_m4_l70   phi=0.600 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  278  A_m4_l70   phi=0.600 N= 250 ord_sym  reps= 500  13.3 s wall, 0.52 s/rep
+cell  279  A_m4_l70   phi=0.600 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  280  A_m4_l70   phi=0.600 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  281  A_m4_l70   phi=0.600 N= 500 ord_sym  reps= 500  13.8 s wall, 0.54 s/rep
+cell  282  A_m4_l70   phi=0.600 N= 500 ord_skew reps= 500  13.6 s wall, 0.53 s/rep
+cell  283  A_m4_l70   phi=0.600 N=1000 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  284  A_m4_l70   phi=0.600 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  285  A_m4_l70   phi=0.600 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  286  A_m4_l70   phi=0.600 N=2000 cont     reps=1000  7.3 s wall, 0.14 s/rep
+cell  287  A_m4_l70   phi=0.600 N=2000 ord_sym  reps= 500  17.9 s wall, 0.70 s/rep
+cell  288  A_m4_l70   phi=0.600 N=2000 ord_skew reps= 500  17.2 s wall, 0.67 s/rep
+cell  289  A_m4_l70   phi=0.700 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  290  A_m4_l70   phi=0.700 N= 250 ord_sym  reps= 500  13.2 s wall, 0.52 s/rep
+cell  291  A_m4_l70   phi=0.700 N= 250 ord_skew reps= 500  13.2 s wall, 0.51 s/rep
+cell  292  A_m4_l70   phi=0.700 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  293  A_m4_l70   phi=0.700 N= 500 ord_sym  reps= 500  14.1 s wall, 0.55 s/rep
+cell  294  A_m4_l70   phi=0.700 N= 500 ord_skew reps= 500  13.7 s wall, 0.54 s/rep
+cell  295  A_m4_l70   phi=0.700 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  296  A_m4_l70   phi=0.700 N=1000 ord_sym  reps= 500  15.3 s wall, 0.60 s/rep
+cell  297  A_m4_l70   phi=0.700 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  298  A_m4_l70   phi=0.700 N=2000 cont     reps=1000  7.5 s wall, 0.14 s/rep
+cell  299  A_m4_l70   phi=0.700 N=2000 ord_sym  reps= 500  18.2 s wall, 0.71 s/rep
+cell  300  A_m4_l70   phi=0.700 N=2000 ord_skew reps= 500  17.5 s wall, 0.69 s/rep
+cell  301  A_m4_l70   phi=0.800 N= 250 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  302  A_m4_l70   phi=0.800 N= 250 ord_sym  reps= 500  12.9 s wall, 0.50 s/rep
+cell  303  A_m4_l70   phi=0.800 N= 250 ord_skew reps= 500  12.9 s wall, 0.51 s/rep
+cell  304  A_m4_l70   phi=0.800 N= 500 cont     reps=1000  7.2 s wall, 0.13 s/rep
+cell  305  A_m4_l70   phi=0.800 N= 500 ord_sym  reps= 500  14.0 s wall, 0.55 s/rep
+cell  306  A_m4_l70   phi=0.800 N= 500 ord_skew reps= 500  13.8 s wall, 0.54 s/rep
+cell  307  A_m4_l70   phi=0.800 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  308  A_m4_l70   phi=0.800 N=1000 ord_sym  reps= 500  15.5 s wall, 0.60 s/rep
+cell  309  A_m4_l70   phi=0.800 N=1000 ord_skew reps= 500  15.1 s wall, 0.59 s/rep
+cell  310  A_m4_l70   phi=0.800 N=2000 cont     reps=1000  7.1 s wall, 0.13 s/rep
+cell  311  A_m4_l70   phi=0.800 N=2000 ord_sym  reps= 500  18.0 s wall, 0.71 s/rep
+cell  312  A_m4_l70   phi=0.800 N=2000 ord_skew reps= 500  17.5 s wall, 0.68 s/rep
+cell  313  A_m4_l70   phi=0.900 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  314  A_m4_l70   phi=0.900 N= 250 ord_sym  reps= 500  13.2 s wall, 0.52 s/rep
+cell  315  A_m4_l70   phi=0.900 N= 250 ord_skew reps= 500  13.4 s wall, 0.52 s/rep
+cell  316  A_m4_l70   phi=0.900 N= 500 cont     reps=1000  7.2 s wall, 0.14 s/rep
+cell  317  A_m4_l70   phi=0.900 N= 500 ord_sym  reps= 500  14.0 s wall, 0.54 s/rep
+cell  318  A_m4_l70   phi=0.900 N= 500 ord_skew reps= 500  13.6 s wall, 0.53 s/rep
+cell  319  A_m4_l70   phi=0.900 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  320  A_m4_l70   phi=0.900 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  321  A_m4_l70   phi=0.900 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  322  A_m4_l70   phi=0.900 N=2000 cont     reps=1000  7.0 s wall, 0.13 s/rep
+cell  323  A_m4_l70   phi=0.900 N=2000 ord_sym  reps= 500  17.7 s wall, 0.70 s/rep
+cell  324  A_m4_l70   phi=0.900 N=2000 ord_skew reps= 500  17.9 s wall, 0.69 s/rep
+cell  325  A_m8_l50   phi=0.000 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  326  A_m8_l50   phi=0.000 N= 250 ord_sym  reps= 500  22.6 s wall, 0.89 s/rep
+cell  327  A_m8_l50   phi=0.000 N= 250 ord_skew reps= 500  22.5 s wall, 0.89 s/rep
+cell  328  A_m8_l50   phi=0.000 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  329  A_m8_l50   phi=0.000 N= 500 ord_sym  reps= 500  24.9 s wall, 0.98 s/rep
+cell  330  A_m8_l50   phi=0.000 N= 500 ord_skew reps= 500  24.1 s wall, 0.95 s/rep
+cell  331  A_m8_l50   phi=0.000 N=1000 cont     reps=1000  6.2 s wall, 0.12 s/rep
+cell  332  A_m8_l50   phi=0.000 N=1000 ord_sym  reps= 500  28.7 s wall, 1.13 s/rep
+cell  333  A_m8_l50   phi=0.000 N=1000 ord_skew reps= 500  28.1 s wall, 1.10 s/rep
+cell  334  A_m8_l50   phi=0.000 N=2000 cont     reps=1000  8.1 s wall, 0.15 s/rep
+cell  335  A_m8_l50   phi=0.000 N=2000 ord_sym  reps= 500  36.9 s wall, 1.46 s/rep
+cell  336  A_m8_l50   phi=0.000 N=2000 ord_skew reps= 500  35.4 s wall, 1.40 s/rep
+cell  337  A_m8_l50   phi=0.031 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  338  A_m8_l50   phi=0.031 N= 250 ord_sym  reps= 500  22.4 s wall, 0.88 s/rep
+cell  339  A_m8_l50   phi=0.031 N= 250 ord_skew reps= 500  22.5 s wall, 0.88 s/rep
+cell  340  A_m8_l50   phi=0.031 N= 500 cont     reps=1000  8.2 s wall, 0.15 s/rep
+cell  341  A_m8_l50   phi=0.031 N= 500 ord_sym  reps= 500  24.4 s wall, 0.96 s/rep
+cell  342  A_m8_l50   phi=0.031 N= 500 ord_skew reps= 500  24.5 s wall, 0.96 s/rep
+cell  343  A_m8_l50   phi=0.031 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  344  A_m8_l50   phi=0.031 N=1000 ord_sym  reps= 500  28.5 s wall, 1.12 s/rep
+cell  345  A_m8_l50   phi=0.031 N=1000 ord_skew reps= 500  27.9 s wall, 1.10 s/rep
+cell  346  A_m8_l50   phi=0.031 N=2000 cont     reps=1000  8.1 s wall, 0.16 s/rep
+cell  347  A_m8_l50   phi=0.031 N=2000 ord_sym  reps= 500  36.8 s wall, 1.46 s/rep
+cell  348  A_m8_l50   phi=0.031 N=2000 ord_skew reps= 500  35.3 s wall, 1.40 s/rep
+cell  349  A_m8_l50   phi=0.062 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  350  A_m8_l50   phi=0.062 N= 250 ord_sym  reps= 500  22.8 s wall, 0.89 s/rep
+cell  351  A_m8_l50   phi=0.062 N= 250 ord_skew reps= 500  22.6 s wall, 0.89 s/rep
+cell  352  A_m8_l50   phi=0.062 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  353  A_m8_l50   phi=0.062 N= 500 ord_sym  reps= 500  24.5 s wall, 0.97 s/rep
+cell  354  A_m8_l50   phi=0.062 N= 500 ord_skew reps= 500  24.4 s wall, 0.96 s/rep
+cell  355  A_m8_l50   phi=0.062 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  356  A_m8_l50   phi=0.062 N=1000 ord_sym  reps= 500  28.7 s wall, 1.13 s/rep
+cell  357  A_m8_l50   phi=0.062 N=1000 ord_skew reps= 500  27.9 s wall, 1.10 s/rep
+cell  358  A_m8_l50   phi=0.062 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  359  A_m8_l50   phi=0.062 N=2000 ord_sym  reps= 500  36.9 s wall, 1.46 s/rep
+cell  360  A_m8_l50   phi=0.062 N=2000 ord_skew reps= 500  35.7 s wall, 1.40 s/rep
+cell  361  A_m8_l50   phi=0.100 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  362  A_m8_l50   phi=0.100 N= 250 ord_sym  reps= 500  22.6 s wall, 0.88 s/rep
+cell  363  A_m8_l50   phi=0.100 N= 250 ord_skew reps= 500  22.3 s wall, 0.88 s/rep
+cell  364  A_m8_l50   phi=0.100 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  365  A_m8_l50   phi=0.100 N= 500 ord_sym  reps= 500  24.7 s wall, 0.97 s/rep
+cell  366  A_m8_l50   phi=0.100 N= 500 ord_skew reps= 500  24.0 s wall, 0.95 s/rep
+cell  367  A_m8_l50   phi=0.100 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  368  A_m8_l50   phi=0.100 N=1000 ord_sym  reps= 500  28.9 s wall, 1.13 s/rep
+cell  369  A_m8_l50   phi=0.100 N=1000 ord_skew reps= 500  27.6 s wall, 1.09 s/rep
+cell  370  A_m8_l50   phi=0.100 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  371  A_m8_l50   phi=0.100 N=2000 ord_sym  reps= 500  36.8 s wall, 1.46 s/rep
+cell  372  A_m8_l50   phi=0.100 N=2000 ord_skew reps= 500  35.4 s wall, 1.39 s/rep
+cell  373  A_m8_l50   phi=0.196 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  374  A_m8_l50   phi=0.196 N= 250 ord_sym  reps= 500  22.4 s wall, 0.88 s/rep
+cell  375  A_m8_l50   phi=0.196 N= 250 ord_skew reps= 500  22.6 s wall, 0.88 s/rep
+cell  376  A_m8_l50   phi=0.196 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  377  A_m8_l50   phi=0.196 N= 500 ord_sym  reps= 500  24.3 s wall, 0.96 s/rep
+cell  378  A_m8_l50   phi=0.196 N= 500 ord_skew reps= 500  24.0 s wall, 0.94 s/rep
+cell  379  A_m8_l50   phi=0.196 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  380  A_m8_l50   phi=0.196 N=1000 ord_sym  reps= 500  28.6 s wall, 1.13 s/rep
+cell  381  A_m8_l50   phi=0.196 N=1000 ord_skew reps= 500  27.6 s wall, 1.09 s/rep
+cell  382  A_m8_l50   phi=0.196 N=2000 cont     reps=1000  8.2 s wall, 0.15 s/rep
+cell  383  A_m8_l50   phi=0.196 N=2000 ord_sym  reps= 500  38.6 s wall, 1.47 s/rep
+cell  384  A_m8_l50   phi=0.196 N=2000 ord_skew reps= 500  35.1 s wall, 1.39 s/rep
+cell  385  A_m8_l50   phi=0.200 N= 250 cont     reps=1000  5.6 s wall, 0.11 s/rep
+cell  386  A_m8_l50   phi=0.200 N= 250 ord_sym  reps= 500  23.1 s wall, 0.89 s/rep
+cell  387  A_m8_l50   phi=0.200 N= 250 ord_skew reps= 500  22.5 s wall, 0.89 s/rep
+cell  388  A_m8_l50   phi=0.200 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  389  A_m8_l50   phi=0.200 N= 500 ord_sym  reps= 500  24.5 s wall, 0.97 s/rep
+cell  390  A_m8_l50   phi=0.200 N= 500 ord_skew reps= 500  24.1 s wall, 0.95 s/rep
+cell  391  A_m8_l50   phi=0.200 N=1000 cont     reps=1000  6.1 s wall, 0.12 s/rep
+cell  392  A_m8_l50   phi=0.200 N=1000 ord_sym  reps= 500  28.6 s wall, 1.13 s/rep
+cell  393  A_m8_l50   phi=0.200 N=1000 ord_skew reps= 500  27.7 s wall, 1.10 s/rep
+cell  394  A_m8_l50   phi=0.200 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  395  A_m8_l50   phi=0.200 N=2000 ord_sym  reps= 500  37.1 s wall, 1.47 s/rep
+cell  396  A_m8_l50   phi=0.200 N=2000 ord_skew reps= 500  35.6 s wall, 1.40 s/rep
+cell  397  A_m8_l50   phi=0.300 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  398  A_m8_l50   phi=0.300 N= 250 ord_sym  reps= 500  22.5 s wall, 0.88 s/rep
+cell  399  A_m8_l50   phi=0.300 N= 250 ord_skew reps= 500  22.5 s wall, 0.88 s/rep
+cell  400  A_m8_l50   phi=0.300 N= 500 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  401  A_m8_l50   phi=0.300 N= 500 ord_sym  reps= 500  24.5 s wall, 0.96 s/rep
+cell  402  A_m8_l50   phi=0.300 N= 500 ord_skew reps= 500  24.4 s wall, 0.96 s/rep
+cell  403  A_m8_l50   phi=0.300 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  404  A_m8_l50   phi=0.300 N=1000 ord_sym  reps= 500  28.9 s wall, 1.13 s/rep
+cell  405  A_m8_l50   phi=0.300 N=1000 ord_skew reps= 500  27.8 s wall, 1.09 s/rep
+cell  406  A_m8_l50   phi=0.300 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  407  A_m8_l50   phi=0.300 N=2000 ord_sym  reps= 500  37.0 s wall, 1.46 s/rep
+cell  408  A_m8_l50   phi=0.300 N=2000 ord_skew reps= 500  35.3 s wall, 1.39 s/rep
+cell  409  A_m8_l50   phi=0.400 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  410  A_m8_l50   phi=0.400 N= 250 ord_sym  reps= 500  22.9 s wall, 0.90 s/rep
+cell  411  A_m8_l50   phi=0.400 N= 250 ord_skew reps= 500  22.9 s wall, 0.89 s/rep
+cell  412  A_m8_l50   phi=0.400 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  413  A_m8_l50   phi=0.400 N= 500 ord_sym  reps= 500  24.8 s wall, 0.98 s/rep
+cell  414  A_m8_l50   phi=0.400 N= 500 ord_skew reps= 500  24.3 s wall, 0.96 s/rep
+cell  415  A_m8_l50   phi=0.400 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  416  A_m8_l50   phi=0.400 N=1000 ord_sym  reps= 500  28.9 s wall, 1.14 s/rep
+cell  417  A_m8_l50   phi=0.400 N=1000 ord_skew reps= 500  27.8 s wall, 1.10 s/rep
+cell  418  A_m8_l50   phi=0.400 N=2000 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  419  A_m8_l50   phi=0.400 N=2000 ord_sym  reps= 500  37.4 s wall, 1.48 s/rep
+cell  420  A_m8_l50   phi=0.400 N=2000 ord_skew reps= 500  35.2 s wall, 1.39 s/rep
+cell  421  A_m8_l50   phi=0.500 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  422  A_m8_l50   phi=0.500 N= 250 ord_sym  reps= 500  22.7 s wall, 0.89 s/rep
+cell  423  A_m8_l50   phi=0.500 N= 250 ord_skew reps= 500  22.4 s wall, 0.88 s/rep
+cell  424  A_m8_l50   phi=0.500 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  425  A_m8_l50   phi=0.500 N= 500 ord_sym  reps= 500  25.2 s wall, 0.99 s/rep
+cell  426  A_m8_l50   phi=0.500 N= 500 ord_skew reps= 500  24.3 s wall, 0.95 s/rep
+cell  427  A_m8_l50   phi=0.500 N=1000 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  428  A_m8_l50   phi=0.500 N=1000 ord_sym  reps= 500  28.9 s wall, 1.14 s/rep
+cell  429  A_m8_l50   phi=0.500 N=1000 ord_skew reps= 500  27.8 s wall, 1.10 s/rep
+cell  430  A_m8_l50   phi=0.500 N=2000 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  431  A_m8_l50   phi=0.500 N=2000 ord_sym  reps= 500  37.5 s wall, 1.47 s/rep
+cell  432  A_m8_l50   phi=0.500 N=2000 ord_skew reps= 500  35.2 s wall, 1.39 s/rep
+cell  433  A_m8_l50   phi=0.600 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  434  A_m8_l50   phi=0.600 N= 250 ord_sym  reps= 500  22.7 s wall, 0.90 s/rep
+cell  435  A_m8_l50   phi=0.600 N= 250 ord_skew reps= 500  22.6 s wall, 0.89 s/rep
+cell  436  A_m8_l50   phi=0.600 N= 500 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  437  A_m8_l50   phi=0.600 N= 500 ord_sym  reps= 500  24.9 s wall, 0.98 s/rep
+cell  438  A_m8_l50   phi=0.600 N= 500 ord_skew reps= 500  24.5 s wall, 0.96 s/rep
+cell  439  A_m8_l50   phi=0.600 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  440  A_m8_l50   phi=0.600 N=1000 ord_sym  reps= 500  29.1 s wall, 1.14 s/rep
+cell  441  A_m8_l50   phi=0.600 N=1000 ord_skew reps= 500  27.9 s wall, 1.10 s/rep
+cell  442  A_m8_l50   phi=0.600 N=2000 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  443  A_m8_l50   phi=0.600 N=2000 ord_sym  reps= 500  37.5 s wall, 1.48 s/rep
+cell  444  A_m8_l50   phi=0.600 N=2000 ord_skew reps= 500  35.3 s wall, 1.39 s/rep
+cell  445  A_m8_l50   phi=0.700 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  446  A_m8_l50   phi=0.700 N= 250 ord_sym  reps= 500  22.9 s wall, 0.91 s/rep
+cell  447  A_m8_l50   phi=0.700 N= 250 ord_skew reps= 500  22.8 s wall, 0.90 s/rep
+cell  448  A_m8_l50   phi=0.700 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  449  A_m8_l50   phi=0.700 N= 500 ord_sym  reps= 500  25.0 s wall, 0.99 s/rep
+cell  450  A_m8_l50   phi=0.700 N= 500 ord_skew reps= 500  24.3 s wall, 0.96 s/rep
+cell  451  A_m8_l50   phi=0.700 N=1000 cont     reps=1000  6.1 s wall, 0.12 s/rep
+cell  452  A_m8_l50   phi=0.700 N=1000 ord_sym  reps= 500  29.0 s wall, 1.15 s/rep
+cell  453  A_m8_l50   phi=0.700 N=1000 ord_skew reps= 500  28.2 s wall, 1.11 s/rep
+cell  454  A_m8_l50   phi=0.700 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  455  A_m8_l50   phi=0.700 N=2000 ord_sym  reps= 500  37.4 s wall, 1.48 s/rep
+cell  456  A_m8_l50   phi=0.700 N=2000 ord_skew reps= 500  35.4 s wall, 1.40 s/rep
+cell  457  A_m8_l50   phi=0.800 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  458  A_m8_l50   phi=0.800 N= 250 ord_sym  reps= 500  22.8 s wall, 0.90 s/rep
+cell  459  A_m8_l50   phi=0.800 N= 250 ord_skew reps= 500  22.8 s wall, 0.89 s/rep
+cell  460  A_m8_l50   phi=0.800 N= 500 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  461  A_m8_l50   phi=0.800 N= 500 ord_sym  reps= 500  24.8 s wall, 0.98 s/rep
+cell  462  A_m8_l50   phi=0.800 N= 500 ord_skew reps= 500  25.0 s wall, 0.98 s/rep
+cell  463  A_m8_l50   phi=0.800 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  464  A_m8_l50   phi=0.800 N=1000 ord_sym  reps= 500  29.2 s wall, 1.15 s/rep
+cell  465  A_m8_l50   phi=0.800 N=1000 ord_skew reps= 500  28.2 s wall, 1.11 s/rep
+cell  466  A_m8_l50   phi=0.800 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  467  A_m8_l50   phi=0.800 N=2000 ord_sym  reps= 500  37.1 s wall, 1.47 s/rep
+cell  468  A_m8_l50   phi=0.800 N=2000 ord_skew reps= 500  36.1 s wall, 1.41 s/rep
+cell  469  A_m8_l50   phi=0.900 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  470  A_m8_l50   phi=0.900 N= 250 ord_sym  reps= 500  23.6 s wall, 0.91 s/rep
+cell  471  A_m8_l50   phi=0.900 N= 250 ord_skew reps= 500  22.9 s wall, 0.91 s/rep
+cell  472  A_m8_l50   phi=0.900 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  473  A_m8_l50   phi=0.900 N= 500 ord_sym  reps= 500  25.0 s wall, 0.99 s/rep
+cell  474  A_m8_l50   phi=0.900 N= 500 ord_skew reps= 500  24.8 s wall, 0.97 s/rep
+cell  475  A_m8_l50   phi=0.900 N=1000 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  476  A_m8_l50   phi=0.900 N=1000 ord_sym  reps= 500  29.0 s wall, 1.15 s/rep
+cell  477  A_m8_l50   phi=0.900 N=1000 ord_skew reps= 500  28.3 s wall, 1.11 s/rep
+cell  478  A_m8_l50   phi=0.900 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  479  A_m8_l50   phi=0.900 N=2000 ord_sym  reps= 500  37.4 s wall, 1.48 s/rep
+cell  480  A_m8_l50   phi=0.900 N=2000 ord_skew reps= 500  36.2 s wall, 1.41 s/rep
+cell  481  A_m8_l70   phi=0.000 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  482  A_m8_l70   phi=0.000 N= 250 ord_sym  reps= 500  23.6 s wall, 0.93 s/rep
+cell  483  A_m8_l70   phi=0.000 N= 250 ord_skew reps= 500  23.3 s wall, 0.92 s/rep
+cell  484  A_m8_l70   phi=0.000 N= 500 cont     reps=1000  8.3 s wall, 0.15 s/rep
+cell  485  A_m8_l70   phi=0.000 N= 500 ord_sym  reps= 500  25.5 s wall, 0.99 s/rep
+cell  486  A_m8_l70   phi=0.000 N= 500 ord_skew reps= 500  24.8 s wall, 0.98 s/rep
+cell  487  A_m8_l70   phi=0.000 N=1000 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  488  A_m8_l70   phi=0.000 N=1000 ord_sym  reps= 500  29.4 s wall, 1.15 s/rep
+cell  489  A_m8_l70   phi=0.000 N=1000 ord_skew reps= 500  28.4 s wall, 1.12 s/rep
+cell  490  A_m8_l70   phi=0.000 N=2000 cont     reps=1000  8.1 s wall, 0.15 s/rep
+cell  491  A_m8_l70   phi=0.000 N=2000 ord_sym  reps= 500  37.3 s wall, 1.48 s/rep
+cell  492  A_m8_l70   phi=0.000 N=2000 ord_skew reps= 500  35.9 s wall, 1.42 s/rep
+cell  493  A_m8_l70   phi=0.031 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  494  A_m8_l70   phi=0.031 N= 250 ord_sym  reps= 500  23.1 s wall, 0.91 s/rep
+cell  495  A_m8_l70   phi=0.031 N= 250 ord_skew reps= 500  23.2 s wall, 0.92 s/rep
+cell  496  A_m8_l70   phi=0.031 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  497  A_m8_l70   phi=0.031 N= 500 ord_sym  reps= 500  25.0 s wall, 0.99 s/rep
+cell  498  A_m8_l70   phi=0.031 N= 500 ord_skew reps= 500  24.8 s wall, 0.98 s/rep
+cell  499  A_m8_l70   phi=0.031 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  500  A_m8_l70   phi=0.031 N=1000 ord_sym  reps= 500  29.4 s wall, 1.15 s/rep
+cell  501  A_m8_l70   phi=0.031 N=1000 ord_skew reps= 500  28.6 s wall, 1.12 s/rep
+cell  502  A_m8_l70   phi=0.031 N=2000 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  503  A_m8_l70   phi=0.031 N=2000 ord_sym  reps= 500  37.2 s wall, 1.47 s/rep
+cell  504  A_m8_l70   phi=0.031 N=2000 ord_skew reps= 500  35.5 s wall, 1.41 s/rep
+cell  505  A_m8_l70   phi=0.062 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  506  A_m8_l70   phi=0.062 N= 250 ord_sym  reps= 500  23.4 s wall, 0.92 s/rep
+cell  507  A_m8_l70   phi=0.062 N= 250 ord_skew reps= 500  23.3 s wall, 0.92 s/rep
+cell  508  A_m8_l70   phi=0.062 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  509  A_m8_l70   phi=0.062 N= 500 ord_sym  reps= 500  25.7 s wall, 1.00 s/rep
+cell  510  A_m8_l70   phi=0.062 N= 500 ord_skew reps= 500  25.2 s wall, 0.98 s/rep
+cell  511  A_m8_l70   phi=0.062 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  512  A_m8_l70   phi=0.062 N=1000 ord_sym  reps= 500  29.3 s wall, 1.16 s/rep
+cell  513  A_m8_l70   phi=0.062 N=1000 ord_skew reps= 500  28.6 s wall, 1.13 s/rep
+cell  514  A_m8_l70   phi=0.062 N=2000 cont     reps=1000  8.1 s wall, 0.16 s/rep
+cell  515  A_m8_l70   phi=0.062 N=2000 ord_sym  reps= 500  37.5 s wall, 1.49 s/rep
+cell  516  A_m8_l70   phi=0.062 N=2000 ord_skew reps= 500  36.0 s wall, 1.42 s/rep
+cell  517  A_m8_l70   phi=0.100 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  518  A_m8_l70   phi=0.100 N= 250 ord_sym  reps= 500  23.1 s wall, 0.91 s/rep
+cell  519  A_m8_l70   phi=0.100 N= 250 ord_skew reps= 500  23.4 s wall, 0.92 s/rep
+cell  520  A_m8_l70   phi=0.100 N= 500 cont     reps=1000  8.7 s wall, 0.16 s/rep
+cell  521  A_m8_l70   phi=0.100 N= 500 ord_sym  reps= 500  25.1 s wall, 0.99 s/rep
+cell  522  A_m8_l70   phi=0.100 N= 500 ord_skew reps= 500  24.8 s wall, 0.98 s/rep
+cell  523  A_m8_l70   phi=0.100 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  524  A_m8_l70   phi=0.100 N=1000 ord_sym  reps= 500  29.5 s wall, 1.15 s/rep
+cell  525  A_m8_l70   phi=0.100 N=1000 ord_skew reps= 500  28.8 s wall, 1.12 s/rep
+cell  526  A_m8_l70   phi=0.100 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  527  A_m8_l70   phi=0.100 N=2000 ord_sym  reps= 500  37.4 s wall, 1.48 s/rep
+cell  528  A_m8_l70   phi=0.100 N=2000 ord_skew reps= 500  35.9 s wall, 1.42 s/rep
+cell  529  A_m8_l70   phi=0.200 N= 250 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  530  A_m8_l70   phi=0.200 N= 250 ord_sym  reps= 500  23.1 s wall, 0.91 s/rep
+cell  531  A_m8_l70   phi=0.200 N= 250 ord_skew reps= 500  23.2 s wall, 0.91 s/rep
+cell  532  A_m8_l70   phi=0.200 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  533  A_m8_l70   phi=0.200 N= 500 ord_sym  reps= 500  25.1 s wall, 0.99 s/rep
+cell  534  A_m8_l70   phi=0.200 N= 500 ord_skew reps= 500  25.1 s wall, 0.98 s/rep
+cell  535  A_m8_l70   phi=0.200 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  536  A_m8_l70   phi=0.200 N=1000 ord_sym  reps= 500  29.1 s wall, 1.14 s/rep
+cell  537  A_m8_l70   phi=0.200 N=1000 ord_skew reps= 500  28.5 s wall, 1.12 s/rep
+cell  538  A_m8_l70   phi=0.200 N=2000 cont     reps=1000  7.7 s wall, 0.15 s/rep
+cell  539  A_m8_l70   phi=0.200 N=2000 ord_sym  reps= 500  37.2 s wall, 1.47 s/rep
+cell  540  A_m8_l70   phi=0.200 N=2000 ord_skew reps= 500  35.5 s wall, 1.41 s/rep
+cell  541  A_m8_l70   phi=0.300 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  542  A_m8_l70   phi=0.300 N= 250 ord_sym  reps= 500  23.4 s wall, 0.92 s/rep
+cell  543  A_m8_l70   phi=0.300 N= 250 ord_skew reps= 500  23.3 s wall, 0.92 s/rep
+cell  544  A_m8_l70   phi=0.300 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  545  A_m8_l70   phi=0.300 N= 500 ord_sym  reps= 500  25.3 s wall, 1.00 s/rep
+cell  546  A_m8_l70   phi=0.300 N= 500 ord_skew reps= 500  25.0 s wall, 0.99 s/rep
+cell  547  A_m8_l70   phi=0.300 N=1000 cont     reps=1000  6.1 s wall, 0.12 s/rep
+cell  548  A_m8_l70   phi=0.300 N=1000 ord_sym  reps= 500  29.4 s wall, 1.16 s/rep
+cell  549  A_m8_l70   phi=0.300 N=1000 ord_skew reps= 500  28.5 s wall, 1.13 s/rep
+cell  550  A_m8_l70   phi=0.300 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  551  A_m8_l70   phi=0.300 N=2000 ord_sym  reps= 500  37.5 s wall, 1.49 s/rep
+cell  552  A_m8_l70   phi=0.300 N=2000 ord_skew reps= 500  36.0 s wall, 1.42 s/rep
+cell  553  A_m8_l70   phi=0.367 N= 250 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  554  A_m8_l70   phi=0.367 N= 250 ord_sym  reps= 500  23.8 s wall, 0.92 s/rep
+cell  555  A_m8_l70   phi=0.367 N= 250 ord_skew reps= 500  23.9 s wall, 0.93 s/rep
+cell  556  A_m8_l70   phi=0.367 N= 500 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  557  A_m8_l70   phi=0.367 N= 500 ord_sym  reps= 500  25.4 s wall, 1.00 s/rep
+cell  558  A_m8_l70   phi=0.367 N= 500 ord_skew reps= 500  25.0 s wall, 0.99 s/rep
+cell  559  A_m8_l70   phi=0.367 N=1000 cont     reps=1000  6.1 s wall, 0.11 s/rep
+cell  560  A_m8_l70   phi=0.367 N=1000 ord_sym  reps= 500  29.6 s wall, 1.16 s/rep
+cell  561  A_m8_l70   phi=0.367 N=1000 ord_skew reps= 500  28.8 s wall, 1.13 s/rep
+cell  562  A_m8_l70   phi=0.367 N=2000 cont     reps=1000  8.2 s wall, 0.15 s/rep
+cell  563  A_m8_l70   phi=0.367 N=2000 ord_sym  reps= 500  37.6 s wall, 1.48 s/rep
+cell  564  A_m8_l70   phi=0.367 N=2000 ord_skew reps= 500  35.9 s wall, 1.42 s/rep
+cell  565  A_m8_l70   phi=0.400 N= 250 cont     reps=1000  6.1 s wall, 0.11 s/rep
+cell  566  A_m8_l70   phi=0.400 N= 250 ord_sym  reps= 500  23.4 s wall, 0.92 s/rep
+cell  567  A_m8_l70   phi=0.400 N= 250 ord_skew reps= 500  23.7 s wall, 0.93 s/rep
+cell  568  A_m8_l70   phi=0.400 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  569  A_m8_l70   phi=0.400 N= 500 ord_sym  reps= 500  25.3 s wall, 1.00 s/rep
+cell  570  A_m8_l70   phi=0.400 N= 500 ord_skew reps= 500  25.0 s wall, 0.98 s/rep
+cell  571  A_m8_l70   phi=0.400 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  572  A_m8_l70   phi=0.400 N=1000 ord_sym  reps= 500  29.3 s wall, 1.16 s/rep
+cell  573  A_m8_l70   phi=0.400 N=1000 ord_skew reps= 500  28.6 s wall, 1.13 s/rep
+cell  574  A_m8_l70   phi=0.400 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  575  A_m8_l70   phi=0.400 N=2000 ord_sym  reps= 500  37.3 s wall, 1.48 s/rep
+cell  576  A_m8_l70   phi=0.400 N=2000 ord_skew reps= 500  35.5 s wall, 1.41 s/rep
+cell  577  A_m8_l70   phi=0.500 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  578  A_m8_l70   phi=0.500 N= 250 ord_sym  reps= 500  23.5 s wall, 0.93 s/rep
+cell  579  A_m8_l70   phi=0.500 N= 250 ord_skew reps= 500  23.6 s wall, 0.93 s/rep
+cell  580  A_m8_l70   phi=0.500 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  581  A_m8_l70   phi=0.500 N= 500 ord_sym  reps= 500  25.8 s wall, 1.01 s/rep
+cell  582  A_m8_l70   phi=0.500 N= 500 ord_skew reps= 500  25.2 s wall, 0.99 s/rep
+cell  583  A_m8_l70   phi=0.500 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  584  A_m8_l70   phi=0.500 N=1000 ord_sym  reps= 500  29.9 s wall, 1.17 s/rep
+cell  585  A_m8_l70   phi=0.500 N=1000 ord_skew reps= 500  28.8 s wall, 1.13 s/rep
+cell  586  A_m8_l70   phi=0.500 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  587  A_m8_l70   phi=0.500 N=2000 ord_sym  reps= 500  37.7 s wall, 1.49 s/rep
+cell  588  A_m8_l70   phi=0.500 N=2000 ord_skew reps= 500  36.0 s wall, 1.43 s/rep
+cell  589  A_m8_l70   phi=0.600 N= 250 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  590  A_m8_l70   phi=0.600 N= 250 ord_sym  reps= 500  23.7 s wall, 0.93 s/rep
+cell  591  A_m8_l70   phi=0.600 N= 250 ord_skew reps= 500  23.7 s wall, 0.93 s/rep
+cell  592  A_m8_l70   phi=0.600 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  593  A_m8_l70   phi=0.600 N= 500 ord_sym  reps= 500  25.8 s wall, 1.01 s/rep
+cell  594  A_m8_l70   phi=0.600 N= 500 ord_skew reps= 500  25.5 s wall, 1.00 s/rep
+cell  595  A_m8_l70   phi=0.600 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  596  A_m8_l70   phi=0.600 N=1000 ord_sym  reps= 500  29.6 s wall, 1.17 s/rep
+cell  597  A_m8_l70   phi=0.600 N=1000 ord_skew reps= 500  29.1 s wall, 1.14 s/rep
+cell  598  A_m8_l70   phi=0.600 N=2000 cont     reps=1000  7.8 s wall, 0.15 s/rep
+cell  599  A_m8_l70   phi=0.600 N=2000 ord_sym  reps= 500  37.4 s wall, 1.48 s/rep
+cell  600  A_m8_l70   phi=0.600 N=2000 ord_skew reps= 500  35.7 s wall, 1.42 s/rep
+cell  601  A_m8_l70   phi=0.700 N= 250 cont     reps=1000  6.2 s wall, 0.12 s/rep
+cell  602  A_m8_l70   phi=0.700 N= 250 ord_sym  reps= 500  23.5 s wall, 0.93 s/rep
+cell  603  A_m8_l70   phi=0.700 N= 250 ord_skew reps= 500  23.8 s wall, 0.94 s/rep
+cell  604  A_m8_l70   phi=0.700 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  605  A_m8_l70   phi=0.700 N= 500 ord_sym  reps= 500  25.7 s wall, 1.01 s/rep
+cell  606  A_m8_l70   phi=0.700 N= 500 ord_skew reps= 500  25.5 s wall, 1.00 s/rep
+cell  607  A_m8_l70   phi=0.700 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  608  A_m8_l70   phi=0.700 N=1000 ord_sym  reps= 500  30.1 s wall, 1.17 s/rep
+cell  609  A_m8_l70   phi=0.700 N=1000 ord_skew reps= 500  29.0 s wall, 1.14 s/rep
+cell  610  A_m8_l70   phi=0.700 N=2000 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  611  A_m8_l70   phi=0.700 N=2000 ord_sym  reps= 500  37.6 s wall, 1.49 s/rep
+cell  612  A_m8_l70   phi=0.700 N=2000 ord_skew reps= 500  36.2 s wall, 1.43 s/rep
+cell  613  A_m8_l70   phi=0.800 N= 250 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  614  A_m8_l70   phi=0.800 N= 250 ord_sym  reps= 500  24.0 s wall, 0.94 s/rep
+cell  615  A_m8_l70   phi=0.800 N= 250 ord_skew reps= 500  23.9 s wall, 0.94 s/rep
+cell  616  A_m8_l70   phi=0.800 N= 500 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  617  A_m8_l70   phi=0.800 N= 500 ord_sym  reps= 500  25.7 s wall, 1.01 s/rep
+cell  618  A_m8_l70   phi=0.800 N= 500 ord_skew reps= 500  25.8 s wall, 1.01 s/rep
+cell  619  A_m8_l70   phi=0.800 N=1000 cont     reps=1000  6.2 s wall, 0.11 s/rep
+cell  620  A_m8_l70   phi=0.800 N=1000 ord_sym  reps= 500  29.9 s wall, 1.17 s/rep
+cell  621  A_m8_l70   phi=0.800 N=1000 ord_skew reps= 500  29.0 s wall, 1.15 s/rep
+cell  622  A_m8_l70   phi=0.800 N=2000 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  623  A_m8_l70   phi=0.800 N=2000 ord_sym  reps= 500  38.8 s wall, 1.49 s/rep
+cell  624  A_m8_l70   phi=0.800 N=2000 ord_skew reps= 500  36.8 s wall, 1.43 s/rep
+cell  625  A_m8_l70   phi=0.900 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  626  A_m8_l70   phi=0.900 N= 250 ord_sym  reps= 500  23.9 s wall, 0.94 s/rep
+cell  627  A_m8_l70   phi=0.900 N= 250 ord_skew reps= 500  24.0 s wall, 0.95 s/rep
+cell  628  A_m8_l70   phi=0.900 N= 500 cont     reps=1000  8.0 s wall, 0.15 s/rep
+cell  629  A_m8_l70   phi=0.900 N= 500 ord_sym  reps= 500  25.8 s wall, 1.02 s/rep
+cell  630  A_m8_l70   phi=0.900 N= 500 ord_skew reps= 500  26.1 s wall, 1.02 s/rep
+cell  631  A_m8_l70   phi=0.900 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  632  A_m8_l70   phi=0.900 N=1000 ord_sym  reps= 500  30.1 s wall, 1.18 s/rep
+cell  633  A_m8_l70   phi=0.900 N=1000 ord_skew reps= 500  29.2 s wall, 1.15 s/rep
+cell  634  A_m8_l70   phi=0.900 N=2000 cont     reps=1000  7.9 s wall, 0.15 s/rep
+cell  635  A_m8_l70   phi=0.900 N=2000 ord_sym  reps= 500  37.6 s wall, 1.49 s/rep
+cell  636  A_m8_l70   phi=0.900 N=2000 ord_skew reps= 500  36.3 s wall, 1.43 s/rep
+cell  637  B_l68_l72  phi=0.000 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  638  B_l68_l72  phi=0.000 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  639  B_l68_l72  phi=0.000 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  640  B_l68_l72  phi=0.000 N= 500 cont     reps=1000  42.5 s wall, 0.83 s/rep
+cell  641  B_l68_l72  phi=0.000 N= 500 ord_sym  reps= 500  30.6 s wall, 1.20 s/rep
+cell  642  B_l68_l72  phi=0.000 N= 500 ord_skew reps= 500  30.6 s wall, 1.20 s/rep
+cell  643  B_l68_l72  phi=0.000 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  644  B_l68_l72  phi=0.000 N=1000 ord_sym  reps= 500  14.9 s wall, 0.59 s/rep
+cell  645  B_l68_l72  phi=0.000 N=1000 ord_skew reps= 500  15.1 s wall, 0.58 s/rep
+cell  646  B_l68_l72  phi=0.000 N=2000 cont     reps=1000  41.8 s wall, 0.82 s/rep
+cell  647  B_l68_l72  phi=0.000 N=2000 ord_sym  reps= 500  35.6 s wall, 1.40 s/rep
+cell  648  B_l68_l72  phi=0.000 N=2000 ord_skew reps= 500  34.9 s wall, 1.36 s/rep
+cell  649  B_l68_l72  phi=0.010 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  650  B_l68_l72  phi=0.010 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell  651  B_l68_l72  phi=0.010 N= 250 ord_skew reps= 500  12.9 s wall, 0.50 s/rep
+cell  652  B_l68_l72  phi=0.010 N= 500 cont     reps=1000  42.2 s wall, 0.83 s/rep
+cell  653  B_l68_l72  phi=0.010 N= 500 ord_sym  reps= 500  31.1 s wall, 1.22 s/rep
+cell  654  B_l68_l72  phi=0.010 N= 500 ord_skew reps= 500  30.3 s wall, 1.20 s/rep
+cell  655  B_l68_l72  phi=0.010 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  656  B_l68_l72  phi=0.010 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  657  B_l68_l72  phi=0.010 N=1000 ord_skew reps= 500  15.0 s wall, 0.58 s/rep
+cell  658  B_l68_l72  phi=0.010 N=2000 cont     reps=1000  42.1 s wall, 0.83 s/rep
+cell  659  B_l68_l72  phi=0.010 N=2000 ord_sym  reps= 500  34.7 s wall, 1.37 s/rep
+cell  660  B_l68_l72  phi=0.010 N=2000 ord_skew reps= 500  34.7 s wall, 1.35 s/rep
+cell  661  B_l68_l72  phi=0.100 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  662  B_l68_l72  phi=0.100 N= 250 ord_sym  reps= 500  12.6 s wall, 0.49 s/rep
+cell  663  B_l68_l72  phi=0.100 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  664  B_l68_l72  phi=0.100 N= 500 cont     reps=1000  42.3 s wall, 0.83 s/rep
+cell  665  B_l68_l72  phi=0.100 N= 500 ord_sym  reps= 500  30.7 s wall, 1.20 s/rep
+cell  666  B_l68_l72  phi=0.100 N= 500 ord_skew reps= 500  30.5 s wall, 1.20 s/rep
+cell  667  B_l68_l72  phi=0.100 N=1000 cont     reps=1000  5.0 s wall, 0.09 s/rep
+cell  668  B_l68_l72  phi=0.100 N=1000 ord_sym  reps= 500  14.9 s wall, 0.58 s/rep
+cell  669  B_l68_l72  phi=0.100 N=1000 ord_skew reps= 500  14.3 s wall, 0.56 s/rep
+cell  670  B_l68_l72  phi=0.100 N=2000 cont     reps=1000  39.5 s wall, 0.77 s/rep
+cell  671  B_l68_l72  phi=0.100 N=2000 ord_sym  reps= 500  34.8 s wall, 1.37 s/rep
+cell  672  B_l68_l72  phi=0.100 N=2000 ord_skew reps= 500  34.7 s wall, 1.35 s/rep
+cell  673  B_l68_l72  phi=0.200 N= 250 cont     reps=1000  5.0 s wall, 0.09 s/rep
+cell  674  B_l68_l72  phi=0.200 N= 250 ord_sym  reps= 500  12.8 s wall, 0.50 s/rep
+cell  675  B_l68_l72  phi=0.200 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  676  B_l68_l72  phi=0.200 N= 500 cont     reps=1000  39.7 s wall, 0.78 s/rep
+cell  677  B_l68_l72  phi=0.200 N= 500 ord_sym  reps= 500  31.0 s wall, 1.22 s/rep
+cell  678  B_l68_l72  phi=0.200 N= 500 ord_skew reps= 500  30.9 s wall, 1.22 s/rep
+cell  679  B_l68_l72  phi=0.200 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  680  B_l68_l72  phi=0.200 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  681  B_l68_l72  phi=0.200 N=1000 ord_skew reps= 500  15.0 s wall, 0.58 s/rep
+cell  682  B_l68_l72  phi=0.200 N=2000 cont     reps=1000  39.5 s wall, 0.78 s/rep
+cell  683  B_l68_l72  phi=0.200 N=2000 ord_sym  reps= 500  35.4 s wall, 1.40 s/rep
+cell  684  B_l68_l72  phi=0.200 N=2000 ord_skew reps= 500  34.6 s wall, 1.37 s/rep
+cell  685  B_l68_l72  phi=0.240 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  686  B_l68_l72  phi=0.240 N= 250 ord_sym  reps= 500  12.9 s wall, 0.51 s/rep
+cell  687  B_l68_l72  phi=0.240 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  688  B_l68_l72  phi=0.240 N= 500 cont     reps=1000  39.6 s wall, 0.78 s/rep
+cell  689  B_l68_l72  phi=0.240 N= 500 ord_sym  reps= 500  31.2 s wall, 1.23 s/rep
+cell  690  B_l68_l72  phi=0.240 N= 500 ord_skew reps= 500  31.0 s wall, 1.22 s/rep
+cell  691  B_l68_l72  phi=0.240 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  692  B_l68_l72  phi=0.240 N=1000 ord_sym  reps= 500  15.2 s wall, 0.59 s/rep
+cell  693  B_l68_l72  phi=0.240 N=1000 ord_skew reps= 500  15.0 s wall, 0.58 s/rep
+cell  694  B_l68_l72  phi=0.240 N=2000 cont     reps=1000  39.9 s wall, 0.78 s/rep
+cell  695  B_l68_l72  phi=0.240 N=2000 ord_sym  reps= 500  35.3 s wall, 1.38 s/rep
+cell  696  B_l68_l72  phi=0.240 N=2000 ord_skew reps= 500  34.6 s wall, 1.36 s/rep
+cell  697  B_l68_l72  phi=0.300 N= 250 cont     reps=1000  5.1 s wall, 0.10 s/rep
+cell  698  B_l68_l72  phi=0.300 N= 250 ord_sym  reps= 500  13.0 s wall, 0.50 s/rep
+cell  699  B_l68_l72  phi=0.300 N= 250 ord_skew reps= 500  12.7 s wall, 0.50 s/rep
+cell  700  B_l68_l72  phi=0.300 N= 500 cont     reps=1000  39.4 s wall, 0.77 s/rep
+cell  701  B_l68_l72  phi=0.300 N= 500 ord_sym  reps= 500  30.8 s wall, 1.21 s/rep
+cell  702  B_l68_l72  phi=0.300 N= 500 ord_skew reps= 500  30.7 s wall, 1.21 s/rep
+cell  703  B_l68_l72  phi=0.300 N=1000 cont     reps=1000  5.1 s wall, 0.10 s/rep
+cell  704  B_l68_l72  phi=0.300 N=1000 ord_sym  reps= 500  15.0 s wall, 0.59 s/rep
+cell  705  B_l68_l72  phi=0.300 N=1000 ord_skew reps= 500  14.6 s wall, 0.57 s/rep
+cell  706  B_l68_l72  phi=0.300 N=2000 cont     reps=1000  39.6 s wall, 0.78 s/rep
+cell  707  B_l68_l72  phi=0.300 N=2000 ord_sym  reps= 500  35.1 s wall, 1.39 s/rep
+cell  708  B_l68_l72  phi=0.300 N=2000 ord_skew reps= 500  34.7 s wall, 1.36 s/rep
+cell  709  B_l68_l72  phi=0.400 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  710  B_l68_l72  phi=0.400 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  711  B_l68_l72  phi=0.400 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  712  B_l68_l72  phi=0.400 N= 500 cont     reps=1000  39.9 s wall, 0.78 s/rep
+cell  713  B_l68_l72  phi=0.400 N= 500 ord_sym  reps= 500  31.3 s wall, 1.23 s/rep
+cell  714  B_l68_l72  phi=0.400 N= 500 ord_skew reps= 500  31.0 s wall, 1.22 s/rep
+cell  715  B_l68_l72  phi=0.400 N=1000 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  716  B_l68_l72  phi=0.400 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  717  B_l68_l72  phi=0.400 N=1000 ord_skew reps= 500  14.6 s wall, 0.58 s/rep
+cell  718  B_l68_l72  phi=0.400 N=2000 cont     reps=1000  39.3 s wall, 0.77 s/rep
+cell  719  B_l68_l72  phi=0.400 N=2000 ord_sym  reps= 500  35.1 s wall, 1.38 s/rep
+cell  720  B_l68_l72  phi=0.400 N=2000 ord_skew reps= 500  34.3 s wall, 1.35 s/rep
+cell  721  B_l68_l72  phi=0.409 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  722  B_l68_l72  phi=0.409 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  723  B_l68_l72  phi=0.409 N= 250 ord_skew reps= 500  12.9 s wall, 0.51 s/rep
+cell  724  B_l68_l72  phi=0.409 N= 500 cont     reps=1000  39.4 s wall, 0.77 s/rep
+cell  725  B_l68_l72  phi=0.409 N= 500 ord_sym  reps= 500  30.9 s wall, 1.21 s/rep
+cell  726  B_l68_l72  phi=0.409 N= 500 ord_skew reps= 500  30.3 s wall, 1.19 s/rep
+cell  727  B_l68_l72  phi=0.409 N=1000 cont     reps=1000  5.0 s wall, 0.09 s/rep
+cell  728  B_l68_l72  phi=0.409 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  729  B_l68_l72  phi=0.409 N=1000 ord_skew reps= 500  14.6 s wall, 0.57 s/rep
+cell  730  B_l68_l72  phi=0.409 N=2000 cont     reps=1000  39.1 s wall, 0.77 s/rep
+cell  731  B_l68_l72  phi=0.409 N=2000 ord_sym  reps= 500  35.0 s wall, 1.38 s/rep
+cell  732  B_l68_l72  phi=0.409 N=2000 ord_skew reps= 500  34.4 s wall, 1.35 s/rep
+cell  733  B_l68_l72  phi=0.500 N= 250 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  734  B_l68_l72  phi=0.500 N= 250 ord_sym  reps= 500  13.2 s wall, 0.51 s/rep
+cell  735  B_l68_l72  phi=0.500 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  736  B_l68_l72  phi=0.500 N= 500 cont     reps=1000  39.6 s wall, 0.77 s/rep
+cell  737  B_l68_l72  phi=0.500 N= 500 ord_sym  reps= 500  31.1 s wall, 1.23 s/rep
+cell  738  B_l68_l72  phi=0.500 N= 500 ord_skew reps= 500  31.0 s wall, 1.22 s/rep
+cell  739  B_l68_l72  phi=0.500 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  740  B_l68_l72  phi=0.500 N=1000 ord_sym  reps= 500  15.7 s wall, 0.60 s/rep
+cell  741  B_l68_l72  phi=0.500 N=1000 ord_skew reps= 500  14.9 s wall, 0.58 s/rep
+cell  742  B_l68_l72  phi=0.500 N=2000 cont     reps=1000  39.2 s wall, 0.77 s/rep
+cell  743  B_l68_l72  phi=0.500 N=2000 ord_sym  reps= 500  35.0 s wall, 1.38 s/rep
+cell  744  B_l68_l72  phi=0.500 N=2000 ord_skew reps= 500  34.3 s wall, 1.35 s/rep
+cell  745  B_l68_l72  phi=0.600 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  746  B_l68_l72  phi=0.600 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  747  B_l68_l72  phi=0.600 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  748  B_l68_l72  phi=0.600 N= 500 cont     reps=1000  39.1 s wall, 0.77 s/rep
+cell  749  B_l68_l72  phi=0.600 N= 500 ord_sym  reps= 500  30.7 s wall, 1.21 s/rep
+cell  750  B_l68_l72  phi=0.600 N= 500 ord_skew reps= 500  30.7 s wall, 1.20 s/rep
+cell  751  B_l68_l72  phi=0.600 N=1000 cont     reps=1000  5.1 s wall, 0.09 s/rep
+cell  752  B_l68_l72  phi=0.600 N=1000 ord_sym  reps= 500  14.9 s wall, 0.58 s/rep
+cell  753  B_l68_l72  phi=0.600 N=1000 ord_skew reps= 500  14.6 s wall, 0.57 s/rep
+cell  754  B_l68_l72  phi=0.600 N=2000 cont     reps=1000  38.5 s wall, 0.76 s/rep
+cell  755  B_l68_l72  phi=0.600 N=2000 ord_sym  reps= 500  35.2 s wall, 1.37 s/rep
+cell  756  B_l68_l72  phi=0.600 N=2000 ord_skew reps= 500  34.6 s wall, 1.35 s/rep
+cell  757  B_l68_l72  phi=0.700 N= 250 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  758  B_l68_l72  phi=0.700 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  759  B_l68_l72  phi=0.700 N= 250 ord_skew reps= 500  13.5 s wall, 0.51 s/rep
+cell  760  B_l68_l72  phi=0.700 N= 500 cont     reps=1000  38.9 s wall, 0.76 s/rep
+cell  761  B_l68_l72  phi=0.700 N= 500 ord_sym  reps= 500  30.9 s wall, 1.22 s/rep
+cell  762  B_l68_l72  phi=0.700 N= 500 ord_skew reps= 500  31.0 s wall, 1.21 s/rep
+cell  763  B_l68_l72  phi=0.700 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  764  B_l68_l72  phi=0.700 N=1000 ord_sym  reps= 500  15.1 s wall, 0.59 s/rep
+cell  765  B_l68_l72  phi=0.700 N=1000 ord_skew reps= 500  14.7 s wall, 0.58 s/rep
+cell  766  B_l68_l72  phi=0.700 N=2000 cont     reps=1000  38.9 s wall, 0.76 s/rep
+cell  767  B_l68_l72  phi=0.700 N=2000 ord_sym  reps= 500  34.8 s wall, 1.37 s/rep
+cell  768  B_l68_l72  phi=0.700 N=2000 ord_skew reps= 500  34.2 s wall, 1.35 s/rep
+cell  769  B_l68_l72  phi=0.800 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  770  B_l68_l72  phi=0.800 N= 250 ord_sym  reps= 500  13.3 s wall, 0.51 s/rep
+cell  771  B_l68_l72  phi=0.800 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  772  B_l68_l72  phi=0.800 N= 500 cont     reps=1000  38.9 s wall, 0.76 s/rep
+cell  773  B_l68_l72  phi=0.800 N= 500 ord_sym  reps= 500  30.9 s wall, 1.21 s/rep
+cell  774  B_l68_l72  phi=0.800 N= 500 ord_skew reps= 500  30.5 s wall, 1.20 s/rep
+cell  775  B_l68_l72  phi=0.800 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  776  B_l68_l72  phi=0.800 N=1000 ord_sym  reps= 500  15.3 s wall, 0.59 s/rep
+cell  777  B_l68_l72  phi=0.800 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell  778  B_l68_l72  phi=0.800 N=2000 cont     reps=1000  38.6 s wall, 0.76 s/rep
+cell  779  B_l68_l72  phi=0.800 N=2000 ord_sym  reps= 500  34.6 s wall, 1.37 s/rep
+cell  780  B_l68_l72  phi=0.800 N=2000 ord_skew reps= 500  34.0 s wall, 1.34 s/rep
+cell  781  B_l68_l72  phi=0.900 N= 250 cont     reps=1000  5.1 s wall, 0.09 s/rep
+cell  782  B_l68_l72  phi=0.900 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  783  B_l68_l72  phi=0.900 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  784  B_l68_l72  phi=0.900 N= 500 cont     reps=1000  39.2 s wall, 0.77 s/rep
+cell  785  B_l68_l72  phi=0.900 N= 500 ord_sym  reps= 500  31.4 s wall, 1.22 s/rep
+cell  786  B_l68_l72  phi=0.900 N= 500 ord_skew reps= 500  30.8 s wall, 1.21 s/rep
+cell  787  B_l68_l72  phi=0.900 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  788  B_l68_l72  phi=0.900 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  789  B_l68_l72  phi=0.900 N=1000 ord_skew reps= 500  15.0 s wall, 0.59 s/rep
+cell  790  B_l68_l72  phi=0.900 N=2000 cont     reps=1000  39.8 s wall, 0.77 s/rep
+cell  791  B_l68_l72  phi=0.900 N=2000 ord_sym  reps= 500  35.1 s wall, 1.38 s/rep
+cell  792  B_l68_l72  phi=0.900 N=2000 ord_skew reps= 500  34.3 s wall, 1.35 s/rep
+cell  793  B_l60_l80  phi=0.000 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  794  B_l60_l80  phi=0.000 N= 250 ord_sym  reps= 500  13.2 s wall, 0.51 s/rep
+cell  795  B_l60_l80  phi=0.000 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  796  B_l60_l80  phi=0.000 N= 500 cont     reps=1000  41.0 s wall, 0.80 s/rep
+cell  797  B_l60_l80  phi=0.000 N= 500 ord_sym  reps= 500  31.5 s wall, 1.24 s/rep
+cell  798  B_l60_l80  phi=0.000 N= 500 ord_skew reps= 500  31.3 s wall, 1.23 s/rep
+cell  799  B_l60_l80  phi=0.000 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  800  B_l60_l80  phi=0.000 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  801  B_l60_l80  phi=0.000 N=1000 ord_skew reps= 500  14.9 s wall, 0.58 s/rep
+cell  802  B_l60_l80  phi=0.000 N=2000 cont     reps=1000  41.1 s wall, 0.80 s/rep
+cell  803  B_l60_l80  phi=0.000 N=2000 ord_sym  reps= 500  35.5 s wall, 1.40 s/rep
+cell  804  B_l60_l80  phi=0.000 N=2000 ord_skew reps= 500  34.9 s wall, 1.37 s/rep
+cell  805  B_l60_l80  phi=0.010 N= 250 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  806  B_l60_l80  phi=0.010 N= 250 ord_sym  reps= 500  13.2 s wall, 0.51 s/rep
+cell  807  B_l60_l80  phi=0.010 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  808  B_l60_l80  phi=0.010 N= 500 cont     reps=1000  40.5 s wall, 0.80 s/rep
+cell  809  B_l60_l80  phi=0.010 N= 500 ord_sym  reps= 500  31.6 s wall, 1.24 s/rep
+cell  810  B_l60_l80  phi=0.010 N= 500 ord_skew reps= 500  31.3 s wall, 1.23 s/rep
+cell  811  B_l60_l80  phi=0.010 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  812  B_l60_l80  phi=0.010 N=1000 ord_sym  reps= 500  15.3 s wall, 0.60 s/rep
+cell  813  B_l60_l80  phi=0.010 N=1000 ord_skew reps= 500  14.9 s wall, 0.59 s/rep
+cell  814  B_l60_l80  phi=0.010 N=2000 cont     reps=1000  42.5 s wall, 0.80 s/rep
+cell  815  B_l60_l80  phi=0.010 N=2000 ord_sym  reps= 500  36.1 s wall, 1.42 s/rep
+cell  816  B_l60_l80  phi=0.010 N=2000 ord_skew reps= 500  35.2 s wall, 1.39 s/rep
+cell  817  B_l60_l80  phi=0.100 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  818  B_l60_l80  phi=0.100 N= 250 ord_sym  reps= 500  13.1 s wall, 0.51 s/rep
+cell  819  B_l60_l80  phi=0.100 N= 250 ord_skew reps= 500  13.2 s wall, 0.51 s/rep
+cell  820  B_l60_l80  phi=0.100 N= 500 cont     reps=1000  40.9 s wall, 0.80 s/rep
+cell  821  B_l60_l80  phi=0.100 N= 500 ord_sym  reps= 500  31.4 s wall, 1.24 s/rep
+cell  822  B_l60_l80  phi=0.100 N= 500 ord_skew reps= 500  31.4 s wall, 1.23 s/rep
+cell  823  B_l60_l80  phi=0.100 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  824  B_l60_l80  phi=0.100 N=1000 ord_sym  reps= 500  15.3 s wall, 0.60 s/rep
+cell  825  B_l60_l80  phi=0.100 N=1000 ord_skew reps= 500  14.9 s wall, 0.58 s/rep
+cell  826  B_l60_l80  phi=0.100 N=2000 cont     reps=1000  40.9 s wall, 0.80 s/rep
+cell  827  B_l60_l80  phi=0.100 N=2000 ord_sym  reps= 500  35.5 s wall, 1.40 s/rep
+cell  828  B_l60_l80  phi=0.100 N=2000 ord_skew reps= 500  34.5 s wall, 1.36 s/rep
+cell  829  B_l60_l80  phi=0.200 N= 250 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  830  B_l60_l80  phi=0.200 N= 250 ord_sym  reps= 500  13.0 s wall, 0.51 s/rep
+cell  831  B_l60_l80  phi=0.200 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  832  B_l60_l80  phi=0.200 N= 500 cont     reps=1000  40.5 s wall, 0.79 s/rep
+cell  833  B_l60_l80  phi=0.200 N= 500 ord_sym  reps= 500  31.2 s wall, 1.23 s/rep
+cell  834  B_l60_l80  phi=0.200 N= 500 ord_skew reps= 500  31.1 s wall, 1.22 s/rep
+cell  835  B_l60_l80  phi=0.200 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  836  B_l60_l80  phi=0.200 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  837  B_l60_l80  phi=0.200 N=1000 ord_skew reps= 500  15.0 s wall, 0.59 s/rep
+cell  838  B_l60_l80  phi=0.200 N=2000 cont     reps=1000  40.5 s wall, 0.80 s/rep
+cell  839  B_l60_l80  phi=0.200 N=2000 ord_sym  reps= 500  35.7 s wall, 1.41 s/rep
+cell  840  B_l60_l80  phi=0.200 N=2000 ord_skew reps= 500  34.9 s wall, 1.37 s/rep
+cell  841  B_l60_l80  phi=0.240 N= 250 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell  842  B_l60_l80  phi=0.240 N= 250 ord_sym  reps= 500  13.2 s wall, 0.52 s/rep
+cell  843  B_l60_l80  phi=0.240 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  844  B_l60_l80  phi=0.240 N= 500 cont     reps=1000  40.6 s wall, 0.80 s/rep
+cell  845  B_l60_l80  phi=0.240 N= 500 ord_sym  reps= 500  31.5 s wall, 1.24 s/rep
+cell  846  B_l60_l80  phi=0.240 N= 500 ord_skew reps= 500  31.3 s wall, 1.23 s/rep
+cell  847  B_l60_l80  phi=0.240 N=1000 cont     reps=1000  5.7 s wall, 0.10 s/rep
+cell  848  B_l60_l80  phi=0.240 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  849  B_l60_l80  phi=0.240 N=1000 ord_skew reps= 500  14.9 s wall, 0.59 s/rep
+cell  850  B_l60_l80  phi=0.240 N=2000 cont     reps=1000  40.7 s wall, 0.80 s/rep
+cell  851  B_l60_l80  phi=0.240 N=2000 ord_sym  reps= 500  35.8 s wall, 1.40 s/rep
+cell  852  B_l60_l80  phi=0.240 N=2000 ord_skew reps= 500  34.7 s wall, 1.36 s/rep
+cell  853  B_l60_l80  phi=0.300 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  854  B_l60_l80  phi=0.300 N= 250 ord_sym  reps= 500  13.3 s wall, 0.51 s/rep
+cell  855  B_l60_l80  phi=0.300 N= 250 ord_skew reps= 500  12.8 s wall, 0.50 s/rep
+cell  856  B_l60_l80  phi=0.300 N= 500 cont     reps=1000  40.3 s wall, 0.79 s/rep
+cell  857  B_l60_l80  phi=0.300 N= 500 ord_sym  reps= 500  31.0 s wall, 1.22 s/rep
+cell  858  B_l60_l80  phi=0.300 N= 500 ord_skew reps= 500  30.8 s wall, 1.21 s/rep
+cell  859  B_l60_l80  phi=0.300 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  860  B_l60_l80  phi=0.300 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  861  B_l60_l80  phi=0.300 N=1000 ord_skew reps= 500  15.0 s wall, 0.58 s/rep
+cell  862  B_l60_l80  phi=0.300 N=2000 cont     reps=1000  40.1 s wall, 0.79 s/rep
+cell  863  B_l60_l80  phi=0.300 N=2000 ord_sym  reps= 500  35.8 s wall, 1.40 s/rep
+cell  864  B_l60_l80  phi=0.300 N=2000 ord_skew reps= 500  34.9 s wall, 1.37 s/rep
+cell  865  B_l60_l80  phi=0.400 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  866  B_l60_l80  phi=0.400 N= 250 ord_sym  reps= 500  13.3 s wall, 0.52 s/rep
+cell  867  B_l60_l80  phi=0.400 N= 250 ord_skew reps= 500  13.3 s wall, 0.52 s/rep
+cell  868  B_l60_l80  phi=0.400 N= 500 cont     reps=1000  40.3 s wall, 0.79 s/rep
+cell  869  B_l60_l80  phi=0.400 N= 500 ord_sym  reps= 500  31.6 s wall, 1.24 s/rep
+cell  870  B_l60_l80  phi=0.400 N= 500 ord_skew reps= 500  31.4 s wall, 1.23 s/rep
+cell  871  B_l60_l80  phi=0.400 N=1000 cont     reps=1000  5.7 s wall, 0.10 s/rep
+cell  872  B_l60_l80  phi=0.400 N=1000 ord_sym  reps= 500  15.4 s wall, 0.60 s/rep
+cell  873  B_l60_l80  phi=0.400 N=1000 ord_skew reps= 500  15.0 s wall, 0.59 s/rep
+cell  874  B_l60_l80  phi=0.400 N=2000 cont     reps=1000  40.7 s wall, 0.79 s/rep
+cell  875  B_l60_l80  phi=0.400 N=2000 ord_sym  reps= 500  35.4 s wall, 1.40 s/rep
+cell  876  B_l60_l80  phi=0.400 N=2000 ord_skew reps= 500  34.5 s wall, 1.36 s/rep
+cell  877  B_l60_l80  phi=0.409 N= 250 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  878  B_l60_l80  phi=0.409 N= 250 ord_sym  reps= 500  13.5 s wall, 0.52 s/rep
+cell  879  B_l60_l80  phi=0.409 N= 250 ord_skew reps= 500  13.1 s wall, 0.51 s/rep
+cell  880  B_l60_l80  phi=0.409 N= 500 cont     reps=1000  40.4 s wall, 0.79 s/rep
+cell  881  B_l60_l80  phi=0.409 N= 500 ord_sym  reps= 500  31.6 s wall, 1.23 s/rep
+cell  882  B_l60_l80  phi=0.409 N= 500 ord_skew reps= 500  31.0 s wall, 1.22 s/rep
+cell  883  B_l60_l80  phi=0.409 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  884  B_l60_l80  phi=0.409 N=1000 ord_sym  reps= 500  14.8 s wall, 0.58 s/rep
+cell  885  B_l60_l80  phi=0.409 N=1000 ord_skew reps= 500  14.7 s wall, 0.57 s/rep
+cell  886  B_l60_l80  phi=0.409 N=2000 cont     reps=1000  40.9 s wall, 0.78 s/rep
+cell  887  B_l60_l80  phi=0.409 N=2000 ord_sym  reps= 500  36.3 s wall, 1.39 s/rep
+cell  888  B_l60_l80  phi=0.409 N=2000 ord_skew reps= 500  34.4 s wall, 1.35 s/rep
+cell  889  B_l60_l80  phi=0.500 N= 250 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  890  B_l60_l80  phi=0.500 N= 250 ord_sym  reps= 500  13.3 s wall, 0.51 s/rep
+cell  891  B_l60_l80  phi=0.500 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  892  B_l60_l80  phi=0.500 N= 500 cont     reps=1000  39.6 s wall, 0.78 s/rep
+cell  893  B_l60_l80  phi=0.500 N= 500 ord_sym  reps= 500  31.3 s wall, 1.23 s/rep
+cell  894  B_l60_l80  phi=0.500 N= 500 ord_skew reps= 500  30.8 s wall, 1.22 s/rep
+cell  895  B_l60_l80  phi=0.500 N=1000 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  896  B_l60_l80  phi=0.500 N=1000 ord_sym  reps= 500  15.4 s wall, 0.60 s/rep
+cell  897  B_l60_l80  phi=0.500 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell  898  B_l60_l80  phi=0.500 N=2000 cont     reps=1000  39.8 s wall, 0.78 s/rep
+cell  899  B_l60_l80  phi=0.500 N=2000 ord_sym  reps= 500  35.4 s wall, 1.40 s/rep
+cell  900  B_l60_l80  phi=0.500 N=2000 ord_skew reps= 500  34.6 s wall, 1.37 s/rep
+cell  901  B_l60_l80  phi=0.600 N= 250 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  902  B_l60_l80  phi=0.600 N= 250 ord_sym  reps= 500  13.4 s wall, 0.52 s/rep
+cell  903  B_l60_l80  phi=0.600 N= 250 ord_skew reps= 500  13.2 s wall, 0.51 s/rep
+cell  904  B_l60_l80  phi=0.600 N= 500 cont     reps=1000  40.0 s wall, 0.78 s/rep
+cell  905  B_l60_l80  phi=0.600 N= 500 ord_sym  reps= 500  31.2 s wall, 1.23 s/rep
+cell  906  B_l60_l80  phi=0.600 N= 500 ord_skew reps= 500  30.9 s wall, 1.22 s/rep
+cell  907  B_l60_l80  phi=0.600 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  908  B_l60_l80  phi=0.600 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  909  B_l60_l80  phi=0.600 N=1000 ord_skew reps= 500  15.1 s wall, 0.59 s/rep
+cell  910  B_l60_l80  phi=0.600 N=2000 cont     reps=1000  40.1 s wall, 0.79 s/rep
+cell  911  B_l60_l80  phi=0.600 N=2000 ord_sym  reps= 500  34.9 s wall, 1.37 s/rep
+cell  912  B_l60_l80  phi=0.600 N=2000 ord_skew reps= 500  34.0 s wall, 1.34 s/rep
+cell  913  B_l60_l80  phi=0.700 N= 250 cont     reps=1000  4.9 s wall, 0.09 s/rep
+cell  914  B_l60_l80  phi=0.700 N= 250 ord_sym  reps= 500  13.3 s wall, 0.51 s/rep
+cell  915  B_l60_l80  phi=0.700 N= 250 ord_skew reps= 500  12.9 s wall, 0.51 s/rep
+cell  916  B_l60_l80  phi=0.700 N= 500 cont     reps=1000  39.5 s wall, 0.77 s/rep
+cell  917  B_l60_l80  phi=0.700 N= 500 ord_sym  reps= 500  31.0 s wall, 1.22 s/rep
+cell  918  B_l60_l80  phi=0.700 N= 500 ord_skew reps= 500  30.6 s wall, 1.21 s/rep
+cell  919  B_l60_l80  phi=0.700 N=1000 cont     reps=1000  5.2 s wall, 0.10 s/rep
+cell  920  B_l60_l80  phi=0.700 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  921  B_l60_l80  phi=0.700 N=1000 ord_skew reps= 500  15.0 s wall, 0.58 s/rep
+cell  922  B_l60_l80  phi=0.700 N=2000 cont     reps=1000  39.6 s wall, 0.78 s/rep
+cell  923  B_l60_l80  phi=0.700 N=2000 ord_sym  reps= 500  35.4 s wall, 1.40 s/rep
+cell  924  B_l60_l80  phi=0.700 N=2000 ord_skew reps= 500  34.7 s wall, 1.36 s/rep
+cell  925  B_l60_l80  phi=0.800 N= 250 cont     reps=1000  5.3 s wall, 0.10 s/rep
+cell  926  B_l60_l80  phi=0.800 N= 250 ord_sym  reps= 500  13.2 s wall, 0.52 s/rep
+cell  927  B_l60_l80  phi=0.800 N= 250 ord_skew reps= 500  13.7 s wall, 0.52 s/rep
+cell  928  B_l60_l80  phi=0.800 N= 500 cont     reps=1000  39.9 s wall, 0.78 s/rep
+cell  929  B_l60_l80  phi=0.800 N= 500 ord_sym  reps= 500  31.2 s wall, 1.23 s/rep
+cell  930  B_l60_l80  phi=0.800 N= 500 ord_skew reps= 500  32.1 s wall, 1.23 s/rep
+cell  931  B_l60_l80  phi=0.800 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell  932  B_l60_l80  phi=0.800 N=1000 ord_sym  reps= 500  15.5 s wall, 0.60 s/rep
+cell  933  B_l60_l80  phi=0.800 N=1000 ord_skew reps= 500  15.1 s wall, 0.59 s/rep
+cell  934  B_l60_l80  phi=0.800 N=2000 cont     reps=1000  40.0 s wall, 0.78 s/rep
+cell  935  B_l60_l80  phi=0.800 N=2000 ord_sym  reps= 500  35.1 s wall, 1.39 s/rep
+cell  936  B_l60_l80  phi=0.800 N=2000 ord_skew reps= 500  34.5 s wall, 1.36 s/rep
+cell  937  B_l60_l80  phi=0.900 N= 250 cont     reps=1000  5.7 s wall, 0.10 s/rep
+cell  938  B_l60_l80  phi=0.900 N= 250 ord_sym  reps= 500  13.2 s wall, 0.51 s/rep
+cell  939  B_l60_l80  phi=0.900 N= 250 ord_skew reps= 500  13.0 s wall, 0.51 s/rep
+cell  940  B_l60_l80  phi=0.900 N= 500 cont     reps=1000  39.7 s wall, 0.78 s/rep
+cell  941  B_l60_l80  phi=0.900 N= 500 ord_sym  reps= 500  31.0 s wall, 1.22 s/rep
+cell  942  B_l60_l80  phi=0.900 N= 500 ord_skew reps= 500  30.7 s wall, 1.21 s/rep
+cell  943  B_l60_l80  phi=0.900 N=1000 cont     reps=1000  5.1 s wall, 0.10 s/rep
+cell  944  B_l60_l80  phi=0.900 N=1000 ord_sym  reps= 500  15.2 s wall, 0.60 s/rep
+cell  945  B_l60_l80  phi=0.900 N=1000 ord_skew reps= 500  14.8 s wall, 0.58 s/rep
+cell  946  B_l60_l80  phi=0.900 N=2000 cont     reps=1000  39.8 s wall, 0.78 s/rep
+cell  947  B_l60_l80  phi=0.900 N=2000 ord_sym  reps= 500  35.5 s wall, 1.39 s/rep
+cell  948  B_l60_l80  phi=0.900 N=2000 ord_skew reps= 500  34.8 s wall, 1.37 s/rep
+cell  949  C_9_7_l75  phi=0.000 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  950  C_9_7_l75  phi=0.000 N= 250 ord_sym  reps= 500  23.3 s wall, 0.92 s/rep
+cell  951  C_9_7_l75  phi=0.000 N= 250 ord_skew reps= 500  23.7 s wall, 0.93 s/rep
+cell  952  C_9_7_l75  phi=0.000 N= 500 cont     reps=1000  49.9 s wall, 0.98 s/rep
+cell  953  C_9_7_l75  phi=0.000 N= 500 ord_sym  reps= 500  47.0 s wall, 1.86 s/rep
+cell  954  C_9_7_l75  phi=0.000 N= 500 ord_skew reps= 500  47.5 s wall, 1.85 s/rep
+cell  955  C_9_7_l75  phi=0.000 N=1000 cont     reps=1000  6.4 s wall, 0.12 s/rep
+cell  956  C_9_7_l75  phi=0.000 N=1000 ord_sym  reps= 500  29.5 s wall, 1.16 s/rep
+cell  957  C_9_7_l75  phi=0.000 N=1000 ord_skew reps= 500  29.1 s wall, 1.14 s/rep
+cell  958  C_9_7_l75  phi=0.000 N=2000 cont     reps=1000  49.3 s wall, 0.97 s/rep
+cell  959  C_9_7_l75  phi=0.000 N=2000 ord_sym  reps= 500  59.0 s wall, 2.33 s/rep
+cell  960  C_9_7_l75  phi=0.000 N=2000 ord_skew reps= 500  57.3 s wall, 2.27 s/rep
+cell  961  C_9_7_l75  phi=0.100 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  962  C_9_7_l75  phi=0.100 N= 250 ord_sym  reps= 500  23.3 s wall, 0.92 s/rep
+cell  963  C_9_7_l75  phi=0.100 N= 250 ord_skew reps= 500  23.4 s wall, 0.92 s/rep
+cell  964  C_9_7_l75  phi=0.100 N= 500 cont     reps=1000  49.4 s wall, 0.97 s/rep
+cell  965  C_9_7_l75  phi=0.100 N= 500 ord_sym  reps= 500  46.9 s wall, 1.85 s/rep
+cell  966  C_9_7_l75  phi=0.100 N= 500 ord_skew reps= 500  46.4 s wall, 1.83 s/rep
+cell  967  C_9_7_l75  phi=0.100 N=1000 cont     reps=1000  5.4 s wall, 0.10 s/rep
+cell  968  C_9_7_l75  phi=0.100 N=1000 ord_sym  reps= 500  30.6 s wall, 1.15 s/rep
+cell  969  C_9_7_l75  phi=0.100 N=1000 ord_skew reps= 500  29.0 s wall, 1.12 s/rep
+cell  970  C_9_7_l75  phi=0.100 N=2000 cont     reps=1000  48.8 s wall, 0.96 s/rep
+cell  971  C_9_7_l75  phi=0.100 N=2000 ord_sym  reps= 500  59.2 s wall, 2.32 s/rep
+cell  972  C_9_7_l75  phi=0.100 N=2000 ord_skew reps= 500  57.1 s wall, 2.26 s/rep
+cell  973  C_9_7_l75  phi=0.200 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  974  C_9_7_l75  phi=0.200 N= 250 ord_sym  reps= 500  23.5 s wall, 0.93 s/rep
+cell  975  C_9_7_l75  phi=0.200 N= 250 ord_skew reps= 500  23.8 s wall, 0.93 s/rep
+cell  976  C_9_7_l75  phi=0.200 N= 500 cont     reps=1000  49.1 s wall, 0.97 s/rep
+cell  977  C_9_7_l75  phi=0.200 N= 500 ord_sym  reps= 500  47.1 s wall, 1.86 s/rep
+cell  978  C_9_7_l75  phi=0.200 N= 500 ord_skew reps= 500  46.7 s wall, 1.85 s/rep
+cell  979  C_9_7_l75  phi=0.200 N=1000 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell  980  C_9_7_l75  phi=0.200 N=1000 ord_sym  reps= 500  29.6 s wall, 1.17 s/rep
+cell  981  C_9_7_l75  phi=0.200 N=1000 ord_skew reps= 500  28.8 s wall, 1.14 s/rep
+cell  982  C_9_7_l75  phi=0.200 N=2000 cont     reps=1000  49.4 s wall, 0.97 s/rep
+cell  983  C_9_7_l75  phi=0.200 N=2000 ord_sym  reps= 500  58.8 s wall, 2.32 s/rep
+cell  984  C_9_7_l75  phi=0.200 N=2000 ord_skew reps= 500  57.0 s wall, 2.26 s/rep
+cell  985  C_9_7_l75  phi=0.300 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell  986  C_9_7_l75  phi=0.300 N= 250 ord_sym  reps= 500  23.6 s wall, 0.93 s/rep
+cell  987  C_9_7_l75  phi=0.300 N= 250 ord_skew reps= 500  23.6 s wall, 0.93 s/rep
+cell  988  C_9_7_l75  phi=0.300 N= 500 cont     reps=1000  49.0 s wall, 0.97 s/rep
+cell  989  C_9_7_l75  phi=0.300 N= 500 ord_sym  reps= 500  47.0 s wall, 1.86 s/rep
+cell  990  C_9_7_l75  phi=0.300 N= 500 ord_skew reps= 500  46.6 s wall, 1.84 s/rep
+cell  991  C_9_7_l75  phi=0.300 N=1000 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell  992  C_9_7_l75  phi=0.300 N=1000 ord_sym  reps= 500  29.7 s wall, 1.16 s/rep
+cell  993  C_9_7_l75  phi=0.300 N=1000 ord_skew reps= 500  28.7 s wall, 1.14 s/rep
+cell  994  C_9_7_l75  phi=0.300 N=2000 cont     reps=1000  48.0 s wall, 0.95 s/rep
+cell  995  C_9_7_l75  phi=0.300 N=2000 ord_sym  reps= 500  58.0 s wall, 2.30 s/rep
+cell  996  C_9_7_l75  phi=0.300 N=2000 ord_skew reps= 500  56.5 s wall, 2.24 s/rep
+cell  997  C_9_7_l75  phi=0.400 N= 250 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell  998  C_9_7_l75  phi=0.400 N= 250 ord_sym  reps= 500  23.4 s wall, 0.92 s/rep
+cell  999  C_9_7_l75  phi=0.400 N= 250 ord_skew reps= 500  23.4 s wall, 0.92 s/rep
+cell 1000  C_9_7_l75  phi=0.400 N= 500 cont     reps=1000  47.9 s wall, 0.94 s/rep
+cell 1001  C_9_7_l75  phi=0.400 N= 500 ord_sym  reps= 500  46.5 s wall, 1.84 s/rep
+cell 1002  C_9_7_l75  phi=0.400 N= 500 ord_skew reps= 500  46.6 s wall, 1.83 s/rep
+cell 1003  C_9_7_l75  phi=0.400 N=1000 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell 1004  C_9_7_l75  phi=0.400 N=1000 ord_sym  reps= 500  29.5 s wall, 1.17 s/rep
+cell 1005  C_9_7_l75  phi=0.400 N=1000 ord_skew reps= 500  28.9 s wall, 1.14 s/rep
+cell 1006  C_9_7_l75  phi=0.400 N=2000 cont     reps=1000  48.5 s wall, 0.95 s/rep
+cell 1007  C_9_7_l75  phi=0.400 N=2000 ord_sym  reps= 500  58.3 s wall, 2.31 s/rep
+cell 1008  C_9_7_l75  phi=0.400 N=2000 ord_skew reps= 500  56.8 s wall, 2.25 s/rep
+cell 1009  C_9_7_l75  phi=0.500 N= 250 cont     reps=1000  5.8 s wall, 0.11 s/rep
+cell 1010  C_9_7_l75  phi=0.500 N= 250 ord_sym  reps= 500  23.7 s wall, 0.94 s/rep
+cell 1011  C_9_7_l75  phi=0.500 N= 250 ord_skew reps= 500  23.9 s wall, 0.94 s/rep
+cell 1012  C_9_7_l75  phi=0.500 N= 500 cont     reps=1000  48.3 s wall, 0.95 s/rep
+cell 1013  C_9_7_l75  phi=0.500 N= 500 ord_sym  reps= 500  46.8 s wall, 1.86 s/rep
+cell 1014  C_9_7_l75  phi=0.500 N= 500 ord_skew reps= 500  46.8 s wall, 1.85 s/rep
+cell 1015  C_9_7_l75  phi=0.500 N=1000 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell 1016  C_9_7_l75  phi=0.500 N=1000 ord_sym  reps= 500  29.6 s wall, 1.17 s/rep
+cell 1017  C_9_7_l75  phi=0.500 N=1000 ord_skew reps= 500  29.7 s wall, 1.15 s/rep
+cell 1018  C_9_7_l75  phi=0.500 N=2000 cont     reps=1000  48.4 s wall, 0.94 s/rep
+cell 1019  C_9_7_l75  phi=0.500 N=2000 ord_sym  reps= 500  58.7 s wall, 2.31 s/rep
+cell 1020  C_9_7_l75  phi=0.500 N=2000 ord_skew reps= 500  56.8 s wall, 2.25 s/rep
+cell 1021  C_9_7_l75  phi=0.600 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell 1022  C_9_7_l75  phi=0.600 N= 250 ord_sym  reps= 500  24.0 s wall, 0.94 s/rep
+cell 1023  C_9_7_l75  phi=0.600 N= 250 ord_skew reps= 500  23.9 s wall, 0.94 s/rep
+cell 1024  C_9_7_l75  phi=0.600 N= 500 cont     reps=1000  47.9 s wall, 0.94 s/rep
+cell 1025  C_9_7_l75  phi=0.600 N= 500 ord_sym  reps= 500  46.6 s wall, 1.83 s/rep
+cell 1026  C_9_7_l75  phi=0.600 N= 500 ord_skew reps= 500  46.3 s wall, 1.83 s/rep
+cell 1027  C_9_7_l75  phi=0.600 N=1000 cont     reps=1000  5.7 s wall, 0.11 s/rep
+cell 1028  C_9_7_l75  phi=0.600 N=1000 ord_sym  reps= 500  29.8 s wall, 1.17 s/rep
+cell 1029  C_9_7_l75  phi=0.600 N=1000 ord_skew reps= 500  29.2 s wall, 1.15 s/rep
+cell 1030  C_9_7_l75  phi=0.600 N=2000 cont     reps=1000  47.8 s wall, 0.94 s/rep
+cell 1031  C_9_7_l75  phi=0.600 N=2000 ord_sym  reps= 500  59.7 s wall, 2.31 s/rep
+cell 1032  C_9_7_l75  phi=0.600 N=2000 ord_skew reps= 500  58.0 s wall, 2.26 s/rep
+cell 1033  C_9_7_l75  phi=0.653 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell 1034  C_9_7_l75  phi=0.653 N= 250 ord_sym  reps= 500  24.1 s wall, 0.95 s/rep
+cell 1035  C_9_7_l75  phi=0.653 N= 250 ord_skew reps= 500  24.2 s wall, 0.96 s/rep
+cell 1036  C_9_7_l75  phi=0.653 N= 500 cont     reps=1000  48.2 s wall, 0.95 s/rep
+cell 1037  C_9_7_l75  phi=0.653 N= 500 ord_sym  reps= 500  47.9 s wall, 1.86 s/rep
+cell 1038  C_9_7_l75  phi=0.653 N= 500 ord_skew reps= 500  47.2 s wall, 1.86 s/rep
+cell 1039  C_9_7_l75  phi=0.653 N=1000 cont     reps=1000  6.2 s wall, 0.12 s/rep
+cell 1040  C_9_7_l75  phi=0.653 N=1000 ord_sym  reps= 500  30.2 s wall, 1.18 s/rep
+cell 1041  C_9_7_l75  phi=0.653 N=1000 ord_skew reps= 500  29.5 s wall, 1.16 s/rep
+cell 1042  C_9_7_l75  phi=0.653 N=2000 cont     reps=1000  48.2 s wall, 0.95 s/rep
+cell 1043  C_9_7_l75  phi=0.653 N=2000 ord_sym  reps= 500  58.4 s wall, 2.31 s/rep
+cell 1044  C_9_7_l75  phi=0.653 N=2000 ord_skew reps= 500  57.0 s wall, 2.26 s/rep
+cell 1045  C_9_7_l75  phi=0.700 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell 1046  C_9_7_l75  phi=0.700 N= 250 ord_sym  reps= 500  24.1 s wall, 0.95 s/rep
+cell 1047  C_9_7_l75  phi=0.700 N= 250 ord_skew reps= 500  24.3 s wall, 0.95 s/rep
+cell 1048  C_9_7_l75  phi=0.700 N= 500 cont     reps=1000  48.1 s wall, 0.94 s/rep
+cell 1049  C_9_7_l75  phi=0.700 N= 500 ord_sym  reps= 500  47.1 s wall, 1.85 s/rep
+cell 1050  C_9_7_l75  phi=0.700 N= 500 ord_skew reps= 500  46.9 s wall, 1.83 s/rep
+cell 1051  C_9_7_l75  phi=0.700 N=1000 cont     reps=1000  5.5 s wall, 0.10 s/rep
+cell 1052  C_9_7_l75  phi=0.700 N=1000 ord_sym  reps= 500  29.9 s wall, 1.17 s/rep
+cell 1053  C_9_7_l75  phi=0.700 N=1000 ord_skew reps= 500  29.2 s wall, 1.15 s/rep
+cell 1054  C_9_7_l75  phi=0.700 N=2000 cont     reps=1000  47.6 s wall, 0.94 s/rep
+cell 1055  C_9_7_l75  phi=0.700 N=2000 ord_sym  reps= 500  58.4 s wall, 2.30 s/rep
+cell 1056  C_9_7_l75  phi=0.700 N=2000 ord_skew reps= 500  58.9 s wall, 2.27 s/rep
+cell 1057  C_9_7_l75  phi=0.800 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell 1058  C_9_7_l75  phi=0.800 N= 250 ord_sym  reps= 500  24.3 s wall, 0.96 s/rep
+cell 1059  C_9_7_l75  phi=0.800 N= 250 ord_skew reps= 500  24.4 s wall, 0.96 s/rep
+cell 1060  C_9_7_l75  phi=0.800 N= 500 cont     reps=1000  48.2 s wall, 0.95 s/rep
+cell 1061  C_9_7_l75  phi=0.800 N= 500 ord_sym  reps= 500  47.6 s wall, 1.88 s/rep
+cell 1062  C_9_7_l75  phi=0.800 N= 500 ord_skew reps= 500  47.3 s wall, 1.86 s/rep
+cell 1063  C_9_7_l75  phi=0.800 N=1000 cont     reps=1000  6.2 s wall, 0.12 s/rep
+cell 1064  C_9_7_l75  phi=0.800 N=1000 ord_sym  reps= 500  30.5 s wall, 1.20 s/rep
+cell 1065  C_9_7_l75  phi=0.800 N=1000 ord_skew reps= 500  29.7 s wall, 1.17 s/rep
+cell 1066  C_9_7_l75  phi=0.800 N=2000 cont     reps=1000  48.3 s wall, 0.95 s/rep
+cell 1067  C_9_7_l75  phi=0.800 N=2000 ord_sym  reps= 500  58.9 s wall, 2.32 s/rep
+cell 1068  C_9_7_l75  phi=0.800 N=2000 ord_skew reps= 500  57.2 s wall, 2.26 s/rep
+cell 1069  C_9_7_l75  phi=0.865 N= 250 cont     reps=1000  6.0 s wall, 0.11 s/rep
+cell 1070  C_9_7_l75  phi=0.865 N= 250 ord_sym  reps= 500  24.3 s wall, 0.96 s/rep
+cell 1071  C_9_7_l75  phi=0.865 N= 250 ord_skew reps= 500  24.4 s wall, 0.96 s/rep
+cell 1072  C_9_7_l75  phi=0.865 N= 500 cont     reps=1000  48.4 s wall, 0.95 s/rep
+cell 1073  C_9_7_l75  phi=0.865 N= 500 ord_sym  reps= 500  49.1 s wall, 1.89 s/rep
+cell 1074  C_9_7_l75  phi=0.865 N= 500 ord_skew reps= 500  47.1 s wall, 1.85 s/rep
+cell 1075  C_9_7_l75  phi=0.865 N=1000 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell 1076  C_9_7_l75  phi=0.865 N=1000 ord_sym  reps= 500  29.8 s wall, 1.18 s/rep
+cell 1077  C_9_7_l75  phi=0.865 N=1000 ord_skew reps= 500  29.3 s wall, 1.16 s/rep
+cell 1078  C_9_7_l75  phi=0.865 N=2000 cont     reps=1000  47.7 s wall, 0.94 s/rep
+cell 1079  C_9_7_l75  phi=0.865 N=2000 ord_sym  reps= 500  58.3 s wall, 2.32 s/rep
+cell 1080  C_9_7_l75  phi=0.865 N=2000 ord_skew reps= 500  57.0 s wall, 2.26 s/rep
+cell 1081  C_9_7_l75  phi=0.900 N= 250 cont     reps=1000  5.9 s wall, 0.11 s/rep
+cell 1082  C_9_7_l75  phi=0.900 N= 250 ord_sym  reps= 500  24.3 s wall, 0.96 s/rep
+cell 1083  C_9_7_l75  phi=0.900 N= 250 ord_skew reps= 500  24.3 s wall, 0.96 s/rep
+cell 1084  C_9_7_l75  phi=0.900 N= 500 cont     reps=1000  48.4 s wall, 0.96 s/rep
+cell 1085  C_9_7_l75  phi=0.900 N= 500 ord_sym  reps= 500  47.5 s wall, 1.88 s/rep
+cell 1086  C_9_7_l75  phi=0.900 N= 500 ord_skew reps= 500  47.7 s wall, 1.87 s/rep
+cell 1087  C_9_7_l75  phi=0.900 N=1000 cont     reps=1000  6.1 s wall, 0.11 s/rep
+cell 1088  C_9_7_l75  phi=0.900 N=1000 ord_sym  reps= 500  30.2 s wall, 1.19 s/rep
+cell 1089  C_9_7_l75  phi=0.900 N=1000 ord_skew reps= 500  29.8 s wall, 1.17 s/rep
+cell 1090  C_9_7_l75  phi=0.900 N=2000 cont     reps=1000  50.6 s wall, 0.96 s/rep
+cell 1091  C_9_7_l75  phi=0.900 N=2000 ord_sym  reps= 500  59.3 s wall, 2.34 s/rep
+cell 1092  C_9_7_l75  phi=0.900 N=2000 ord_skew reps= 500  57.7 s wall, 2.27 s/rep
+cell 1093  C_9_7_l75  phi=0.912 N= 250 cont     reps=1000  6.1 s wall, 0.11 s/rep
+cell 1094  C_9_7_l75  phi=0.912 N= 250 ord_sym  reps= 500  24.5 s wall, 0.96 s/rep
+cell 1095  C_9_7_l75  phi=0.912 N= 250 ord_skew reps= 500  24.3 s wall, 0.96 s/rep
+cell 1096  C_9_7_l75  phi=0.912 N= 500 cont     reps=1000  48.6 s wall, 0.96 s/rep
+cell 1097  C_9_7_l75  phi=0.912 N= 500 ord_sym  reps= 500  47.1 s wall, 1.86 s/rep
+cell 1098  C_9_7_l75  phi=0.912 N= 500 ord_skew reps= 500  46.5 s wall, 1.84 s/rep
+cell 1099  C_9_7_l75  phi=0.912 N=1000 cont     reps=1000  5.6 s wall, 0.10 s/rep
+cell 1100  C_9_7_l75  phi=0.912 N=1000 ord_sym  reps= 500  29.9 s wall, 1.18 s/rep
+cell 1101  C_9_7_l75  phi=0.912 N=1000 ord_skew reps= 500  29.2 s wall, 1.16 s/rep
+cell 1102  C_9_7_l75  phi=0.912 N=2000 cont     reps=1000  48.3 s wall, 0.95 s/rep
+cell 1103  C_9_7_l75  phi=0.912 N=2000 ord_sym  reps= 500  58.8 s wall, 2.32 s/rep
+cell 1104  C_9_7_l75  phi=0.912 N=2000 ord_skew reps= 500  56.9 s wall, 2.26 s/rep

@@ -1,0 +1,71 @@
+\subsection{Dependence on the Fitting Criterion}
+\label{sec:estimators}
+
+The transition in Theorem~\ref{thm:ml} depends on the estimation criterion. Under unweighted least squares (ULS), it occurs at $1/p$, independently of the population loading. Principal components retain the equal block-mean direction at every positive trait correlation. Thus a single population can yield an equal composite under one criterion and a factor that emphasizes one trait under another.
+
+\begin{theorem}[Unweighted least squares solution]
+\label{thm:uls}
+For the population in Section~\ref{sec:setup}, let
+\[
+G(l)=\sum_{i<j}(R_{ij}-l_il_j)^2,\qquad |l_i|\le1,
+\]
+be the least-squares, or MINRES, objective with free uniquenesses; the constraint $|l_i|\le1$ is equivalent to $\psi_i=1-l_i^2\ge0$. For $\varphi>0$, every global minimizer has a common loading sign. Choose that sign to be positive. If $0<\varphi<1/(2m)=1/p$, every global minimizer is constant within blocks; after ordering the blocks, its block loadings $\alpha>\beta>0$ satisfy
+\[
+\alpha^2+\beta^2=L,\qquad \alpha\beta=mL\varphi,
+\qquad
+G_{\min}=\frac{m(m-1)L^2}{2}-m^2(m-1)L^2\varphi^2.
+\]
+At and above $\varphi=1/(2m)$, the positive minimizer is unique and symmetric, with
+\[
+l^2=\frac{L(n+m\varphi)}{\nu },\qquad
+G_{\min}=\frac{m^2(m-1)L^2(1-\varphi)^2}{2m-1}.
+\]
+The branches coincide at $\alpha^2=\beta^2=L/2$. For $0<\varphi\le1/(2m)$,
+\[
+|\alpha-\beta|=\lambda\sqrt{2m}\sqrt{\frac1{2m}-\varphi}.
+\]
+At $\varphi=0$, either block is fitted exactly and the other has zero loadings, giving $G_{\min}=m(m-1)L^2/2$. For $m\ge3$, all retained loadings equal $\lambda$, up to their common sign. For $m=2$, the retained pair is $(t,L/t)$, $L\le t\le1$, up to its common sign; these representations give the same retained-block covariance.
+
+\end{theorem}
+
+Appendix~\ref{app:uls} outlines the unrestricted proof. The argument uses a tight relaxation to establish constant loadings within blocks, then minimizes a convex quadratic over a cone. The result characterizes global minimizers; it does not assert a complete classification of nonglobal ULS local minima.
+
+Weighted least squares makes the source of the difference more explicit. Let $w_W>0$ and $w_C>0$ be the weights given to within-block and cross-block residual correlations, respectively, and define
+\[
+G_w(l)=w_W\sum_{\mathrm{within}}(R_{ij}-l_il_j)^2
++w_C\sum_{\mathrm{across}}(R_{ij}-l_il_j)^2,
+\qquad \omega=\frac{w_C}{w_W}.
+\]
+Each weight is constant within its pair class.
+
+\begin{proposition}[Weighted least squares solution]
+\label{cor:wls}
+For the population in Section~\ref{sec:setup}, minimize $G_w$ over $|l_i|\le1$. For $\varphi>0$, choose the common loading sign to be positive. If $\omega>(m-1)/m$, the threshold is
+\begin{equation}
+\varphi_\omega=\frac12-\frac{m-1}{2m\omega}.
+\label{eq:wls-threshold}
+\end{equation}
+For $0<\varphi<\varphi_\omega$, every global minimizer is constant within blocks; after ordering the blocks, its block loadings $\alpha>\beta>0$ satisfy
+\[
+\alpha^2+\beta^2=L,\qquad
+\alpha\beta=\frac{\omega mL\varphi}{\omega m-m+1}.
+\]
+At and above the threshold, the positive minimizer is unique and symmetric, with
+\[
+l^2=\frac{L\{m(m-1)+\omega m^2\varphi\}}{m(m-1)+\omega m^2}.
+\]
+The branches agree at $l^2=L/2$. If $\omega\le(m-1)/m$, the positive symmetric solution is the unique global minimizer at every $\varphi>0$.
+
+At $\varphi=0$, nonzero blocks may have independent signs, and the global minimizers depend on the sign of $\omega m-m+1$. If $\omega>(m-1)/m$, they form the retained-block family of Theorem~\ref{thm:uls}. If $\omega=(m-1)/m$, the block-uniform minimizers form the continuum $\alpha^2+\beta^2=L$; when $m=2$, a zero block also permits the retained-pair family of Theorem~\ref{thm:uls}. If $\omega<(m-1)/m$, both blocks are uniform and have squared loading $L(m-1)/(m-1+\omega m)$.
+
+\end{proposition}
+
+The unrestricted proof is outlined in Appendix~\ref{app:uls} and given in full in Online Resource~2. Setting $\omega=1$ recovers the minimizers in Theorem~\ref{thm:uls} and the threshold $1/p$. Reducing the relative weight on cross-block residuals lowers the threshold, and can remove the asymmetric regime altogether.
+
+For ordinal items with common thresholds, the parameter-fitting part of WLSMV uses diagonally weighted least squares on the polychoric correlations, with thresholds estimated freely. The residual weights are the inverse asymptotic variances of the polychoric estimates. In the exchangeable population, there is one weight within blocks and one across blocks, so Proposition~\ref{cor:wls} applies with $\omega$ equal to the ratio of the within-block and cross-block asymptotic variances. Because these variances depend on $\varphi$, the transition is a solution of $\varphi=\varphi_\omega(\varphi)$. In each design evaluated here, this equation had a single root, or none, on $[0,.95]$; uniqueness of the root is not established in general.
+
+In the ordinal designs considered here, the within-block correlations are estimated more precisely and $\omega<1$. WLSMV therefore has a lower transition than ULS, or remains symmetric throughout the evaluated range of trait correlations. With four response categories and thresholds $(-.8,0,.8)$, population loading .5 gives WLSMV thresholds of .081 for four items per trait and .010 for eight. At loading .7, $\omega=.62$ when $\varphi=0$; for four or more items per trait this is below $(m-1)/m$. Across the evaluated correlation range, $\varphi$ exceeds $\varphi_\omega(\varphi)$ by at least .10, and no asymmetric WLSMV solution occurs. Changing the thresholds to $(.3,1.0,1.7)$ changes the reported transition values by less than .01. Appendix~\ref{app:uls} describes the calculation of the weights. These parameter-fitting results are distinct from the unscaled, scaled, and robust fit-index calculations for WLSMV (Savalei, 2021).
+
+At loading .7, ML thresholds for tests with $p=4$, 8, and 16 items are approximately .49, .41, and .37, respectively, and tend to $\lambda^2/(2-\lambda^2)=.32$ as the number of items increases. ULS thresholds for the same test lengths are .25, .125, and .0625 and tend to zero. The four-category WLSMV threshold is approximately .10 for $p=4$; for $p=8$ and 16 the fitted factor remains a composite at every evaluated correlation. The leading principal component remains in the equal block-mean direction for every $\varphi>0$.
+
+These differences reflect how the criteria use residual correlations. ML can reduce its discrepancy by fitting one block closely while allowing larger uniquenesses in the other. ULS weights all residual correlations equally, so this solution occurs only below $\varphi=1/p$, which is small unless the test is very short. WLSMV weights each residual by its estimation precision. In the examples above, this favors the within-block correlations and further reduces the range in which the fitted factor emphasizes one trait.

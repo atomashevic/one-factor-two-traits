@@ -1,0 +1,155 @@
+\section{Unequal-Block Solutions and Sensitivity}
+\label{app:unequal}
+
+This appendix gives the block reduction used in Lemma~\ref{lem:uniformity}, the exact scalar equation for unequal-block solutions, and the local sensitivity result stated in the text. The complete classification proofs and algebraic derivations are given in Online Resource~3. The accompanying symbolic checks verify identities in those derivations; the numerical examples have a separate status.
+
+\subsection{Proof of Lemma~\ref{lem:uniformity} and Scope of the Reduction}
+\label{app:unequal-reduction}
+
+\begin{proof}[Proof of Lemma~\ref{lem:uniformity}]
+Write $L_A=\lambda_A^2$, $L_B=\lambda_B^2$, and $c=\lambda_A\lambda_B\varphi$. Existence, concentration over the loading vector, the interior score equations, and Perron positivity follow as in Appendix~\ref{app:ml}. None of those arguments requires the two blocks to have equal sizes or equal population loadings.
+
+Boundary minima are excluded by Proposition~\ref{prop:boundary}. If a uniqueness is zero for item $j$ in A, the residual covariances after regression on that item are $L_A(1-L_A)$ within the remaining part of A, $L_B(1-L_A\varphi^2)$ within B, and $c(1-L_A)$ across blocks. All available residual covariances are positive, as are the weights in Proposition~\ref{prop:boundary}. Since B contains at least two items, the inward derivative is strictly negative. The same argument applies when the zero uniqueness is in B. Every local minimum is therefore interior, and its loadings can be chosen strictly positive.
+
+For an item in A, the interior score equation states that
+\[
+(1+\gamma)l_i-(1-L_A)\frac{l_i}{1-l_i^2},
+\qquad \gamma=l^{\top}\Psi^{-1}l,
+\]
+takes the same value for every item in the block. This expression is strictly concave in $l_i$ on $(0,1)$, so there are at most two loading values in A. If items $i$ and $j$ have distinct loadings $x<y$, equating the expression at $x$ and $y$ gives
+\[
+\gamma_{\mathrm{rest}}(1-x^2)(1-y^2)
+=(1+xy)(xy-L_A),
+\]
+where $\gamma_{\mathrm{rest}}=\sum_{k\ne i,j}l_k^2/\psi_k>0$ is the contribution of the other items to $\gamma$. Hence $xy>L_A$.
+
+Suppose A has these two values, and let $z$ be the smallest loading in B. Every within-block residual in the score row for $y$ is negative. Some cross-block residual must therefore be positive, so $yz<c$. Since $y^2>xy>L_A$, we have $y>\lambda_A$, and therefore $z<c/y<\lambda_B\varphi<\lambda_B$. Every cross-block residual in the row for $z$ is then positive. To satisfy that row equation, B must contain a larger loading $w$; the same product identity gives $zw>L_B$. Applying the row equation to $w$ gives $wx<c$. Multiplication yields
+\[
+(xy)(zw)>L_AL_B,
+\qquad
+(yz)(wx)<c^2=L_AL_B\varphi^2<L_AL_B.
+\]
+The two products on the left are identical, which is a contradiction. Thus both blocks have constant loadings. Diagonal reproduction gives the stated uniquenesses.
+\end{proof}
+
+\textit{Scope.} The same proof applies to items that are exchangeable within each block, with positive within-block correlations $r_A,r_B<1$ and positive cross-block correlation $c$, whenever $c^2\le r_Ar_B$. For example, suppose items in a block share a common part, $X_i=U_A+e_i$ in A and $X_j=U_B+e_j$ in B, with $\Var(U_A)+\Var(e_i)=1$ and $\Var(U_B)+\Var(e_j)=1$, positive residual variances, and mutually uncorrelated residuals that are also uncorrelated with the common parts. Then $r_A=\Var(U_A)$, $r_B=\Var(U_B)$, and $c=\Cov(U_A,U_B)$ satisfy the required inequality by Cauchy--Schwarz. Equal cross-loading constructions within each block are included. Negative $c$ is handled by reflecting one block. At $c=0$, the endpoint comparison in the main text replaces the positive-loading argument.
+
+The inequality is essential. With two items per block, within-block correlations .1 and cross-block correlations .5 give a positive-definite correlation matrix with exchangeable items in each block, but a strict local minimum with a zero uniqueness exists. Online Resource~3 gives an exact boundary derivative and covariance comparison for this counterexample.
+
+\textit{Numerical illustration.} In the verification run reported in Online Resource~3, full-parameter optimization from 10 random starts in each of 52 designs returned constant fitted loadings within blocks. The designs, 12 fixed edge cases and 40 random designs, had block sizes from 2 to 6, population loadings from .08 to .98, and $\varphi$ from .001 to .999, under the assumptions of Lemma~\ref{lem:uniformity}. The largest within-block spread was $2.7\times10^{-8}$. That search parametrized the uniquenesses on the log scale and so did not reach the zero-uniqueness boundary, which is excluded analytically above. This computation illustrates the reduction and is not used to prove it.
+
+\subsection{Scalar Classification for Arbitrary Block Sizes}
+\label{app:unequal-scalar}
+
+To make the reduction explicit, let $a_A=1-L_A$, $a_B=1-L_B$, $b_A=1+(m_A-1)L_A$, $b_B=1+(m_B-1)L_B$, and $\nu_{AB}=m_A+m_B-1$. Define
+\[
+\begin{gathered}
+k_A=(m_A-1)a_A,\quad k_B=(m_B-1)a_B,\quad c_A=m_Ac,\quad c_B=m_Bc,\\
+e_0=m_Ab_B+m_Bb_A-b_Ab_B-c_Ac_B.
+\end{gathered}
+\]
+The scalar coordinate
+\[
+v=\frac{\beta/\psi_B}{\alpha/\psi_A}>0
+\]
+is the ratio of precision-weighted block loadings. Set
+\[
+U=b_A+c_Bv,\qquad V=b_B+c_A/v,\qquad
+H=m_AV+m_BU-UV=e_0+c_Bk_Bv+c_Ak_A/v.
+\]
+After concentration over the loadings and the common uniqueness scale, the profile is
+\begin{equation}
+\begin{aligned}
+\mathcal G(v)={}&\nu_{AB}\log H-(m_B-1)\log U-(m_A-1)\log V-\nu_{AB}\log \nu_{AB}\\
+&-\log(b_Ab_B-m_Am_Bc^2)-(m_A-1)\log a_A-(m_B-1)\log a_B.
+\end{aligned}
+\label{eq:unequal-profile}
+\end{equation}
+Its stationary equation is the quartic
+\begin{equation}
+P(v)=v\{v^2V(\nu_{AB}V-H)-U(\nu_{AB}U-H)\}=0.
+\label{eq:unequal-quartic}
+\end{equation}
+Although the displayed factors contain $1/v$, their combination is a polynomial. Every positive root reconstructs an admissible stationary point through
+\[
+\psi_A=\frac{H}{\nu_{AB}V},\qquad \psi_B=\frac{H}{\nu_{AB}U},
+\qquad \alpha=\sqrt{1-\psi_A},\qquad \beta=\sqrt{1-\psi_B}.
+\]
+Both uniquenesses lie strictly between zero and one. Conversely, every positive block-uniform stationary point gives a positive root.
+
+For completeness, put $J=\nu_{AB}b_A-e_0$, $K=\nu_{AB}b_B-e_0$, $f=\nu_{AB}-k_B$, and $g=\nu_{AB}-k_A$. The coefficients in $P(v)=\sum_{j=0}^4P_jv^j$ are
+\begin{equation}
+\begin{aligned}
+P_4&=-b_Bc_Bk_B,&
+P_3&=b_BK-c_Ac_Bk_B-c_B^2f,\\
+P_2&=b_Bc_Ag+c_AK-b_Ac_Bf-c_BJ,&
+P_1&=c_A^2g-b_AJ+c_Ac_Bk_A,\\
+P_0&=b_Ac_Ak_A.&&
+\end{aligned}
+\label{eq:unequal-quartic-coefficients}
+\end{equation}
+In particular, $P_4<0<P_0$. With $\bar V=vV$ and $\bar H=vH$,
+\[
+\mathcal G'(v)=-\frac{cm_Am_BP(v)}{vU\bar V\bar H},
+\]
+whose denominator is positive for $v>0$. The quartic has at least one negative root, so there are at most three positive roots counted with multiplicity. Away from repeated roots, there is either one positive root, which is a minimum, or three, which are a minimum, a saddle, and a minimum in increasing order. At every positive root, the Hessian of the full discrepancy is positive definite in the within-block contrast directions, which change loadings and uniquenesses within one block while keeping their block sums fixed. The classification by the scalar profile therefore also classifies these points in the unrestricted parameter space. The global solution is obtained by comparing \eqref{eq:unequal-profile} at its one or two minimum roots. When two minima have equal profile values, both are global and the minimizing covariance is not unique. Such equal-value points occur for some unequal-size designs, as in the example in Section~\ref{sec:unequal}, and the global solution changes discontinuously there. For equal block sizes with unequal loadings, Proposition~\ref{prop:unequal} excludes them; with equal loadings, Theorem~\ref{thm:ml} gives the tied pair of block-reflected minima for $0<\varphi<\varphi^*$.
+
+A double positive root has a cubic leading term in the local profile and is not a local minimum. At a nondegenerate fold it coexists with a separate simple minimum. A triple positive root is the only positive root and has a positive quartic leading term, giving a strict global minimum with one zero Hessian eigenvalue. The exchangeable threshold is such a triple-root case. A fold as $\varphi$ varies requires
+\[
+P(v;\varphi)=P_v(v;\varphi)=0,
+\qquad v>0,\quad 0<\varphi<1,
+\]
+and nondegeneracy additionally requires $P_{vv}\ne0$ and $P_\varphi\ne0$. A vanishing resultant alone is not sufficient to identify a feasible fold.
+
+These statements classify all positive block-uniform stationary points and, by Lemma~\ref{lem:uniformity}, all local minima. They do not enumerate zero-loading or sign-changing saddles of the unrestricted likelihood. For arbitrary unequal sizes, they give an exact root-comparison procedure rather than a closed partition of the entire parameter space.
+
+For equal block sizes, the proof of Proposition~\ref{prop:unequal} uses a rescaled log ratio of uniquenesses to compare a solution with its block-reflected counterpart. The profile is smaller on the side favoring the stronger block, and its stationary equation has exactly one root on that side. On the weaker side, the stationary equation varies monotonically with the cross-block signal. Additional roots exist precisely under \eqref{eq:weaker-minimum-condition}, and disappear in a single transverse collision. Together with the positive contrast curvatures, this establishes the unique global minimum and the single weaker-block fold. The full monotonicity calculation appears in Online Resource~3.
+
+\subsection{Sensitivity Near the Exchangeable Threshold}
+\label{app:cusp}
+
+\begin{theorem}[Perturbation of the symmetric transition]
+\label{thm:cusp}
+Let each block contain $m\ge2$ items, with population loadings $\lambda-\varepsilon$ and $\lambda+\varepsilon$, where $0<\lambda<1$ is fixed and $0<\varepsilon<\min(\lambda,1-\lambda)$. Write $L=\lambda^2$, $a=1-L$, $b=1+(m-1)L$, and $\nu =2m-1$, and define
+\[
+C_{\mathrm{tilt}}=\frac{2m+1-L}{2\nu L}
+\left\{\frac{\nu \lambda^5}{ab(2-L)}\right\}^{1/3},
+\qquad
+E_{\mathrm{fold}}=\frac{3\,2^{1/3}\nu ^{2/3}(ab)^{1/3}}
+{m\lambda^{2/3}(2-L)^{5/3}}.
+\]
+Let $\varphi^*=\varphi^*(\lambda,m)$ be the threshold of the balanced design in Theorem~\ref{thm:ml}. As $\varepsilon\downarrow0$, the tilt of the unique global solution at $\varphi=\varphi^*$, defined as the followed-trait share (Section~\ref{sec:unequal}) minus $1/2$, is
+\[
+C_{\mathrm{tilt}}\varepsilon^{1/3}+O(\varepsilon).
+\]
+For sufficiently small positive $\varepsilon$, the local minimum favoring the weaker block exists exactly for $0<\varphi<\varphi_f(\varepsilon)$. Its fold is nondegenerate, and
+\[
+\varphi^*-\varphi_f(\varepsilon)
+=E_{\mathrm{fold}}\varepsilon^{2/3}+O(\varepsilon^{4/3}).
+\]
+The limits are for fixed $m$ and fixed interior $\lambda$; no uniformity at loading zero or one is asserted.
+
+\end{theorem}
+
+The exponents are those of the cusp normal form for a perturbed pitchfork (Golubitsky \& Schaeffer, 1985). The model-specific content is the coefficients, the controlled remainder, and the connection to the global classification in Proposition~\ref{prop:unequal}. To outline the derivation, let $d=\tfrac12\log(\psi_A/\psi_B)$ and profile out the common scale. Near the symmetric critical point, the profile $\mathcal G$, now written as a function of $d$, has the expansion
+\[
+\mathcal G=\mathcal G_0-k_1\varepsilon d
++\tfrac12k_2(\varphi-\varphi^*)d^2
++\tfrac14k_4d^4+\text{higher-order terms},
+\]
+where $\mathcal G_0=\mathcal G(0;\varphi,\varepsilon)$ and
+\[
+k_1=\frac{2m(m-1)\lambda(2-L)}{ab},\qquad
+k_2=\frac{(m-1)m^2(2-L)^3}{a\nu b},\qquad
+k_4=\frac{2(m-1)m(2-L)^2}{\nu L^2}
+\]
+are positive. At $\varphi^*$, balancing the linear perturbation and cubic derivative gives $d=(k_1/k_4)^{1/3}\varepsilon^{1/3}+O(\varepsilon)$. At the fold, solving $\mathcal G_d=\mathcal G_{dd}=0$, where subscripts denote partial derivatives with respect to $d$, gives the $\varepsilon^{2/3}$ shift. Analytic remainder bounds, given with the cusp derivation in Online Resource~3, justify the implicit-function arguments. Conversion from $d$ to the followed-trait tilt gives $C_{\mathrm{tilt}}$, while the fold calculation gives $E_{\mathrm{fold}}$. Proposition~\ref{prop:unequal} is needed to identify this local fold as the only disappearance point of the weaker minimum; a Taylor expansion alone does not establish that global statement.
+
+For $\lambda=.7$ and four items per block, $C_{\mathrm{tilt}}=1.057$ and $E_{\mathrm{fold}}=2.38$. At $\varepsilon=.0005$, the exact tilt is .0836, compared with .0839 from the leading term. At $\varepsilon=.001$, the fold occurs at .3852, compared with .3851 from the approximation. These are numerical evaluations of the exact equations. The asymptotic expressions are not asserted to be accurate for arbitrary fixed asymmetry, and the unsigned tilt is the absolute value of the signed coefficient imbalance. It should not be treated as a smooth coordinate through zero.
+
+\subsection{Mirrored Heterogeneous Loadings}
+\label{app:mirrored}
+
+If both blocks contain the same set of nonconstant loadings, simultaneous exchange of corresponding items preserves the population covariance. Such a design retains the block-exchange symmetry, but Lemma~\ref{lem:uniformity} no longer applies because the items within a block are not exchangeable. We therefore locate loss of stability of the symmetric solution numerically, by the zero eigenvalue of the Hessian in the antisymmetric directions. This is a local criterion: it identifies where the symmetric solution stops being a local minimum, and it does not by itself show that this is where the global solution first becomes asymmetric.
+
+The calculation reproduces $\varphi^*=.409$ for four equal loadings of .7 in each block. Mirrored loadings .6, .65, .75, and .8 give a threshold of .441; mirrored loadings .5, .6, .7, and .8 give .413. Substituting the average signal-to-noise ratio $\lambda^2/(1-\lambda^2)$ into the exchangeable expression gives .434 and .398, respectively. This approximation is slightly low in both examples. These calculations do not establish that heterogeneity always raises the threshold or provide a general error bound.

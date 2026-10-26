@@ -1,0 +1,76 @@
+\section{Population Fit and the Distinction Between Traits}
+\label{sec:fit-indices}
+
+The minimum discrepancy in Theorem~\ref{thm:ml} provides a population benchmark for interpreting a one-factor fit. For a specified loading and test length, it identifies the trait correlations at which the fitted model meets a conventional cutoff although two traits generated the data. These cutoff boundaries concern overall fit. The threshold $\varphi^*$ concerns which direction the fitted factor represents. The two boundaries answer different questions.
+
+\subsection{Cutoff Boundaries}
+
+Table~\ref{tab:1} gives the cutoff boundaries for CFI, TLI, RMSEA and SRMR. With loadings of .70 and 4 to 16 items in total, a one-factor model meets CFI $\ge .95$ when the trait correlation reaches approximately .78 to .84. The corresponding RMSEA boundary decreases from .92 to .84 as items are added. Thus, a favorable CFI does not establish that the two generating traits are identical, and disagreement between indices can occur at the population level.
+
+\begin{table}[t]
+\centering\small
+\caption{Trait-correlation boundaries for conventional population fit cutoffs. Each entry is the trait correlation, calculated from Theorem~\ref{thm:ml} and rounded to two decimals, at which the population index reaches the cutoff. In each tabled design, each index is monotone in $\varphi$ (checked numerically on a grid of step .01), so each boundary is a single crossing and the cutoff is met at all larger correlations. The item count is $p=2m$. ``Many'' gives the limit as $m\to\infty$: CFI and TLI from $\mathrm{CFI}_\infty$, SRMR from $\lambda^2(1-\varphi)/2$, and population RMSEA tends to zero for every $\varphi$. ``Any $\varphi$'' indicates that the cutoff is met throughout $0\le\varphi<1$. The final column gives the ML threshold $\varphi^*$ for equal versus unequal fitted loadings across the two blocks; its ``many'' entry is the limit $\lambda^2/(2-\lambda^2)$.}
+\label{tab:1}
+\begin{tabular}{ccccccc}
+\toprule
+Loading & Total items & CFI $\ge .95$ & TLI $\ge .95$ & RMSEA $\le .06$ & SRMR $\le .08$ & ML $\varphi^*$ \\
+\midrule
+.50 & 4 & .71 & .83 & .76 & any $\varphi$ & .36 \\
+.50 & 8 & .74 & .78 & .64 & .27 & .25 \\
+.50 & 16 & .77 & .79 & .54 & .32 & .20 \\
+.50 & many & .91 & .91 & any $\varphi$ & .36 & .14 \\
+.70 & 4 & .78 & .87 & .92 & .55 & .49 \\
+.70 & 8 & .82 & .85 & .88 & .63 & .41 \\
+.70 & 16 & .84 & .86 & .84 & .65 & .37 \\
+.70 & many & .93 & .93 & any $\varphi$ & .67 & .32 \\
+.85 & 4 & .86 & .92 & .97 & .70 & .67 \\
+.85 & 8 & .88 & .91 & .95 & .75 & .62 \\
+.85 & 16 & .90 & .91 & .94 & .76 & .59 \\
+.85 & many & .95 & .95 & any $\varphi$ & .78 & .57 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All of the CFI $\ge .95$ boundaries in Table~\ref{tab:1} lie in the equal-loading regime of Theorem~\ref{thm:ml}. Consequently, these examples of favorable CFI should be distinguished from the preferential representation of one trait at lower correlations. The practical point is that an overall fit index does not by itself resolve either the dimensionality of the population or the interpretation of the fitted factor.
+
+The closed forms for CFI, TLI and RMSEA follow by substituting $F_{\min}$ into their definitions. For SRMR, the fitted model reproduces the diagonal, and the remaining residuals take three values. Hence
+\[
+\mathrm{SRMR}^2=
+\frac{\tfrac{m(m-1)}{2}\big[(L-\alpha^2)^2+(L-\beta^2)^2\big]+m^2(L\varphi-\alpha\beta)^2}
+{m(2m+1)}.
+\]
+In the equal-loading regime, this reduces to
+\[
+\mathrm{SRMR}
+=\lambda^2(1-\varphi)\sqrt{\frac{m(m-1)}{4m^2-1}}
+\;\longrightarrow\;\frac{\lambda^2(1-\varphi)}{2}.
+\]
+For $\varphi\ge\lambda^2/(2-\lambda^2)$, the limiting CFI and TLI as the number of items increases are
+\[
+\mathrm{CFI}_{\infty}=\mathrm{TLI}_{\infty}
+=1-\frac{\log\big(1+\lambda^2(1-\varphi)/[2(1-\lambda^2)]\big)}
+{-\log(1-\lambda^2)}.
+\]
+
+The indices differ because they summarize discrepancy in different ways. RMSEA divides the discrepancy by the model degrees of freedom. It decreases at rate $m^{-1/2}$ for fixed loading and trait correlation, and its limit is zero. Thus, sufficiently long tests meet a fixed positive RMSEA cutoff even when the two traits are uncorrelated. CFI and TLI compare model discrepancy with independence-model discrepancy; TLI also adjusts for degrees of freedom. At loading .70, their limiting .95 cutoff boundary is approximately .93. Finite-length boundaries need not be monotone: the TLI boundaries are .87, .85 and .86 for 4, 8 and 16 items.
+
+SRMR instead summarizes the sizes of residual correlations. It depends directly on $\lambda^2$ and has little dependence on test length once $m$ is moderately large. It does not normalize residuals by their precision or by baseline discrepancy. It is the most permissive cutoff for the finite item counts in Table~\ref{tab:1}. For four items loading .50, SRMR is .079 at $\varphi=0$, so two independent traits meet the .08 cutoff.
+
+Kenny and McCoach (2003) derived the symmetric-branch population CFI and TLI. The limiting expression above follows from their determinant formulas, and they also described the decline of RMSEA with test length. Shi, Lee and Maydeu-Olivares (2019) studied model-size effects numerically. Theorem~\ref{thm:ml} adds the global classification: it identifies when the symmetric expression is the minimum and supplies the asymmetric branch when it is not. The cutoff calculations therefore use the minimum over the full one-factor model.
+
+The exact discrepancy can also be used in the conventional noncentral-$\chi^2$ power approximation, with noncentrality $NF_{\min}$ for sample size $N$ under the normal-likelihood convention. This approximation is justified under regular local alternatives. Its finite-sample accuracy under fixed misspecification, near $\varphi^*$ and at nonregular endpoints is not established by the population formulas (Chun \& Shapiro, 2009).
+
+\subsection{CFI at a Fixed Information Loss}
+
+A change in CFI need not indicate a change in the information lost by the one-factor approximation. Fix $p=2m$ and the contrast signal-to-noise ratio $\kappa_-$, and vary the loading along
+\[
+\varphi=1-\frac{\kappa_-(1-\lambda^2)}{m\lambda^2},
+\]
+within the regime $\varphi\ge\varphi^*$. Theorem~\ref{thm:ml} implies that $F_{\min}$, the Kullback--Leibler divergence and RMSEA are constant on this path. The baseline discrepancy increases with $\lambda^2$, however, so CFI increases.
+
+More explicitly, the derivative of total correlation with respect to $\lambda^2$ along this path is positive exactly when
+$\kappa_-<(2m-1)\lambda^2/(1-\lambda^2)$, a condition satisfied on the stated path with $\varphi\ge0$. For eight items and $\kappa_-=1$, the Kullback--Leibler divergence is .121 (half of $F_{\min}=.242$) and RMSEA is .110 throughout the path, whereas CFI is .62, .82, .91, .95 and .97 at loadings .5, .6, .7, .8 and .9. At loading .5 the path meets the threshold, $\varphi=\varphi^*=.25$.
+
+Moshagen and Auerswald (2018) showed that RMSEA and the conventional noncentral-$\chi^2$ power approximation do not depend on loadings when discrepancy is held fixed. The calculation here gives the corresponding result for an incremental index. It also clarifies the relation to the reliability paradox: studies of that phenomenon hold the form of misspecification fixed and find that fit worsens as loadings increase (Hancock \& Mueller, 2011; McNeish, An \& Hancock, 2018). The direction of the loading effect depends on which feature of the population is held constant.
+
+For heterogeneous loadings, the exact expressions need not apply. Proposition~\ref{prop:ceiling} in Appendix~\ref{app:ceiling} gives an upper bound on the information lost by the best one-factor approximation. The bound depends on the smaller eigenvalue of the trait signal after each item is scaled by its unique standard deviation.

@@ -1,0 +1,70 @@
+\subsection{Cross-Loadings and Negative Trait Correlations}
+\label{sec:crossloadings}
+
+Cross-loadings change the relation between the correlation of the generating traits and the correlation relevant to the one-factor approximation. In a design with equal, mirrored cross-loadings, this change has an exact expression. The result explains why a one-factor fit can combine information from two uncorrelated traits without contradicting the single-block solution at $\varphi=0$ in Theorem~\ref{thm:ml}. In this section, $\rho$ denotes the correlation of the generating traits, to distinguish it from the effective correlation $\varphi_{\mathrm{eff}}$ defined below.
+
+\begin{proposition}[Equal cross-loadings]
+\label{prop:crossloading}
+Let each block contain $m\ge2$ items. Every item in block A has primary and secondary loadings $(\lambda_{\mathrm p},\lambda_{\mathrm s})$ on $(\theta_1,\theta_2)$, and every item in block B has loadings $(\lambda_{\mathrm s},\lambda_{\mathrm p})$. Suppose that the traits have unit variance and correlation $\rho$, and that item residuals are mutually independent, independent of the traits, and have common variance $\tau^2>0$. Define the signal variance and the between-block signal covariance
+\[
+\sigma_{\mathrm S}^2=\lambda_{\mathrm p}^2+\lambda_{\mathrm s}^2+2\lambda_{\mathrm p}\lambda_{\mathrm s}\rho,\qquad
+\sigma_{AB}=2\lambda_{\mathrm p}\lambda_{\mathrm s}+\rho(\lambda_{\mathrm p}^2+\lambda_{\mathrm s}^2),
+\]
+and assume $\sigma_{\mathrm S}^2>0$. The standardized item correlation matrix has the exchangeable form of Section~\ref{sec:setup}, with $\lambda^2$ and $\varphi$ replaced by
+\[
+\lambda_{\mathrm{eff}}^2=\frac{\sigma_{\mathrm S}^2}{\tau^2+\sigma_{\mathrm S}^2},\qquad
+\varphi_{\mathrm{eff}}=\frac{\sigma_{AB}}{\sigma_{\mathrm S}^2}
+=\frac{2\lambda_{\mathrm p}\lambda_{\mathrm s}+\rho(\lambda_{\mathrm p}^2+\lambda_{\mathrm s}^2)}
+{\lambda_{\mathrm p}^2+\lambda_{\mathrm s}^2+2\lambda_{\mathrm p}\lambda_{\mathrm s}\rho},
+\]
+where $-1\le\varphi_{\mathrm{eff}}\le1$.
+\end{proposition}
+
+\begin{proof}
+Because the residuals are independent of the traits and of each other, the common signal variance of each item is $\sigma_{\mathrm S}^2$, and the signal covariance between blocks is $\sigma_{AB}$. Dividing within- and between-block covariances by the common item variance $\tau^2+\sigma_{\mathrm S}^2$ gives the stated parameters. The identities
+$\sigma_{\mathrm S}^2\pm\sigma_{AB}=(1\pm\rho)(\lambda_{\mathrm p}\pm\lambda_{\mathrm s})^2$
+also give $|\varphi_{\mathrm{eff}}|\le1$.
+\end{proof}
+
+For probit latent responses, $\tau^2=1$; when the loadings and residual variance are already standardized, $\lambda_{\mathrm{eff}}^2=\sigma_{\mathrm S}^2$. Negative effective correlations require only a sign change. Reversing the signs of the items in block B maps $R(\lambda,\varphi)$ to $R(\lambda,-\varphi)$ and leaves each discrepancy considered here unchanged. Hence, if $|\varphi_{\mathrm{eff}}|<1$, Theorem~\ref{thm:ml}, Theorem~\ref{thm:uls} and Proposition~\ref{cor:wls} apply to $(\lambda_{\mathrm{eff}},|\varphi_{\mathrm{eff}}|)$ after this reflection, using the threshold for the estimator in question. If $|\varphi_{\mathrm{eff}}|=1$, the signal is already one-dimensional. The ML classification therefore has three regimes. If $\varphi_{\mathrm{eff}}\ge\varphi^*(\lambda_{\mathrm{eff}},m)$, the best one-factor ML approximation has equal block loadings with the same sign. If $|\varphi_{\mathrm{eff}}|<\varphi^*(\lambda_{\mathrm{eff}},m)$, its loading magnitudes are unequal, and one block direction is retained at $\varphi_{\mathrm{eff}}=0$. If $\varphi_{\mathrm{eff}}\le-\varphi^*(\lambda_{\mathrm{eff}},m)$, it has equal loading magnitudes with opposite signs.
+
+For $\lambda_{\mathrm p}>0$ and $\rho=0$, write $r=\lambda_{\mathrm s}/\lambda_{\mathrm p}$ for the secondary-to-primary slope ratio. Then $\varphi_{\mathrm{eff}}=2r/(1+r^2)$. Table~\ref{tab:2} gives the smallest nonnegative ratio for which the Gaussian one-factor ML approximation has equal block loadings. Across these designs, ratios from .08 to .22 suffice. Thus, modest cross-loadings can place uncorrelated generating traits in the equal-loading regime. This is a result for the stated latent-response populations; it does not establish the prevalence of such cross-loadings in substantive applications.
+
+\begin{table}[t]
+\centering\small
+\caption{Smallest secondary-to-primary slope ratio that makes a one-factor ML fit a composite of two uncorrelated traits (probit latent responses, Gaussian analogue). Entries are the exact thresholds implied by Proposition~\ref{prop:crossloading} and Theorem~\ref{thm:ml}, rounded up to two decimals, so that each tabled ratio suffices.}
+\label{tab:2}
+\begin{tabular}{cccc}
+\toprule
+Primary probit slope & 5 items per trait & 20 items per trait & Many items \\
+\midrule
+.6 & .13 & .09 & .08 \\
+.8 & .17 & .14 & .13 \\
+1.0 & .22 & .19 & .18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The distinction matters when interpreting simulation studies that fit unidimensional IRT models to two-dimensional data. A unidimensional approximation can reflect both generating traits when items have compensatory cross-loadings, whereas exact simple structure permits a single-block solution at zero trait correlation. The Gaussian mapping provides a mechanism that can produce these different findings. It does not by itself identify the likelihood solution in every IRT design.
+
+For example, Strachan et al. (2022) examined primary slopes from 1.2 to 1.6 and secondary slopes from .2 to .6, with a representative ratio of approximately .29. For 20 items per block, take representative logistic slopes 1.4 and .4 and divide both by 1.702 to obtain a Gaussian probit analogue. The equal-cross-loading mapping then gives the effective correlations and ML thresholds in the second and third columns of Table~\ref{tab:crossloading-illustration}. At trait correlations 0, $-.4$ and $-.8$, they place the analogue in the equal-loading, unequal-loading and bipolar regimes, respectively. At the last value, a composite constrained to have nonnegative weights cannot represent the bipolar direction. This offers a possible explanation for the instability of their nonnegative composite approximation at negative correlations.
+
+\label{sec:crossloading-illustration}%
+Heterogeneous cross-loadings produced the same qualitative regimes. We drew slopes for 20 items per trait from the ranges of Strachan et al.\ (2022), primary slopes from $U(1.2,1.6)$ and secondary slopes from $U(.2,.6)$, and divided them by 1.702 to convert the logistic metric. A one-factor model was fitted by ML to the latent-response correlation matrix, with all parameters free and 25 random starts. The best solution found was approximately balanced at $\rho=.8$, .4 and 0, favored block B at $\rho=-.4$, and formed a bipolar contrast at $\rho=-.8$ (Table~\ref{tab:crossloading-illustration}). The pattern is consistent with the effective-correlation result, but the mapping is approximate because slopes vary within blocks. These calculations concern a Gaussian latent-response analogue; they do not evaluate binary responses fitted by marginal ML. Appendix~\ref{app:binary} treats binary responses numerically.
+
+\begin{table}[t]
+\centering\small
+\caption{One-factor ML fits to a Gaussian analogue of the approximate-simple-structure design of Strachan et al.\ (2022), with 20 items per trait; $\rho$ is the generating trait correlation. The effective correlation and ML threshold use the representative slopes 1.4 and .4; because slopes vary within blocks, they are approximate reference values. Slopes were drawn once (seed 22 in the supplementary code). Block loadings are the block means of the best solution found over 25 random starts, all of which reached the same objective value; signs are shown with block A positive.}
+\label{tab:crossloading-illustration}
+\begin{tabular}{rrrcl}
+\toprule
+$\rho$ & $\varphi_{\mathrm{eff}}$ & ML $\varphi^*$ & Block loadings, A / B & Regime \\
+\midrule
+.8 & .93 & .36 & .71 / .70 & Composite \\
+.4 & .77 & .32 & .65 / .65 & Composite \\
+0 & .53 & .29 & .57 / .58 & Composite \\
+$-.4$ & .16 & .24 & .29 / .58 & Tilted toward B \\
+$-.8$ & $-.47$ & .20 & .41 / $-.49$ & Bipolar contrast \\
+\bottomrule
+\end{tabular}
+\end{table}

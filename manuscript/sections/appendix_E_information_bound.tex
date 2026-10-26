@@ -1,0 +1,27 @@
+\section{An Information-Loss Bound for Heterogeneous Loadings}
+\label{app:ceiling}
+
+The exact ML classification assumes common loadings within each block. An upper bound remains available when this assumption is relaxed. Let a zero-mean Gaussian two-trait population of $p\ge2$ items have covariance $R=\Lambda\Phi\Lambda^\top+\Psi_0$, with positive diagonal uniqueness matrix $\Psi_0$ and positive-semidefinite trait covariance $\Phi$. Write $\mathrm{KL}_{1F}$ for the minimum Kullback--Leibler divergence from this Gaussian population to a zero-mean Gaussian distribution in the one-factor covariance model.
+
+\begin{proposition}[An upper bound for arbitrary loadings]
+\label{prop:ceiling}
+Let $\kappa_1\ge\kappa_2\ge0$ be the eigenvalues of
+$\Phi^{1/2}\Lambda^\top\Psi_0^{-1}\Lambda\Phi^{1/2}$.
+Then
+\[
+\mathrm{KL}_{1F}\le
+\frac12\left[(p-1)\log\left(1+\frac{\kappa_2}{p-1}\right)
+-\log(1+\kappa_2)\right]
+\le\frac12\left[\kappa_2-\log(1+\kappa_2)\right].
+\]
+Equality holds in the first inequality for the exchangeable population when $|\varphi|\ge\varphi^*$.
+\end{proposition}
+
+\begin{proof}
+Whitening by $\Psi_0$ gives the population covariance
+$I+\kappa_1u_1u_1^\top+\kappa_2u_2u_2^\top$.
+Consider a one-factor covariance with uniqueness matrix $t\Psi_0$, where
+$t=1+\kappa_2/(p-1)$, and a loading proportional to $\Psi_0^{1/2}u_1$ chosen to match the leading population eigenvalue. This covariance is feasible because $1+\kappa_1\ge t$. Its Kullback--Leibler divergence is the middle expression, which bounds the minimum. The inequality $(p-1)\log(1+\kappa_2/(p-1))\le\kappa_2$ gives the second bound; choosing $t=1$ gives the same looser bound directly. For the exchangeable population with $\varphi\ge\varphi^*$, the constructed covariance is the minimizer in Theorem~\ref{thm:ml}; reflecting one block extends the equality to $\varphi\le-\varphi^*$, because the reflection leaves both $\mathrm{KL}_{1F}$ and $\kappa_2$ unchanged.
+\end{proof}
+
+The first bound is attained in the exchangeable composite regime and, by continuity, is nearly attained for small departures from that design, so it cannot be tightened by a fixed factor. A matching lower bound for heterogeneous loadings is not established here.

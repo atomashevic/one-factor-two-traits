@@ -1,0 +1,76 @@
+Command: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 Rscript checks/sample_ctrl.R
+UTC: 2026-10-09 15:39:00 UTC 
+Current R: R version 4.6.1 (2026-06-24) | lavaan: 0.7.2 
+Paper HEAD: ce0fa203d72b621b35aead7319f09935a47f8f21 
+Current RNGkind: Mersenne-Twister, Inversion, Rejection 
+Threads: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 
+MD5: sample_ctrl.R=20cadf0dde515ed55cd891259afaff94 order_ctrl.R=b43921cdd3dcd0152c8a385ce469957a sim_functions.R=0352a47b7c59a1e33144e684f8922976 
+Scope: three continuous-data, first-replication, default-start, one-factor ML fits only.
+Original options retained: std.lv=TRUE, se=none, test=standard, h1/baseline=TRUE, sample.cov.rescale=TRUE.
+The original one-factor fit is the first fit after generation; no preceding estimator or random-start draws are replayed.
+Generator: set.seed(cell$seed + rep); matrix(rnorm(N*p),N,p) %*% chol(pop_sigma(cell)).
+Archive files do not retain generated data, starting matrices, or RNGkind. Exact data identity is unverified.
+Nonzero archival differences are reported explicitly. Absolute ML discrepancy agreement tolerance=1e-8; exact reproduction is separate.
+Derivative coordinates: raw observed scales, unit latent variance; common global sign orientation.
+Stationarity threshold=1e-06; Hessian threshold=1e-05; uniqueness boundary threshold=1e-08
+PASS derivative check empirical cell 232: max gradient error 1.86e-10; max Hessian error 2.28e-10
+
+Cell 232 rep 1 seed 2020001: A_m4_l70 phi=0.30 N=500
+Archive: R version 4.5.1 (2025-06-13) | lavaan 0.6.20 | MD5 db5147546f876e3858df749edc932b8b 
+Archived F=0.97913635885256767; current F=0.97913635885256767; absolute difference=0; exact fx match=TRUE; within1e-8=TRUE
+Exact reproduction of all compared floating-point fields failed: block-loading difference 5.55e-17; minimum-uniqueness difference 1.11e-16.
+Current lavaan converged=TRUE; max full gradient=9.2e-07; min full Hessian eigenvalue=0.444179; strict_minimum_evidence
+Raw uniqueness=[0.54042559,0.99116149]; standardized uniqueness=[0.52270379,0.89642995]; oriented standardized block means=[0.66423810,0.33744947]
+Direct/lavaan objective error=0; sample rescaling error=2.22e-16; estimator preserved generator RNG state=TRUE
+PASS derivative check empirical cell 664: max gradient error 1.24e-09; max Hessian error 8.77e-10
+
+Cell 664 rep 1 seed 5620001: B_l68_l72 phi=0.10 N=500
+Archive: R version 4.5.1 (2025-06-13) | lavaan 0.6.20 | MD5 7b29dceca3386912fc0285bbb4957e9e 
+Archived F=1.2453924404491588; current F=1.2453924404491588; absolute difference=0; exact fx match=TRUE; within1e-8=TRUE
+Exact reproduction of all compared floating-point fields failed: block-loading difference 2.78e-17; minimum-uniqueness difference 1.11e-16.
+Current lavaan converged=TRUE; max full gradient=1.57e-06; min full Hessian eigenvalue=0.523484; nonstationary
+Raw uniqueness=[0.56329555,1.09285773]; standardized uniqueness=[0.57606968,0.99684665]; oriented standardized block means=[0.62848243,0.09933020]
+Direct/lavaan objective error=0; sample rescaling error=1.11e-16; estimator preserved generator RNG state=TRUE
+PASS derivative check empirical cell 808: max gradient error 1.02e-07; max Hessian error 5.99e-08
+
+Cell 808 rep 1 seed 6820001: B_l60_l80 phi=0.01 N=500
+Archive: R version 4.5.1 (2025-06-13) | lavaan 0.6.20 | MD5 f7e9dc254495855b3405f2a1822bece7 
+Archived F=1.8816055655408608; current F=1.881605565540859; absolute difference=1.78e-15; exact fx match=TRUE; within1e-8=TRUE
+Exact reproduction of all compared floating-point fields failed: block-loading difference 1.39e-17; minimum-uniqueness difference 0.
+Current lavaan converged=TRUE; max full gradient=1.65e-06; min full Hessian eigenvalue=0.440421; nonstationary
+Raw uniqueness=[0.54959595,1.02040317]; standardized uniqueness=[0.55699445,0.99999978]; oriented standardized block means=[0.63442737,-0.01513947]
+Direct/lavaan objective error=1.78e-15; sample rescaling error=2.22e-16; estimator preserved generator RNG state=TRUE
+
+CSV: <repository>/results/summary/sample_ctrl_stage4.csv 
+Completed exactly three cross-version empirical refits; no simulation source or archived result was changed.
+These selected converged archive rows do not estimate failure rates, establish empirical global minima, or validate all archived classifications.
+PASS: seed/design checks, covariance rescaling, direct objective checks, and independent derivative checks.
+
+Session info:
+R version 4.6.1 (2026-06-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Omarchy
+
+Matrix products: default
+BLAS:   /usr/lib/libblas.so.3.12.0 
+LAPACK: /usr/lib/liblapack.so.3.12.0  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: Europe/Belgrade
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] lavaan_0.7-2
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1      parallel_4.6.1      tools_4.6.1        
+[4] mnormt_2.1.2        pbivnorm_0.6.0      numDeriv_2016.8-1.1
+[7] stats4_4.6.1        quadprog_1.5-8     

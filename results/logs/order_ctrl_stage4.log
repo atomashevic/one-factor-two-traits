@@ -1,0 +1,145 @@
+Command: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 Rscript checks/order_ctrl.R
+UTC: 2026-10-09 15:36:27 UTC 
+R: R version 4.6.1 (2026-06-24) | lavaan: 0.7.2 | numDeriv: 2016.8.1.1 
+Paper: ce0fa203d72b621b35aead7319f09935a47f8f21 dirty | package: 19bbfce9b7b007b7702e9e9a8e7253a17e2bb967 clean 
+Source directory: ~/work/undeRfactor 
+Sibling package source version: 0.1.0 
+MD5: order_ctrl.R=b43921cdd3dcd0152c8a385ce469957a blind_spot.R=d749efddf1e809fb17a8148830e09b57 factor_share.R=6a3533385698799ff16cb0e49cea2b71 order_check.R=1dbe62d0ae7d751909c00653f4ab4cd3 phi_star.R=18072609b562942b05738518ca7199c5 polychoric.R=538fd82a60a8e3a409c26ff80450c277 pop_fit.R=8cb2f6cce8fbd7e7a081c870ad02bfed two_trait_cor.R=dc405cde2d19ebad60ac3872ad730bcb undeRfactor-package.R=823b72b3e2a69ea4204605cced7af14b utils.R=b36365fb3c51eb45d5f180a9fe909de4 
+Threads:OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1| seed=20261009 | random starts per unequal case=8
+Population sample.cov.rescale=FALSE; sample.nobs=1000; no generated data.
+Coordinates: unit latent variance, raw observed scales; one common sign flip.
+Thresholds: gradient=1e-06; Hessian=1e-05; uniqueness boundary=1e-08; starting covariance=1e-12; objective=1e-08; derivative=1e-06
+Negative uniqueness is inadmissible; boundary fits are unclassified. No constrained KKT conclusion is drawn.
+Unequal-case reference = best strict minimum found numerically, not a global optimality certificate.
+
+Case 1: phi=0.10 lambda_A=0.68 lambda_B=0.72
+PASS derivative check case 1 common start: max gradient error 2.38e-10; max Hessian error 1.73e-10
+Numerical reference seed: 20261010 | five deterministic starts plus 8 random starts; package saddle-escape perturbation retained.
+Reference: F=0.9759270127 signed_share_A=0.046357; 2 distinct verified strict minima found; numerical best found
+  std.lv default A_first converged=TRUE  F=1.2305672130 gap= 0.255 grad=9.9e-08 Hmin= 0.728 psi=[0.5435,0.9823] l=[0.67562,0.13302] shareA=0.919470 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.9759270127 gap= 8.88e-15 grad=4.6e-08 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046357 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.9759270127 gap= 1.78e-15 grad=2.8e-08 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046357 strict_minimum_evidence
+  std.lv common  B_first converged=TRUE  F=0.9759270127 gap= 1.78e-15 grad=2.8e-08 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046357 strict_minimum_evidence
+  marker default A_first converged=TRUE  F=1.2305672130 gap= 0.255 grad=8.3e-07 Hmin= 0.728 psi=[0.5435,0.9823] l=[0.67562,0.13302] shareA=0.919471 strict_minimum_evidence
+  marker default B_first converged=TRUE  F=0.9759270127 gap= 8.12e-13 grad=8.1e-07 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046357 strict_minimum_evidence
+  marker common  A_first converged=TRUE  F=0.9759270127 gap= 3.71e-11 grad=5.8e-06 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046353 nonstationary
+  marker common  B_first converged=TRUE  F=0.9759270127 gap= 1.46e-13 grad=2.6e-07 Hmin= 0.951 psi=[0.4837,0.9899] l=[0.10036,0.71854] shareA=0.046356 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+Case 2: phi=0.01 lambda_A=0.60 lambda_B=0.80
+PASS derivative check case 2 common start: max gradient error 1.39e-10; max Hessian error 1.74e-10
+Numerical reference seed: 20261011 | five deterministic starts plus 8 random starts; package saddle-escape perturbation retained.
+Reference: F=0.6064052566 signed_share_A=0.001788; 2 distinct verified strict minima found; numerical best found
+  std.lv default A_first converged=TRUE  F=1.9921900575 gap= 1.39 grad=1.4e-07 Hmin= 0.164 psi=[0.6425,0.9967] l=[0.59794,0.05771] shareA=0.941236 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.6064052566 gap= 5.49e-13 grad=5.4e-07 Hmin= 1 psi=[0.3600,0.9999] l=[0.00707,0.80000] shareA=0.001788 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.6064052566 gap= 4.64e-13 grad=4.8e-07 Hmin= 1 psi=[0.3600,0.9999] l=[0.00707,0.80000] shareA=0.001788 strict_minimum_evidence
+  std.lv common  B_first converged=TRUE  F=0.6064052566 gap= 4.64e-13 grad=4.8e-07 Hmin= 1 psi=[0.3600,0.9999] l=[0.00707,0.80000] shareA=0.001788 strict_minimum_evidence
+  marker default A_first converged=TRUE  F=1.9921900575 gap= 1.39 grad=5.2e-07 Hmin= 0.164 psi=[0.6425,0.9967] l=[0.59794,0.05771] shareA=0.941236 strict_minimum_evidence
+  marker default B_first converged=TRUE  F=0.6064052566 gap= 4.57e-12 grad=1.8e-06 Hmin= 1 psi=[0.3600,0.9999] l=[0.00708,0.80000] shareA=0.001790 nonstationary
+  marker common  A_first converged=FALSE F=0.6064052566 gap= 5.61e-12 grad=3.8e-06 Hmin= 1 psi=[0.3600,0.9999] l=[0.00708,0.80000] shareA=0.001789 nonstationary
+    Warnings: lavaan->lav_step11_estoptim():  
+   the optimizer (NLMINB) claimed the model converged, but not all elements 
+   of the gradient are (near) zero; the optimizer may not have found a local 
+   solution use check.gradient = FALSE to skip this check. 
+  marker common  B_first converged=TRUE  F=0.6064052566 gap= 8.7e-14 grad=6.5e-07 Hmin= 1 psi=[0.3600,1.0000] l=[0.00707,0.80000] shareA=0.001788 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+Case 3: phi=0.20 lambda_A=0.68 lambda_B=0.72
+PASS derivative check case 3 common start: max gradient error 3.09e-10; max Hessian error 2.06e-10
+Numerical reference seed: 20261012 | five deterministic starts plus 8 random starts; package saddle-escape perturbation retained.
+Reference: F=0.9281335785 signed_share_A=0.094357; 2 distinct verified strict minima found; numerical best found
+  std.lv default A_first converged=TRUE  F=1.1579698336 gap= 0.23 grad=1.4e-07 Hmin= 0.425 psi=[0.5684,0.9206] l=[0.65698,0.28173] shareA=0.817616 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.9281335785 gap= 0 grad=2e-09 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.9281335785 gap= 9.24e-14 grad=1.8e-07 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+  std.lv common  B_first converged=TRUE  F=0.9281335785 gap= 9.24e-14 grad=1.8e-07 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+  marker default A_first converged=TRUE  F=1.1579698336 gap= 0.23 grad=1.5e-06 Hmin= 0.425 psi=[0.5684,0.9206] l=[0.65698,0.28173] shareA=0.817615 nonstationary
+  marker default B_first converged=TRUE  F=0.9281335785 gap= 4.26e-14 grad=1.9e-07 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+  marker common  A_first converged=TRUE  F=0.9281335785 gap= 2.98e-13 grad=7.1e-07 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+  marker common  B_first converged=TRUE  F=0.9281335785 gap= 1.78e-15 grad=1.9e-08 Hmin= 0.866 psi=[0.4903,0.9596] l=[0.20091,0.71391] shareA=0.094357 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+Case 4: phi=0.05 lambda_A=0.60 lambda_B=0.80
+PASS derivative check case 4 common start: max gradient error 2.67e-10; max Hessian error 2.02e-10
+Numerical reference seed: 20261013 | five deterministic starts plus 8 random starts; package saddle-escape perturbation retained.
+Reference: F=0.6042898657 signed_share_A=0.008889; 1 distinct verified strict minima found; numerical best found
+  std.lv default A_first converged=TRUE  F=0.6042898657 gap= 1.42e-14 grad=8e-08 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.6042898657 gap= 1.23e-13 grad=2.5e-07 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.6042898657 gap= 8.88e-15 grad=5.4e-08 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+  std.lv common  B_first converged=TRUE  F=0.6042898657 gap= 1.24e-14 grad=5.4e-08 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+  marker default A_first converged=TRUE  F=0.6042898657 gap= 5.74e-13 grad=6.5e-07 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+  marker default B_first converged=TRUE  F=0.6042898657 gap= 3.82e-13 grad=1.3e-06 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 nonstationary
+  marker common  A_first converged=TRUE  F=0.6042898657 gap= 9.38e-13 grad=1e-06 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 nonstationary
+  marker common  B_first converged=TRUE  F=0.6042898657 gap= 3.02e-14 grad=3.7e-07 Hmin= 1 psi=[0.3601,0.9987] l=[0.03536,0.79994] shareA=0.008889 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+Case 5: phi=0.30 lambda_A=0.70 lambda_B=0.70
+PASS derivative check case 5 common start: max gradient error 2.77e-10; max Hessian error 2.22e-10
+PASS derivative check analytic asymmetric minimum: max gradient error 2.69e-10; max Hessian error 2.4e-10
+PASS derivative check analytic symmetric saddle: max gradient error 1.48e-10; max Hessian error 1.35e-10
+Reference: F=0.9407950513 signed_share_A=0.785559; 2 distinct verified strict minima found; analytic global value
+  std.lv default A_first converged=TRUE  F=0.9407950513 gap= 1.94e-13 grad=2e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.67045,0.35507] shareA=0.785559 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.9407950513 gap= 1.94e-13 grad=2e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.35507,0.67045] shareA=0.214441 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.9707519880 gap= 0.03 grad=1e-08 Hmin=-0.306 psi=[0.7060,0.7060] l=[0.54222,0.54222] shareA=0.500000 saddle_evidence
+  std.lv common  B_first converged=TRUE  F=0.9707519880 gap= 0.03 grad=1e-08 Hmin=-0.306 psi=[0.7060,0.7060] l=[0.54222,0.54222] shareA=0.500000 saddle_evidence
+  marker default A_first converged=TRUE  F=0.9407950513 gap= 9.15e-13 grad=8.9e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.67045,0.35507] shareA=0.785559 strict_minimum_evidence
+  marker default B_first converged=TRUE  F=0.9407950513 gap= 9.15e-13 grad=8.9e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.35507,0.67045] shareA=0.214441 strict_minimum_evidence
+  marker common  A_first converged=TRUE  F=0.9407950513 gap= 2.18e-13 grad=3.2e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.67045,0.35507] shareA=0.785559 strict_minimum_evidence
+  marker common  B_first converged=TRUE  F=0.9407950513 gap= 2.18e-13 grad=3.2e-07 Hmin= 0.477 psi=[0.5505,0.8739] l=[0.35507,0.67045] shareA=0.214441 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+Case 6: phi=0.30 lambda_A=0.60 lambda_B=0.80
+PASS derivative check case 6 common start: max gradient error 1.82e-10; max Hessian error 2.11e-10
+Numerical reference seed: 20261015 | five deterministic starts plus 8 random starts; package saddle-escape perturbation retained.
+Reference: F=0.5277811386 signed_share_A=0.054039; 1 distinct verified strict minima found; numerical best found
+  std.lv default A_first converged=TRUE  F=0.5277811386 gap= 3.55e-15 grad=3e-08 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  std.lv default B_first converged=TRUE  F=0.5277811386 gap= 5.33e-15 grad=3.2e-08 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  std.lv common  A_first converged=TRUE  F=0.5277811386 gap= 0 grad=1.4e-08 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  std.lv common  B_first converged=TRUE  F=0.5277811386 gap= 0 grad=1.4e-08 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  marker default A_first converged=TRUE  F=0.5277811386 gap= 7.11e-14 grad=2.7e-07 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  marker default B_first converged=TRUE  F=0.5277811386 gap= 1.78e-15 grad=3.2e-08 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+  marker common  A_first converged=TRUE  F=0.5277811386 gap= 2.42e-12 grad=1.9e-06 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 nonstationary
+  marker common  B_first converged=TRUE  F=0.5277811386 gap= 3.02e-14 grad=2e-07 Hmin= 1.03 psi=[0.3632,0.9558] l=[0.21014,0.79802] shareA=0.054039 strict_minimum_evidence
+PASS common starting covariance across four identification/order combinations: max error 0
+
+CSV: <repository>/results/summary/order_ctrl_stage4.csv 
+Controlled fits: 48 | reference candidates: 68 
+                             numerical_classification
+lavaan_or_reference_converged nonstationary saddle_evidence
+                        FALSE             1               0
+                        TRUE              6               2
+                             numerical_classification
+lavaan_or_reference_converged strict_minimum_evidence
+                        FALSE                       0
+                        TRUE                       39
+Maximum common starting covariance target error: 0 
+PASS: bounded controlled comparisons and all asserted independent checks.
+Convergence, stationarity, curvature, and admissibility are separate diagnostics. Multiple starts do not certify numerical global optimality.
+
+Session info:
+R version 4.6.1 (2026-06-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Omarchy
+
+Matrix products: default
+BLAS:   /usr/lib/libblas.so.3.12.0 
+LAPACK: /usr/lib/liblapack.so.3.12.0  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: Europe/Belgrade
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] lavaan_0.7-2
+
+loaded via a namespace (and not attached):
+[1] MASS_7.3-65         compiler_4.6.1      parallel_4.6.1     
+[4] tools_4.6.1         mnormt_2.1.2        pbivnorm_0.6.0     
+[7] numDeriv_2016.8-1.1 stats4_4.6.1        quadprog_1.5-8     

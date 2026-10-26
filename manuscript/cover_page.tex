@@ -1,0 +1,35 @@
+% Cover (title) page for submission to Psychometrika.
+% Compile separately from main.tex, e.g. `pdflatex cover_page.tex` in this folder.
+% The manuscript itself (main.tex) is anonymised; author details appear here and in
+% the named preprint, both from author.tex.
+\input{preamble}
+\input{author}
+\hypersetup{
+  pdftitle={Fitting One Factor to Two Traits: Population Solutions and Fit Indices (title page)},
+  pdfauthor={\AuthorName},
+  pdfsubject={Title page for submission to Psychometrika}
+}
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+{\Large\bfseries Fitting One Factor to Two Traits:\\Population Solutions and Fit Indices\par}
+\bigskip
+{\large \AuthorName\par}
+\smallskip
+\AuthorAffiliation\par
+\end{center}
+
+\bigskip
+\noindent\textbf{Corresponding author:} \AuthorName, \AuthorAffiliation.\\
+Email: \href{mailto:\AuthorEmail}{\AuthorEmail}\\
+ORCID: \AuthorORCID
+% The journal asks for full contact details of the corresponding author;
+% add a postal address here if the submission system requires one.
+
+% Acknowledgments are optional for the journal. Funding belongs under Financial Support, not here.
+% \section*{Acknowledgments}
+
+\input{declarations}
+
+\end{document}

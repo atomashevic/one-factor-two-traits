@@ -1,0 +1,13 @@
+build/
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+*.Rcheck/
+*.tar.gz
+# Raw simulation output, available from the author on request
+results/raw/
+results/fits1f.rds
+# Supplement PDF used by empirical/kroenke2016/extract_tables.py (not redistributed)
+empirical/data/raw/

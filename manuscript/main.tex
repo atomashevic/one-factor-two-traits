@@ -1,0 +1,35 @@
+\input{preamble}
+\title{Fitting One Factor to Two Traits:\\Population Solutions and Fit Indices}
+% Default build: anonymised for review; author details are on the separate
+% cover page (cover_page.tex). Built with \def\preprint{} (see build.py),
+% this file gives the named preprint with its declarations.
+\ifdefined\preprint
+  \input{preprint_front}
+\else
+  \author{}
+  \date{}
+\fi
+\begin{document}
+\maketitle
+\input{sections/01_introduction}
+\input{sections/02_population}
+\input{sections/03_ml_solution}
+\input{sections/04_population_fit}
+\input{sections/05_extensions}
+\input{sections/06_numerical}
+\input{sections/07_phq_illustration}
+\input{sections/08_discussion}
+\ifdefined\preprint\input{declarations}\fi
+\clearpage
+\input{sections/references}
+\clearpage
+\appendix
+\input{sections/appendix_A_ml}
+\input{sections/appendix_B_boundary}
+\input{sections/appendix_C_least_squares}
+\input{sections/appendix_D_unequal_blocks}
+\input{sections/appendix_E_information_bound}
+\input{sections/appendix_F_entropy}
+\input{sections/appendix_G_computation}
+\input{sections/appendix_H_binary}
+\end{document}

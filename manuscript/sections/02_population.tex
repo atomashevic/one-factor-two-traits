@@ -1,0 +1,46 @@
+\section{Population Model and Measures of Fit}
+\label{sec:setup}
+
+Consider two standardized traits, $\theta_1$ and $\theta_2$, with correlation $\varphi\in[0,1)$. Block A contains $m\ge2$ items that load only on $\theta_1$, and block B contains $m$ items that load only on $\theta_2$, so the test has $p=2m$ items. Every item has standardized loading $\lambda\in(0,1)$ and an independent error with variance $1-\lambda^2$. The population correlation matrix $R$ has unit diagonal, within-block correlations $\lambda^2$, and between-block correlations $\lambda^2\varphi$. We write $R_A$ and $R_B$ for the within-block correlation matrices of blocks A and B, that is, the two diagonal blocks of $R$. Negative trait correlations are obtained by reflecting one block. The minimization results depend on the population only through its correlation matrix $R$. Normality is assumed only to give the ML discrepancy its likelihood and information interpretations.
+
+We fit the unrestricted one-factor covariance model
+\[
+\Sigma=ll^{\top}+\Psi,\qquad
+\Psi=\diag(\psi_1,\ldots,\psi_p),\qquad
+\psi_i\ge0,\quad \Sigma\succ0.
+\]
+In particular, equality of the fitted loadings or uniquenesses is not imposed. The population maximum likelihood discrepancy is
+\begin{equation}
+F(\Sigma)=\tr(\Sigma^{-1}R)-\log\det(\Sigma^{-1}R)-p,
+\label{eq:ml-discrepancy}
+\end{equation}
+and $F_{\min}$ denotes its minimum over this model. The independence model has discrepancy $F_B=-\log\det R$. The population fit indices are
+\begin{equation}
+\begin{aligned}
+\mathrm{CFI}&=1-\frac{F_{\min}}{F_B},&
+\mathrm{TLI}&=1-\frac{F_{\min}/\mathit{df}_M}{F_B/\mathit{df}_B},&
+\mathrm{RMSEA}&=\sqrt{\frac{F_{\min}}{\mathit{df}_M}},
+\end{aligned}
+\label{eq:population-indices}
+\end{equation}
+where $\mathit{df}_M=p(p-3)/2$ and $\mathit{df}_B=p(p-1)/2$. SRMR is the root mean square residual correlation over the $p(p+1)/2$ nonredundant matrix entries, including the diagonal. These are population quantities: they depend only on $R$ and the fitted covariance, not on sample size. The sample indices reported in Section~\ref{sec:numerical} estimate them, with the usual truncation at zero for noncentrality-based indices.
+
+These indices summarize different aspects of the same approximation. Under normality, $F(\Sigma)=2\KL\{\mathcal N(0,R)\,\|\,\mathcal N(0,\Sigma)\}$ (Akaike, 1987), whereas $F_B=2\TC(R)$ is twice the total correlation, or multi-information, among the items; for a correlation matrix $S$, $\TC(S)=-\tfrac12\log\det S$ (Watanabe, 1960). CFI therefore expresses the reduction in this information loss relative to independence. RMSEA expresses the square root of the loss per model degree of freedom. Their denominators differ, so their judgments of the same fitted covariance need not agree (Lai \& Green, 2016).
+
+At an ML solution of a scale-invariant covariance model, $\tr(\hat\Sigma^{-1}R)=p$ (Dijkstra, 1990). Consequently,
+\begin{equation}
+F_{\min}=\log\det\hat\Sigma-\log\det R.
+\label{eq:entropy-gap}
+\end{equation}
+Appendix~\ref{app:entropy} interprets this difference in terms of Gaussian entropies. All solutions considered here also reproduce the item variances. For these solutions, population CFI equals $\TC(\hat\Sigma)/\TC(R)$, the fraction of the population multi-information present in the fitted covariance. Equivalently, it is the ratio of the two log determinants (Kenny \& McCoach, 2003, Eq.~10). These established identities provide an interpretation of the results below; the new question is which one-factor covariance minimizes the discrepancy.
+
+For the equal-block design, write
+\[
+L=\lambda^2,\qquad a=1-L,\qquad n=m-1,\qquad
+\nu =2m-1,\qquad b=1+nL,
+\]
+and set $h=mL\varphi$ and $q=h/b$. The eigenvalues of $R$ are $a$, with multiplicity $2n$, and $b+h$ and $b-h$, corresponding to the sum and difference of the block means. Hence
+\[
+\det R=a^{2n}b^2(1-q^2).
+\]
+The quantity $\kappa_-=mL(1-\varphi)/a$ is the signal-to-noise ratio for the contrast between the traits: the difference eigenvalue is $b-h=a(1+\kappa_-)$, with signal part $mL(1-\varphi)$ and noise part $a$. We also use $F_0=-n\log a-\log b=-\log\det R_A=2\TC(R_A)$, the independence-model discrepancy of a single block, and $q^*=L/(2-L)$, the value of $q$ at the threshold $\varphi^*$ of Theorem~\ref{thm:ml}. Because $q$ increases with $\varphi$, the condition $\varphi\ge\varphi^*$ is equivalent to $q\ge q^*$.

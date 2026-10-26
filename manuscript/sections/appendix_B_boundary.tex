@@ -1,0 +1,77 @@
+\section{Derivation of the Boundary Criterion}
+\label{app:heywood-proof}
+
+Heywood cases can refer to zero or negative estimated uniquenesses. The following result concerns the zero-uniqueness boundary of the one-factor ML model with nonnegative uniquenesses. It is used to exclude boundary minima in Theorem~\ref{thm:ml} and Lemma~\ref{lem:uniformity}. The statement applies to any positive-definite correlation matrix.
+
+\begin{proposition}[A zero-uniqueness boundary]
+\label{prop:boundary}
+Let $R$ be a positive-definite correlation matrix, and fix an item $j$. On the boundary $\psi_j=0$, the ML discrepancy has a unique minimizing covariance $\Sigma_\star$, represented by
+\[
+l_j=1,\qquad l_i=R_{ij},\qquad
+\psi_i=1-R_{ij}^2\quad(i\ne j).
+\]
+At $\Sigma_\star$, increasing $\psi_j$ while holding the other parameters fixed changes the discrepancy at rate
+\[
+\begin{aligned}
+\left.\frac{dF}{d\psi_j}\right|_{0^+}
+&=-\sum_{\substack{i\ne k\\i,k\ne j}}
+\frac{R_{ij}R_{kj}(R_{ik}-R_{ij}R_{kj})}
+{(1-R_{ij}^2)(1-R_{kj}^2)}\\
+&=\sum_{i\ne j}w_i^2\Var(r_i)
+-\Var\!\left(\sum_{i\ne j}w_i r_i\right),
+\end{aligned}
+\]
+where $w_i=R_{ij}/(1-R_{ij}^2)$ and $r_i=X_i-R_{ij}X_j$ for $X\sim\mathcal N(0,R)$.
+A local minimum of the full model attained on this boundary must therefore have the covariance $\Sigma_\star$ and satisfy
+$\Var(\sum_{i\ne j}w_i r_i)\le\sum_{i\ne j}w_i^2\Var(r_i)$.
+\end{proposition}
+
+\begin{proof}
+Fix a boundary face $\psi_j=0$. Positive definiteness gives $l_j\ne0$ and positive uniquenesses on the remaining items. Put $t=l_j^2$ and $\delta_i=l_i/l_j$ for $i\ne j$. Let $D$ be diagonal with $D_{jj}=t$ and $D_{ii}=\psi_i$ otherwise, and let
+\[
+T_\delta=I+\sum_{i\ne j}\delta_i e_i e_j^{\top}.
+\]
+Then $\Sigma=T_\delta DT_\delta^{\top}$, $\det T_\delta=1$, and $T_\delta^{-1}=I-\sum_{i\ne j}\delta_i e_i e_j^{\top}$. Thus
+\[
+\log\det\Sigma=\log t+\sum_{i\ne j}\log\psi_i,
+\qquad
+x^{\top}\Sigma^{-1}x
+=\frac{x_j^2}{t}+\sum_{i\ne j}\frac{(x_i-\delta_i x_j)^2}{\psi_i}.
+\]
+Taking expectations under the population correlation matrix yields, up to an additive constant,
+\[
+F=\log t+\frac1t
++\sum_{i\ne j}\left\{\log\psi_i+
+\frac{1-2\delta_iR_{ij}+\delta_i^2}{\psi_i}\right\}.
+\]
+The terms separate. Their unique stationary minimum is $t=1$, $\delta_i=R_{ij}$, and $\psi_i=1-R_{ij}^2$, which is the covariance $\Sigma_\star$ in Proposition~\ref{prop:boundary}.
+
+Increasing $\psi_j$ by $\varepsilon\ge0$ gives the feasible inward perturbation $\Sigma_\star+\varepsilon e_je_j^{\top}$. Put $K=\Sigma_\star^{-1}$. The derivative of the discrepancy at $\varepsilon=0$ is $K_{jj}-(KRK)_{jj}$. Define
+\[
+w_i=\frac{R_{ij}}{1-R_{ij}^2},\qquad
+s=\sum_{i\ne j}w_iR_{ij}.
+\]
+The inverse quadratic form gives $Ke_j=(1+s)e_j-\sum_{i\ne j}w_i e_i$, and therefore
+\[
+K_{jj}-(KRK)_{jj}
+=s+s^2-\sum_{i\ne j}w_i^2
+-\sum_{\substack{i,k\ne j\\i\ne k}}w_iw_kR_{ik}.
+\]
+The diagonal terms cancel because $\psi_i+R_{ij}^2=1$. The remaining terms give
+\[
+\left.\frac{dF}{d\psi_j}\right|_{0^+}
+=-\sum_{\substack{i,k\ne j\\i\ne k}}
+w_iw_k(R_{ik}-R_{ij}R_{kj}).
+\]
+Finally, if $r_i=X_i-R_{ij}X_j$, then $\Var(r_i)=1-R_{ij}^2$ and $\Cov(r_i,r_k)=R_{ik}-R_{ij}R_{kj}$. The same derivative is
+\[
+\sum_{i\ne j}w_i^2\Var(r_i)
+-\Var\!\left(\sum_{i\ne j}w_i r_i\right),
+\]
+which proves the variance form of the criterion.\end{proof}
+
+The boundary covariance $\Sigma_\star$ is obtained by regressing every other item on item $j$ and treating the resulting residuals as independent. A negative derivative indicates residual covariance that can be represented by moving into the interior of the one-factor model. In the exchangeable two-trait population, the derivative is strictly negative except at $m=2$ and $\varphi=0$. At that endpoint, boundary representations occur in the exact-fit family for the retained pair.
+
+For an observed zero-uniqueness ML solution, the covariance form and derivative provide necessary checks for a local minimum. A nonnegative derivative is not sufficient. The result does not classify negative uniqueness estimates from unconstrained fitting or solutions obtained by WLSMV.
+
+\textit{Numerical corroboration.} In a numerical check reported in Online Resource~1, on 400 random correlation matrices with 3 to 8 items, the formula agreed with direct computation to $4\times10^{-14}$, and one-sided finite differences agreed within their numerical error. This inherited check is not part of the proof.

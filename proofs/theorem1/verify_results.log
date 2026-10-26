@@ -1,0 +1,40 @@
+Numerical verification only; this script is not a proof.
+ML: 4/144 populations; largest F error 1.21e-15
+ML: 8/144 populations; largest F error 1.21e-15
+ML: 12/144 populations; largest F error 1.21e-15
+ML: 16/144 populations; largest F error 1.5e-15
+ML: 20/144 populations; largest F error 1.5e-15
+ML: 24/144 populations; largest F error 1.5e-15
+ML: 28/144 populations; largest F error 1.5e-15
+ML: 32/144 populations; largest F error 1.5e-15
+ML: 36/144 populations; largest F error 1.5e-15
+ML: 40/144 populations; largest F error 1.5e-15
+ML: 44/144 populations; largest F error 1.5e-15
+ML: 48/144 populations; largest F error 1.5e-15
+ML: 52/144 populations; largest F error 1.94e-15
+ML: 56/144 populations; largest F error 1.94e-15
+ML: 60/144 populations; largest F error 1.94e-15
+ML: 64/144 populations; largest F error 1.94e-15
+ML: 68/144 populations; largest F error 1.94e-15
+ML: 72/144 populations; largest F error 1.94e-15
+ML: 76/144 populations; largest F error 2.33e-15
+ML: 80/144 populations; largest F error 2.33e-15
+ML: 84/144 populations; largest F error 2.33e-15
+ML: 88/144 populations; largest F error 2.33e-15
+ML: 92/144 populations; largest F error 2.66e-15
+ML: 96/144 populations; largest F error 2.66e-15
+ML: 100/144 populations; largest F error 2.66e-15
+ML: 104/144 populations; largest F error 2.66e-15
+ML: 108/144 populations; largest F error 2.66e-15
+ML: 112/144 populations; largest F error 2.66e-15
+ML: 116/144 populations; largest F error 2.78e-15
+ML: 120/144 populations; largest F error 2.78e-15
+ML: 124/144 populations; largest F error 3e-15
+ML: 128/144 populations; largest F error 3e-15
+ML: 132/144 populations; largest F error 3e-15
+ML: 136/144 populations; largest F error 3e-15
+ML: 140/144 populations; largest F error 5.33e-15
+ML: 144/144 populations; largest F error 5.33e-15
+PASS: 4224 checks; 0 failures; 7.3 s
+Results: /tmp/claude-0/proofcheck/run/rerun.json
+exit 0

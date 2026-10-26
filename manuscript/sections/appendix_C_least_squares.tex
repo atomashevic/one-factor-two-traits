@@ -1,0 +1,41 @@
+\section{Main Steps in the Least-Squares Proofs}
+\label{app:uls}
+
+The complete unrestricted ULS proof is given in Online Resource~1, Section~11; the weighted result is proved in Online Resource~2. The common reduction is described here so that the role of the weights is explicit.
+
+The loading domain is compact, so a global minimum exists. Replacing loadings by their absolute values cannot increase any squared residual when the target correlations are nonnegative. At positive trait correlation, all nonzero minimizing loadings have a common sign. The zero vector cannot minimize, and a nonnegative nonzero minimizer cannot contain a zero loading because its corresponding one-sided derivative is negative. The positive sign convention is therefore valid.
+
+Let $\xi=\binom{m}{2}^{-1}\sum_{i<j\in A}l_il_j$ and $\eta=\binom{m}{2}^{-1}\sum_{i<j\in B}l_il_j$ be the mean within-block pair products, and let $Q_A$ and $Q_B$ be the sums of squared loadings in the two blocks. Jensen's inequality bounds the within-block residual sums, while Cauchy--Schwarz gives
+\[
+Q_A\ge m\xi,\qquad Q_B\ge m\eta.
+\]
+These inequalities define a relaxation of the original problem. At positive trait correlation its minimum is attained, and the stationarity equations force both inequalities to be equalities. The equality condition gives constant loadings within each block. Online Resources~1 and~2 supply the attainment argument, including the case in which a minimizing sequence of the relaxed problem is unbounded, and treat the zero-correlation equality cases separately.
+
+For ULS, put $u=\alpha^2+\beta^2$, $v=\alpha\beta$, and $C_m=m(m-1)/2$. The block-uniform objective is
+\[
+G=C_m(u-L)^2+m(v-mL\varphi)^2
++C_mL^2-m^2(m-1)L^2\varphi^2,
+\]
+over the cone $u\ge2v\ge0$. It is a strictly convex quadratic. Its unconstrained minimum $(u,v)=(L,mL\varphi)$ is feasible exactly when $\varphi\le1/(2m)$. Above that value, the minimum is on $u=2v$, at $v=L(n+m\varphi)/\nu $. The Karush--Kuhn--Tucker multiplier is
+\[
+\varpi=2C_m(2v-L)
+=\frac{m(m-1)L(2m\varphi-1)}{2m-1},
+\]
+which is nonnegative precisely when $\varphi\ge1/(2m)$. Convexity makes these conditions sufficient. Substitution gives Theorem~\ref{thm:uls}, and the equality conditions of the original relaxation give its retained-block endpoint family.
+
+For weighted least squares, the same sign and inequality arguments apply within each pair class. To see why the reduction remains tight for every $\omega>0$, set $c=L\varphi$ and $S_A^2=Q_A+m(m-1)\xi$, with $S_B$ defined analogously. If $Q_A>m\xi$ at a relaxed minimizer, stationarity gives $\xi=L+\omega Q_B>L$ and $Q_B=cS_B/S_A$. If both norm inequalities are strict, stationarity also gives $\eta>L$ and $Q_AQ_B=c^2$, contradicting $Q_AQ_B>m^2L^2$. If the other inequality is an equality, then $Q_B=m\eta$, and boundary stationarity gives $\eta=L+\omega m\xi>L$ and $c^2=\eta S_A^2\ge m^2\xi\eta>m^2L^2$. This again contradicts $c<L$. Hence both norm inequalities are equalities.
+
+For the resulting block-uniform loadings,
+\[
+\frac{G_w}{w_W}
+=C_m(u-L)^2+m(\omega m-m+1)v^2
+-2\omega m^2L\varphi v+C_mL^2+\omega m^2L^2\varphi^2.
+\]
+If $\omega m-m+1>0$, this is a strictly convex quadratic on $u\ge2v\ge0$. Its unconstrained minimizer is
+\[
+(u,v)=\left(L,\frac{\omega mL\varphi}{\omega m-m+1}\right),
+\]
+which is feasible exactly when $\varphi\le\varphi_\omega$. Otherwise the minimum is on $u=2v$, at $v=L(2C_m+\omega m^2\varphi)/(2C_m+\omega m^2)$. The two solutions coincide at $(L,L/2)$ when $\varphi=\varphi_\omega$. If $\omega m-m+1\le0$, the objective is concave or linear in $v$ at fixed $u$ and, for $\varphi>0$, decreases in $v$. Its minimum is therefore on $v=u/2$, which gives the symmetric solution. At $\varphi=0$, the equality cases give the retained-block solutions, continuum, and independent block signs stated in Proposition~\ref{cor:wls}.
+
+For the WLSMV calculations, the residual weights are inverse asymptotic variances of two-step polychoric estimates. We obtained them from the estimator's influence function, including estimation of the item thresholds, by numerical differentiation of bivariate normal cell probabilities. The resulting population weights agree with lavaan's estimated asymptotic covariance matrix for 200,000 cases to within 0.3\%. The implementation is included in the supplementary code.
+

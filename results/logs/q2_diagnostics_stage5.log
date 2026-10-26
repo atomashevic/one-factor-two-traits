@@ -1,0 +1,51 @@
+Command: /usr/lib64/R/bin/exec/R --no-echo --no-restore --file=simulation/posthoc/q2fix.R --args --input results/fits1f.rds --output results/summary/q2_diagnostics_stage5.csv 
+Thread limits: 1/1/1 
+Contrast invariance, block exchange, sign, reference and cancellation checks passed.
+Magnitude-selection sign invariance, block exchange, strict cutoff and zero denominator checks passed.
+Input provenance: Signed archived lA/lB, shareA, ok and converged are unchanged; no fit certification inferred. 
+Input source files: 1104 
+                             R lavaan
+1 R version 4.5.1 (2025-06-13) 0.6.20
+Legacy reproduction n max absolute error 0 
+Legacy reproduction q95 max absolute error 5.551115e-15 
+Legacy reproduction p_tilted max absolute error 0 
+Legacy reproduction mean_share max absolute error 3.108624e-15 
+Legacy reproduction mean_abs_d max absolute error 5.551115e-16 
+Stage 4 preservation: 68 columns; maximum numerical difference 4.405365e-13 
+Figure 5 right pooled magnitude-selection counts:
+    est  format n_selected_first n_selected_second n_selected_M_gt_10
+1    ML    cont            24767              3952              28719
+2   ULS    cont            12385              5959              18344
+3   MLs ord_sym            11508              1993              13501
+4 WLSMV ord_sym             2649              2097               4746
+  p_selected_first
+1        0.8623908
+2        0.6751526
+3        0.8523813
+4        0.5581542
+1946 cell-estimator summaries; elapsed 14.819 seconds
+Input MD5: 447c7ccc70a72573041ab71d49ff2eb6 
+Script MD5: 81910d5a2dc4ef5449841e82f00b6315 
+Output MD5: 3e03fa21eb91ff5bb137bf1324aa2898 
+R: R version 4.6.1 (2026-06-24) 
+SHA256 input, script and output:
+1d6e8e010a5d160c151b76753b31df8f9d299d002097f3675033e0b28ed47ec1  results/fits1f.rds
+e78713f77512b987e1cb6cc17e301df8d60481c13791d046fd85c72d1b1e11b6  simulation/posthoc/q2fix.R
+252774e14c25cdf614da8b2a66f458e4feebb4ee3b20c4ce8de2eeaf4defb451  results/summary/q2_diagnostics_stage5.csv
+All quantities condition on convergence and their stated domain. No minimum or score certification.
+Magnitude imbalance M=abs(a)-abs(b) is distinct from signed D; neither is a score share.
+C_magnitude normalizes magnitude imbalance on all valid-reference nonzero pairs, regardless of polarity.
+C_bounded requires nonnegative oriented block means; opposite-sign cases remain in D.
+MCSE uses independent replications within each cell. Formats are not pooled.
+Magnitude selection is abs(M)>.1; first means M>.1, second M<-.1. Conditional proportions use selected counts, not n_finite.
+Conditional selection MCSE is the nominal per-cell binomial SE. Pooled heterogeneous-cell bars require their own uncertainty calculation.
+Fields named admissible_first/second mean positive recorded min_psi only; they do not certify a minimum.
+  design n_attempted n_converged n_finite n_opposite_sign n_common_flips
+1      A      742000      742000   742000           49369              0
+2      B      312000      312000   312000           23501              0
+3      C      156000      156000   156000            6589              0
+  n_C_bounded n_covariance_share_outside_01
+1      692631                         73041
+2      288499                         40938
+3      149411                          9295
+Zero-correlation groups forced to zero by legacy q95 >= 1: 42 of 148 
