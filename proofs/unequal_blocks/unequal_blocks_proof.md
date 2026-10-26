@@ -694,11 +694,11 @@ If \(\alpha\beta\le c\), these imply \(\alpha^2\ge L_A\) and \(\beta^2\ge L_B\),
  \alpha\beta>c,\qquad 0<\alpha^2<L_A,\qquad0<\beta^2<L_B. \tag{S6}
 \]
 
-Take a vector \(e\) supported on A with \(\sum_i e_i=0\) and \(\sum_i e_i^2=1\). Put \(\delta l=te\) and \(\delta\psi=se\). In these coordinates the exact Hessian quadratic form is
+Take a vector \(e\) supported on A with \(\sum_i e_i=0\) and \(\sum_i e_i^2=1\). Put \(\delta l=te\) and \(\delta\psi=we\). In these coordinates the exact Hessian quadratic form is
 
 \[
- H_A(t,s)=\frac{2t^2}{\psi_A}+\frac{s^2}{\psi_A^2}
- -\frac{2a_A}{\tau}\left(\frac t{\psi_A}-\frac{\alpha s}{\psi_A^2}\right)^2.
+ H_A(t,w)=\frac{2t^2}{\psi_A}+\frac{w^2}{\psi_A^2}
+ -\frac{2a_A}{\tau}\left(\frac t{\psi_A}-\frac{\alpha w}{\psi_A^2}\right)^2.
                                                                \tag{S7}
 \]
 Its determinant is
@@ -716,9 +716,46 @@ The needed strict positivity follows from the identity
 \]
 This includes \(m_A=2\). The first principal minor is also positive. The same calculation applies to the \(m_B-1\) contrast copies in B.
 
-*Derivation of (S7).* Use the Sherman–Morrison representation of the likelihood, with \(\gamma=\sum_i l_i^2/\psi_i\), \(\tau=1+\gamma\) and \(Q=l^T\Psi^{-1}R\Psi^{-1}l\). At a stationary point \(Q=\gamma\tau\). For a contrast perturbation \(\gamma'=Q'=0\). The second derivative of \(-Q/\tau+\log\tau\) is \(-Q''/\tau+\gamma''\). Since \(R\) acts as \(a_A\) on an A contrast, expanding these two terms and the diagonal likelihood terms yields (S7). The determinant identity (S8), before substituting \(\psi_A=1-\alpha^2\), is also checked exactly by `verify_unequal_blocks.py::scalar_symbolic_checks`.
+*Derivation of (S7).* Use \(u=\Psi^{-1}l\) and \(\gamma=l^T\Psi^{-1}l\) of Section 1.3, and put \(\tau=1+\gamma\) and \(\mathcal Q=u^TRu\). In the notation of (1.1), \(r=\gamma\) and \(\mathcal Q=v^TSv\). At a stationary point \(\tau\) is the largest whitened eigenvalue of Section 2.3. Since \(\operatorname{tr}S=\sum_i1/\psi_i\) and \(-\log\det S=\sum_i\log\psi_i-\log\det R\), (1.1) reads
+\[
+F=\sum_i\Bigl(\frac1{\psi_i}+\log\psi_i\Bigr)+\log\tau-\frac{\mathcal Q}\tau-\log\det R-p.
+\]
+Move along \(l+\eta te\), \(\psi+\eta we\), and write primes for derivatives in \(\eta\) at \(\eta=0\). The loadings and uniquenesses are constant on the support of \(e\), so each derivative below reduces to a multiple of \(\sum_ie_i=0\) or \(\sum_ie_i^2=1\). With \(\kappa=t/\psi_A-\alpha w/\psi_A^2\),
+\[
+\gamma'=0,\qquad \gamma''=2\psi_A\kappa^2,\qquad u'=\kappa e,\qquad u_i''=-\frac{2w\kappa}{\psi_A}e_i^2 .
+\]
+Because \(\tau'=\gamma'=0\), the second derivative of \(\log\tau-\mathcal Q/\tau\) is \(\gamma''/\tau-\mathcal Q''/\tau+\mathcal Q\gamma''/\tau^2\). At a stationary point the loading equation (1.4) is \(Ru=\tau l\), so \(\mathcal Q=\gamma\tau\), and this second derivative equals \(\gamma''-\mathcal Q''/\tau\). A within-block contrast satisfies \(Re=a_Ae\), hence
+\[
+\mathcal Q''=2u'^TRu'+2(Ru)^Tu''=2a_A\kappa^2-\frac{4\tau\alpha w\kappa}{\psi_A}.
+\]
+The diagonal terms contribute \(2w^2/\psi_A^3-w^2/\psi_A^2\). Using \(2\psi_A\kappa^2+4\alpha w\kappa/\psi_A=2t^2/\psi_A-2\alpha^2w^2/\psi_A^3\), the terms add to
+\[
+H_A(t,w)=\frac{2t^2}{\psi_A}+\frac{2(1-\alpha^2)w^2}{\psi_A^3}-\frac{w^2}{\psi_A^2}-\frac{2a_A}{\tau}\kappa^2 ,
+\]
+and the diagonal relation (1.5), \(1-\alpha^2=\psi_A\), gives (S7). The determinant of (S7) is \((2/\psi_A^3)[1-a_A(\psi_A+2\alpha^2)/(\tau\psi_A^2)]\). It equals (S8) because \(\psi_A+2\alpha^2=1+\alpha^2\); `verify_unequal_blocks.py::scalar_symbolic_checks` checks this identity exactly. Section 5 compares (S7), transformed to log-uniqueness coordinates, with numerically differentiated second derivatives of the full-covariance discrepancy at 65 digits, for one contrast in each block.
 
-Permutation invariance separates the full Hessian into these contrast sectors and the four-dimensional block-mean sector. For fixed uniquenesses the concentrated leading-eigenvector factor is a strict local minimum: the leading eigenvalue is simple, exceeds 1, and the remaining eigenvalues are strictly smaller. The scale direction is also strictly positive. The Schur complement in the remaining direction has the sign of \(\mathcal G''\). Thus a simple scalar minimum has a positive definite full Hessian; a simple scalar maximum has exactly one negative Hessian eigenvalue. Replacing \(\psi\) by \(\log\psi\) is an invertible coordinate change and preserves these inertia conclusions. At a nondegenerate fold there is one zero eigenvalue and all other eigenvalues are positive.
+*Sector decomposition.* Permuting the items within A and within B, with loadings and uniquenesses permuted together, leaves \(R\), \(F\) and every block-uniform point unchanged. So at such a point the Hessian \(\mathcal H\) of \(F\) in \((l,\psi)\) commutes with these permutations. Write \(\mathbb R^p=W\oplus C_A\oplus C_B\), where \(W\) is spanned by \(1_A\) and \(1_B\) and \(C_A,C_B\) are the within-block contrast spaces, of dimensions \(m_A-1\) and \(m_B-1\). Loading and uniqueness perturbations split in the same way. Invariance under all permutations of A forces each \(m_A\times m_A\) block of \(\mathcal H\) on the items of A (loading–loading, loading–uniqueness and uniqueness–uniqueness) to have the form \(xI+yJ\), which acts on \(C_A\) as the scalar \(x\). Invariance under the permutations of both blocks forces each block coupling the items of A with those of B to be a multiple of \(1_A1_B^T\), which annihilates \(C_A\) and \(C_B\). Hence \(\mathcal H\) has no cross terms between the four-dimensional block-mean sector \(W\times W\) and the contrast sectors, nor between the A and B contrast sectors. In an orthonormal contrast basis it equals \(I_{m_A-1}\otimes\mathcal H_A\) on \(C_A\times C_A\), with a \(2\times2\) matrix \(\mathcal H_A\), and likewise for B. Equivalently, \(C_A\) and \(C_B\) are absolutely irreducible representations of these permutations (the sign representation when a block has two items). They are inequivalent to each other and to the trivial representation, which makes up \(W\) twice, and Schur's lemma applies to the isotypic components. At a positive root of (S2), \(\mathcal H_A\) is the matrix of (S7), so by (S8) and (S9) the contrast sectors are positive definite.
+
+*Inertia of the block-mean sector.* Use coordinates \((\alpha,\beta,\psi_A,\psi_B)\) on \(W\times W\). This linear change of coordinates preserves inertia. At fixed uniquenesses write \(x=\Psi^{-1/2}l\), the vector \(v\) of Section 1.2, and \(\zeta_1>\zeta_2\ge\dots\) for the eigenvalues of \(S\), with eigenvectors \(q_1,q_2,\dots\). At a positive root the fitted \(x\) is the positive Perron vector of \(S\) (Section 1.3). So \(\zeta_1=\tau>1\) (Section 2.3), \(\zeta_1\) is simple, and the other eigenvalues are strictly smaller. The loading-dependent part of (1.1), \(\log(1+|x|^2)-x^TSx/(1+|x|^2)\), has Hessian \(2I-2S/\tau+4xx^T/\tau^2\) at \(x=\sqrt{\tau-1}\,q_1\). Its eigenvalues are
+\[
+\frac{4(\tau-1)}{\tau^2}\ \text{along}\ q_1,\qquad \frac{2(\tau-\zeta_k)}{\tau}\ \text{along}\ q_k,\ k\ge2,
+\]
+all positive. The loading block of the block-mean Hessian is a restriction of this form, so it is positive definite. Two standard facts finish the argument.
+
+- *Haynsworth's inertia additivity:* a symmetric matrix with a nonsingular leading block has the inertia of that block plus that of its Schur complement.
+- *Schur complement and concentration:* if \(f_x(\hat x(y),y)\equiv0\) with \(f_{xx}\) nonsingular, the Hessian of \(y\mapsto f(\hat x(y),y)\) is \(f_{yy}-f_{yx}f_{xx}^{-1}f_{xy}\).
+
+The block-mean sector therefore has the inertia of the loading block, \((2,0,0)\), plus the inertia, at the stationary point, of the Hessian of the loading-concentrated discrepancy \(F(\psi_A,\psi_B)\) of Section 2.2. The concentrated loading is the simple leading eigenvector, which the within-block permutations fix, so it is block-uniform: concentrating over \((\alpha,\beta)\) and over all of \(l\) gives the same function. Pass to \(\psi_A=e^{s+d}\), \(\psi_B=e^{s-d}\); at a stationary point an invertible change of coordinates changes the Hessian by congruence. There \(F_{ss}=\nu_{AB}>0\) at the scale optimum, and by the second fact the Schur complement in \(d\) is \(\mathcal G''(d)\) of (R.2). The block-mean sector therefore has inertia \((4,0,0)\), \((3,1,0)\) or \((3,0,1)\) as \(\mathcal G''(d)\) is positive, negative or zero. Because \(d'(v)>0\), the sign of \(\mathcal G''(d)\) at the root is that of the second derivative of (S1).
+
+*Conclusion.* At a simple scalar minimum the full \(2p\times2p\) Hessian is positive definite. At a simple scalar maximum, the saddle between two minima, it has exactly one negative eigenvalue. At a nondegenerate fold it has one zero eigenvalue and all others positive. Replacing \(\psi\) by \(\log\psi\) is again a congruence at stationary points and preserves these conclusions.
+
+`checks/or3_full_hessian.py`, which `build.py --checks` runs, builds the analytic Hessian at 30 digits at all 18 positive roots of ten designs, four of them saddles. In an orthonormal basis of block means and random contrasts it confirms three things:
+
+- the cross terms vanish;
+- each contrast sector equals the matrix of (S7), to within \(4\times10^{-26}\), the accuracy of the roots;
+- the stated inertia.
+
+The script does not test the fold case.
 
 ### 2.5. Equal sizes with unequal loadings: uniqueness, preference, and one fold
 
@@ -817,6 +854,8 @@ The same criterion can be written
  \frac{mL_A}{1-L_A}>(m-1)L_B,
 \]
 which is the condition stated in Proposition 2 of the article and the strict endpoint stability condition when A alone is fitted at \(\phi=0\). It is a stability criterion, not the criterion deciding which endpoint fit is global.
+
+**Proved. The weaker-block minimum emphasizes A in both senses.** It has \(\alpha>\beta\) and \(\alpha/\lambda_A>\beta/\lambda_B\), equivalently A's composite share exceeds 1/2. Every stationary point other than the global minimum has \(d<0\) in the coordinate of this section, so \(\psi_A/\psi_B=(b_A/b_B)e^{2d}<b_A/b_B<1\), because \(L_A<L_B\). Diagonal reproduction, \(\psi_A=1-\alpha^2\) and \(\psi_B=1-\beta^2\), then gives \(\alpha>\beta\). Since \(\lambda_A<\lambda_B\), also \(\alpha/\lambda_A>\beta/\lambda_A>\beta/\lambda_B\).
 
 **Proved. Exchangeable special case.** When \(\lambda_A=\lambda_B\), \(\delta=0\). Equation (S10) gives the symmetric root \(t=0\) and, below the threshold, two roots satisfying \(aR=b\). The threshold \(\rho_*=b/a\) simplifies to \(L/(2-L)\), hence
 
@@ -1002,6 +1041,21 @@ The high-correlation limit obtained from (S15) is
  S_A(1^-)=0.54935648928344790117901033438\ldots.
 \]
 Thus the asymptotic preference for A is modest and is governed by (S16).
+
+**Numerical, from the exact quartic. A discontinuous switch: two items at .90 versus four at .70.** This is the second example of Section 5.2 of the article, with block A the shorter block. For every \(0<\phi<.536151\) the quartic (S2) has three positive roots: a minimum favouring A (the smallest root), a saddle, and a minimum favouring B (the largest root). At \(\phi=.536151\) the minimum favouring B meets the saddle, and above it only the minimum favouring A remains. The profile values (S1) of the two minima are equal at
+
+\[
+ \phi_M=0.325654740638\ldots .
+\]
+Below \(\phi_M\) the minimum favouring B is global; above it, the minimum favouring A. At \(\phi_M\) the three stationary points are
+
+| Stationary point | \(v\) | \(\alpha\) | \(\beta\) | \(S_A\) |
+|---|---|---|---|---|
+| Minimum favouring A | 0.06738 | 0.8937 | 0.2763 | 0.9237 |
+| Saddle | 0.4572 | 0.7197 | 0.5070 | 0.5486 |
+| Minimum favouring B | 3.011 | 0.3771 | 0.6912 | 0.1027 |
+
+As \(\phi\) increases through \(\phi_M\), the global solution therefore jumps between the two minima. Its coefficient share for A's trait jumps from .103 to .924, and its loadings jump as well. Evaluated directly at the three points, the full six-item discrepancy takes the same value, 0.9640812038, at both minima. Its Hessian in the loadings and uniquenesses is positive definite at both minima and has exactly one negative eigenvalue at the saddle. `checks/unequal_jump_example.py` computes these values at 50 digits, and `build.py --checks` runs it. They are numerical values, not a certificate. The same design is the negative control of the interval certificate above.
 
 ### 2.7. Boundaries and remaining limitations
 
@@ -1247,7 +1301,7 @@ The signed version has the corresponding signed linear term. At the critical poi
 C_{\alpha\beta}=\frac{(2m+1-L)\sqrt{2-L}}{4Na\lambda}.
 \]
 
-**Proved.** Along interior stationary branches the diagonal score equations give \(\psi_A=1-\alpha^2\) and \(\psi_B=1-\beta^2\). At the critical point, differentiating \(d=\tfrac12\log(\psi_A/\psi_B)\) in the antisymmetric direction gives
+**Proved.** At the critical point the diagonal relations \(\psi_A=1-\alpha^2\) and \(\psi_B=1-\beta^2\) hold along the scale-profiled curve up to \(O(d^3)\); see the order bound below. Differentiating \(d=\tfrac12\log(\psi_A/\psi_B)\) there gives
 \[
 \beta-\alpha=\frac{2a}{\lambda\sqrt{2-L}}d+o(d).
 \]
@@ -1258,7 +1312,20 @@ Therefore, on the cusp stationary branches,
 =\frac{2m+1-L}{2NL}>0.}
 \tag{C.14}
 \]
-The order bound follows from analyticity of the concentrated loading, the symmetry in (C.2), and the stationary diagonal relations. The \(O(\varepsilon)\) term includes the change of the normalization loadings \(\lambda_A,\lambda_B\). It is smaller than the cusp term \(O(\varepsilon^{1/3})\).
+*Order bound.* Work in a neighbourhood of the critical point on which the expansions converge, with \(|d|\le d_0\). There \(Q>0\) and \(h>0\), so the scale optimum \(\widehat s(d;\delta,\varepsilon)=\log(Q(d)/N)\) of Section 3.1 is real analytic. Let \(\alpha(d;\delta,\varepsilon)\) and \(\beta(d;\delta,\varepsilon)\) be the concentrated block loadings at \(\psi_A=e^{\widehat s+d}\), \(\psi_B=e^{\widehat s-d}\). By Section 1.2 the concentrated whitened loading is \(\sqrt{\zeta_1-1}\) times the leading eigenvector of \(S\), taken with positive entries. Since \(\zeta_1>1\) is simple there, both loadings are real analytic in \((d,\delta,\varepsilon)\), and on every stationary branch they are the fitted loadings. Substituting them, with \(\lambda_A=\lambda-\varepsilon\) and \(\lambda_B=\lambda+\varepsilon\), into (C.12) defines a real-analytic function \(\vartheta(d,\delta,\varepsilon)\) that equals \(\tau_B\) on stationary branches. Both blocks have \(m\) items, so exchanging them maps \((d,\delta,\varepsilon)\) to \((-d,\delta,-\varepsilon)\), as in (C.2). The exchange also swaps \(\alpha\) with \(\beta\) and \(\lambda_A\) with \(\lambda_B\), so it reverses the sign of (C.12):
+\[
+\vartheta(-d,\delta,-\varepsilon)=-\vartheta(d,\delta,\varepsilon).
+\]
+A Taylor monomial \(d^i\delta^j\varepsilon^k\) of \(\vartheta\) can therefore occur only when \(i+k\) is odd. The terms with \(i+k=1\) are \((C_d+O(\delta))d\) and \(O(\varepsilon)\). Every term with \(i+k\ge3\) is \(O(|d|^3+d^2|\varepsilon|+|d|\varepsilon^2+|\varepsilon|^3)\), and for \(|d|\le d_0\) the last three are \(O(|\varepsilon|)\). This gives the remainder in (C.14).
+
+The slope \(C_d=\vartheta_d(0,0,0)\) is evaluated at \(\varepsilon=\delta=0\). Along the scale-profiled curve the loading equation holds, and the derivation of \(H=\Psi^{-1}(\Sigma-R)\Psi^{-1}\) in Section 1.3 uses only that equation. So \(\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_i^2\) there. By the envelope theorem, the derivatives \(F_s\) and \(F_d\) of the loading-concentrated discrepancy of Section 3.1 equal the partial derivatives at the concentrated loading. Moreover \(F_s=0\) at the scale optimum, and \(F_d=\mathcal G_d\) because \(F_s(\widehat s(d),d)\equiv0\). The block residuals \(\Delta_A=\alpha^2+\psi_A-1\) and \(\Delta_B=\beta^2+\psi_B-1\) therefore satisfy
+\[
+\frac{m\Delta_A}{\psi_A}+\frac{m\Delta_B}{\psi_B}=F_s=0,\qquad
+\frac{m\Delta_A}{\psi_A}-\frac{m\Delta_B}{\psi_B}=F_d=\mathcal G_d=O(d^3),
+\]
+the last by (C.8) at \(\varepsilon=\delta=0\). The diagonal relations \(\psi_A=1-\alpha^2\) and \(\psi_B=1-\beta^2\) thus hold up to \(O(d^3)\). Differentiating them gives the slope of \(\beta-\alpha\) displayed above, and (C.13) converts that slope into \(C_d\).
+
+On the cusp branches \(d=O(\varepsilon^{1/3})\) and \(\delta=O(\varepsilon^{2/3})\), so the remainder is \(O(\varepsilon)\). It includes the change of the normalization loadings \(\lambda_A,\lambda_B\), and it is smaller than the cusp term, which is of order \(\varepsilon^{1/3}\).
 
 **Proved.** The observable form of (C.9) is consequently
 \[

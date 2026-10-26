@@ -103,6 +103,9 @@ report('asymptotic constant^2 = (2-L)(1-q*) mL/b = 2 m L a/b = [lambda sqrt(2m(1
        rz(Cc2 - 2*m*L*a/b) and rz(Cc2 - L*2*m*(1 - L)/(1 + (m - 1)*L)))
 report('l_s^2 = L(n+m phi)/nu = 1 - (2na+b-h)/nu', rz(L*(n + m*phi)/nu - (1 - (2*n*a + b - h)/nu)))
 report('symmetric fit is concentrated optimum: 1 - psi_s = (b+h)/(...)', True)
+ls2 = L*(n + m*phi)/nu
+report('symmetric point satisfies the score equation (3.4): (b+h)/psi_s = 1 + 2m l_s^2/psi_s',
+       rz((b + h)/(1 - ls2) - (1 + 2*m*ls2/(1 - ls2))))
 # continuity, C^1, C^2 jump
 d0 = (Fs - Fa)
 # value: H(q) - H(q*) at q = q*  -> exact zero because both are H at same argument (above identities)

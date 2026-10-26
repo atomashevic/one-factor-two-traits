@@ -18,10 +18,25 @@ Equality holds in the first inequality for the exchangeable population when $|\v
 \end{proposition}
 
 \begin{proof}
-Whitening by $\Psi_0$ gives the population covariance
-$I+\kappa_1u_1u_1^\top+\kappa_2u_2u_2^\top$.
-Consider a one-factor covariance with uniqueness matrix $t\Psi_0$, where
-$t=1+\kappa_2/(p-1)$, and a loading proportional to $\Psi_0^{1/2}u_1$ chosen to match the leading population eigenvalue. This covariance is feasible because $1+\kappa_1\ge t$. Its Kullback--Leibler divergence is the middle expression, which bounds the minimum. The inequality $(p-1)\log(1+\kappa_2/(p-1))\le\kappa_2$ gives the second bound; choosing $t=1$ gives the same looser bound directly. For the exchangeable population with $\varphi\ge\varphi^*$, the constructed covariance is the minimizer in Theorem~\ref{thm:ml}; reflecting one block extends the equality to $\varphi\le-\varphi^*$, because the reflection leaves both $\mathrm{KL}_{1F}$ and $\kappa_2$ unchanged.
+Put $A=\Psi_0^{-1/2}\Lambda\Phi^{1/2}$. Then $\Psi_0^{-1/2}R\Psi_0^{-1/2}=I+AA^\top$, and $AA^\top$ has the same nonzero eigenvalues as $A^\top A=\Phi^{1/2}\Lambda^\top\Psi_0^{-1}\Lambda\Phi^{1/2}$. With orthonormal eigenvectors $u_1,u_2$ of $AA^\top$ for $\kappa_1,\kappa_2$, whitening by $\Psi_0^{-1/2}$ gives the population covariance
+\[
+\tilde R=I+\kappa_1u_1u_1^\top+\kappa_2u_2u_2^\top.
+\]
+The map $\Sigma\mapsto\Psi_0^{-1/2}\Sigma\Psi_0^{-1/2}$ takes the one-factor model onto itself, because it rescales the loadings and keeps the uniqueness matrix diagonal, and the Kullback--Leibler divergence does not change when the same invertible linear map is applied to both distributions. Hence $\mathrm{KL}_{1F}$ may be computed for $\tilde R$.
+
+Let $t=1+\kappa_2/(p-1)$ and $c^2=1+\kappa_1-t$, which is nonnegative because $\kappa_1\ge\kappa_2\ge\kappa_2/(p-1)$. The one-factor covariance $\tilde\Sigma=tI+c^2u_1u_1^\top$ corresponds to uniquenesses $t\Psi_0$ and loading $c\Psi_0^{1/2}u_1$ on the original scale. The matrices $\tilde\Sigma$ and $\tilde R$ have the same eigenvectors: $\tilde\Sigma^{-1}\tilde R$ has eigenvalue 1 on $u_1$, $(1+\kappa_2)/t$ on $u_2$, and $1/t$ on the remaining $p-2$ directions. Therefore
+\[
+\tr(\tilde\Sigma^{-1}\tilde R)=1+\frac{p-1+\kappa_2}{t}=p,
+\qquad
+\log\det(\tilde\Sigma^{-1}\tilde R)=\log(1+\kappa_2)-(p-1)\log t,
+\]
+and $2\,\mathrm{KL}\{\mathcal N(0,\tilde R)\,\|\,\mathcal N(0,\tilde\Sigma)\}=\tr(\tilde\Sigma^{-1}\tilde R)-\log\det(\tilde\Sigma^{-1}\tilde R)-p$ is twice the middle expression, which therefore bounds $\mathrm{KL}_{1F}$. The inequality $(p-1)\log\{1+\kappa_2/(p-1)\}\le\kappa_2$ gives the second bound; choosing $t=1$ gives the same looser bound directly.
+
+For the exchangeable population with $\varphi\ge\varphi^*$, $\Lambda^\top\Psi_0^{-1}\Lambda=(mL/a)I_2$, so $\kappa_1=mL(1+\varphi)/a$, $\kappa_2=\kappa_-$ and $u_1=1_p/\sqrt p$. With $p-1=\nu$, the constructed uniquenesses are
+\[
+ta=a+\frac{mL(1-\varphi)}{\nu}=1-l_s^2,
+\]
+and each constructed loading satisfies $l_i^2=c^2a/p=l_s^2$, so the constructed covariance is the symmetric solution of Theorem~\ref{thm:ml}. That solution minimizes $F=2\,\mathrm{KL}$ when $\varphi\ge\varphi^*$, so equality holds, and the middle expression equals $F_{\min}/2$ in equation~\eqref{eq:ml-minimum}. Reflecting one block extends the equality to $\varphi\le-\varphi^*$: the reflection leaves $\mathrm{KL}_{1F}$ unchanged (Section~\ref{sec:crossloadings}) and maps $\Phi$ to a matrix with the same eigenvalues, so $\kappa_1$ and $\kappa_2$ are unchanged. Nothing is deferred to an Online Resource.
 \end{proof}
 
-The first bound is attained in the exchangeable composite regime and, by continuity, is nearly attained for small departures from that design, so it cannot be tightened by a fixed factor. A matching lower bound for heterogeneous loadings is not established here.
+Because the first bound is attained, and positive, in the exchangeable composite regime, no smaller multiple of it bounds $\mathrm{KL}_{1F}$ for every population. A matching lower bound for heterogeneous loadings is not established here. A numerical check of the construction and of the equality case is part of the accompanying code (\texttt{checks/prop5\_bound.py}).

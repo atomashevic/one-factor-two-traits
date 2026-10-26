@@ -55,6 +55,11 @@ run([sys.executable, 'checks/table2_ratios.py'], 'checks/table2-ratios.log')
 if args.checks:
     run([sys.executable, 'checks/exact_algebra.py'], 'checks/exact-algebra.log')
     run([sys.executable, 'checks/theorem1_exact.py'], 'checks/theorem1-exact.log')
+    run([sys.executable, 'proofs/theorem1/check_saddle_7_3_sympy.py'], 'checks/saddle-7-3.log')
+    run([sys.executable, 'checks/corollary1_quartic.py'], 'checks/corollary1-quartic.log')
+    run([sys.executable, 'checks/prop5_bound.py'], 'checks/prop5-bound.log')
+    run([sys.executable, 'checks/unequal_jump_example.py'], 'checks/unequal-jump-example.log')
+    run([sys.executable, 'checks/or3_full_hessian.py'], 'checks/or3-full-hessian.log')
     run([sys.executable, 'checks/unequal_example_certificate.py'], 'checks/unequal-example-certificate.log')
     run([sys.executable, 'proofs/unequal_blocks/verify_unequal_blocks.py',
          '--output', BUILD/'checks/unequal-rerun.json'], 'checks/unequal-rerun.log')

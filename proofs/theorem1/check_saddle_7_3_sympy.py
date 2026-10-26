@@ -30,3 +30,11 @@ print("(7.4) identity:", sp.simplify((2 - L)*z - L - m*L*(2 - L)/N*(phi - b/(m*(
 Lp = sp.symbols('L', positive=True)
 z0 = Lp*n/N
 print("(2-L)z - L at phi = 0:", sp.factor(sp.simplify((2 - Lp)*z0 - Lp)))
+
+# Fail (non-zero exit) unless every identity above reduces to zero and the phi = 0 sign is negative.
+assert d1 == 0 and d3 == 0
+assert sp.simplify(sp.together(E - E_claim)) == 0 and sp.simplify(sp.together(E - E_three)) == 0
+assert sp.simplify(U - (b + h)) == 0 and sp.simplify(V - (b - h)) == 0
+assert sp.simplify((2 - L)*z - L - m*L*(2 - L)/N*(phi - b/(m*(2 - L)))) == 0
+assert sp.simplify((2 - Lp)*z0 - Lp + Lp*(1 + (m - 1)*Lp)/(2*m - 1)) == 0
+print("all (7.3) identities verified")

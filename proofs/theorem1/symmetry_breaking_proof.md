@@ -529,7 +529,12 @@ There are consequently no asymmetric local minima above threshold, and no interv
 
 ### Lemma 7.1 — A smooth descending direction below threshold, including \(\phi=0\). **Proved.**
 
-The symmetric point (1.5) satisfies both equations of Lemma 3.2, so it is stationary for every \(0\le\phi<1\). For \(\phi>0\), (6.8) already proves negative symmetry-breaking curvature below threshold. At \(\phi=0\), however, the concentrated eigenvalue has a degeneracy at equal uniquenesses; a cusp of a concentrated objective alone would not establish a descent path from the specified symmetric loading. The following direct calculation treats all cases uniformly.
+The symmetric point (1.5) is stationary for every \(0\le\phi<1\). With \(l=l_s1_p\) and \(\Psi=\psi_sI\), \(\psi_s=1-l_s^2\), equation (3.5) holds by construction. Every row of \(R\) sums to \(b+h\), so \(u=(l_s/\psi_s)1_p\) and \(\gamma=2ml_s^2/\psi_s\) give
+\[
+Ru=\frac{l_s(b+h)}{\psi_s}1_p,\qquad
+(1+\gamma)l=\frac{l_s(\psi_s+2ml_s^2)}{\psi_s}1_p=\frac{l_s(1+Nl_s^2)}{\psi_s}1_p .
+\]
+These agree because \(Nl_s^2=L(n+m\phi)=b+h-1\) by (1.5), so (3.4) holds as well. For \(\phi>0\), (6.8) already proves negative symmetry-breaking curvature below threshold. At \(\phi=0\), however, the concentrated eigenvalue has a degeneracy at equal uniquenesses; a cusp of a concentrated objective alone would not establish a descent path from the specified symmetric loading. The following direct calculation treats all cases uniformly.
 
 Let \(z=l_s^2\), \(r_s=1-z\), \(U=b+h=1+Nz\), and \(V=b-h=Nr_s-2na\). Perturb
 \[
@@ -629,6 +634,17 @@ K_4=\frac{nm(2-L)^2}{2NL^2}>0.}
 \tag{7.6}
 \]
 This is a supercritical pitchfork in the profiled coordinate. Its global character follows from (6.8), not just this expansion.
+
+*From the profile to the full discrepancy.* At \(\phi=\phi_*\) the discrepancy itself also grows quartically along the symmetry-breaking path (7.1), where \(z=l_s^2=q_*\). Every point of that path has block-uniform loadings and uniquenesses, with
+\[
+d(\epsilon)=\tfrac12\log\frac{\psi_A}{\psi_B}=-\frac{2\sqrt z}{1-z}\,\epsilon+O(\epsilon^3),
+\]
+and \(\mathcal H(d)\) is the minimum of \(F\) over the loadings and the common scale at fixed \(d\) (Lemma 6.1). At \(\phi_*\) the symmetric point is the global minimizer, so \(F(0)=\mathcal H(0)\), and (7.6) gives
+\[
+F(\epsilon)-F(0)\ \ge\ \mathcal H(d(\epsilon);\phi_*)-\mathcal H(0;\phi_*)
+=\frac{16K_4z^2}{(1-z)^4}\,\epsilon^4+O(\epsilon^6).
+\]
+Along (7.1), \(F(\epsilon)\) is real analytic and even in \(\epsilon\) (Lemma 7.1), and its \(\epsilon^2\) coefficient \(E\) vanishes at \(\phi_*\) by (7.3) and (7.4). Hence \(F(\epsilon)-F(0)=C\epsilon^4+O(\epsilon^6)\) with \(C\ge16K_4z^2/(1-z)^4>0\): at the threshold the discrepancy has zero curvature along (7.1) and grows quartically along it, as Corollary 1 of the article states. (Checked numerically at 50 digits in `checks/corollary1_quartic.py`: \(F(0)=\mathcal H(0)\), the profile bound and its coefficient are reproduced, and \(C\) exceeds the bound.)
 
 Let the asymmetric formula in (1.4) be analytically extended locally across the threshold. In (6.7), the part depending only on \(q\) is common to the symmetric and asymmetric formulas; their difference is the \(w\)-dependent part evaluated at \(w=q\) minus its value at \(q_*\). Thus both the values and first derivatives agree at the threshold. Their second derivatives with respect to \(\phi\) differ by
 \[
@@ -732,7 +748,7 @@ and
 \[
 D\Sigma D=(Dl)(Dl)^T+\Psi\in\mathcal M.
 \]
-The products \((D\Sigma D)^{-1}(DRD)\) and \(\Sigma^{-1}R\) are conjugate by \(D\), so they have the same trace and determinant. Hence the discrepancy is invariant and the theorem holds with \(|\phi|\). In the above-threshold regime the two blocks have equal-magnitude loadings of opposite signs. Below threshold, their magnitudes are unequal and their relative sign is the sign of \(\phi\).
+The products \((D\Sigma D)^{-1}(DRD)\) and \(\Sigma^{-1}R\) are conjugate by \(D\), so they have the same trace and determinant. Hence the discrepancy is invariant and the theorem holds with \(|\phi|\). The least-squares criteria of Section 11 and Online Resource 2 are invariant as well: replacing \(l\) by \(Dl\) and \(R\) by \(DRD\) multiplies each residual \(R_{ij}-l_il_j\) by \(D_{ii}D_{jj}=\pm1\), leaves each pair in its within-block or cross-block class, and preserves the bounds \(|l_i|\le1\). Theorem U and the weighted result therefore also hold with \(|\phi|\). In the above-threshold regime the two blocks have equal-magnitude loadings of opposite signs. Below threshold, their magnitudes are unequal and their relative sign is the sign of \(\phi\).
 
 ### Corollary C2 — Equal cross-loadings, with explicit normalization (Proposition 3 of the article). **Proved with the normalization stated below.**
 
