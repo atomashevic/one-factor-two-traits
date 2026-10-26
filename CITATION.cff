@@ -9,9 +9,8 @@ authors:
     given-names: "Aleksandar"
     affiliation: "Institute of Physics Belgrade, University of Belgrade, Serbia"
     orcid: "https://orcid.org/0000-0003-4863-6051"
-license:
-  - MIT
-  - CC-BY-4.0
+license: CC-BY-4.0
+repository-code: "https://github.com/atomashevic/one-factor-two-traits"
 abstract: >-
   Code, archived simulation summaries, portable evidence from the raw simulation
   output, complete proofs (Online Resources 1-3) and manuscript sources for the
@@ -23,12 +22,3 @@ keywords:
   - fit indices
   - unidimensionality
   - reproducibility
-references:
-  - type: software
-    title: "undeRfactor: What One Factor Measures When the Items Come from Two Traits"
-    version: 0.2.0
-    doi: 10.5281/zenodo.23668208
-    authors:
-      - family-names: "Tomašević"
-        given-names: "Aleksandar"
-        orcid: "https://orcid.org/0000-0003-4863-6051"
