@@ -1,7 +1,7 @@
 \section{An Information-Loss Bound for Heterogeneous Loadings}
 \label{app:ceiling}
 
-The exact ML classification assumes common loadings within each block. An upper bound remains available when this assumption is relaxed. Let a zero-mean Gaussian two-trait population of $p\ge2$ items have covariance $R=\Lambda\Phi\Lambda^\top+\Psi_0$, with positive diagonal uniqueness matrix $\Psi_0$ and positive-semidefinite trait covariance $\Phi$. Write $\mathrm{KL}_{1F}$ for the minimum Kullback--Leibler divergence from this Gaussian population to a zero-mean Gaussian distribution in the one-factor covariance model.
+The exact ML classification assumes common loadings within each block. An upper bound remains available when this assumption is relaxed. Let a zero-mean Gaussian two-trait population of $p\ge2$ items have covariance $R=\Lambda\Phi\Lambda^\top+\Psi_0$, with positive diagonal uniqueness matrix $\Psi_0$ and positive-semidefinite trait covariance $\Phi$. Write $\mathrm{KL}_{1F}$ for the infimum of the Kullback--Leibler divergence from this Gaussian population to a zero-mean Gaussian distribution in the one-factor covariance model.
 
 \begin{proposition}[An upper bound for arbitrary loadings]
 \label{prop:ceiling}
@@ -18,7 +18,7 @@ Equality holds in the first inequality for the exchangeable population when $|\v
 \end{proposition}
 
 \begin{proof}
-Put $A=\Psi_0^{-1/2}\Lambda\Phi^{1/2}$. Then $\Psi_0^{-1/2}R\Psi_0^{-1/2}=I+AA^\top$, and $AA^\top$ has the same nonzero eigenvalues as $A^\top A=\Phi^{1/2}\Lambda^\top\Psi_0^{-1}\Lambda\Phi^{1/2}$. With orthonormal eigenvectors $u_1,u_2$ of $AA^\top$ for $\kappa_1,\kappa_2$, whitening by $\Psi_0^{-1/2}$ gives the population covariance
+Put $A=\Psi_0^{-1/2}\Lambda\Phi^{1/2}$. Then $\Psi_0^{-1/2}R\Psi_0^{-1/2}=I+AA^\top$, and $AA^\top$ has the same nonzero eigenvalues as $A^\top A=\Phi^{1/2}\Lambda^\top\Psi_0^{-1}\Lambda\Phi^{1/2}$. With orthonormal eigenvectors $u_1,u_2$ of $AA^\top$ for $\kappa_1,\kappa_2$ (any choice, when $\kappa_1=\kappa_2$ or $\kappa_2=0$ leaves them undetermined), whitening by $\Psi_0^{-1/2}$ gives the population covariance
 \[
 \tilde R=I+\kappa_1u_1u_1^\top+\kappa_2u_2u_2^\top.
 \]

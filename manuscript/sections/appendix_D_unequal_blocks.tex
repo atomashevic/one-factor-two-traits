@@ -1,50 +1,139 @@
 \section{Unequal-Block Solutions and Sensitivity}
 \label{app:unequal}
 
-This appendix gives the block reduction used in Lemma~\ref{lem:uniformity}, the exact scalar equation for unequal-block solutions, and the local sensitivity result stated in the text. The complete classification proofs and algebraic derivations are given in Online Resource~3. The accompanying symbolic checks verify identities in those derivations; the numerical examples have a separate status.
+This appendix proves Lemma~\ref{lem:uniformity}, the zero-correlation result of Section~\ref{sec:unequal}, the scalar classification of unequal-block solutions, Proposition~\ref{prop:unequal} and Theorem~\ref{thm:cusp}. It then gives the equations for mirrored designs, the statements for unequal block sizes, and the ordering of shares in the exchangeable design. Lemmas~\ref{lem:A-existence}--\ref{lem:A-interior} and Proposition~\ref{prop:boundary} are used as stated for a general correlation matrix; where a step from a proof in Appendix~\ref{app:ml} is needed, it is restated here. Each part ends by naming the routine algebra, endpoint cases and computer-assisted steps left to Online Resource~3. The symbolic checks cited there verify identities; the numerical examples have a separate status and are labeled as such.
+
+Throughout, $L_A=\lambda_A^2$, $L_B=\lambda_B^2$, $c=\lambda_A\lambda_B\varphi$, $a_A=1-L_A$, $a_B=1-L_B$, $b_A=1+(m_A-1)L_A$, $b_B=1+(m_B-1)L_B$, $h=c\sqrt{m_Am_B}$ and $\nu_{AB}=m_A+m_B-1$. The population matrix $R$ has the within-block contrasts as eigenvectors, with eigenvalues $a_A$ and $a_B$, and acts on the two normalized block-mean vectors as the $2\times2$ matrix with diagonal entries $b_A$, $b_B$ and off-diagonal entry $h$. Since
+\[
+b_Ab_B-h^2=a_Aa_B+a_Am_BL_B+a_Bm_AL_A+m_Am_BL_AL_B(1-\varphi^2)>0,
+\]
+$\det R=a_A^{m_A-1}a_B^{m_B-1}(b_Ab_B-h^2)>0$ and $R$ is positive definite for $0\le\varphi\le1$.
+
+For $\Psi\succ0$ write $B=\Psi^{-1/2}R\Psi^{-1/2}$ for the whitened population matrix and $v=\Psi^{-1/2}l$. The rank-one inverse and determinant identities give
+\[
+F=\tr B-\log\det B-p-\frac{v^{\top}Bv}{1+v^{\top}v}+\log(1+v^{\top}v),
+\]
+the expression from which Lemma~\ref{lem:A-concentration} is derived. We call it the whitened form of the discrepancy.
 
 \subsection{Proof of Lemma~\ref{lem:uniformity} and Scope of the Reduction}
 \label{app:unequal-reduction}
 
 \begin{proof}[Proof of Lemma~\ref{lem:uniformity}]
-Write $L_A=\lambda_A^2$, $L_B=\lambda_B^2$, and $c=\lambda_A\lambda_B\varphi$. Existence, concentration over the loading vector, the interior score equations, and Perron positivity follow as in Appendix~\ref{app:ml}. None of those arguments requires the two blocks to have equal sizes or equal population loadings.
+For $0<\varphi<1$ the matrix $R$ is positive definite with strictly positive off-diagonal entries. Lemmas~\ref{lem:A-existence}--\ref{lem:A-interior} therefore apply: a minimum exists, and every local minimum with positive uniquenesses satisfies the score equations~\eqref{eq:ml-scores} and has loadings of one sign in $(0,1)$ after a common sign change. None of those lemmas requires equal block sizes or equal population loadings.
 
-Boundary minima are excluded by Proposition~\ref{prop:boundary}. If a uniqueness is zero for item $j$ in A, the residual covariances after regression on that item are $L_A(1-L_A)$ within the remaining part of A, $L_B(1-L_A\varphi^2)$ within B, and $c(1-L_A)$ across blocks. All available residual covariances are positive, as are the weights in Proposition~\ref{prop:boundary}. Since B contains at least two items, the inward derivative is strictly negative. The same argument applies when the zero uniqueness is in B. Every local minimum is therefore interior, and its loadings can be chosen strictly positive.
+Boundary minima are excluded by Proposition~\ref{prop:boundary}. A positive-definite one-factor covariance has at most one zero uniqueness: if two uniquenesses vanished, the principal submatrix of $\Sigma$ on those two items would be that of the rank-one matrix $ll^{\top}$ and would be singular. If the uniqueness of item $j$ in A is zero, the residual covariances $R_{ik}-R_{ij}R_{kj}$ after regression on that item are $L_A(1-L_A)$ within the remaining part of A, $L_B(1-L_A\varphi^2)$ within B, and $c(1-L_A)$ across blocks. All of them are positive, as are the weights in Proposition~\ref{prop:boundary}. Since B contains at least two items, the sum in the proposition has at least one term and the inward derivative is strictly negative. The same argument applies when the zero uniqueness is in B. Every local minimum is therefore interior, and its loadings can be chosen strictly positive.
 
-For an item in A, the interior score equation states that
+Let $u=\Psi^{-1}l$ and $\gamma=l^{\top}u$. For an item $i$ in A, row $i$ of equation~\eqref{eq:ml-scores} is
 \[
-(1+\gamma)l_i-(1-L_A)\frac{l_i}{1-l_i^2},
-\qquad \gamma=l^{\top}\Psi^{-1}l,
+(1+\gamma)l_i-(1-L_A)\frac{l_i}{1-l_i^2}=C_A,
+\qquad
+C_A=L_A\sum_{k\in A}u_k+c\sum_{k\in B}u_k,
 \]
-takes the same value for every item in the block. This expression is strictly concave in $l_i$ on $(0,1)$, so there are at most two loading values in A. If items $i$ and $j$ have distinct loadings $x<y$, equating the expression at $x$ and $y$ gives
+with the same $C_A$ for every item in the block. The second derivative of the left side in $l_i=t$ is $-2a_At(3+t^2)/(1-t^2)^3<0$ on $(0,1)$. The left side is therefore strictly concave there and takes the value $C_A$ at most twice, so there are at most two loading values in A. Let items $i$ and $j$ have distinct loadings $x<y$. Subtracting their two equations and dividing by $y-x$ gives $(1+\gamma)(1-x^2)(1-y^2)=a_A(1+xy)$, because $y/(1-y^2)-x/(1-x^2)=(y-x)(1+xy)/\{(1-x^2)(1-y^2)\}$. Since $1+\gamma=(1-x^2y^2)/\{(1-x^2)(1-y^2)\}+\gamma_{\mathrm{rest}}$, elimination of $1+\gamma$ gives
 \[
 \gamma_{\mathrm{rest}}(1-x^2)(1-y^2)
 =(1+xy)(xy-L_A),
 \]
-where $\gamma_{\mathrm{rest}}=\sum_{k\ne i,j}l_k^2/\psi_k>0$ is the contribution of the other items to $\gamma$. Hence $xy>L_A$.
+where $\gamma_{\mathrm{rest}}=\sum_{k\ne i,j}l_k^2/\psi_k>0$ is the contribution of the other items to $\gamma$. Hence $xy>L_A$, and in particular $y>\lambda_A$. The same statements hold in B with $L_B$.
 
-Suppose A has these two values, and let $z$ be the smallest loading in B. Every within-block residual in the score row for $y$ is negative. Some cross-block residual must therefore be positive, so $yz<c$. Since $y^2>xy>L_A$, we have $y>\lambda_A$, and therefore $z<c/y<\lambda_B\varphi<\lambda_B$. Every cross-block residual in the row for $z$ is then positive. To satisfy that row equation, B must contain a larger loading $w$; the same product identity gives $zw>L_B$. Applying the row equation to $w$ gives $wx<c$. Multiplication yields
+Suppose A has these two values, and let $z$ be the smallest loading in B. In the row equation~\eqref{eq:ml-row-score} for an item with loading $y$, the within-block residuals $L_A-xy$ and $L_A-y^2$ are negative and the weights $u_k$ are positive. Some cross-block residual in that row is therefore positive, so $yz<c$ and $z<c/y<\lambda_B\varphi<\lambda_B$. In the row for an item of B with loading $z$, the cross-block residuals are $c-zx$ and $c-zy$; they are positive because $zx<zy<c$. Some within-block residual $L_B-zl_k$ in that row is therefore negative. It cannot belong to another item with loading $z$, because $z<\lambda_B$ gives $L_B-z^2>0$. Hence B has a second loading $w>z$, and the product identity in B gives $zw>L_B$. In the row for an item with loading $w$, the within-block residuals are negative, so some cross-block residual is positive and $wx<c$. Multiplication yields
 \[
 (xy)(zw)>L_AL_B,
 \qquad
 (yz)(wx)<c^2=L_AL_B\varphi^2<L_AL_B.
 \]
-The two products on the left are identical, which is a contradiction. Thus both blocks have constant loadings. Diagonal reproduction gives the stated uniquenesses.
+The two products on the left are identical, which is a contradiction. Block A is therefore uniform, and by the same argument so is block B. Equation~\eqref{eq:ml-scores} gives the stated uniquenesses.
 \end{proof}
 
-\textit{Scope.} The same proof applies to items that are exchangeable within each block, with positive within-block correlations $r_A,r_B<1$ and positive cross-block correlation $c$, whenever $c^2\le r_Ar_B$. For example, suppose items in a block share a common part, $X_i=U_A+e_i$ in A and $X_j=U_B+e_j$ in B, with $\Var(U_A)+\Var(e_i)=1$ and $\Var(U_B)+\Var(e_j)=1$, positive residual variances, and mutually uncorrelated residuals that are also uncorrelated with the common parts. Then $r_A=\Var(U_A)$, $r_B=\Var(U_B)$, and $c=\Cov(U_A,U_B)$ satisfy the required inequality by Cauchy--Schwarz. Equal cross-loading constructions within each block are included. Negative $c$ is handled by reflecting one block. At $c=0$, the endpoint comparison of Online Resource~3, Section~2.1, replaces the positive-loading argument.
+\textit{Scope.} The same proof applies to items that are exchangeable within each block, with positive within-block correlations $r_A,r_B<1$ and positive cross-block correlation $c$, whenever $c^2\le r_Ar_B$; replace $L_A$ and $L_B$ by $r_A$ and $r_B$. Equality is allowed. The boundary argument needs only that the three residual covariances $r_A(1-r_A)$, $r_B-c^2\ge r_B(1-r_A)$ and $c(1-r_A)$ are positive. In the last step, $y>\sqrt{r_A}$ gives $z<c/y<\sqrt{r_B}$, and the contradiction remains strict because $(xy)(zw)>r_Ar_B$ while $(yz)(wx)<c^2\le r_Ar_B$. For example, suppose items in a block share a common part, $X_i=U_A+e_i$ in A and $X_j=U_B+e_j$ in B, with $\Var(U_A)+\Var(e_i)=1$ and $\Var(U_B)+\Var(e_j)=1$, positive residual variances, and mutually uncorrelated residuals that are also uncorrelated with the common parts. Then $r_A=\Var(U_A)$, $r_B=\Var(U_B)$, and $c=\Cov(U_A,U_B)$ satisfy the required inequality by Cauchy--Schwarz. Equal cross-loading constructions within each block are included. Negative $c$ is handled by reflecting one block: with $D=\diag(I_{m_A},-I_{m_B})$, the map $\Sigma\mapsto D\Sigma D$ sends the one-factor covariance with loadings $l$ to the one with loadings $Dl$ and the same uniquenesses, and the discrepancy of $D\Sigma D$ from $DRD$ equals that of $\Sigma$ from $R$. Local and global minima therefore correspond. With $\lambda_A=\sqrt{r_A}$, $\lambda_B=\sqrt{r_B}$ and $\varphi=c/\sqrt{r_Ar_B}$, this class is the class of Lemma~\ref{lem:uniformity} together with the case $\varphi=1$ and, through the reflection, negative cross-block correlation; no wider class is asserted. At $c=0$ the reduction is not asserted: a retained two-item block has the nonuniform family of representations $(t,L/t)$, and local minima that are not global are not covered. Lemma~\ref{lem:D-endpoint} gives the global minimizing covariance at $c=0$ when the two total correlations differ.
 
-The inequality is essential. With two items per block, within-block correlations .1 and cross-block correlations .5 give a positive-definite correlation matrix with exchangeable items in each block, but a strict local minimum with a zero uniqueness exists. Online Resource~3 gives an exact boundary derivative and covariance comparison for this counterexample.
+The inequality is essential. With two items per block, within-block correlations $1/10$ and cross-block correlations $1/2$, the correlation matrix is positive definite, with eigenvalues $9/10$, $9/10$, $21/10$ and $1/10$, and its items are exchangeable within each block, but $c^2=1/4>1/100=r_Ar_B$. The boundary covariance $\Sigma_\star$ of Proposition~\ref{prop:boundary} for the first item has weights $10/99$, $2/3$ and $2/3$ and residual covariances $9/20$ for the two cross-block pairs and $-3/20$ for the pair in the other block, so its inward derivative is
+\[
+-\Bigl\{4\cdot\frac{10}{99}\cdot\frac23\cdot\frac9{20}
++2\Bigl(\frac23\Bigr)^2\Bigl(-\frac3{20}\Bigr)\Bigr\}=\frac2{165}>0.
+\]
+Because $\Sigma_\star$ is the unique minimizer on its boundary face and the derivative in the zero uniqueness is positive and continuous near it, $\Sigma_\star$ is a strict local minimum with a zero uniqueness. Online Resource~3, Section~1.7, shows in addition that it is not the global minimum.
 
 \textit{Numerical illustration.} In the verification run reported in Online Resource~3, full-parameter optimization from 10 random starts in each of 52 designs returned constant fitted loadings within blocks. The designs, 12 fixed edge cases and 40 random designs, had block sizes from 2 to 6, population loadings from .08 to .98, and $\varphi$ from .001 to .999, under the assumptions of Lemma~\ref{lem:uniformity}. The largest within-block spread was $2.7\times10^{-8}$. That search parametrized the uniquenesses on the log scale and so did not reach the zero-uniqueness boundary, which is excluded analytically above. This computation illustrates the reduction and is not used to prove it.
+
+\textit{Deferred to Online Resource~3.} The Cauchy--Schwarz step for cross-loading common parts and the comparison showing that the counterexample is not global (Section~1.7); the 52-design run, which is an illustration only (Section~5).
+
+\subsubsection*{The zero-correlation endpoint}
+
+\begin{applemma}[Zero trait correlation]
+\label{lem:D-endpoint}
+Let $\varphi=0$ and $m_A,m_B\ge2$. Then $F_{\min}(0)=2\min\{\TC(R_A),\TC(R_B)\}$. If $\TC(R_A)>\TC(R_B)$, the minimizing covariance is unique and equals $\diag(R_A,I_{m_B})$; if $\TC(R_B)>\TC(R_A)$, it is $\diag(I_{m_A},R_B)$. If the two total correlations differ, every global minimizing covariance for $\varphi>0$ converges to this covariance as $\varphi\downarrow0$. In particular, when block B is retained, the positive block-uniform loadings of Lemma~\ref{lem:uniformity} satisfy $\alpha\to0$ and $\beta\to\lambda_B$.
+\end{applemma}
+
+\begin{proof}
+At $\varphi=0$, $R=\diag(R_A,R_B)$, and $2\TC(R_A)=-\log\det R_A>0$ because $R_A$ is a correlation matrix that is not diagonal; likewise for B. Let $\Psi\succ0$. The whitened matrix $B=\Psi^{-1/2}R\Psi^{-1/2}$ is block diagonal. Suppose its largest eigenvalue exceeds one and choose a leading eigenvector supported in one block, say A; this is possible also when the largest eigenvalue is tied between the blocks. By Lemma~\ref{lem:A-concentration}, the minimum over the loadings is the sum of $g$ over the nonleading eigenvalues. The eigenvalues of the A block contribute a nonnegative amount, and those of the B block contribute
+\[
+\sum_{i\in B}\Bigl(\frac1{\psi_i}+\log\psi_i-1\Bigr)-\log\det R_B
+=\sum_{i\in B}g(1/\psi_i)+2\TC(R_B)\ge2\TC(R_B),
+\]
+with equality only if $\Psi_B=I$. With a leading eigenvector chosen in B, the same argument gives the bound $2\TC(R_A)$. If no eigenvalue exceeds one, the minimum over the loadings is the diagonal-model discrepancy, which is at least $2\TC(R_A)+2\TC(R_B)$. Every fit with positive uniquenesses therefore has discrepancy at least $2\min\{\TC(R_A),\TC(R_B)\}$. The bound extends to a feasible point with a zero uniqueness by applying it to $\Psi+\delta I$ and letting $\delta\downarrow0$, since the discrepancy is continuous on the positive-definite cone. The covariance $\diag(R_A,I_{m_B})$ is a one-factor covariance with discrepancy $-\log\det R_B=2\TC(R_B)$, and $\diag(I_{m_A},R_B)$ has discrepancy $2\TC(R_A)$. This proves the value.
+
+Let $\TC(R_A)>\TC(R_B)$, and consider a global minimizer with $\Psi\succ0$. Its loading vector minimizes the discrepancy at its $\Psi$. If no eigenvalue of $B$ exceeded one, the discrepancy would be at least $2\TC(R_A)+2\TC(R_B)$, which exceeds the minimum. If the largest eigenvalue of $B$ were attained in block B, also in a tie, the bound for that choice would give a discrepancy of at least $2\TC(R_A)$, which also exceeds the minimum. The leading eigenspace therefore lies in block A, so the loadings vanish on B. Equality in the display forces $\Psi_B=I$, and a zero contribution from block A forces every nonleading eigenvalue of its whitened matrix to equal one, so block A is fitted exactly. The covariance is $\diag(R_A,I_{m_B})$. A global minimizer with one zero uniqueness, say for item $j$, has the covariance $\Sigma_\star$ of Proposition~\ref{prop:boundary}. If the block of $j$ has at least three items, two other items of that block have positive weights and the positive residual covariance $L(1-L)$ of that block, the cross-block weights vanish, and the inward derivative is strictly negative, so $\Sigma_\star$ is not a minimum. If the block of $j$ has two items, $\Sigma_\star$ fits that block exactly and is diagonal on the other, and it is the minimizer only if it is the covariance already found.
+
+For the limit, let $\varphi_k\downarrow0$ with global minimizing covariances $\Sigma_k$. The population matrices $R(\varphi_k)$ converge to $R(0)\succ0$, and the feasible covariance $\diag(R_A,I_{m_B})$ gives a bounded discrepancy for all $k$. The discrepancy is the sum of $g$ over the eigenvalues of $R^{1/2}\Sigma^{-1}R^{1/2}$, and $g$ tends to infinity at both ends of $(0,\infty)$; a bounded discrepancy therefore confines these eigenvalues, and with them the $\Sigma_k$, to a compact subset of the positive-definite cone. The one-factor model is closed in that cone, because $l_i^2\le\Sigma_{ii}$ and $0\le\psi_i\le\Sigma_{ii}$ bound the parameters along a convergent sequence of feasible covariances. Let $\Sigma_0$ be the limit of a convergent subsequence. For every feasible $\Sigma$, the discrepancy of $\Sigma_k$ from $R(\varphi_k)$ is at most that of $\Sigma$; passing to the limit, $\Sigma_0$ minimizes the discrepancy from $R(0)$. That minimizer is unique, so the whole sequence converges to it. The within-block entries of the fitted covariance are $\alpha^2$ and $\beta^2$, which gives the limits of the loadings.
+\end{proof}
+
+When the two total correlations are equal, both covariances are minimizers and this argument does not determine which is approached; the main text leaves that case open.
+
+\begin{applemma}[Curvature at the endpoint]
+\label{lem:D-curvature}
+Let $\varphi=0$ and consider the fit that retains block A: $l_A=\lambda_A1$, $\Psi_A=a_AI$, $l_B=0$, $\Psi_B=I$. Put $\kappa_A=m_AL_A/a_A$. If the loadings of block B are changed to a vector $x$ and all other parameters are held fixed, the discrepancy changes by
+\[
+x^{\top}\Bigl(I-\frac{R_B}{1+\kappa_A}\Bigr)x+O(\|x\|^4).
+\]
+The quadratic form is positive definite if $1+\kappa_A>b_B$, that is, if $m_AL_A/(1-L_A)>(m_B-1)L_B$, and indefinite if the inequality is reversed.
+\end{applemma}
+
+\begin{proof}
+Use the whitened form of the discrepancy. At the stated fit, $v^{\top}v=\kappa_A$ and $v^{\top}Bv=\kappa_A(1+\kappa_A)$, because $v$ is an eigenvector of the whitened block A with eigenvalue $1+\kappa_A$. The change adds $e=x^{\top}x$ to $v^{\top}v$ and $q=x^{\top}R_Bx$ to $v^{\top}Bv$ and leaves $\tr B-\log\det B$ unchanged. The discrepancy therefore changes by
+\[
+\frac{\kappa_Ae-q}{1+\kappa_A+e}+\log\Bigl(1+\frac e{1+\kappa_A}\Bigr)
+=e-\frac q{1+\kappa_A}+O(\|x\|^4).
+\]
+The largest eigenvalue of $R_B$ is $b_B$.
+\end{proof}
+
+For equal block sizes the condition of Lemma~\ref{lem:D-curvature} is condition~\eqref{eq:weaker-minimum-condition}.
+
+\textit{Deferred to Online Resource~3, Section~2.1.} The case $\TC(R_A)=\TC(R_B)$, which Lemma~\ref{lem:D-endpoint} does not cover: the statement of Section~\ref{sec:unequal} that the two covariances $\diag(R_A,I_{m_B})$ and $\diag(I_{m_A},R_B)$ are then the only minimizers, and the two-item parameter family of a retained block; and the proof that, for $m_A\ge3$, the retained-block fit of Lemma~\ref{lem:D-curvature} is a strict local minimum in all directions when $1+\kappa_A>b_B$.
 
 \subsection{Scalar Classification for Arbitrary Block Sizes}
 \label{app:unequal-scalar}
 
-To make the reduction explicit, let $a_A=1-L_A$, $a_B=1-L_B$, $b_A=1+(m_A-1)L_A$, $b_B=1+(m_B-1)L_B$, and $\nu_{AB}=m_A+m_B-1$. Define
+Let $0<\varphi\le1$, so that $h>0$ and $b_Ab_B-h^2>0$. Lemmas~\ref{lem:D-scale} and~\ref{lem:D-roots} are stated for this range, because the proof of Proposition~\ref{prop:unequal} uses them at $\varphi=1$; Lemma~\ref{lem:D-hessian} is stated for $0<\varphi<1$ only. For block-uniform uniquenesses write $\Psi=\diag(\psi_AI_{m_A},\psi_BI_{m_B})$ with $\psi_A=e^{s+d}$ and $\psi_B=e^{s-d}$. Put $k_A=(m_A-1)a_A$, $k_B=(m_B-1)a_B$, and
+\[
+T_\pm(d)=\frac{b_Ae^{-d}+b_Be^{d}\pm\sqrt{(b_Ae^{-d}-b_Be^{d})^2+4h^2}}2,
+\qquad
+Q_{AB}(d)=k_Ae^{-d}+k_Be^{d}+T_-(d).
+\]
+
+\begin{applemma}[Scale profile for unequal blocks]
+\label{lem:D-scale}
+Let $0<\varphi\le1$ and fix $d$. Over all $s$ and all loading vectors, the discrepancy at $\Psi=\diag(e^{s+d}I_{m_A},e^{s-d}I_{m_B})$ has the minimum
+\[
+\mathcal G(d)=\nu_{AB}\log\frac{Q_{AB}(d)}{\nu_{AB}}+(m_A-m_B)d-\log T_-(d)
+-(m_A-1)\log a_A-(m_B-1)\log a_B .
+\]
+It is attained only at $e^s=Q_{AB}(d)/\nu_{AB}$ with the loading vector of Lemma~\ref{lem:A-concentration}. There the leading eigenvalue of the whitened matrix is simple and exceeds one, and the loadings are block uniform and, after a common sign change, positive.
+\end{applemma}
+
+\begin{proof}
+The eigenvalues of the whitened matrix are $e^{-s}$ times $a_Ae^{-d}$ ($m_A-1$ times), $a_Be^{d}$ ($m_B-1$ times), $T_+(d)$ and $T_-(d)$, where $T_\pm$ are the eigenvalues of the $2\times2$ matrix with diagonal entries $b_Ae^{-d}$, $b_Be^{d}$ and off-diagonal entry $h$. Because $h>0$, $T_+$ is simple and exceeds both diagonal entries, which exceed the contrast values $a_Ae^{-d}$ and $a_Be^{d}$; and $T_+T_-=b_Ab_B-h^2>0$. The leading eigenvalue is therefore $e^{-s}T_+$, with an eigenvector that is constant and positive within each block, and the other $\nu_{AB}$ eigenvalues sum to $e^{-s}Q_{AB}$ with $Q_{AB}<\nu_{AB}T_+$. Where $e^{-s}T_+>1$, Lemma~\ref{lem:A-concentration} gives the concentrated discrepancy
+\[
+e^{-s}Q_{AB}+\nu_{AB}s+(m_A-m_B)d-\log T_--(m_A-1)\log a_A-(m_B-1)\log a_B-\nu_{AB},
+\]
+which is strictly convex in $s$ with minimum $\mathcal G(d)$ at $e^s=Q_{AB}/\nu_{AB}$; this scale satisfies $e^{-s}T_+=\nu_{AB}T_+/Q_{AB}>1$. Where $e^{-s}T_+\le1$, the concentrated discrepancy is that of the diagonal model, with derivative $p-e^{-s}(m_Ae^{-d}+m_Be^{d})>0$ in $s$, because the trace $m_Ae^{-d}+m_Be^{d}$ is below $pT_+$. The two expressions agree at $e^{-s}T_+=1$, where the leading eigenvalue contributes $g(1)=0$. That scale is larger than the optimal one, so the first expression already exceeds $\mathcal G(d)$ there, and the diagonal-model expression increases with $s$ beyond it. The discrepancy therefore exceeds $\mathcal G(d)$ throughout that region.
+\end{proof}
+
+To make the profile algebraic, define
 \[
 \begin{gathered}
-k_A=(m_A-1)a_A,\quad k_B=(m_B-1)a_B,\quad c_A=m_Ac,\quad c_B=m_Bc,\\
+c_A=m_Ac,\quad c_B=m_Bc,\\
 e_0=m_Ab_B+m_Bb_A-b_Ab_B-c_Ac_B.
 \end{gathered}
 \]
@@ -70,14 +159,7 @@ Its stationary equation is the quartic
 P(v)=v\{v^2V(\nu_{AB}V-H)-U(\nu_{AB}U-H)\}=0.
 \label{eq:unequal-quartic}
 \end{equation}
-Although the displayed factors contain $1/v$, their combination is a polynomial. Every positive root reconstructs an admissible stationary point through
-\[
-\psi_A=\frac{H}{\nu_{AB}V},\qquad \psi_B=\frac{H}{\nu_{AB}U},
-\qquad \alpha=\sqrt{1-\psi_A},\qquad \beta=\sqrt{1-\psi_B}.
-\]
-Both uniquenesses lie strictly between zero and one. Conversely, every positive block-uniform stationary point gives a positive root.
-
-For completeness, put $J=\nu_{AB}b_A-e_0$, $K=\nu_{AB}b_B-e_0$, $f=\nu_{AB}-k_B$, and $g=\nu_{AB}-k_A$. The coefficients in $P(v)=\sum_{j=0}^4P_jv^j$ are
+Although the displayed factors contain $1/v$, their combination is a polynomial. Put $J=\nu_{AB}b_A-e_0$, $K=\nu_{AB}b_B-e_0$, $f=\nu_{AB}-k_B$, and $g=\nu_{AB}-k_A$. The coefficients in $P(v)=\sum_{j=0}^4P_jv^j$ are
 \begin{equation}
 \begin{aligned}
 P_4&=-b_Bc_Bk_B,&
@@ -90,11 +172,89 @@ P_0&=b_Ac_Ak_A.&&
 \end{equation}
 In particular, $P_4<0<P_0$. With $\bar V=vV$ and $\bar H=vH$,
 \[
-\mathcal G'(v)=-\frac{cm_Am_BP(v)}{vU\bar V\bar H},
+\mathcal G'(v)=-\frac{cm_Am_BP(v)}{vU\bar V\bar H}.
 \]
-whose denominator is positive for $v>0$. The quartic has at least one negative root, so there are at most three positive roots counted with multiplicity. Away from repeated roots, there is either one positive root, which is a minimum, or three, which are a minimum, a saddle, and a minimum in increasing order. At every positive root, the Hessian of the full discrepancy is positive definite in the within-block contrast directions, which change loadings and uniquenesses within one block while keeping their block sums fixed. The classification by the scalar profile therefore also classifies these points in the unrestricted parameter space. The global solution is obtained by comparing \eqref{eq:unequal-profile} at its one or two minimum roots. When two minima have equal profile values, both are global and the minimizing covariance is not unique. Such equal-value points occur for some unequal-size designs, as in the example in Section~\ref{sec:unequal}, and the global solution changes discontinuously there. For equal block sizes with unequal loadings, Proposition~\ref{prop:unequal} excludes them; with equal loadings, Theorem~\ref{thm:ml} gives the tied pair of block-reflected minima for $0<\varphi<\varphi^*$.
+The coefficients and this derivative identity are verified exactly with computer algebra (Online Resource~3, Section~2.3).
 
-A double positive root has a cubic leading term in the local profile and is not a local minimum. At a nondegenerate fold it coexists with a separate simple minimum. A triple positive root is the only positive root and has a positive quartic leading term, giving a strict global minimum with one zero Hessian eigenvalue. The exchangeable threshold is such a triple-root case. A fold as $\varphi$ varies requires
+\begin{applemma}[Stationary points and the quartic]
+\label{lem:D-roots}
+Let $0<\varphi\le1$.
+\begin{enumerate}
+\item[(i)] The map $d(v)=\tfrac12\log(U/V)$ is strictly increasing from $(0,\infty)$ onto the real line, and the profile~\eqref{eq:unequal-profile} equals $\mathcal G(d(v))$ of Lemma~\ref{lem:D-scale}. At $d=d(v)$ the optimal scale gives
+\[
+\psi_A=\frac{H}{\nu_{AB}V},\qquad \psi_B=\frac{H}{\nu_{AB}U},
+\qquad \tau=\frac{\nu_{AB}UV}{H}>1,
+\]
+where $\tau$ is the leading whitened eigenvalue, and $H>0$.
+\item[(ii)] The stationary points with positive uniquenesses and positive block-uniform loadings correspond one to one to the positive roots of $P$. At the point given by a root $v$, the uniquenesses are those of (i), $\alpha=\sqrt{1-\psi_A}$ and $\beta=\sqrt{1-\psi_B}$ with $0<\psi_A,\psi_B<1$, the coordinate $v$ equals $(\beta/\psi_B)/(\alpha/\psi_A)$, and the discrepancy equals $\mathcal G(v)$.
+\item[(iii)] $P$ has at least one negative root and at least one and at most three positive roots, counted with multiplicity. If the positive roots are simple, there is either one, a minimum of $\mathcal G$, or three, which in increasing order are a minimum, a maximum and a minimum of $\mathcal G$.
+\end{enumerate}
+\end{applemma}
+
+\begin{proof}
+(i) Since $c_A,c_B>0$, $U$ increases and $V$ decreases in $v$, with $U/V\to0$ as $v\downarrow0$ and $U/V\to\infty$ as $v\to\infty$. Take uniquenesses $\psi_A=tU$ and $\psi_B=tV$ with $t>0$, so that $d=d(v)$ and $e^s=t\sqrt{UV}$. The block-mean matrix of the whitened population has diagonal entries $b_A/(tU)$, $b_B/(tV)$ and off-diagonal entry $h/(t\sqrt{UV})$. Because $(U-b_A)(V-b_B)=c_Ac_B=h^2$, its eigenvalues are $1/t$ and $(b_Ab_B-h^2)/(tUV)$, and the first is the larger because $UV>b_Ab_B$. Hence $T_+(d)=\sqrt{UV}$ and $T_-(d)=(b_Ab_B-h^2)/\sqrt{UV}$, and
+\[
+Q_{AB}(d)=\frac{k_AV+k_BU+b_Ab_B-h^2}{\sqrt{UV}}=\frac H{\sqrt{UV}},
+\]
+again by $(U-b_A)(V-b_B)=h^2$ and $k_A=m_A-b_A$, $k_B=m_B-b_B$. In particular $H>0$. Substituting $T_-$ and $Q_{AB}$ into $\mathcal G(d)$ and collecting the coefficients of $\log U$ and $\log V$ gives~\eqref{eq:unequal-profile}. The optimal scale $e^s=Q_{AB}/\nu_{AB}$ of Lemma~\ref{lem:D-scale} gives the displayed uniquenesses and $\tau=e^{-s}T_+=\nu_{AB}UV/H$, which exceeds one by that lemma.
+
+(ii) Let $(l,\Psi)$ be a stationary point with positive uniquenesses and positive block-uniform loadings, and let $(s,d)$ be the coordinates of its uniquenesses. By Lemma~\ref{lem:A-scores}, $v_0=\Psi^{-1/2}l$ is a positive eigenvector of the whitened matrix with eigenvalue $1+\gamma>1$ and $v_0^{\top}v_0=\gamma$. The whitened matrix is symmetric with positive entries, so it has a positive leading eigenvector (Perron's theorem), and eigenvectors of different eigenvalues are orthogonal. Two positive vectors are not orthogonal, so $v_0$ belongs to the leading eigenvalue, and $l$ is the concentrated loading of Lemma~\ref{lem:A-concentration}. The concentrated loading is a smooth function of the uniquenesses near this point, because the leading eigenvalue is simple, and the derivatives of the discrepancy with respect to the loadings vanish along it. The derivatives of the concentrated discrepancy with respect to $s$ and $d$ are therefore combinations of the derivatives $\partial F/\partial\psi_i$, which vanish. By the convexity in $s$ established in Lemma~\ref{lem:D-scale}, $e^s=Q_{AB}(d)/\nu_{AB}$, and then $\mathcal G'(d)=0$. With $v$ defined by $d=d(v)$, part (i) and the derivative identity give $P(v)=0$.
+
+Conversely, let $P(v)=0$ with $v>0$, put $d=d(v)$, take the scale of part (i) and the concentrated loading, which is positive and block uniform by Lemma~\ref{lem:D-scale}. The derivatives with respect to the loadings vanish. The concentrated discrepancy is stationary in $s$ and, because $\mathcal G'(d(v))=0$, in $d$. These two derivatives are the sums of $\psi_i\,\partial F/\partial\psi_i$ over the two blocks with signs $(+,+)$ and $(+,-)$. Permuting the items within a block leaves $R$ and this point unchanged, so $\partial F/\partial\psi_i$ is constant within each block, and both constants vanish. The point is stationary. Lemma~\ref{lem:A-scores} then gives $\psi_A=1-\alpha^2$ and $\psi_B=1-\beta^2$, so both uniquenesses lie strictly between zero and one. Its discrepancy is $\mathcal G(d(v))=\mathcal G(v)$. Finally, with $u_A=\alpha/\psi_A$ and $u_B=\beta/\psi_B$, the row of $Ru=\tau l$ for an item of A is $b_Au_A+c_Bu_B=\tau\psi_Au_A$; since $\tau\psi_A=U=b_A+c_Bv$, this gives $v=u_B/u_A$. Distinct roots give distinct values of $d$ and hence distinct points.
+
+(iii) $P(0)=P_0>0$ and $P(v)\to-\infty$ as $v\to\pm\infty$, so $P$ has a negative root and a positive root, and at most three positive roots. By the derivative identity, $\mathcal G'(v)$ is negative near zero and positive for large $v$ and changes sign at each simple positive root.
+\end{proof}
+
+\begin{applemma}[Hessian at a positive root]
+\label{lem:D-hessian}
+Let $0<\varphi<1$, and consider the stationary point given by a positive root $v$ of $P$. Then
+\[
+\alpha\beta>c,\qquad \alpha^2<L_A,\qquad \beta^2<L_B .
+\]
+The Hessian of the discrepancy in the loadings and uniquenesses is positive definite on the within-block contrast directions, which change loadings and uniquenesses within one block while keeping their block sums fixed. On the four block-uniform directions it has three positive eigenvalues and a fourth with the sign of $\mathcal G''(v)$. The two sets of directions are not coupled.
+\end{applemma}
+
+\begin{proof}
+For block-uniform loadings, the row equations~\eqref{eq:ml-row-score} are
+\[
+(m_A-1)\frac{\alpha}{\psi_A}(L_A-\alpha^2)+m_B\frac{\beta}{\psi_B}(c-\alpha\beta)=0,
+\qquad
+(m_B-1)\frac{\beta}{\psi_B}(L_B-\beta^2)+m_A\frac{\alpha}{\psi_A}(c-\alpha\beta)=0.
+\]
+If $\alpha\beta\le c$, they give $\alpha^2\ge L_A$ and $\beta^2\ge L_B$, hence $\alpha\beta\ge\sqrt{L_AL_B}>c$, a contradiction. Therefore $\alpha\beta>c$, and the two equations give $\alpha^2<L_A$ and $\beta^2<L_B$.
+
+\textit{Contrast directions.} Let $e$ be a vector supported on block A with $\sum_ie_i=0$ and $\sum_ie_i^2=1$, and move along $l+\epsilon xe$, $\psi+\epsilon ye$. The second derivative of the discrepancy in $\epsilon$ at $\epsilon=0$, which is the Hessian quadratic form in this direction and twice the second-order Taylor term, is
+\[
+\frac{2x^2}{\psi_A}+\frac{y^2}{\psi_A^2}
+-\frac{2a_A}{\tau}\kappa^2,\qquad \kappa=\frac x{\psi_A}-\frac{\alpha y}{\psi_A^2},
+\]
+with determinant $(2/\psi_A^3)\{1-a_A(1+\alpha^2)/(\tau\psi_A^2)\}$. To derive it, write the whitened form with $u=\Psi^{-1}l$, $\gamma=l^{\top}u$, $\tau=1+\gamma$ and $\mathcal Q=u^{\top}Ru$:
+\[
+F=\sum_i\Bigl(\frac1{\psi_i}+\log\psi_i\Bigr)+\log\tau-\frac{\mathcal Q}\tau-\log\det R-p .
+\]
+Primes denote derivatives in $\epsilon$ at $\epsilon=0$. The loadings and uniquenesses are constant on the support of $e$, so each derivative reduces to a multiple of $\sum_ie_i=0$ or $\sum_ie_i^2=1$:
+\[
+\gamma'=0,\qquad\gamma''=2\psi_A\kappa^2,\qquad u'=\kappa e,\qquad u_i''=-\frac{2y\kappa}{\psi_A}e_i^2 .
+\]
+Because $\tau'=0$, the second derivative of $\log\tau-\mathcal Q/\tau$ is $\gamma''/\tau-\mathcal Q''/\tau+\mathcal Q\gamma''/\tau^2$. At a stationary point $Ru=\tau l$, so $\mathcal Q=\gamma\tau$ and this equals $\gamma''-\mathcal Q''/\tau$. A within-block contrast satisfies $Re=a_Ae$, hence
+\[
+\mathcal Q''=2u'^{\top}Ru'+2(Ru)^{\top}u''=2a_A\kappa^2-\frac{4\tau\alpha y\kappa}{\psi_A} .
+\]
+The diagonal terms contribute $2y^2/\psi_A^3-y^2/\psi_A^2$. Since $2\psi_A\kappa^2+4\alpha y\kappa/\psi_A=2x^2/\psi_A-2\alpha^2y^2/\psi_A^3$, the sum is $2x^2/\psi_A+2(1-\alpha^2)y^2/\psi_A^3-y^2/\psi_A^2-2a_A\kappa^2/\tau$, and $1-\alpha^2=\psi_A$ gives the display. The script \texttt{checks/appendix\_d\_chain.py} compares the display with the second derivative of the discrepancy computed from the covariance matrices, in exact rational arithmetic at stationary points with rational coordinates. The coefficient of $x^2$ is $(2/\psi_A)\{1-a_A/(\tau\psi_A)\}$, which is positive because $\tau\psi_A=U>b_A>a_A$. The determinant is positive because, with $\tau=1+m_A\alpha^2/\psi_A+m_B\beta^2/\psi_B$ and $\psi_A=1-\alpha^2$,
+\[
+\tau\psi_A^2-a_A(1+\alpha^2)
+=(L_A-\alpha^2)(1+\alpha^2)+(m_A-2)\alpha^2\psi_A+m_B\beta^2\psi_A^2/\psi_B>0 .
+\]
+This includes $m_A=2$. The same holds in block B.
+
+\textit{Decoupling.} Permuting the items within A and within B, with loadings and uniquenesses permuted together, leaves $R$, the discrepancy and every block-uniform point unchanged. The Hessian at such a point therefore commutes with these permutations. Each of its blocks on the items of A has the form $\xi I+\zeta11^{\top}$ and acts on the contrasts of A as the scalar $\xi$, and each block coupling items of A with items of B is a multiple of $11^{\top}$ and annihilates contrasts. The Hessian thus has no cross terms between block-uniform directions and contrast directions, or between the contrasts of A and those of B, and on the contrasts of A it is $m_A-1$ copies of the quadratic form above.
+
+\textit{Block-uniform directions.} Use the coordinates $(\alpha,\beta,\psi_A,\psi_B)$. At fixed uniquenesses, the part of the whitened form that depends on $x_0=\Psi^{-1/2}l$ is $\log(1+x_0^{\top}x_0)-x_0^{\top}Bx_0/(1+x_0^{\top}x_0)$. At the fitted $x_0$, a leading eigenvector with $x_0^{\top}x_0=\tau-1$, its Hessian is $2I-2B/\tau+4x_0x_0^{\top}/\tau^2$, with eigenvalue $4(\tau-1)/\tau^2$ along $x_0$ and $2(\tau-\zeta_k)/\tau$ along the eigenvectors of the other eigenvalues $\zeta_k<\tau$. The loading block is therefore positive definite. Two standard facts complete the argument. First, a symmetric matrix with a nonsingular leading block is congruent to the block-diagonal matrix formed by that block and its Schur complement, so its numbers of positive, negative and zero eigenvalues are the sums of theirs (Haynsworth's inertia additivity). Second, if $f(x,y)$ has a smooth family of stationary points $\hat x(y)$ in $x$ with nonsingular $f_{xx}$, the Hessian of the concentrated function $f(\hat x(y),y)$ is the Schur complement $f_{yy}-f_{yx}f_{xx}^{-1}f_{xy}$. By the second fact, the Schur complement of the loading block is the Hessian of the discrepancy concentrated over the loadings. The concentrated loading is block uniform, so this is the Hessian of the concentrated discrepancy of Lemma~\ref{lem:D-scale} in $(\psi_A,\psi_B)$. In the coordinates $(s,d)$, which change a Hessian at a stationary point by a congruence, its second derivative in $s$ is $e^{-s}Q_{AB}=\nu_{AB}>0$, and by the second fact again the Schur complement in $d$ is $\mathcal G''(d)$. Since $d'(v)>0$, $\mathcal G''(d)$ has the sign of $\mathcal G''(v)$ at a stationary point.
+\end{proof}
+
+\textit{Classification.} By Lemma~\ref{lem:uniformity}, every local minimum of the unrestricted problem is a stationary point of the kind in Lemma~\ref{lem:D-roots}(ii). Along the feasible curve of Lemma~\ref{lem:D-scale}, indexed by $d$, the discrepancy equals $\mathcal G(d)$, so a local minimum corresponds to a positive root that is a local minimum of $\mathcal G$. Conversely, by Lemma~\ref{lem:D-hessian}, a simple root that is a minimum of $\mathcal G$ gives a positive-definite Hessian and hence a strict local minimum of the unrestricted problem, and a simple root that is a maximum of $\mathcal G$ gives a saddle with exactly one negative Hessian eigenvalue. Away from repeated roots there is therefore either one local minimum, or two local minima separated by a saddle. A global minimum exists (Lemma~\ref{lem:A-existence}) and is found by comparing \eqref{eq:unequal-profile} at the one or two minimum roots. When two minima have equal profile values, both are global and the minimizing covariance is not unique. A numerical solution of the exact quartic finds such an equal-value point in the second unequal-size example of Section~\ref{sec:unequal} (Appendix~\ref{app:unequal-sizes}), and the global solution changes discontinuously there; this is a numerical result, not a proved one. For equal block sizes with unequal loadings, Proposition~\ref{prop:unequal} excludes them; with equal loadings, Theorem~\ref{thm:ml} gives the tied pair of block-reflected minima for $0<\varphi<\varphi^*$.
+
+A double positive root has a cubic leading term in the local profile, so the discrepancy decreases along the curve on one side and the point is not a local minimum. At a nondegenerate fold it coexists with a separate simple minimum. A triple positive root $v_0$ is the only positive root: then $P(v)=-\varrho(v-v_0)^3(v-v_-)$ with $\varrho>0$ and $v_-<0$, the derivative identity gives a positive quartic leading term in $\mathcal G-\mathcal G(v_0)$, and the point is the global minimum, with one zero Hessian eigenvalue. The exchangeable threshold is such a triple-root case. A positive root of multiplicity four is impossible because $P$ has a negative root. A fold as $\varphi$ varies requires
 \[
 P(v;\varphi)=P_v(v;\varphi)=0,
 \qquad v>0,\quad 0<\varphi<1,
@@ -103,7 +263,70 @@ and nondegeneracy additionally requires $P_{vv}\ne0$ and $P_\varphi\ne0$. A vani
 
 These statements classify all positive block-uniform stationary points and, by Lemma~\ref{lem:uniformity}, all local minima. They do not enumerate zero-loading or sign-changing saddles of the unrestricted likelihood. For arbitrary unequal sizes, they give an exact root-comparison procedure rather than a closed partition of the entire parameter space.
 
-For equal block sizes, the proof of Proposition~\ref{prop:unequal} uses a rescaled log ratio of uniquenesses to compare a solution with its block-reflected counterpart. The profile is smaller on the side favoring the stronger block, and its stationary equation has exactly one root on that side. On the weaker side, the stationary equation varies monotonically with the cross-block signal. Additional roots exist precisely under \eqref{eq:weaker-minimum-condition}, and disappear in a single transverse collision. Together with the positive contrast curvatures, this establishes the unique global minimum and the single weaker-block fold. The weaker-block minimum lies on the side with $\psi_A/\psi_B<b_A/b_B<1$, so diagonal reproduction gives $\alpha>\beta$, and $\lambda_A<\lambda_B$ then gives $\alpha/\lambda_A>\beta/\lambda_B$: that minimum follows the trait measured by block A. The full monotonicity calculation appears in Online Resource~3.
+\textit{Deferred to Online Resource~3.} The expansion of the quartic coefficients and the rational identity for $\mathcal G'(v)$, verified exactly by \texttt{verify\_unequal\_blocks.py} (Section~2.3); the expansion that yields the contrast quadratic form and its determinant, with the numerical comparison in \texttt{checks/or3\_full\_hessian.py} (Section~2.4); and the Sturm-sequence remark on exact counting of positive roots (Section~2.3).
+
+\begin{proof}[Proof of Proposition~\ref{prop:unequal}]
+Let $m_A=m_B=m$, $\nu_{AB}=2m-1$ and $0<\lambda_A<\lambda_B<1$. Use the shifted coordinate $\eta=d-\tfrac12\log(b_A/b_B)$, so that $\psi_A=b_Ae^{s'+\eta}$ and $\psi_B=b_Be^{s'-\eta}$ for a scale $s'$, and put
+\[
+\rho=\frac{mc}{\sqrt{b_Ab_B}},\qquad
+\mu_A=\frac{(m-1)a_A}{b_A},\qquad \mu_B=\frac{(m-1)a_B}{b_B},\qquad
+\mu_\pm=\mu_A\pm\mu_B .
+\]
+Here $\mu_->0$ because $L_A<L_B$, and $0<\mu_+<2(m-1)$. In this coordinate the eigenvalues of Lemma~\ref{lem:D-scale} are $\sqrt{b_Ab_B}$ times $\cosh\eta\pm\sqrt{\sinh^2\eta+\rho^2}$, and the contrast values sum to $\sqrt{b_Ab_B}\,(\mu_Ae^{-\eta}+\mu_Be^{\eta})$. Up to a constant, the profile is therefore
+\[
+\mathcal G(\eta)=\nu_{AB}\log\{\mu_Ae^{-\eta}+\mu_Be^{\eta}+r_-(\eta)\}-\log r_-(\eta),
+\qquad r_-(\eta)=\cosh\eta-\sqrt{\sinh^2\eta+\rho^2}.
+\]
+
+\textit{The global minimum.} The function $r_-$ is even and $\mu_A>\mu_B$, so $\mathcal G(\eta)<\mathcal G(-\eta)$ for every $\eta>0$, and $\mathcal G'(0)=\nu_{AB}(\mu_B-\mu_A)/\{\mu_++r_-(0)\}<0$. Every global minimizer of the profile therefore has $\eta>0$. Set $t=\tanh\eta$, $r=\sqrt{\rho^2+(1-\rho^2)t^2}$,
+\[
+A_1=\nu_{AB}(\mu_++1)-1,\qquad A_0=\nu_{AB}-1-\mu_+,
+\]
+both positive, and
+\[
+\mathcal F(t;\rho)=\frac{t(A_1r-A_0)}{\nu_{AB}r+t^2},\qquad -1<t<1 .
+\]
+In the variable $t$ the profile is $\nu_{AB}\log(\mu_++1-\mu_-t-r)-\log(1-r)-(m-1)\log(1-t^2)$ up to a constant, and differentiation gives
+\[
+\frac{d\mathcal G}{dt}=\frac{\nu_{AB}r+t^2}{(\mu_++1-\mu_-t-r)(1-t^2)\,r}\,\{\mathcal F(t;\rho)-\mu_-\}.
+\]
+The first factor in the denominator equals $Q_{AB}/(\sqrt{b_Ab_B}\cosh\eta)$ and is positive. Stationarity is thus $\mathcal F(t;\rho)=\mu_-$, and at a root the sign and the vanishing of $\partial\mathcal F/\partial t$ are those of the second derivative of the profile. Moreover
+\[
+\frac{\partial\mathcal F}{\partial t}
+=\frac{(A_1r-A_0)(\nu_{AB}r-t^2)+t\,r'(A_1t^2+\nu_{AB}A_0)}{(\nu_{AB}r+t^2)^2},
+\qquad r'=\frac{(1-\rho^2)t}{r} .
+\]
+For $t>0$, $\nu_{AB}r>t^2$ and $r'>0$. Wherever $\mathcal F\ge0$ with $t>0$, $A_1r-A_0\ge0$ and the derivative is positive. Since $\mathcal F(0;\rho)=0<\mu_-$ and $\mathcal F(1;\rho)=\mu_+>\mu_-$, the equation $\mathcal F=\mu_-$ has exactly one solution in $0<t<1$, and the profile has a positive second derivative there. Since $\mathcal G'(0)<0$, no stationary point has $\eta=0$. This gives the first of two facts used again in the proof of Theorem~\ref{thm:cusp}.
+
+\textit{(P1)} For every $0<\varphi<1$, exactly one stationary point of the profile has $\eta\ge0$. It has $\eta>0$, is a simple root, and is the unique global minimizer of the profile.
+
+By Lemmas~\ref{lem:A-existence} and~\ref{lem:uniformity}, a global minimum of the unrestricted problem exists and is a stationary point of the kind in Lemma~\ref{lem:D-roots}(ii), with discrepancy equal to the profile value. It is therefore the point given by this root, so the minimizing covariance is unique. Its off-diagonal entries are positive, and they determine the loadings up to a common sign.
+
+\textit{The global minimum follows B.} The root depends continuously on $\varphi$ by the implicit function theorem, and with it $\alpha$ and $\beta$. For equal block sizes $\TC(R_B)>\TC(R_A)$, because $-\log\det$ of a block with within-block correlation $L$ has derivative $(m-1)\{1/(1-L)-1/(1+(m-1)L)\}>0$ in $L$. By Lemma~\ref{lem:D-endpoint}, $\alpha\to0$ and $\beta\to\lambda_B$ as $\varphi\downarrow0$, so $\beta>\alpha$ and $\beta/\lambda_B>\alpha/\lambda_A$ for small $\varphi$. Neither inequality can become an equality on $0<\varphi<1$. If $\alpha=\beta$, then $\psi_A=\psi_B$ and $v=1$, and $\tau\psi_A=U$, $\tau\psi_B=V$ give $b_A=b_B$, contrary to $L_A\ne L_B$. If $\alpha/\lambda_A=\beta/\lambda_B=\varsigma$, then $\varsigma<1$ by Lemma~\ref{lem:D-hessian}, and the two row equations in the proof of that lemma become
+\[
+(m-1)(1-\varsigma^2)X=m(\varsigma^2-\varphi)Y,\qquad
+(m-1)(1-\varsigma^2)Y=m(\varsigma^2-\varphi)X,
+\]
+with $X=L_A/(1-\varsigma^2L_A)$ and $Y=L_B/(1-\varsigma^2L_B)$ positive. They force $X=Y$, hence $L_A=L_B$. The global minimum therefore has $\beta>\alpha$ and $\beta/\lambda_B>\alpha/\lambda_A$ throughout, and by the definition of the coefficients $w_B>w_A$: the trait measured by block B is the followed trait.
+
+\textit{Stationary points on the other side.} $\mathcal F$ is odd in $t$, so the stationary points with $\eta<0$ correspond to the solutions of $\mathcal F(t;\rho)=-\mu_-$ with $0<t<1$. At fixed $t>0$,
+\[
+\frac{\partial\mathcal F}{\partial r}=\frac{t(A_1t^2+\nu_{AB}A_0)}{(\nu_{AB}r+t^2)^2}>0,
+\]
+and $r$ increases with $\rho$, so $\mathcal F(t;\rho)$ increases strictly with $\rho$. At $\rho=0$, $r=t$ and $\mathcal F(t;0)=(A_1t-A_0)/(\nu_{AB}+t)$, which increases in $t$ from the limit $-A_0/\nu_{AB}$. Hence $\mathcal F(t;\rho)>-A_0/\nu_{AB}$ for all $\rho>0$ and $0<t<1$. If $\mu_-\ge A_0/\nu_{AB}$, there is no solution for any $\varphi>0$, and the global minimum is the only stationary point of this kind. A direct calculation gives
+\[
+\frac{A_0}{\nu_{AB}}-\mu_-=\frac{2m(m-1)\{mL_A-(m-1)L_B(1-L_A)\}}{\nu_{AB}b_Ab_B},
+\]
+so $\mu_-<A_0/\nu_{AB}$ is condition~\eqref{eq:weaker-minimum-condition}.
+
+Assume that condition. For $\rho>0$ let $M(\rho)=\min_{0\le t\le1}\mathcal F(t;\rho)\le0$. The function $\mathcal F$ is jointly continuous in $(t,\rho)$ on $0\le t\le1$, $\rho>0$, so $M$ is continuous on $\rho>0$. It increases strictly with $\rho$ wherever it is negative, because the minimum is then attained at some $t>0$. By the strict bound above, $M(\rho)>-A_0/\nu_{AB}$. For fixed $t_0>0$, $M(\rho)\le\mathcal F(t_0;\rho)$, which tends to $\mathcal F(t_0;0)$ as $\rho\downarrow0$, and $\mathcal F(t_0;0)\to-A_0/\nu_{AB}$ as $t_0\downarrow0$. Hence $M(\rho)\to-A_0/\nu_{AB}<-\mu_-$ as $\rho\downarrow0$. ($\mathcal F$ is not jointly continuous at $t=\rho=0$, which is why the limit is argued in this way.)
+
+At $\varphi=1$, Lemmas~\ref{lem:D-scale} and~\ref{lem:D-roots} apply as stated, $\rho=m\sqrt{L_AL_B}/\sqrt{b_Ab_B}<1$ because $b_A>mL_A$ and $b_B>mL_B$, so the expression for $d\mathcal G/dt$ remains valid, and the two row equations displayed in the proof of Lemma~\ref{lem:D-hessian} hold at any positive block-uniform stationary point, being equation~\eqref{eq:ml-row-score}. The conclusion $\alpha\beta>c$ of that lemma does not hold at $\varphi=1$. There $c=\sqrt{L_AL_B}$: if $\alpha\beta>c$, the row equations give $\alpha^2<L_A$ and $\beta^2<L_B$, hence $\alpha\beta<c$; if $\alpha\beta<c$, they give $\alpha\beta>c$. Both are impossible, so $\alpha\beta=c$, and the only such point is the exact fit $\alpha=\lambda_A$, $\beta=\lambda_B$, for which $\psi_A/\psi_B=a_A/a_B>b_A/b_B$ and $\eta>0$. The value of $\rho$ at $\varphi=1$ therefore has $M>-\mu_-$. Since $\rho$ is proportional to $\varphi$, there is exactly one $\varphi_f\in(0,1)$ at which $M=-\mu_-$. For $\varphi>\varphi_f$ there is no solution. For $0<\varphi<\varphi_f$, $\mathcal F(0;\rho)=0$, $M<-\mu_-$ and $\mathcal F(1;\rho)=\mu_+$ give at least two solutions, and Lemma~\ref{lem:D-roots}(iii) allows at most two besides the global minimum. They are simple, and by the same lemma the one with the smaller $v$ is a minimum of the profile and the other a maximum. This is the second fact used in the proof of Theorem~\ref{thm:cusp}: \textit{(P2)} under condition~\eqref{eq:weaker-minimum-condition}, the stationary points with $\eta<0$ are two simple roots for $0<\varphi<\varphi_f$, one double root at $\varphi_f$, and absent for $\varphi_f<\varphi<1$; without the condition there are none. By Lemma~\ref{lem:D-hessian} they are a strict local minimum and a saddle of the unrestricted problem. At $\varphi_f$ the two coincide in a double root; it has multiplicity exactly two because the quartic also has the global root and a negative root. Near it, by the two derivative identities, $P(v;\varphi)$ equals a nonvanishing smooth factor times $\mathcal F(t;\rho)+\mu_-$, with $t=-\tanh\eta$ a function of $v$ and $\varphi$. At the double root $\partial\mathcal F/\partial t=0$, so $P_\varphi$ equals that factor times $(\partial\mathcal F/\partial\rho)(d\rho/d\varphi)\ne0$, and $P_{vv}\ne0$ because the multiplicity is two: the fold is nondegenerate. A double root is not a local minimum.
+
+A stationary point with $\eta<0$ has $\psi_A/\psi_B<b_A/b_B<1$, so $\alpha>\beta$, and $\lambda_A<\lambda_B$ then gives $\alpha/\lambda_A>\beta/\lambda_B$: the second minimum follows the trait measured by block A.
+\end{proof}
+
+\textit{Deferred to Online Resource~3, Section~2.5.} The differentiation that gives $d\mathcal G/dt$ and the two derivatives of $\mathcal F$, the algebra for $A_0/\nu_{AB}-\mu_-$, and the exchangeable case $\lambda_A=\lambda_B$, which recovers the threshold of Theorem~\ref{thm:ml}. The script \texttt{checks/appendix\_d\_chain.py} verifies these identities exactly.
 
 \subsection{Sensitivity Near the Exchangeable Threshold}
 \label{app:cusp}
@@ -131,25 +354,207 @@ The limits are for fixed $m$ and fixed interior $\lambda$; no uniformity at load
 
 \end{theorem}
 
-The exponents are those of the cusp normal form for a perturbed pitchfork (Golubitsky \& Schaeffer, 1985). The model-specific content is the coefficients, the controlled remainder, and the connection to the global classification in Proposition~\ref{prop:unequal}. To outline the derivation, let $d=\tfrac12\log(\psi_A/\psi_B)$ and profile out the common scale. Near the symmetric critical point, the profile $\mathcal G$, now written as a function of $d$, has the expansion
+The exponents are those of the cusp normal form for a perturbed pitchfork (Golubitsky \& Schaeffer, 1985). The model-specific content is the coefficients, the controlled remainder, and the connection to the global classification in Proposition~\ref{prop:unequal}.
+
+\begin{proof}
+Write $n=m-1$, $\lambda_A=\lambda-\varepsilon$, $\lambda_B=\lambda+\varepsilon$, with $a_A,a_B,b_A,b_B$ as above, $h=m\lambda_A\lambda_B\varphi$ and $\delta=\varphi-\varphi^*$. We allow $\varepsilon$ of either sign, $|\varepsilon|<\min(\lambda,1-\lambda)$.
+
+\textit{Profile and symmetry.} By Lemma~\ref{lem:D-scale} with $m_A=m_B=m$, the profile in $d=\tfrac12\log(\psi_A/\psi_B)$ is
 \[
-\mathcal G=\mathcal G_0-k_1\varepsilon d
-+\tfrac12k_2(\varphi-\varphi^*)d^2
-+\tfrac14k_4d^4+\text{higher-order terms},
+\mathcal G(d;\varphi,\varepsilon)=\nu\log\frac{Q_{AB}(d)}\nu-n\log a_A-n\log a_B-\log T_-(d),
+\qquad Q_{AB}(d)=na_Ae^{-d}+na_Be^{d}+T_-(d).
 \]
-where $\mathcal G_0=\mathcal G(0;\varphi,\varepsilon)$ and
+It is real analytic near $(d,\varphi,\varepsilon)=(0,\varphi^*,0)$, because $h>0$ there. Exchanging the two blocks gives
+\[
+\mathcal G(d;\varphi,\varepsilon)=\mathcal G(-d;\varphi,-\varepsilon).
+\]
+At $\varepsilon=0$ the profile is $\mathcal H$ of Lemma~\ref{lem:A-scale}, with $T_-=b\cosh d-\sqrt{b^2\sinh^2d+h^2}$, $Q=C\cosh d-\sqrt{b^2\sinh^2d+h^2}$, $C=2na+b$ and $h=mL\varphi$. At the threshold,
+\[
+\varphi^*=\frac b{m(2-L)},\quad h^*=\frac{Lb}{2-L},\quad Q=\frac{2a\nu}{2-L},\quad
+\psi_A=\psi_B=\frac{2a}{2-L},\quad \alpha=\beta=\frac{\lambda}{\sqrt{2-L}} .
+\]
+
+\textit{Coefficients.} At $d=\varepsilon=0$ the first derivatives of $T_-$ and $Q_{AB}$ in $d$ and in $\varepsilon$ vanish. Differentiating with $\partial_\varepsilon a_A=2\lambda$, $\partial_\varepsilon a_B=-2\lambda$, $\partial_\varepsilon b_A=-2n\lambda$, $\partial_\varepsilon b_B=2n\lambda$ and $\partial_\varepsilon h=0$ gives
+\[
+\partial_d\partial_\varepsilon T_-=-\frac{2n\lambda(b-h)}h,\qquad
+\partial_d\partial_\varepsilon Q_{AB}=-\frac{2n\lambda(b+h)}h,
+\]
+and therefore
+\[
+\mathcal G_{d\varepsilon}=\nu\frac{\partial_d\partial_\varepsilon Q_{AB}}{C-h}-\frac{\partial_d\partial_\varepsilon T_-}{b-h}
+=-\frac{4mn\lambda(nL+h)}{h(C-h)} .
+\]
+At $\varepsilon=0$, with $r_j$ and $Q_j$ the $j$th derivatives of $T_-$ and $Q$ in $d$ at $d=0$,
+\[
+r_0=b-h,\quad Q_0=C-h,\quad r_2=b-\frac{b^2}h,\quad Q_2=C-\frac{b^2}h,\quad
+r_4=b-\frac{4b^2}h+\frac{3b^4}{h^3},\quad Q_4=C-\frac{4b^2}h+\frac{3b^4}{h^3},
+\]
+and
+\[
+\mathcal G_{dd}=\nu\frac{Q_2}{Q_0}-\frac{r_2}{r_0},\qquad
+\mathcal G_{dddd}=\nu\Bigl(\frac{Q_4}{Q_0}-\frac{3Q_2^2}{Q_0^2}\Bigr)-\Bigl(\frac{r_4}{r_0}-\frac{3r_2^2}{r_0^2}\Bigr).
+\]
+Substituting $h=h^*$ gives $\mathcal G_{d\varepsilon}=-k_1$, $\mathcal G_{dd}=0$, $\mathcal G_{dd\varphi}=mL\,\partial_h\mathcal G_{dd}=k_2$ and $\mathcal G_{dddd}=6k_4$, with
 \[
 k_1=\frac{2m(m-1)\lambda(2-L)}{ab},\qquad
 k_2=\frac{(m-1)m^2(2-L)^3}{a\nu b},\qquad
-k_4=\frac{2(m-1)m(2-L)^2}{\nu L^2}
+k_4=\frac{2(m-1)m(2-L)^2}{\nu L^2},
 \]
-are positive. At $\varphi^*$, balancing the linear perturbation and cubic derivative gives $d=(k_1/k_4)^{1/3}\varepsilon^{1/3}+O(\varepsilon)$. At the fold, solving $\mathcal G_d=\mathcal G_{dd}=0$, where subscripts denote partial derivatives with respect to $d$, gives the $\varepsilon^{2/3}$ shift. Analytic remainder bounds, given with the cusp derivation in Online Resource~3, justify the implicit-function arguments. Conversion from $d$ to the followed-trait tilt gives $C_{\mathrm{tilt}}$, while the fold calculation gives $E_{\mathrm{fold}}$. Proposition~\ref{prop:unequal} is needed to identify this local fold as the only disappearance point of the weaker minimum; a Taylor expansion alone does not establish that global statement.
+all positive. Hence
+\[
+\mathcal G=\mathcal G(0;\varphi,\varepsilon)-k_1\varepsilon d
++\tfrac12k_2\delta d^2+\tfrac14k_4d^4+\mathcal R(d,\delta,\varepsilon).
+\]
+
+\textit{Remainder.} By the symmetry, a monomial $d^i\delta^j\varepsilon^k$ occurs in the Taylor series of $\mathcal G$ only if $i+k$ is even. The terms $\varepsilon d^2$ and $\varepsilon^2d$ are therefore absent, and with $\mathcal G_{dd}(0;\varphi^*,0)=0$ and the terms displayed, every remaining monomial that depends on $d$ is dominated by one of those in
+\[
+\mathcal R=O\bigl(d^6+|\delta|d^4+\delta^2d^2+|\varepsilon||d|^3+|\varepsilon\delta d|+\varepsilon^2d^2+|\varepsilon|^3|d|\bigr),
+\]
+and the same holds after one or two differentiations in $d$, because the series converges. In particular
+\[
+\mathcal G_d=-k_1\varepsilon+k_2\delta d+k_4d^3
++O\bigl(|d|^5+|\delta||d|^3+\delta^2|d|+|\varepsilon|d^2+|\varepsilon\delta|+\varepsilon^2|d|+|\varepsilon|^3\bigr).
+\]
+Under the scaling $d=\sigma z$, $\delta=\sigma^2y$, $\varepsilon=\sigma^3$ with $\sigma>0$, each term of the last remainder is $O(\sigma^5)$, and each term of the remainder of $\mathcal G_{dd}$ is $O(\sigma^4)$.
+
+\textit{Response at the threshold.} Let $\varepsilon>0$, $\sigma=\varepsilon^{1/3}$, $\delta=0$ and $d=\sigma z$. Dividing $\mathcal G_d=0$ by $\sigma^3$ gives $-k_1+k_4z^3+O(\sigma^2)=0$. At $\sigma=0$ the root $z=D=(k_1/k_4)^{1/3}$ is simple, since the derivative there is $3k_4D^2>0$. The left side is analytic in $(z,\sigma)$ and, by the parity of the series, even in $\sigma$. The implicit function theorem gives a root $z=D+O(\sigma^2)$, that is,
+\[
+d(\varphi^*,\varepsilon)=D\varepsilon^{1/3}+O(\varepsilon),\qquad
+D=\Bigl\{\frac{\nu\lambda^5}{ab(2-L)}\Bigr\}^{1/3},
+\]
+with $\mathcal G_{dd}=3k_4D^2\varepsilon^{2/3}+O(\varepsilon^{4/3})>0$. This stationary point is the global minimum: in the coordinate $\eta=d-\tfrac12\log(b_A/b_B)$ of the proof of Proposition~\ref{prop:unequal}, $b_A<b_B$ for $\varepsilon>0$, so $\eta>d>0$, and by (P1) of that proof the only stationary point with $\eta\ge0$ is the global minimum.
+
+\textit{Fold.} A fold solves $\mathcal G_d=\mathcal G_{dd}=0$. With the scaling above, division by $\sigma^3$ and $\sigma^2$ gives
+\[
+-k_1+k_2yz+k_4z^3+O(\sigma^2)=0,\qquad k_2y+3k_4z^2+O(\sigma^2)=0 .
+\]
+At $\sigma=0$ the solution with $z<0$ is
+\[
+z_f=-\Bigl(\frac{k_1}{2k_4}\Bigr)^{1/3},\qquad
+y_f=-\frac{3k_4}{k_2}\Bigl(\frac{k_1}{2k_4}\Bigr)^{2/3},
+\]
+and the Jacobian determinant in $(z,y)$ there is $-6k_2k_4z_f^2\ne0$. The implicit function theorem gives a solution with $z=z_f+O(\sigma^2)$ and $y=y_f+O(\sigma^2)$, so
+\[
+\varphi^*-\varphi_f(\varepsilon)=\frac{3k_4}{k_2}\Bigl(\frac{k_1}{2k_4}\Bigr)^{2/3}\varepsilon^{2/3}+O(\varepsilon^{4/3})
+=E_{\mathrm{fold}}\varepsilon^{2/3}+O(\varepsilon^{4/3}).
+\]
+There $\mathcal G_{ddd}=6k_4d_f+O(\varepsilon)\ne0$ and $\mathcal G_{d\varphi}=k_2d_f+O(\varepsilon)\ne0$ with $d_f=z_f\varepsilon^{1/3}+O(\varepsilon)$, so this fold is nondegenerate. It has $\eta<0$ for small $\varepsilon$, because $d_f$ is negative of order $\varepsilon^{1/3}$ and the shift is $O(\varepsilon)$. For small $\varepsilon$ condition~\eqref{eq:weaker-minimum-condition} holds, since it holds with strict inequality at $\varepsilon=0$, and by (P2) of the proof of Proposition~\ref{prop:unequal} the stationary points with $\eta<0$ have a repeated root at exactly one correlation, $\varphi_f$. The fold found here is therefore $\varphi_f$, and the weaker-block minimum exists exactly for $0<\varphi<\varphi_f(\varepsilon)$. The expansion alone would give only the local statement.
+
+\textit{Conversion to the tilt.} Both coefficients are positive at a stationary point (Appendix~\ref{app:unequal-sizes}), and solving their definition gives the signed tilt
+\[
+\vartheta=\frac{w_B-w_A}{2(w_A+w_B)}
+=\frac{1+\varphi}{2(1-\varphi)}\,
+\frac{\beta/\lambda_B-\alpha/\lambda_A}{\beta/\lambda_B+\alpha/\lambda_A} .
+\]
+On the global branch the trait of block B is followed, and the tilt of the theorem is $\vartheta$. Let $\alpha(d;\delta,\varepsilon)$ and $\beta(d;\delta,\varepsilon)$ be the concentrated block loadings at the optimal scale; they are analytic, because the leading eigenvalue is simple, and equal the fitted loadings at stationary points. Substituting them defines an analytic function $\vartheta(d,\delta,\varepsilon)$. Exchanging the blocks exchanges $\alpha$ with $\beta$ and $\lambda_A$ with $\lambda_B$, so $\vartheta(-d,\delta,-\varepsilon)=-\vartheta(d,\delta,\varepsilon)$, and a monomial $d^i\delta^j\varepsilon^k$ occurs in $\vartheta$ only if $i+k$ is odd. Hence
+\[
+\vartheta=C_d\,d+O\bigl(|d|^3+|\delta d|+|\varepsilon|\bigr),\qquad C_d=\vartheta_d(0,0,0).
+\]
+To evaluate $C_d$, set $\varepsilon=\delta=0$. Along the concentrated curve the loading derivatives vanish, so by Lemma~\ref{lem:A-scores} $\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_i^2$. The residuals $\Delta_A=\alpha^2+\psi_A-1$ and $\Delta_B=\beta^2+\psi_B-1$ therefore satisfy
+\[
+\frac{m\Delta_A}{\psi_A}+\frac{m\Delta_B}{\psi_B}=0,\qquad
+\frac{m\Delta_A}{\psi_A}-\frac{m\Delta_B}{\psi_B}=\mathcal G_d=O(d^3),
+\]
+the first because the scale is optimal and the second because the derivative of the concentrated discrepancy in $d$ at the optimal scale is $\mathcal G_d$. The relations $\psi_A=1-\alpha^2$ and $\psi_B=1-\beta^2$ thus hold up to $O(d^3)$. At $\varepsilon=0$ the exchange of the blocks maps $d$ to $-d$ and exchanges $\alpha$ with $\beta$, so $\beta-\alpha$ is odd in $d$ and $\beta+\alpha$ is even. Differentiating $d=\tfrac12\log(\psi_A/\psi_B)$ at the threshold values therefore gives
+\[
+\beta-\alpha=\frac{2a}{\lambda\sqrt{2-L}}\,d+O(d^3),\qquad
+\frac{\beta-\alpha}{\beta+\alpha}=\frac aL\,d+O(d^3),
+\]
+and therefore
+\[
+C_d=\frac{1+\varphi^*}{2(1-\varphi^*)}\cdot\frac aL=\frac{2m+1-L}{2\nu L},
+\]
+because $1+\varphi^*=(2m+1-L)/\{m(2-L)\}$ and $1-\varphi^*=\nu a/\{m(2-L)\}$. On the global branch at $\varphi^*$, $d=D\varepsilon^{1/3}+O(\varepsilon)$ and $\delta=0$, so the tilt is $C_dD\varepsilon^{1/3}+O(\varepsilon)=C_{\mathrm{tilt}}\varepsilon^{1/3}+O(\varepsilon)$.
+\end{proof}
+
+\textit{Deferred to Online Resource~3.} The differentiations that give the mixed derivative and $r_j$, $Q_j$, and the substitution of $h^*$ that gives $k_1$, $k_2$ and $k_4$, verified exactly by checks C1--C4 of \texttt{verify\_unequal\_blocks.py} (Section~3.2); the equal-size quartic, its triple root at the symmetric threshold and the boundary at which the weaker minimum ceases to exist (Section~3.5); and the 80-digit evaluations of the fold and the tilt (Section~3.6).
 
 For $\lambda=.7$ and four items per block, $C_{\mathrm{tilt}}=1.057$ and $E_{\mathrm{fold}}=2.38$. At $\varepsilon=.0005$, the exact tilt is .0836, compared with .0839 from the leading term. At $\varepsilon=.001$, the fold occurs at .3852, compared with .3851 from the approximation. These are numerical evaluations of the exact equations. The asymptotic expressions are not asserted to be accurate for arbitrary fixed asymmetry, and the unsigned tilt is the absolute value of the signed coefficient imbalance. It should not be treated as a smooth coordinate through zero.
 
 \subsection{Mirrored Heterogeneous Loadings}
 \label{app:mirrored}
 
-If both blocks contain the same set of nonconstant loadings, simultaneous exchange of corresponding items preserves the population covariance. Such a design retains the block-exchange symmetry, but Lemma~\ref{lem:uniformity} no longer applies because the items within a block are not exchangeable. We therefore locate loss of stability of the symmetric solution numerically, by the zero eigenvalue of the Hessian in the antisymmetric directions. This is a local criterion: it identifies where the symmetric solution stops being a local minimum, and it does not by itself show that this is where the global solution first becomes asymmetric.
+If both blocks contain the same set of nonconstant loadings, simultaneous exchange of corresponding items preserves the population covariance. Such a design retains the block-exchange symmetry, but Lemma~\ref{lem:uniformity} no longer applies because the items within a block are not exchangeable. We therefore locate loss of stability of the symmetric solution numerically. Let both blocks have the population loadings $\lambda_1,\ldots,\lambda_m$, and let a symmetric stationary point have loadings $(t_1,\ldots,t_m)$ in each block and uniquenesses $1-t_i^2$. With
+\[
+\gamma=2\sum_i\frac{t_i^2}{1-t_i^2},\qquad W=\sum_i\frac{\lambda_it_i}{1-t_i^2},
+\]
+equation~\eqref{eq:ml-scores} becomes
+\[
+(1+\gamma)t_i-(1-\lambda_i^2)\frac{t_i}{1-t_i^2}-(1+\varphi)\lambda_iW=0,\qquad i=1,\ldots,m .
+\]
+The block exchange makes the symmetric and antisymmetric perturbations invariant subspaces of the Hessian. Let $\mathcal K_-$ be the Hessian in the loadings and log uniquenesses restricted to the antisymmetric perturbations. The stability boundary is the correlation at which
+\[
+\lambda_{\min}(\mathcal K_-)=0
+\]
+at a solution of the stationary equations. A zero determinant of $\mathcal K_-$ without this condition on the smallest eigenvalue is not sufficient. The numerical result reported below is the following: at the positive solution of the stationary equations found by the solver, the smallest eigenvalue of $\mathcal K_-$ is zero at the stated correlation and its other eigenvalues are positive. The computation did not record the eigenvalues of the Hessian on the symmetric perturbations, and it does not show that the positive symmetric stationary point is unique. The correlation is therefore where that symmetric stationary point loses stability in the antisymmetric directions; it is where the point stops being a local minimum provided the Hessian on the symmetric perturbations is positive definite there, which holds in the exchangeable case. This is a local criterion and does not by itself show that this is where the global solution first becomes asymmetric.
 
-The calculation reproduces $\varphi^*=.409$ for four equal loadings of .7 in each block. Mirrored loadings .6, .65, .75, and .8 give a threshold of .441; mirrored loadings .5, .6, .7, and .8 give .413. Substituting the average signal-to-noise ratio $\lambda^2/(1-\lambda^2)$ into the exchangeable expression gives .434 and .398, respectively. This approximation is slightly low in both examples. These calculations do not establish that heterogeneity always raises the threshold or provide a general error bound.
+The calculation reproduces $\varphi^*=.409$ for four equal loadings of .7 in each block. Mirrored loadings .6, .65, .75, and .8 give a threshold of .441; mirrored loadings .5, .6, .7, and .8 give .413. For comparison, let $\bar c=m^{-1}\sum_i\lambda_i^2/(1-\lambda_i^2)$ be the average signal-to-noise ratio and $L_{\mathrm{eff}}=\bar c/(1+\bar c)$. Substituting $L_{\mathrm{eff}}$ for $\lambda^2$ in the exchangeable threshold, $\{1+(m-1)L_{\mathrm{eff}}\}/\{m(2-L_{\mathrm{eff}})\}$, gives .434 and .398, respectively. This approximation is slightly low in both examples. These calculations do not establish that heterogeneity always raises the threshold or provide a general error bound.
+
+\textit{Deferred to Online Resource~3, Section~4.} The analytic expression for the action of the Hessian used to evaluate $\mathcal K_-$, and the 60-digit solutions of the two displayed conditions. No analytic result beyond this local-stability characterization is claimed.
+
+\subsection{Unequal Block Sizes}
+\label{app:unequal-sizes}
+
+This subsection supports the statements of Section~\ref{sec:unequal} for blocks of different lengths. Write $\hat\alpha=\alpha/\lambda_A$ and $\hat\beta=\beta/\lambda_B$ for the fitted block loadings relative to the population loadings.
+
+\textit{Positive coefficients.} At every stationary point of Lemma~\ref{lem:D-roots}(ii), and hence at every local minimum for $0<\varphi<1$, Lemma~\ref{lem:D-hessian} gives $\hat\alpha<1$, $\hat\beta<1$ and $\hat\alpha\hat\beta>\varphi$, so $\hat\alpha>\varphi\hat\beta$ and $\hat\beta>\varphi\hat\alpha$. The covariance-matching coefficients
+\[
+w_A=\frac{\hat\alpha-\varphi\hat\beta}{1-\varphi^2},\qquad
+w_B=\frac{\hat\beta-\varphi\hat\alpha}{1-\varphi^2}
+\]
+are therefore both positive, the share of trait A is $S_A=(\hat\alpha-\varphi\hat\beta)/\{(1-\varphi)(\hat\alpha+\hat\beta)\}$, and it exceeds $1/2$ exactly when $\hat\alpha>\hat\beta$. The followed-trait share is $\max(S_A,1-S_A)$ and lies in $[.5,1)$.
+
+\textit{Equal shares.} Suppose $m_A\ne m_B$ and $\hat\alpha=\hat\beta$ at a stationary point, and put $t_0=\hat\alpha^2$. By Lemma~\ref{lem:D-hessian}, $\hat\alpha<1$ and $\hat\alpha\hat\beta>\varphi$, so $\varphi<t_0<1$; these signs fix the positive square roots below. The two row equations in the proof of that lemma give
+\[
+t_0=\frac{\varsigma_1L_B-L_A}{(\varsigma_1-1)L_AL_B},\qquad
+\varphi_0=(1+\varsigma_2)t_0-\varsigma_2,
+\]
+with $\varsigma_1=\sqrt{m_B(m_B-1)/\{m_A(m_A-1)\}}$ and $\varsigma_2=\sqrt{(m_A-1)(m_B-1)/(m_Am_B)}$. Conversely, if $0<t_0<1$ and $0<\varphi_0<1$, these loadings satisfy the row equations at $\varphi_0$. Whether that stationary point is the global minimum must be decided by the comparison of Appendix~\ref{app:unequal-scalar}. An equal share at a stationary point is a different event from equality of the discrepancy at two local minima.
+
+\textit{High trait correlation.} At $\varphi=1$ the population covariance is the one-factor covariance with loadings $\lambda_A$ and $\lambda_B$, and the discrepancy vanishes there. With $p\ge4$ items and nonzero loadings this parametrization is locally identified: if a perturbation leaves every off-diagonal entry unchanged to first order, then $\delta l_i/l_i+\delta l_j/l_j=0$ for every pair of items, which forces $\delta l=0$, and the diagonal entries then force $\delta\psi=0$. At $\Sigma=R$ the first-order term of the discrepancy vanishes and its Hessian in the parameters is the quadratic form $\tr(\Sigma^{-1}d\Sigma\,\Sigma^{-1}d\Sigma)$ evaluated at the first-order change $d\Sigma$ of the covariance, which is positive unless $d\Sigma=0$. With the injective Jacobian just shown, the Hessian at the exact fit is positive definite, and the implicit function theorem gives a locally unique analytic branch of stationary points for $\varphi$ near one. As $\varphi\uparrow1$ the minimum discrepancy tends to zero while the population matrices stay in a compact set of positive-definite matrices, so the global minimizing covariances converge to the exact fit. Their within-block entries are $\alpha^2$ and $\beta^2$, so $\alpha\to\lambda_A$ and $\beta\to\lambda_B$, and the minimizers enter the locally unique branch. The global minimum is therefore unique for $\varphi$ sufficiently close to one. Put $\kappa_k=m_kL_k/a_k$ and $j_k=2(m_k-1)L_k/a_k$ for $k=A,B$. On this branch
+\[
+\hat\alpha=1-\vartheta_A(1-\varphi)+O\{(1-\varphi)^2\},\qquad
+\hat\beta=1-\vartheta_B(1-\varphi)+O\{(1-\varphi)^2\},
+\]
+where the row equations at first order give $j_A\vartheta_A=\kappa_B(1-\vartheta_A-\vartheta_B)$ and $j_B\vartheta_B=\kappa_A(1-\vartheta_A-\vartheta_B)$, that is,
+\[
+\vartheta_A=\frac{\kappa_B/j_A}{1+\kappa_B/j_A+\kappa_A/j_B},\qquad
+\vartheta_B=\frac{\kappa_A/j_B}{1+\kappa_B/j_A+\kappa_A/j_B} .
+\]
+Consequently
+\[
+\lim_{\varphi\uparrow1}S_A=\frac{1+\vartheta_B-\vartheta_A}2 ,
+\]
+and the limit favors the trait of block A if and only if $\kappa_Aj_A>\kappa_Bj_B$, that is,
+\[
+m_A(m_A-1)\Bigl(\frac{L_A}{1-L_A}\Bigr)^2>m_B(m_B-1)\Bigl(\frac{L_B}{1-L_B}\Bigr)^2 .
+\]
+The limiting share is not .5 in general: for four items per block with loadings .6 and .8 it is .786 for the trait of block B.
+
+\textit{The example with two items at .85 and three at .75.} Here $\TC(R_B)>\TC(R_A)$, so block B is retained at $\varphi=0$ (Lemma~\ref{lem:D-endpoint}), and the limiting share of the trait of block A is .549. Two computer-assisted results, reported in Online Resource~3, Section~2.6, complete the statements of Section~\ref{sec:unequal}. First, an exact Sturm and discriminant calculation (\texttt{verify\_unequal\_blocks.py}) shows that $P$ has exactly one positive root for $1/2\le\varphi\le1$; the global minimum is then unique, and its share crosses $1/2$ at the value $\varphi_0=.7575$ of the display above, with a positive derivative of the share. Second, an interval-arithmetic certificate (\texttt{checks/unequal\_example\_certificate.py}) shows that for every $0<\varphi\le.51$ the largest positive root $v_3$ of $P$ has a profile value smaller by at least .0538 than that of every other positive root, minimum or saddle, and that $\hat\alpha<\hat\beta$ at $v_3$. Its decisions use exact rational and outward-rounded interval arithmetic on boxes that cover all positive roots. Together with Lemma~\ref{lem:uniformity}, Lemma~\ref{lem:D-roots} and the positivity of the coefficients, the certificate shows that the global minimum on that range is unique and favors the longer block. On part of that range a nonglobal minimum favoring the shorter block coexists.
+
+\textit{The example with two items at .90 and four at .70.} This statement is numerical. Solving the quartic at 50 digits (\texttt{checks/unequal\_jump\_example.py}) gives three positive roots for $0<\varphi<.536$: a minimum favoring the shorter block, a saddle, and a minimum favoring the longer block. The profile values of the two minima are equal at $\varphi=.3257$, where the full discrepancy is .9641 at both. Below that correlation the minimum favoring the longer block is global, and above it the other. The share of the shorter block's trait is .103 at the first and .924 at the second. These are evaluations of the exact equations, not a certificate.
+
+\textit{Deferred to Online Resource~3, Section~2.6.} The verification that the stated loadings satisfy the row equations at $\varphi_0$; the first-order expansion behind $\vartheta_A$ and $\vartheta_B$; the exact Sturm and discriminant calculation with the exact value and derivative at the crossing; and the interval-arithmetic certificate.
+
+\subsection{Score Share in the Exchangeable Design}
+\label{app:score-share}
+
+Let both blocks have $m$ items with loading $\lambda$, and let $0<\varphi<\varphi^*$. By Theorem~\ref{thm:ml} the fitted block loadings are positive and unequal, with product $q=m\lambda^2\varphi/\{1+(m-1)\lambda^2\}$. Call them $\alpha$ for the favored block and $\beta<\alpha$ for the other, and let $w_1$, $w_2$ be the covariance-matching coefficients of the corresponding traits. The equations $\alpha=\lambda(w_1+\varphi w_2)$ and $\beta=\lambda(\varphi w_1+w_2)$ give
+\[
+\frac{w_1-w_2}{w_1+w_2}=\frac{1+\varphi}{1-\varphi}\cdot\frac{\alpha-\beta}{\alpha+\beta} .
+\]
+Regression and Bartlett scores have weights proportional to $\Psi^{-1}l$, so their trait parts are proportional to $m\lambda\alpha/(1-\alpha^2)$ and $m\lambda\beta/(1-\beta^2)$, and
+\[
+\frac{\alpha(1-\beta^2)-\beta(1-\alpha^2)}{\alpha(1-\beta^2)+\beta(1-\alpha^2)}
+=\frac{1+q}{1-q}\cdot\frac{\alpha-\beta}{\alpha+\beta} .
+\]
+The share of the followed trait is one half plus one half of the left side, in each case. Since
+\[
+\varphi-q=\frac{\varphi(1-\lambda^2)}{1+(m-1)\lambda^2}>0
+\]
+and $q>0$, we have $1<(1+q)/(1-q)<(1+\varphi)/(1-\varphi)$. The unit-weighted sum has equal trait parts $m\lambda$. Hence, for $0<\varphi<\varphi^*$,
+\[
+\tfrac12<\text{score share}<\text{coefficient share},
+\]
+with strict inequalities. The script \texttt{checks/share\_ordering.py} verifies the two identities and the expression for $\varphi-q$ exactly. At $\varphi=0$, for a representation with positive uniquenesses, both shares equal one, and for $\varphi^*\le\varphi<1$ all three equal one half.

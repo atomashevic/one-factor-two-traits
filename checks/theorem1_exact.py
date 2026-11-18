@@ -178,6 +178,28 @@ for mm in range(2, 13):
 report(f'dTC/dL > 0  <=>  kappa < (2m-1)L/a on grid (|phi|<1), mismatches={len(bad)}', len(bad) == 0)
 if bad:
     print('  first mismatches:', bad[:5])
+# Lemma A.5 (boundary exclusion): the inward derivative of Proposition 4 at the star
+# covariance, computed directly as K_jj - (KRK)_jj with exact matrices (symbolic L, phi;
+# m = 2..5), against the block sum of Lemma A.5 and its closed form at phi = 0.
+for mm in (2, 3, 4, 5):
+    pp_ = 2*mm
+    Rm = sp.eye(pp_)
+    for i_ in range(pp_):
+        for k_ in range(pp_):
+            if i_ != k_:
+                Rm[i_, k_] = L if (i_ < mm) == (k_ < mm) else L*phi
+    lstar = Rm[:, 0]
+    Sstar = lstar*lstar.T + sp.diag(*[1 - Rm[i_, 0]**2 for i_ in range(pp_)])
+    Kst = Sstar.inv()
+    direct = sp.cancel((Kst - Kst*Rm*Kst)[0, 0])
+    wA = L/(1 - L**2); wB = L*phi/(1 - L**2*phi**2)
+    block_sum = -((mm - 1)*(mm - 2)*wA**2*(L - L**2) + mm*(mm - 1)*wB**2*(L - L**2*phi**2)
+                  + 2*(mm - 1)*mm*wA*wB*(L*phi - L**2*phi))
+    report(f'Lemma A.5: K_jj-(KRK)_jj at the star covariance = block sum (m={mm}, symbolic L, phi)',
+           rz(direct - block_sum))
+    closed0 = -(mm - 1)*(mm - 2)*L**3/((1 - L)*(1 + L)**2)
+    report(f'Lemma A.5: derivative at phi=0 is -(m-1)(m-2)L^3/((1-L)(1+L)^2) (m={mm})',
+           rz(direct.subs(phi, 0) - closed0))
 print(f'TOTAL pass={npass} fail={nfail}')
 
 import sys

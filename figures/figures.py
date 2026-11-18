@@ -114,10 +114,10 @@ if 2 in options.figures:
         pts = [(float(r["phi"]), float(r["share"])) for r in rows if r["design"] == d]
         ax.plot(*zip(*pts), **st)
     loc = [(float(r["phi"]), float(r["local"])) for r in rows if r["design"] == "mild" and r["local"] not in ("", "NA")]
-    loc.append((0.2415, 0.7127))                     # the fold (Proposition 1)
-    ax.plot(*zip(*loc), color=BLACK, ls=":", lw=1.2, label="Local minimum, .68 vs .72")
+    loc.append((0.2415, 0.7127))                     # the fold (Proposition 2)
+    ax.plot(*zip(*loc), color=BLACK, ls=":", lw=1.2, label="Weaker-block minimum, .68 vs .72")
     ax.plot([0.2415], [0.7127], marker="o", mfc="white", mec=BLACK, ms=4)
-    ax.text(0.25, 0.70, r"fold, $\varphi$ = .24", fontsize=8)
+    ax.text(0.25, 0.70, r"fold, $\varphi_f$ = .242", fontsize=8)
     for x, lab in [(0.4089, r"$\varphi^* = .409$"), (0.4411, ".441")]:
         ax.plot([x], [0.5], marker="o", color=DARK, ms=3.5)
     ax.text(0.36, 0.475, r"$\varphi^*$ = .409", fontsize=8, color=DARK, ha="right")

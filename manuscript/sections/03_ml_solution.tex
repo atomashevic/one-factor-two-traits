@@ -36,11 +36,11 @@ F_0+n\log(1-q^2),&0\le\varphi\le\varphi^*,\\[3pt]
 The two expressions agree at $\varphi^*$.
 \end{theorem}
 
-The second form shows that $\varphi^*$ is the trait correlation at which $q=q^*$ (Section~\ref{sec:setup}). The behavior of the solution as $\varphi$ approaches this threshold follows from the closed forms in Theorem~\ref{thm:ml}.
+The second form shows that $\varphi^*$ is the trait correlation at which $q=q^*$ (Section~\ref{sec:setup}). The behavior of the solution as $\varphi$ approaches this threshold follows from the closed forms in Theorem~\ref{thm:ml}; the curvature statement also uses the profile of Appendix~\ref{app:ml}.
 
 \begin{corollary}[Behavior at the transition]
 \label{cor:ml-transition}
-Under the conditions of Theorem~\ref{thm:ml}, $F_{\min}$ is continuous on $[0,1)$ and real analytic away from $\varphi^*$. At $\varphi^*$, $F_{\min}$ is continuously differentiable but not twice continuously differentiable, and the symmetric solution is the unique minimizer although the discrepancy has zero curvature in the symmetry-breaking direction and grows quartically along it. For $0<\varphi<\varphi^*$, the loading difference satisfies
+Under the conditions of Theorem~\ref{thm:ml}, $F_{\min}$ is continuous on $[0,1)$ and real analytic away from $\varphi^*$. At $\varphi^*$, $F_{\min}$ is continuously differentiable but not twice continuously differentiable, and the symmetric solution is the unique minimizer although the discrepancy has zero curvature in the symmetry-breaking direction (opposite changes in the two blocks' loadings, with $\psi_i=1-l_i^2$ to first order) and grows quartically along it. For $0<\varphi<\varphi^*$, the loading difference satisfies
 \begin{equation}
 (\alpha-\beta)^2=(2-L)(q^*-q)(1-q),
 \label{eq:loading-gap}
@@ -53,7 +53,7 @@ and therefore, as $\varphi\uparrow\varphi^*$,
 \]
 \end{corollary}
 
-The complete proof of Theorem~\ref{thm:ml} is given in Online Resource~1. Appendix~\ref{app:ml} presents its main reductions. The argument first establishes existence and excludes boundary minima by a zero-uniqueness criterion (Proposition~\ref{prop:boundary}, Appendix~\ref{app:heywood-proof}), apart from the stated two-item endpoint representations. It then shows that every local minimum at positive trait correlation has constant loadings within each block. Minimization of a one-dimensional profile completes the global comparison. Thus the conclusion does not depend on imposing equal fitted loadings or on examining the Hessian at the symmetric solution alone. Appendix~\ref{app:ml} also gives the second-derivative jump at $\varphi^*$ and the local expansion behind Corollary~\ref{cor:ml-transition}.
+Appendix~\ref{app:ml} proves Theorem~\ref{thm:ml} and Corollary~\ref{cor:ml-transition}, including the zero-correlation endpoint; Online Resource~1 holds the routine algebra listed at the end of that appendix. The argument first establishes existence and excludes boundary minima by a zero-uniqueness criterion (Proposition~\ref{prop:boundary}, Appendix~\ref{app:heywood-proof}), apart from the stated two-item endpoint representations. It then shows that every local minimum at positive trait correlation has constant loadings within each block. Minimization of a one-dimensional profile completes the global comparison. Thus the conclusion does not depend on imposing equal fitted loadings or on examining the Hessian at the symmetric solution alone. Appendix~\ref{app:ml} also gives the second-derivative jump at $\varphi^*$ and the local expansion behind Corollary~\ref{cor:ml-transition}.
 
 The substantive distinction is between an equal composite and a factor that gives greater weight to one trait. Above $\varphi^*$, the fitted covariance has equal uniquenesses, and its discrepancy is the familiar maximum likelihood expression for a one-factor model with equal uniquenesses, the probabilistic principal component model: $p-1$ times the logarithm of the ratio of the arithmetic and geometric means of the $p-1$ nonleading eigenvalues of $R$ (Lawley, 1956; Tipping \& Bishop, 1999). Kenny and McCoach (2003, pp.~342--345) give the same symmetric fitted covariance and the corresponding CFI and TLI. Theorem~\ref{thm:ml} establishes when that covariance is the unrestricted optimum. Below $\varphi^*$, the symmetric expression overstates the minimum discrepancy because the optimum has unequal block loadings.
 
@@ -71,6 +71,6 @@ The next section uses this global solution to determine what conventional fit cr
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.85\textwidth]{fig1.pdf}
-\caption{Fitted block loadings for two traits measured by four items each, with population loading .7. The ML solution has unequal block loadings below $\varphi^*=.409$. The ULS solution remains symmetric down to $\varphi=1/p=.125$; its characterization is given in Theorem~\ref{thm:uls}. Solid lines represent ML and dashed lines represent ULS. Both estimators give the same symmetric fitted covariance above the ML threshold and retain one trait at zero correlation.}
+\caption{Fitted block loadings for two traits measured by four items each, with population loading .7. The ML solution has unequal block loadings below $\varphi^*=.409$. The ULS solution remains symmetric down to $\varphi=1/p=.125$; its characterization is given in Theorem~\ref{thm:uls}. Solid lines represent ML and dashed lines represent ULS. Below each estimator's threshold, the upper and lower curves are the loadings of the favored block and of the other block. Both estimators give the same symmetric fitted covariance above the ML threshold and retain one trait at zero correlation.}
 \label{fig:1}
 \end{figure}

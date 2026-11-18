@@ -28,7 +28,7 @@ At $\varphi=0$, either block is fitted exactly and the other has zero loadings, 
 
 \end{theorem}
 
-Appendix~\ref{app:uls} outlines the unrestricted proof. The argument uses a tight relaxation to establish constant loadings within blocks, then minimizes a convex quadratic over a cone. The result characterizes global minimizers; it does not assert a complete classification of nonglobal ULS local minima.
+Appendix~\ref{app:uls} gives the unrestricted proof; Online Resource~1 holds the routine algebra. The argument uses a tight relaxation to establish constant loadings within blocks, then minimizes a convex quadratic over a cone. The result characterizes global minimizers; it does not assert a complete classification of nonglobal ULS local minima.
 
 Weighted least squares makes the source of the difference more explicit. Let $w_W>0$ and $w_C>0$ be the weights given to within-block and cross-block residual correlations, respectively, and define
 \[
@@ -40,7 +40,7 @@ Each weight is constant within its pair class.
 
 \begin{proposition}[Weighted least squares solution]
 \label{cor:wls}
-For the population in Section~\ref{sec:setup}, minimize $G_w$ over $|l_i|\le1$. For $\varphi>0$, choose the common loading sign to be positive. If $\omega>(m-1)/m$, the threshold is
+For the population in Section~\ref{sec:setup}, minimize $G_w$ over $|l_i|\le1$. For $\varphi>0$, every global minimizer has a common loading sign; choose it to be positive. If $\omega>(m-1)/m$, the threshold is
 \begin{equation}
 \varphi_\omega=\frac12-\frac{m-1}{2m\omega}.
 \label{eq:wls-threshold}
@@ -50,17 +50,17 @@ For $0<\varphi<\varphi_\omega$, every global minimizer is constant within blocks
 \alpha^2+\beta^2=L,\qquad
 \alpha\beta=\frac{\omega mL\varphi}{\omega m-m+1}.
 \]
-At and above the threshold, the positive minimizer is unique and symmetric, with
+At and above the threshold, the positive global minimizer is unique and symmetric, with
 \[
 l^2=\frac{L\{m(m-1)+\omega m^2\varphi\}}{m(m-1)+\omega m^2}.
 \]
 The branches agree at $l^2=L/2$. If $\omega\le(m-1)/m$, the positive symmetric solution is the unique global minimizer at every $\varphi>0$.
 
-At $\varphi=0$, nonzero blocks may have independent signs, and the global minimizers depend on the sign of $\omega m-m+1$. If $\omega>(m-1)/m$, they form the retained-block family of Theorem~\ref{thm:uls}. If $\omega=(m-1)/m$, the block-uniform minimizers form the continuum $\alpha^2+\beta^2=L$; when $m=2$, a zero block also permits the retained-pair family of Theorem~\ref{thm:uls}. If $\omega<(m-1)/m$, both blocks are uniform and have squared loading $L(m-1)/(m-1+\omega m)$.
+At $\varphi=0$, nonzero blocks may have independent signs, and the global minimizers depend on the sign of $\omega m-m+1$. If $\omega>(m-1)/m$, they form the retained-block family of Theorem~\ref{thm:uls}. If $\omega=(m-1)/m$, every global minimizer is block-uniform with $\alpha^2+\beta^2=L$, except that when $m=2$ a zero block also permits the retained-pair family of Theorem~\ref{thm:uls}. If $\omega<(m-1)/m$, both blocks are uniform and have squared loading $L(m-1)/(m-1+\omega m)$.
 
 \end{proposition}
 
-The unrestricted proof is outlined in Appendix~\ref{app:uls} and given in full in Online Resource~2. Setting $\omega=1$ recovers the minimizers in Theorem~\ref{thm:uls} and the threshold $1/p$. Reducing the relative weight on cross-block residuals lowers the threshold, and can remove the asymmetric regime altogether.
+Appendix~\ref{app:uls} gives the unrestricted proof; Online Resource~2 holds the routine algebra and the equality analysis at $\varphi=0$ for $\omega\le(m-1)/m$. As for ULS, the result characterizes global minimizers and does not classify nonglobal local minima. Setting $\omega=1$ recovers the minimizers in Theorem~\ref{thm:uls} and the threshold $1/p$. Reducing the relative weight on cross-block residuals lowers the threshold, and can remove the asymmetric regime altogether.
 
 For ordinal items with common thresholds, the parameter-fitting part of WLSMV uses diagonally weighted least squares on the polychoric correlations, with thresholds estimated freely. The residual weights are the inverse asymptotic variances of the polychoric estimates. In the exchangeable population, there is one weight within blocks and one across blocks, so Proposition~\ref{cor:wls} applies with $\omega$ equal to the ratio of the within-block and cross-block asymptotic variances. Because these variances depend on $\varphi$, the transition is a solution of $\varphi=\varphi_\omega(\varphi)$. In each design evaluated here, this equation had a single root, or none, on $[0,.95]$; uniqueness of the root is not established in general.
 

@@ -1,41 +1,152 @@
-\section{Main Steps in the Least-Squares Proofs}
+\section{Proofs of Theorem~\ref{thm:uls} and Proposition~\ref{cor:wls}}
 \label{app:uls}
 
-The complete unrestricted ULS proof is given in Online Resource~1, Section~11; the weighted result is proved in Online Resource~2. The common reduction is described here so that the role of the weights is explicit.
-
-The loading domain is compact, so a global minimum exists. Replacing loadings by their absolute values cannot increase any squared residual when the target correlations are nonnegative. At positive trait correlation, all nonzero minimizing loadings have a common sign. The zero vector cannot minimize, and a nonnegative nonzero minimizer cannot contain a zero loading because its corresponding one-sided derivative is negative. The positive sign convention is therefore valid.
-
-Let $\xi=\binom{m}{2}^{-1}\sum_{i<j\in A}l_il_j$ and $\eta=\binom{m}{2}^{-1}\sum_{i<j\in B}l_il_j$ be the mean within-block pair products, and let $Q_A$ and $Q_B$ be the sums of squared loadings in the two blocks. Jensen's inequality bounds the within-block residual sums, while Cauchy--Schwarz gives
+The proof is written once for a general weight ratio $\omega>0$; Theorem~\ref{thm:uls} is the case $\omega=1$. Throughout, $c=L\varphi$, $C_m=m(m-1)/2$, $d_\omega=\omega m-m+1$, and
 \[
-Q_A\ge m\xi,\qquad Q_B\ge m\eta.
+\bar G_w(l)=\frac{G_w(l)}{w_W}
+=\sum_{\mathrm{within}}(L-l_il_j)^2+\omega\sum_{\mathrm{across}}(c-l_il_j)^2,
+\qquad |l_i|\le1 .
 \]
-Minimizing the resulting lower bound under these inequalities, without the loading bounds, relaxes the problem. At positive trait correlation the relaxed minimum is attained and its stationarity equations make both inequalities equalities. Block-uniform loadings within the bounds attain it, so the minima coincide, and Cauchy--Schwarz equality forces constant loadings within each block. Online Resources~1 (Section~11) and~2 (Sections~1--5) give the details, including zero correlation.
+Sections~\ref{app:uls-signs}--\ref{app:uls-cone} assume $\varphi>0$. Section~\ref{app:uls-zero} treats $\varphi=0$.
 
-For ULS, put $u=\alpha^2+\beta^2$, $v=\alpha\beta$, and $C_m=m(m-1)/2$. The block-uniform objective is
+\subsection{Existence and Signs}
+\label{app:uls-signs}
+
+The loading domain is compact and $\bar G_w$ is continuous, so a global minimum exists. For $r,z\ge0$, $(r+z)^2-(r-z)^2=4rz\ge0$. Replacing every loading by its absolute value therefore increases no squared residual, and it strictly decreases the residual of every pair with $l_il_j<0$, because every target correlation is positive when $\varphi>0$. Hence the nonzero loadings of a global minimizer have a common sign, which we take to be positive. The zero vector is not a minimizer: giving two items of one block the loading $t$ changes the objective by $(L-t^2)^2-L^2<0$ for small $t>0$. A nonnegative, nonzero minimizer has no zero loading, because at $l_i=0$
+\[
+\frac{\partial\bar G_w}{\partial l_i}=-2\sum_{j\ne i}w_{ij}R_{ij}l_j<0,
+\]
+where $w_{ij}=1$ within blocks and $w_{ij}=\omega$ across blocks, and $l_i$ can be increased. Every global minimizer is therefore strictly positive after a common sign change.
+
+\subsection{The Relaxed Problem}
+\label{app:uls-relaxed}
+
+For nonnegative loadings, let $S_A$ and $Q_A$ be the sum and the sum of squares of the loadings in block A, and let
+\[
+\xi=\frac{S_A^2-Q_A}{m(m-1)}=\binom{m}{2}^{-1}\sum_{i<j\in A}l_il_j
+\]
+be the mean within-block pair product. Define $S_B$, $Q_B$, and $\eta$ in the same way for block B. The Cauchy--Schwarz inequality $S_A^2\le mQ_A$ is equivalent to
+\[
+Q_A\ge m\xi,\qquad Q_B\ge m\eta,
+\]
+with equality exactly when the loadings within the block are equal. Jensen's inequality gives $\sum_{i<j\in A}(L-l_il_j)^2\ge C_m(L-\xi)^2$, and likewise for block B. The cross-block sum is exact: $\sum_{i\in A,\,j\in B}(c-l_il_j)^2=m^2c^2-2cS_AS_B+Q_AQ_B$. Hence $\bar G_w(l)\ge f(\xi,\eta,Q_A,Q_B)$, where
+\[
+f=C_m\{(L-\xi)^2+(L-\eta)^2\}
++\omega\left(m^2c^2-2cS_AS_B+Q_AQ_B\right),
+\]
+\[
+S_A=\sqrt{Q_A+m(m-1)\xi},\qquad S_B=\sqrt{Q_B+m(m-1)\eta}.
+\]
+The relaxed problem is to minimize $f$ over
+\[
+\mathcal D=\{\xi\ge0,\ \eta\ge0,\ Q_A\ge m\xi,\ Q_B\ge m\eta\},
+\]
+with no upper bounds. At a point with $Q_A=m\xi$ and $Q_B=m\eta$, $f$ equals $\bar G_w$ at the block-uniform loadings $\alpha=\sqrt\xi$ and $\beta=\sqrt\eta$. Where $S_A>0$,
+\[
+\frac{\partial f}{\partial Q_A}=\omega\left(Q_B-c\frac{S_B}{S_A}\right),
+\qquad
+\frac{\partial f}{\partial\xi}=m(m-1)\left(\xi-L-\omega c\frac{S_B}{S_A}\right),
+\]
+and the derivatives with respect to $Q_B$ and $\eta$ follow by interchanging the blocks.
+
+\subsection{Attainment and Tightness of the Relaxation}
+\label{app:uls-tight}
+
+\emph{Attainment.} On $\mathcal D$, $m(m-1)\xi\le(m-1)Q_A$, so $S_A^2\le mQ_A$ and $S_B^2\le mQ_B$. Therefore
+\[
+f\ge C_m\{(L-\xi)^2+(L-\eta)^2\}+\omega\left(\sqrt{Q_AQ_B}-mc\right)^2,
+\]
+and $\xi$, $\eta$, and $Q_AQ_B$ are bounded on every sublevel set of $f$. Consider an unbounded sequence in a sublevel set. After an interchange of the blocks and passage to a subsequence, $Q_A\to\infty$, so $Q_B\to0$ and $\eta\le Q_B/m\to0$. Along it, $S_A^2S_B^2\le mQ_AQ_B\{1+m(m-1)\xi/Q_A\}$; the product $T=Q_AQ_B$ stays bounded, the factor in braces tends to 1, and $(L-\eta)^2\to L^2$. Dropping the term $C_m(L-\xi)^2$ gives
+\[
+\liminf f\ge C_mL^2+\omega\inf_{T\ge0}\left(T-2c\sqrt{mT}+m^2c^2\right)
+=C_mL^2+\omega m(m-1)c^2 .
+\]
+The point of $\mathcal D$ given by the uniform loadings $\sqrt L$ in block A and $\sqrt L\varphi$ in block B has $S_AS_B=m^2c$ and $Q_AQ_B=m^2c^2$, so there $f=C_mL^2(1-\varphi^2)^2$, which is below this limit. A minimizing sequence is therefore bounded. Because $\mathcal D$ is closed and $f$ is continuous, the relaxed minimum is attained.
+
+\emph{Positivity.} At a relaxed minimizer, $\xi>0$ and $\eta>0$; consequently $Q_A$, $Q_B$, $S_A$, and $S_B$ are positive. Suppose $\xi=0$. If $Q_A>0$, then $S_A>0$, $\xi$ can be increased within $\mathcal D$, and $\partial f/\partial\xi=-m(m-1)(L+\omega cS_B/S_A)<0$. If $Q_A=0$, moving to $(\xi,Q_A)=(t^2,mt^2)$ gives $S_A=mt$ and changes $f$ by
+\[
+C_m\{(L-t^2)^2-L^2\}+\omega mt\left(tQ_B-2cS_B\right),
+\]
+which is negative for small $t>0$: if $S_B>0$ the term $-2\omega mcS_Bt$ dominates, and if $S_B=0$ then $Q_B=0$ and only the first term remains. Both cases contradict minimality. The argument for $\eta$ is the same.
+
+\emph{Tightness.} At a relaxed minimizer, $Q_A=m\xi$ and $Q_B=m\eta$. Suppose instead that $Q_A>m\xi$. Because $\xi>0$, both $Q_A$ and $\xi$ can vary in either direction, so the two displayed derivatives vanish:
+\[
+Q_B=c\frac{S_B}{S_A},\qquad \xi=L+\omega c\frac{S_B}{S_A}=L+\omega Q_B>L .
+\]
+If also $Q_B>m\eta$, the same equations with the blocks interchanged give $Q_A=cS_A/S_B$ and $\eta>L$. Then $Q_AQ_B=c^2$, whereas $Q_AQ_B>m^2\xi\eta>m^2L^2>c^2$. Hence $Q_B=m\eta$ and $S_B=m\sqrt\eta$. Along the boundary $Q_B=m\eta$, $\eta$ can vary in either direction because $\eta>0$, and stationarity of $f$ gives
+\[
+0=m(m-1)(\eta-L)+\omega mQ_A-\omega mc\frac{S_A}{\sqrt\eta}.
+\]
+The equation $Q_B=cS_B/S_A$ now reads $S_A=c/\sqrt\eta$, so $cS_A/\sqrt\eta=S_A^2=Q_A+m(m-1)\xi$, and the stationarity equation becomes $\eta=L+\omega m\xi>L$. Finally $S_A^2>m\xi+m(m-1)\xi=m^2\xi$, so
+\[
+c^2=\eta S_A^2>m^2\xi\eta>m^2L^2,
+\]
+which contradicts $c<L$. Hence $Q_A=m\xi$, and by symmetry $Q_B=m\eta$. The argument holds for every $\omega>0$.
+
+\subsection{Minimization Over Block-Uniform Loadings}
+\label{app:uls-cone}
+
+By Section~\ref{app:uls-tight}, the relaxed minimum is the minimum of $f$ over points with $Q_A=m\xi$ and $Q_B=m\eta$, that is, of $\bar G_w$ over nonnegative block-uniform loadings $(\alpha,\beta)$. Put $u=\alpha^2+\beta^2$ and $v=\alpha\beta$. The map from nonnegative pairs to the cone $u\ge2v\ge0$ is onto, and $(u,v)$ determines the unordered pair through $\{\sqrt{u+2v}\pm\sqrt{u-2v}\}/2$. For block-uniform loadings,
+\[
+\frac{G_w}{w_W}
+=h(u,v)=C_m(u-L)^2+md_\omega v^2
+-2\omega m^2L\varphi v+C_mL^2+\omega m^2L^2\varphi^2.
+\]
+In this appendix $h$ denotes this function, not the cross-block eigenvalue term of Section~\ref{sec:setup}.
+
+\emph{Case $d_\omega>0$.} Here $h$ is a strictly convex quadratic. Its unconstrained minimizer is
+\[
+(u,v)=\left(L,\frac{\omega mL\varphi}{\omega m-m+1}\right),
+\]
+which lies in the cone exactly when $\varphi\le\varphi_\omega$, and is then the unique minimizer over the cone. It gives $\alpha^2+\beta^2=L$ and
+\[
+(\alpha-\beta)^2=u-2v=\frac{2\omega mL}{d_\omega}(\varphi_\omega-\varphi),
+\]
+so $\alpha\ne\beta$ for $\varphi<\varphi_\omega$ and $\alpha=\beta=\sqrt{L/2}$ at $\varphi=\varphi_\omega$. For $\varphi\ge\varphi_\omega$, consider the edge $u=2v=2t$, on which
+\[
+h(2t,t)=m(m-1)(L-t)^2+\omega m^2(c-t)^2,
+\qquad
+t_s=\frac{L(2C_m+\omega m^2\varphi)}{2C_m+\omega m^2}
+\]
+is the unique minimizer. Because the derivative of $h(2t,t)$ vanishes at $t_s$, the gradient of $h$ at $(2t_s,t_s)$ is $\varpi(1,-2)$ with
+\[
+\varpi=2C_m(2t_s-L)=\frac{m(m-1)L(2\omega m\varphi-d_\omega)}{m-1+\omega m},
+\]
+which is nonnegative precisely when $\varphi\ge\varphi_\omega$. Convexity then gives $h(u,v)\ge h(2t_s,t_s)+\varpi(u-2v)\ge h(2t_s,t_s)$ on the cone, and strict convexity makes the minimizer unique. At $\varphi=\varphi_\omega$ the multiplier is zero and $(2t_s,t_s)=(L,L/2)$, so the two solutions coincide.
+
+\emph{Case $d_\omega\le0$.} For $\varphi>0$, $\partial h/\partial v=2md_\omega v-2\omega m^2c<0$, so at each fixed $u$ the minimum over the cone is at $v=u/2$. The edge quadratic above then gives the unique minimizer $(2t_s,t_s)$ at every $\varphi>0$.
+
+\emph{Return to the original problem.} The asymmetric solutions satisfy $\alpha^2+\beta^2=L$ with $\alpha\beta>0$, and the symmetric solution satisfies $0<t_s<L$ because $t_s$ is a weighted mean of $L$ and $c<L$. All these loadings lie strictly inside the bounds $|l_i|\le1$, so the block-uniform minimizers are feasible for the original problem and the original and relaxed minima are equal. Let $l$ be any global minimizer of the original problem, with its common sign positive. Its coordinates $(\xi,\eta,Q_A,Q_B)$ lie in $\mathcal D$ and satisfy $f\le\bar G_w(l)$, so they minimize $f$. Section~\ref{app:uls-tight} gives $Q_A=m\xi$ and $Q_B=m\eta$, and equality in the Cauchy--Schwarz inequality makes the loadings constant within each block. Its pair $(u,v)$ then minimizes $h$ over the cone. This proves the statements of Proposition~\ref{cor:wls} for $\varphi>0$. Substitution into $h$ gives the minimum values $C_mL^2-\omega m^2(m-1)L^2\varphi^2/d_\omega$ on the asymmetric branch and $\omega m^2(m-1)L^2(1-\varphi)^2/(m-1+\omega m)$ on the symmetric branch.
+
+\emph{Unweighted least squares.} At $\omega=1$, $d_\omega=1$, $\varphi_\omega=1/(2m)$, and
 \[
 G=C_m(u-L)^2+m(v-mL\varphi)^2
-+C_mL^2-m^2(m-1)L^2\varphi^2,
++C_mL^2-m^2(m-1)L^2\varphi^2 .
 \]
-over the cone $u\ge2v\ge0$. It is a strictly convex quadratic. Its unconstrained minimum $(u,v)=(L,mL\varphi)$ is feasible exactly when $\varphi\le1/(2m)$. Above that value, the minimum is on $u=2v$, at $v=L(n+m\varphi)/\nu $. The Karush--Kuhn--Tucker multiplier is
+The unconstrained minimum $(u,v)=(L,mL\varphi)$ is feasible exactly when $\varphi\le1/(2m)$. Above that value, the minimum is on $u=2v$, at $v=L(n+m\varphi)/\nu $, with multiplier
 \[
 \varpi=2C_m(2v-L)
 =\frac{m(m-1)L(2m\varphi-1)}{2m-1},
 \]
-which is nonnegative precisely when $\varphi\ge1/(2m)$. Convexity makes these conditions sufficient. Substitution gives Theorem~\ref{thm:uls}, and the equality conditions of the original relaxation give its retained-block endpoint family.
+which is nonnegative precisely when $\varphi\ge1/(2m)$. The displayed difference becomes $(\alpha-\beta)^2=2mL\{1/(2m)-\varphi\}$, and the two minimum values become those of Theorem~\ref{thm:uls}.
 
-For weighted least squares, the same sign and inequality arguments apply within each pair class. To see why the reduction remains tight for every $\omega>0$, set $c=L\varphi$ and $S_A^2=Q_A+m(m-1)\xi$, with $S_B$ defined analogously. If $Q_A>m\xi$ at a relaxed minimizer, stationarity gives $\xi=L+\omega Q_B>L$ and $Q_B=cS_B/S_A$. If both norm inequalities are strict, stationarity also gives $\eta>L$ and $Q_AQ_B=c^2$, contradicting $Q_AQ_B>m^2L^2$. If the other inequality is an equality, then $Q_B=m\eta$, and boundary stationarity gives $\eta=L+\omega m\xi>L$ and $c^2=\eta S_A^2\ge m^2\xi\eta>m^2L^2$. This again contradicts $c<L$. Hence both norm inequalities are equalities.
+\subsection{Zero Trait Correlation}
+\label{app:uls-zero}
 
-For the resulting block-uniform loadings,
+Set $\varphi=c=0$. Absolute values again increase no residual, and strictly decrease the residual of a within-block pair with $l_il_j<0$. The cross-block target is zero, so the signs of the two blocks are independent. For the absolute loadings, the bound of Section~\ref{app:uls-relaxed} and $Q_AQ_B\ge m^2\xi\eta$ give
 \[
-\frac{G_w}{w_W}
-=C_m(u-L)^2+m(\omega m-m+1)v^2
--2\omega m^2L\varphi v+C_mL^2+\omega m^2L^2\varphi^2.
+\bar G_w\ge C_m\{(L-\xi)^2+(L-\eta)^2\}+\omega Q_AQ_B
+\ge C_m(u-L)^2+md_\omega v^2+C_mL^2,
 \]
-If $\omega m-m+1>0$, this is a strictly convex quadratic on $u\ge2v\ge0$. Its unconstrained minimizer is
-\[
-(u,v)=\left(L,\frac{\omega mL\varphi}{\omega m-m+1}\right),
-\]
-which is feasible exactly when $\varphi\le\varphi_\omega$. Otherwise the minimum is on $u=2v$, at $v=L(2C_m+\omega m^2\varphi)/(2C_m+\omega m^2)$. The two solutions coincide at $(L,L/2)$ when $\varphi=\varphi_\omega$. If $\omega m-m+1\le0$, the objective is concave or linear in $v$ at fixed $u$ and, for $\varphi>0$, decreases in $v$. Its minimum is therefore on $v=u/2$, which gives the symmetric solution. At $\varphi=0$, the equality cases give the retained-block solutions, continuum, and independent block signs stated in Proposition~\ref{cor:wls}.
+with $u=\xi+\eta$ and $v=\sqrt{\xi\eta}$, so that $u\ge2v\ge0$.
+
+If $d_\omega>0$, which includes ULS, the right side is at least $C_mL^2$, with equality only at $(u,v)=(L,0)$. A block fitted exactly, with the other block at zero, attains $C_mL^2$. At any minimizer, therefore, $(\xi,\eta)$ is $(L,0)$ or $(0,L)$. Take $(L,0)$. Then $Q_A\ge mL>0$, and equality in the second inequality requires $Q_AQ_B=m^2\xi\eta=0$, so block B has zero loadings. Equality in Jensen's inequality requires every pair product in block A to equal $L$. For $m\ge3$ this forces every retained loading to have magnitude $\lambda$. For $m=2$ there is one pair product, and the retained pair is $(t,L/t)$ with $L\le t\le1$. The inequality $Q_A\ge m\xi$ is strict along this family except at $t=\lambda$; it need not be an equality here, because $Q_A$ enters $f$ only through $Q_AQ_B$ and $cS_AS_B$, and both vanish. This is the endpoint statement of Theorem~\ref{thm:uls}.
+
+If $d_\omega=0$, the right side is minimized exactly when $u=L$, for every $0\le v\le L/2$. If $d_\omega<0$, it is minimized at fixed $u$ by $v=u/2$; the resulting quadratic in $u$ has leading coefficient $C_m+md_\omega/4=m(m-1+\omega m)/4>0$ and is minimized at $\xi=\eta=L(m-1)/(m-1+\omega m)$. The equality conditions in these two cases give the continuum, the additional two-item family, and the uniform solution with independent block signs stated in Proposition~\ref{cor:wls}.
+
+Deferred to Online Resource~1 (Section~11) and Online Resource~2 (Sections~5 and~7) are routine algebra and one endpoint analysis: the expansion of $\bar G_w$ into $h$, the substitutions that give the minimum values, their symbolic checks, and the equality conditions at $\varphi=0$ for $d_\omega\le0$.
+
+\subsection{Weights for WLSMV}
+\label{app:uls-weights}
 
 For the WLSMV calculations, the residual weights are inverse asymptotic variances of two-step polychoric estimates. We obtained them from the estimator's influence function, including estimation of the item thresholds, by numerical differentiation of bivariate normal cell probabilities. The resulting population weights agree with lavaan's estimated asymptotic covariance matrix for 200,000 cases to within 0.3\%. The implementation is included in the supplementary code.
-

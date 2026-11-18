@@ -27,7 +27,7 @@ $\Var(\sum_{i\ne j}w_i r_i)\le\sum_{i\ne j}w_i^2\Var(r_i)$.
 \end{proposition}
 
 \begin{proof}
-Fix a boundary face $\psi_j=0$. Positive definiteness gives $l_j\ne0$ and positive uniquenesses on the remaining items. Put $t=l_j^2$ and $\delta_i=l_i/l_j$ for $i\ne j$. Let $D$ be diagonal with $D_{jj}=t$ and $D_{ii}=\psi_i$ otherwise, and let
+Fix a boundary face $\psi_j=0$. Positive definiteness gives $\Sigma_{jj}=l_j^2>0$. It also gives positive uniquenesses on the remaining items: if $\psi_k=0$ for some $k\ne j$, the principal submatrix of $\Sigma$ on $\{j,k\}$ would be that of the rank-one matrix $ll^{\top}$ and would be singular. Put $t=l_j^2$ and $\delta_i=l_i/l_j$ for $i\ne j$. Let $D$ be diagonal with $D_{jj}=t$ and $D_{ii}=\psi_i$ otherwise, and let
 \[
 T_\delta=I+\sum_{i\ne j}\delta_i e_i e_j^{\top}.
 \]
@@ -44,7 +44,7 @@ F=\log t+\frac1t
 +\sum_{i\ne j}\left\{\log\psi_i+
 \frac{1-2\delta_iR_{ij}+\delta_i^2}{\psi_i}\right\}.
 \]
-The terms separate. Their unique stationary minimum is $t=1$, $\delta_i=R_{ij}$, and $\psi_i=1-R_{ij}^2$, which is the covariance $\Sigma_\star$ in Proposition~\ref{prop:boundary}.
+The terms separate. The term in $t$ tends to infinity at both ends of $(0,\infty)$ and is stationary only at $t=1$. For each $i\ne j$, write $c_i=1-2\delta_iR_{ij}+\delta_i^2$, so that $c_i\ge1-R_{ij}^2>0$. The term $\log\psi_i+c_i/\psi_i$ is stationary in $\psi_i$ only at $\psi_i=c_i$, where it equals $1+\log c_i$, and it tends to infinity as $\psi_i$ tends to zero or to infinity. The value $c_i$ is smallest, and stationary in $\delta_i$, only at $\delta_i=R_{ij}$. The face therefore has the single stationary point $t=1$, $\delta_i=R_{ij}$, and $\psi_i=1-R_{ij}^2$, and this point is its global minimizer. It is the covariance $\Sigma_\star$ in Proposition~\ref{prop:boundary}. With the sign of $l_j$ fixed, the map from $(l,\psi_i\,(i\ne j))$ on the face to $(t,\delta,\psi)$ is a diffeomorphism onto the open set $(0,\infty)\times\mathbb R^{p-1}\times(0,\infty)^{p-1}$, with inverse $l_j=\sqrt t$, $l_i=\delta_i\sqrt t$. A local minimum of the full model that lies on the face is a local minimum of the discrepancy restricted to the face, hence stationary in these coordinates, and so has the covariance $\Sigma_\star$.
 
 Increasing $\psi_j$ by $\varepsilon\ge0$ gives the feasible inward perturbation $\Sigma_\star+\varepsilon e_je_j^{\top}$. Put $K=\Sigma_\star^{-1}$. The derivative of the discrepancy at $\varepsilon=0$ is $K_{jj}-(KRK)_{jj}$. Define
 \[
@@ -68,10 +68,10 @@ Finally, if $r_i=X_i-R_{ij}X_j$, then $\Var(r_i)=1-R_{ij}^2$ and $\Cov(r_i,r_k)=
 \sum_{i\ne j}w_i^2\Var(r_i)
 -\Var\!\left(\sum_{i\ne j}w_i r_i\right),
 \]
-which proves the variance form of the criterion.\end{proof}
+which proves the variance form of the criterion. At a local minimum of the full model the feasible inward perturbation cannot lower the discrepancy, so this derivative is nonnegative there. That is the final inequality of the proposition. Online Resource~1, Section~4, repeats the derivation with the expansion of $(KRK)_{jj}$ written out; nothing else is deferred.\end{proof}
 
-The boundary covariance $\Sigma_\star$ is obtained by regressing every other item on item $j$ and treating the resulting residuals as independent. A negative derivative indicates residual covariance that can be represented by moving into the interior of the one-factor model. In the exchangeable two-trait population, the derivative is strictly negative except at $m=2$ and $\varphi=0$. At that endpoint, boundary representations occur in the exact-fit family for the retained pair.
+The boundary covariance $\Sigma_\star$ is obtained by regressing every other item on item $j$ and treating the resulting residuals as independent. A negative derivative indicates residual covariance that can be represented by moving into the interior of the one-factor model. In the exchangeable two-trait population, the derivative is strictly negative except at $m=2$ and $\varphi=0$; Lemma~\ref{lem:A-boundary} evaluates the sum. At that endpoint, boundary representations occur in the exact-fit family for the retained pair.
 
-For an observed zero-uniqueness ML solution, the covariance form and derivative provide necessary checks for a local minimum. A nonnegative derivative is not sufficient. The result does not classify negative uniqueness estimates from unconstrained fitting or solutions obtained by WLSMV.
+For an observed zero-uniqueness ML solution, the covariance form and derivative provide necessary checks for a local minimum. A strictly positive derivative is also sufficient: $\Sigma_\star$ is the unique minimizer on its face, and the derivative in the zero uniqueness is continuous and positive near it, so $\Sigma_\star$ is then a strict local minimum. A zero derivative is inconclusive. The result does not classify negative uniqueness estimates from unconstrained fitting or solutions obtained by WLSMV.
 
 \textit{Numerical corroboration.} In a numerical check reported in Online Resource~1, Section~4, on 400 random correlation matrices with 3 to 8 items, the formula agreed with direct computation to $4\times10^{-14}$, and one-sided finite differences agreed within their numerical error. This inherited check is not part of the proof.

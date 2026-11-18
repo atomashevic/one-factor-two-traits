@@ -1,22 +1,26 @@
-\section{Main Steps in the Proof of Theorem~\ref{thm:ml}}
+\section{Proof of Theorem~\ref{thm:ml}}
 \label{app:ml}
 
-This appendix presents the reductions that give the unrestricted ML solution. The complete proof, including the separate endpoint argument and all equality cases, is given in Online Resource~1. We retain the notation of Section~\ref{sec:setup}.
+This appendix proves Theorem~\ref{thm:ml} and Corollary~\ref{cor:ml-transition}. Lemmas~\ref{lem:A-existence}--\ref{lem:A-interior} hold for a general positive-definite correlation matrix $R$, under the hypotheses each states; the later lemmas use the exchangeable population. The final paragraph lists the routine algebra left to Online Resource~1. We retain the notation of Section~\ref{sec:setup}. Stationary points, local minima and saddles refer to the parameters $(l,\Psi)$ with $\psi_i\ge0$ and $\Sigma=ll^{\top}+\Psi\succ0$. Uniqueness of a minimizer refers to the covariance $\Sigma$ unless the parameters are named.
 
 \subsection{Existence and Interior Score Equations}
 
+\begin{applemma}[Existence]
+\label{lem:A-existence}
+For every positive-definite correlation matrix $R$, the ML discrepancy attains its minimum over the one-factor covariances with nonnegative uniquenesses.
+\end{applemma}
+
+\begin{proof}
 Let $\mu_1,\ldots,\mu_p$ be the eigenvalues of $R^{1/2}\Sigma^{-1}R^{1/2}$. Then
 \[
 F(\Sigma)=\sum_{i=1}^p g(\mu_i),\qquad g(t)=t-\log t-1.
 \]
 Because $g$ is nonnegative and tends to infinity at both ends of $(0,\infty)$, a sublevel set $\{F\le c\}$ bounds $\Sigma$ above and away from singularity. The one-factor model is closed relative to the positive-definite cone: along a convergent sequence of feasible covariances, $l_i^2\le\Sigma_{ii}$ and $0\le\psi_i\le\Sigma_{ii}$ bound the parameters and give a convergent feasible subsequence. Since the identity matrix is feasible, a minimizing sequence lies in a nonempty compact sublevel set. The discrepancy therefore attains its minimum.
+\end{proof}
 
-For fixed $\Psi\succ0$, write $B=\Psi^{-1/2}R\Psi^{-1/2}$, the population matrix whitened by the uniquenesses, and $v=\Psi^{-1/2}l$. The rank-one inverse and determinant identities give
-\[
-F=\tr B-\log\det B-p
--\frac{v^{\top}Bv}{1+v^{\top}v}+\log(1+v^{\top}v).
-\]
-At fixed $v^{\top}v$, the minimizing direction is a leading eigenvector of $B$. If the ordered eigenvalues of $B$ are $\zeta_1\ge\cdots\ge\zeta_p$, minimization over the norm gives $v^{\top}v=\max(\zeta_1-1,0)$ and concentrated discrepancy
+\begin{applemma}[Concentration over the loadings]
+\label{lem:A-concentration}
+Let $R$ be a positive-definite correlation matrix and fix $\Psi\succ0$. Write $B=\Psi^{-1/2}R\Psi^{-1/2}$ for the population matrix whitened by the uniquenesses, and let $\zeta_1\ge\cdots\ge\zeta_p$ be its eigenvalues. Then
 \[
 \min_l F=
 \begin{cases}
@@ -24,9 +28,21 @@ At fixed $v^{\top}v$, the minimizing direction is a leading eigenvector of $B$. 
 \displaystyle\sum_{j=1}^p g(\zeta_j),&\zeta_1\le1.
 \end{cases}
 \]
-At a nonzero local minimum over the loading vector, $v$ is an eigenvector of $B$ (stationarity at fixed norm) and must be a leading one, since rotation toward an eigenvector with a larger eigenvalue lowers the discrepancy.
+If $\zeta_1>1$, the minimizing loading vectors are $l=\Psi^{1/2}v$ with $v$ a leading eigenvector of $B$ and $v^{\top}v=\zeta_1-1$. If $\zeta_1\le1$, the minimizer is $l=0$. Every nonzero local minimum of $F$ over $l$ at this $\Psi$ is one of the minimizers of the first case.
+\end{applemma}
 
-At an interior stationary point, put $u=\Psi^{-1}l$ and $\gamma=l^{\top}u$. Differentiation with respect to the loadings and uniquenesses gives
+\begin{proof}
+Put $v=\Psi^{-1/2}l$. The rank-one inverse and determinant identities give
+\[
+F=\tr B-\log\det B-p
+-\frac{v^{\top}Bv}{1+v^{\top}v}+\log(1+v^{\top}v).
+\]
+At fixed $v^{\top}v=r>0$, the minimizing direction is a leading eigenvector of $B$, and the last two terms become $-r\zeta_1/(1+r)+\log(1+r)$. The derivative of this expression in $r$ is $(1+r-\zeta_1)/(1+r)^2$, so the minimizing norm is $r=\max(\zeta_1-1,0)$. Substitution gives the displayed minimum. At a nonzero local minimum over the loading vector, $v$ is an eigenvector of $B$ (stationarity at fixed norm) and must be a leading one, since rotation toward an eigenvector with a larger eigenvalue lowers the discrepancy. Its squared norm is then a stationary point of the function of $r$ above, and the only positive one is $r=\zeta_1-1$, which requires $\zeta_1>1$.
+\end{proof}
+
+\begin{applemma}[Interior score equations]
+\label{lem:A-scores}
+Let $R$ be a positive-definite correlation matrix and let $(l,\Psi)$ be a stationary point with $\Psi\succ0$. Put $u=\Psi^{-1}l$ and $\gamma=l^{\top}u$. Then
 \begin{equation}
 Ru=(1+\gamma)l,
 \qquad \psi_i=1-l_i^2,
@@ -37,49 +53,137 @@ so the fitted variances equal the population variances. An equivalent row equati
 \sum_{j\ne i}u_j(R_{ij}-l_il_j)=0.
 \label{eq:ml-row-score}
 \end{equation}
-When $\varphi>0$, $B$ has strictly positive entries. Perron's theorem implies that its leading eigenvalue is simple and has a strictly positive eigenvector (Horn \& Johnson, 2013, Ch.~8). The zero-loading stationary point is not a minimum because the leading eigenvalue of $R$ exceeds one. Thus every interior local minimum has strictly positive loadings after a common sign change.
+Conversely, a point with $\Psi\succ0$ that satisfies equation~\eqref{eq:ml-scores} is stationary. At a point with $\Psi\succ0$ where only the derivatives with respect to the loadings vanish, $\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_i^2$.
+\end{applemma}
+
+\begin{proof}
+Write $K=\Sigma^{-1}$ and $H=K-KRK=K(\Sigma-R)K$. The differential of the discrepancy is $\tr(H\,d\Sigma)$, so $\partial F/\partial l=2Hl$ and $\partial F/\partial\psi_i=H_{ii}$. The rank-one inverse is $K=\Psi^{-1}-uu^{\top}/(1+\gamma)$, which gives $Kl=u/(1+\gamma)$ and $\Sigma u=(1+\gamma)l$. If $Hl=0$, then $(\Sigma-R)Kl=0$ because $K$ is invertible, so $(\Sigma-R)u=0$. This is the first part of equation~\eqref{eq:ml-scores}. Substituting the rank-one inverse into $H$ and using $(\Sigma-R)u=0$ on both sides gives $H=\Psi^{-1}(\Sigma-R)\Psi^{-1}$, so $H_{ii}=(\Sigma_{ii}-1)/\psi_i^2$. The equations $H_{ii}=0$ are therefore $l_i^2+\psi_i=1$. The steps reverse, which proves the converse. Row $i$ of $Ru=(1+\gamma)l$ is $u_i+\sum_{j\ne i}R_{ij}u_j=l_i+l_i\sum_ju_jl_j$. Equation~\eqref{eq:ml-row-score} follows because $u_i(1-l_i^2)=l_i$.
+\end{proof}
+
+\begin{applemma}[Interior positivity]
+\label{lem:A-interior}
+Let $R$ be a positive-definite correlation matrix with strictly positive off-diagonal entries. In the exchangeable population this is the case $0<\varphi<1$. At every local minimum with $\Psi\succ0$, the loadings are nonzero and have a common sign. After a common sign change, $0<l_i<1$ for every item.
+\end{applemma}
+
+\begin{proof}
+If $l=0$ at a local minimum, the uniquenesses are a local minimum of the diagonal-model discrepancy, whose only stationary point is $\Psi=I$. Then $B=R$. The leading eigenvalue of $R$ exceeds one, because the quadratic form of $R$ at the vector of ones exceeds $p$. In the proof of Lemma~\ref{lem:A-concentration}, the derivative in $r$ at $r=0$ is $1-\zeta_1<0$, so a small nonzero loading in the leading direction lowers the discrepancy, and $l=0$ is not a local minimum. If $l\ne0$, Lemma~\ref{lem:A-concentration} shows that $v=\Psi^{-1/2}l$ is a leading eigenvector of $B$. The matrix $B$ has strictly positive entries. Perron's theorem implies that its leading eigenvalue is simple and has a strictly positive eigenvector (Horn \& Johnson, 2013, Ch.~8). Hence $v$, and with it $l$, is strictly positive after a common sign change. Equation~\eqref{eq:ml-scores} gives $l_i^2=1-\psi_i<1$.
+\end{proof}
 
 \subsection{Boundary Exclusion and the Reduction to Two Loadings}
 
-A positive-definite one-factor covariance can have at most one zero uniqueness. Proposition~\ref{prop:boundary} characterizes the only stationary candidate on each such boundary face and gives its inward derivative. For the present population that derivative is strictly negative except when $m=2$ and $\varphi=0$. Hence all local minima at positive trait correlation are interior.
+\begin{applemma}[Boundary exclusion]
+\label{lem:A-boundary}
+In the exchangeable population with $0\le\varphi<1$, no local minimum has a zero uniqueness, except when $m=2$ and $\varphi=0$. In that exceptional case a local minimum with $\psi_j=0$ has the covariance $\Sigma_\star$ of Proposition~\ref{prop:boundary}.
+\end{applemma}
 
-For an item in A, equation~\eqref{eq:ml-scores} can be written
+\begin{proof}
+A positive-definite one-factor covariance has at most one zero uniqueness: if $\psi_j=\psi_k=0$ with $j\ne k$, the principal submatrix of $\Sigma$ on $\{j,k\}$ is that of the rank-one matrix $ll^{\top}$ and is singular. Let a local minimum have $\psi_j=0$. By Proposition~\ref{prop:boundary} its covariance is $\Sigma_\star$, and the derivative of the discrepancy in $\psi_j$ at $\Sigma_\star$ is
+\[
+-\sum_{\substack{i\ne k\\i,k\ne j}}w_iw_k\,(R_{ik}-R_{ij}R_{kj}),
+\qquad w_i=\frac{R_{ij}}{1-R_{ij}^2}.
+\]
+Take $j$ in block A; the other case follows by interchanging the blocks. The weights are $w_i=L/(1-L^2)>0$ for the other items of A and $w_i=L\varphi/(1-L^2\varphi^2)\ge0$ for the items of B. The residual covariances $R_{ik}-R_{ij}R_{kj}$ are
+\[
+L-L^2=aL\quad(i,k\in A),\qquad
+L-L^2\varphi^2\quad(i,k\in B),\qquad
+L\varphi-L^2\varphi=aL\varphi\quad(i\in A,\ k\in B).
+\]
+All three are nonnegative, so no summand is negative and the derivative is at most zero. If $\varphi>0$, two distinct items of B give a summand with positive weights and the positive residual covariance $L-L^2\varphi^2$. If $\varphi=0$, the weights in B vanish, and only the $(m-1)(m-2)$ ordered pairs of other items in A remain:
+\[
+\left.\frac{dF}{d\psi_j}\right|_{0^+}
+=-(m-1)(m-2)\frac{L^3}{(1-L)(1+L)^2}.
+\]
+The derivative is therefore strictly negative unless $m=2$ and $\varphi=0$, where it is zero. Where it is negative, increasing $\psi_j$ from zero, a feasible change, lowers the discrepancy, so $\Sigma_\star$ is not a local minimum.
+\end{proof}
+
+\begin{applemma}[Block uniformity]
+\label{lem:A-uniformity}
+Let $0<\varphi<1$. At every stationary point with $\Psi\succ0$ and strictly positive loadings, the loadings are constant within each block.
+\end{applemma}
+
+\begin{proof}
+By equation~\eqref{eq:ml-scores}, $0<l_i<1$ and $u_i=l_i/(1-l_i^2)>0$. For an item $i$ in A, row $i$ of $Ru$ is $(1-L)u_i+L\sum_{k\in A}u_k+L\varphi\sum_{k\in B}u_k$. Equation~\eqref{eq:ml-scores} can therefore be written
 \[
 (1+\gamma)l_i-a\frac{l_i}{1-l_i^2}=C_A,
+\qquad
+C_A=L\Bigl(\sum_{k\in A}u_k+\varphi\sum_{k\in B}u_k\Bigr),
 \]
-with the same $C_A$ throughout the block. The left side is strictly concave on $(0,1)$, so there are at most two loading values within a block. If those values are $x<y$, elimination of $C_A$ gives
+with the same $C_A$ throughout the block. As a function $f$ of $t=l_i$ on $(0,1)$, the left side has
 \[
-\gamma_{\mathrm{rest}}(1-x^2)(1-y^2)=(1+xy)(xy-L),
+f''(t)=-\frac{2at(3+t^2)}{(1-t^2)^3}<0 .
 \]
-where $i$ and $j$ are items with loadings $x$ and $y$, and $\gamma_{\mathrm{rest}}=\sum_{k\ne i,j}l_k^2/\psi_k>0$ is the contribution of the other items to $\gamma$. Therefore $xy>L$.
+It is strictly concave on $(0,1)$, the interval that contains every loading, so it takes the value $C_A$ at most twice. There are therefore at most two loading values within a block. The same holds in B.
 
-The row equation for an item loading $y$ now has negative within-block residuals. It must have a positive cross-block residual, so $yz<L\varphi$ for the smallest loading $z$ in B. Since $xy>L$ gives $y>\lambda$, we have $z<L\varphi/y<\lambda$. The row equation for $z$ then has positive cross-block residuals, so some within-block residual $L-zw$ in that row is negative. Hence B contains a second loading $w>L/z>\lambda>z$, with $zw>L$. Applying the same argument to $w$ gives $wx<L\varphi$. This is impossible, because
+Suppose that A has two values $x<y$, taken by items $i$ and $j$. Let $\gamma_{\mathrm{rest}}=\sum_{k\ne i,j}l_k^2/\psi_k$ be the contribution of the other items to $\gamma$; it is positive because the loadings are positive and $p\ge4$. Subtracting the two equations and dividing by $y-x$ gives
+\[
+(1+\gamma)(1-x^2)(1-y^2)=a(1+xy),
+\]
+because $y/(1-y^2)-x/(1-x^2)=(y-x)(1+xy)/\{(1-x^2)(1-y^2)\}$. Also
+\[
+1+\gamma=\frac{1-x^2y^2}{(1-x^2)(1-y^2)}+\gamma_{\mathrm{rest}} .
+\]
+Elimination of $1+\gamma$, with $a=1-L$, gives
+\[
+\gamma_{\mathrm{rest}}(1-x^2)(1-y^2)=(1+xy)(xy-L).
+\]
+Therefore $xy>L$, and in particular $y>\lambda$.
+
+Consider the row equation~\eqref{eq:ml-row-score} for an item of A with loading $y$. The weights $u_k$ are positive. The within-block residuals are $L-xy$ and $L-y^2$, both negative, and the block has at least one other item. Some cross-block residual in that row is therefore positive. If $z$ is the smallest loading in B, then $yz<L\varphi$, and hence $z<L\varphi/y<\lambda$.
+
+Now consider the row equation for an item of B with loading $z$. Its cross-block residuals are $L\varphi-zl_k$ with $l_k$ equal to $x$ or $y$; they are positive because $zx<zy<L\varphi$. Some within-block residual $L-zl_k$ in that row is therefore negative. It cannot belong to another item with loading $z$, because $z<\lambda$ gives $L-z^2>0$. Hence B has a second loading $w>z$, with $zw>L$ and $w>L/z>\lambda$.
+
+In the row equation for an item of B with loading $w$, the within-block residuals $L-zw$ and $L-w^2$ are negative, so some cross-block residual is positive, and $wx<L\varphi$ for the smallest loading $x$ in A. This is impossible, because
 \[
 (xy)(zw)>L^2,
 \qquad
 (yz)(wx)<L^2\varphi^2<L^2,
 \]
-whereas the left sides are equal. Each local minimum at $\varphi>0$ must therefore have constant loadings within each block. Appendix~\ref{app:unequal-reduction} gives the corresponding argument for unequal blocks.
+whereas the left sides are equal. Block A is therefore uniform, and by the same argument so is block B.
+\end{proof}
+
+Lemmas~\ref{lem:A-interior}--\ref{lem:A-uniformity} show that, for $0<\varphi<1$, every local minimum has positive uniquenesses and, after a common sign change, positive loadings that are constant within each block. By equation~\eqref{eq:ml-scores} its uniquenesses are also constant within each block. Appendix~\ref{app:unequal-reduction} gives the corresponding argument for unequal blocks.
 
 \subsection{The Global Scalar Comparison}
 
-For block-uniform uniquenesses, let $\Psi=\diag(\psi_AI_m,\psi_BI_m)$ and write $\psi_A=e^{s+d}$ and $\psi_B=e^{s-d}$. Before multiplication by $e^{-s}$, the two block-mean eigenvalues are
+For block-uniform uniquenesses, let $\Psi=\diag(\psi_AI_m,\psi_BI_m)$ and write $\psi_A=e^{s+d}$ and $\psi_B=e^{s-d}$. Define
 \[
-T_\pm(d)=b\cosh d\pm\sqrt{b^2\sinh^2d+h^2}.
+T_\pm(d)=b\cosh d\pm\sqrt{b^2\sinh^2d+h^2},
+\qquad
+Q(d)=2na\cosh d+T_-(d).
 \]
-The leading eigenvalue is $T_+$; the sum of the remaining $\nu $ eigenvalues is $Q(d)=2na\cosh d+T_-(d)$. Minimization over the common scale gives $e^s=Q(d)/\nu $ and leaves
+
+\begin{applemma}[Scale profile]
+\label{lem:A-scale}
+Let $0\le\varphi<1$ and fix $d$. Over all $s$ and all loading vectors, the discrepancy at $\Psi=\diag(e^{s+d}I_m,e^{s-d}I_m)$ has the minimum
 \[
 \mathcal H(d)=\nu \log\frac{Q(d)}\nu -2n\log a-\log T_-(d).
 \]
-The optimal scale belongs to the active-factor region because $Q<\nu T_+$. In the diagonal-model region, where the leading whitened eigenvalue is at most one, the discrepancy increases with $s$, so that region cannot give a smaller value. Thus this is the global scale profile, not an extension of a formula outside its admissible region.
+It is attained only at $e^s=Q(d)/\nu$, and there the leading eigenvalue of the whitened matrix exceeds one.
+\end{applemma}
 
-Set $\Delta=b^2-h^2$, $k=2na/b$, and
+\begin{proof}
+The within-block contrasts are eigenvectors of $B$ with eigenvalues $a/\psi_A$ and $a/\psi_B$, each of multiplicity $n$. On the two normalized block-mean vectors, $B$ acts as the $2\times2$ matrix with diagonal entries $b/\psi_A$ and $b/\psi_B$ and off-diagonal entry $h/\sqrt{\psi_A\psi_B}$. The eigenvalues of $B$ are therefore $e^{-s}$ times
+\[
+ae^{-d},\quad ae^{d}\quad(\text{each $n$ times}),\qquad T_+(d),\qquad T_-(d).
+\]
+Because $T_+\ge b\cosh d+b|\sinh d|=be^{|d|}$ and $b>a$, the value $T_+$ exceeds both contrast values, and $T_+\ge T_-$. The leading eigenvalue is thus $\zeta_1=e^{-s}T_+$, the other $\nu$ eigenvalues sum to $e^{-s}Q$, and their product is $e^{-\nu s}a^{2n}T_-$. Each of the $2n$ contrast values is below $T_+$ and $T_-\le T_+$, so $Q<\nu T_+$.
+
+Where $e^{-s}T_+>1$, Lemma~\ref{lem:A-concentration} gives the concentrated discrepancy
+\[
+e^{-s}Q+\nu s-2n\log a-\log T_- -\nu ,
+\]
+which is strictly convex in $s$, with its minimum at $e^s=Q/\nu$ and minimum value $\mathcal H(d)$. This scale satisfies $e^{-s}T_+=\nu T_+/Q>1$. Where $e^{-s}T_+\le1$, the concentrated discrepancy is that of the diagonal model, and its derivative in $s$ is $p-e^{-s}(2na+2b)\cosh d>0$, because the trace $(2na+2b)\cosh d$ is below $pT_+$. The two expressions agree at $e^{-s}T_+=1$. The discrepancy therefore increases with $s$ throughout that region and exceeds $\mathcal H(d)$ there. Thus $\mathcal H$ is the global scale profile, not an extension of a formula outside its admissible region.
+\end{proof}
+
+\begin{applemma}[Profile monotonicity]
+\label{lem:A-profile}
+Let $0\le\varphi<1$, and set $\Delta=b^2-h^2$, $k=2na/b$, and
 \[
 w=\sqrt{1-\frac{1-q^2}{\cosh^2d}}.
 \]
-As $|d|$ increases, $w$ increases from $q$ to 1. Substitution gives
+As $|d|$ increases from zero, $w$ increases strictly from $q$ toward 1. In this variable,
 \begin{align*}
-\mathcal H(w)={}&n\log \Delta-2n\log a-\nu \log \nu 
+\mathcal H(w)={}&n\log \Delta-2n\log a-\nu \log \nu
 +\nu \log(k+1-w)\\
 &-m\log(1-w)-n\log(1+w),
 \end{align*}
@@ -89,26 +193,52 @@ with derivative
 =\frac{(\nu k+2n)(w-q^*)}{(k+1-w)(1-w^2)}.
 \label{eq:profile-sign}
 \end{equation}
-The denominator is positive. The profile decreases up to $q^*$ and increases thereafter, so its minimizing value is $w=\max(q,q^*)$. The solution is symmetric, $d=0$, precisely when $q\ge q^*$, or equivalently when $\varphi\ge\varphi^*$.
+The minimum of $\mathcal H$ over $d$ is attained exactly where $w=\max(q,q^*)$: only at $d=0$ when $q\ge q^*$, and only at the two values $\pm d^*$ with $w(d^*)=q^*$ when $q<q^*$. The profile has no other local minimum.
+\end{applemma}
 
-Below the threshold, the optimal uniquenesses satisfy
+\begin{proof}
+The definition gives $\sqrt{b^2\sinh^2d+h^2}=wb\cosh d$ and $b^2\cosh^2d=\Delta/(1-w^2)$, so that $T_-=b\cosh d\,(1-w)$ and $Q=b\cosh d\,(k+1-w)$. Substitution into $\mathcal H(d)$ gives the expression for $\mathcal H(w)$, and differentiation gives equation~\eqref{eq:profile-sign} after the identity $q^*=(2n-k)/(\nu k+2n)$. The denominator in equation~\eqref{eq:profile-sign} is positive for $0\le w<1$, and $0<q^*<1$. The profile decreases in $w$ up to $q^*$ and increases thereafter. Since $w$ ranges over $[q,1)$ and is a strictly increasing function of $|d|$, the statement follows.
+\end{proof}
+
+The solution is symmetric, $d=0$, precisely when $q\ge q^*$, or equivalently when $\varphi\ge\varphi^*$. At $d=0$ the optimal scale is $e^s=(2na+b-h)/\nu=1-l_s^2$. For $\varphi>0$ the leading eigenvector at $d=0$ is the constant vector, and the optimal norm of Lemma~\ref{lem:A-concentration} gives the loadings $l_s$. Substitution of $w=q$ gives the second case of equation~\eqref{eq:ml-minimum} ($\varphi\ge\varphi^*$).
+
+Below the threshold, $w=q^*$ and $e^s=Q/\nu$ give the optimal uniquenesses
 \[
 \psi_A+\psi_B=(2-L)(1-q^2),\qquad \psi_A\psi_B=a(1-q^2).
 \]
-With $\alpha=\sqrt{1-\psi_A}$ and $\beta=\sqrt{1-\psi_B}$, these identities give equation~\eqref{eq:ml-asymmetric-loadings}. The nonleading whitened eigenvalues sum to $\nu $ and have product $\{a/(1-q^2)\}^n b$. Their concentrated discrepancy is therefore $F_0+n\log(1-q^2)$. At the symmetric solution, substitution gives the second case of equation~\eqref{eq:ml-minimum} ($\varphi\ge\varphi^*$).
+The loadings at this point satisfy $l_i^2=1-\psi_i$. The point minimizes the discrepancy over the loadings, so the derivatives with respect to the loadings vanish, and Lemma~\ref{lem:A-scores} gives $\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_i^2$. Its loading is a leading eigenvector, which lies in the span of the two block-mean vectors (proof of Lemma~\ref{lem:A-scale}), so $\Sigma_{ii}$ is constant within each block. The point also minimizes over the two block uniquenesses $\psi_A$ and $\psi_B$, and the derivative with respect to $\psi_A$ is the sum of the $m$ equal terms $(\Sigma_{ii}-1)/\psi_A^2$ of block A. Hence $\Sigma_{ii}=1$ in A, and likewise in B. With $\alpha=\sqrt{1-\psi_A}$ and $\beta=\sqrt{1-\psi_B}$, the two identities give equation~\eqref{eq:ml-asymmetric-loadings}. They also give the nonleading whitened eigenvalues. The contrast eigenvalues are $a/\psi_A$ and $a/\psi_B$. The block-mean matrix has trace $b(1/\psi_A+1/\psi_B)=b(2-L)/a$ and determinant $\Delta/(\psi_A\psi_B)=b^2/a$, so its eigenvalues are $b/a$ and $b$, and the leading one is $b/a$. The nonleading eigenvalues therefore sum to $n(2-L)+b=\nu$ and have product $\{a/(1-q^2)\}^n b$. By Lemma~\ref{lem:A-concentration} their concentrated discrepancy is $F_0+n\log(1-q^2)$, the first case of equation~\eqref{eq:ml-minimum}.
 
-Existence ensures that at least one reduced candidate is a global minimum. Below the threshold, the two candidates are block interchanges with equal discrepancies, so both are global. At and above the threshold there is one candidate. Conversely, every local minimum must map to a local minimum of this profile: the concentrated positive leading eigenvector and its optimal norm vary continuously with nearby positive uniquenesses. Because the scale optimum $e^{s}=Q(d)/\nu$ is unique and continuous in $d$, a local minimum in $(s,d)$ is a local minimum of $\mathcal H$. Equation~\eqref{eq:profile-sign} therefore excludes additional local minima of the full problem for $\varphi>0$. For $\varphi>0$, every covariance obtained in this way has nonzero off-diagonal entries, and $l_i^2=\Sigma_{ij}\Sigma_{ik}/\Sigma_{jk}$ for distinct $i,j,k$. The loadings are therefore determined by the covariance up to a common sign; parameter nonuniqueness occurs only in the two-item endpoint family at $\varphi=0$.
+\subsection{Completion of the Proof for Positive Trait Correlation}
+
+Let $0<\varphi<1$. By Lemma~\ref{lem:A-existence} a global minimum exists, and it is a local minimum. By Lemmas~\ref{lem:A-interior}--\ref{lem:A-uniformity} every local minimum has block-uniform positive uniquenesses. Its discrepancy is therefore at least $\mathcal H(d)$ for its value of $d$ (Lemma~\ref{lem:A-scale}), and hence at least the minimum of $\mathcal H$. That minimum is attained by feasible points. The global minimizers are therefore the points of Lemma~\ref{lem:A-profile} with the scale of Lemma~\ref{lem:A-scale} and the concentrated loading: one covariance when $\varphi\ge\varphi^*$, including equality, and two covariances, exchanged by the interchange of the blocks, when $\varphi<\varphi^*$.
+
+Every local minimum is one of these. For each $d$, let $\Psi(d)$ be the block-uniform uniquenesses with $e^s=Q(d)/\nu$, and let $l(d)$ be the positive concentrated loading of Lemma~\ref{lem:A-concentration}. For $\varphi>0$ the leading eigenvalue of the whitened matrix is simple. A simple eigenvalue of a symmetric matrix that depends smoothly on a parameter has a smooth eigenvector, by the implicit function theorem applied to the eigenvalue equation with a normalization. Hence $(l(d),\Psi(d))$ is a smooth curve of feasible points, and $F(l(d),\Psi(d))=\mathcal H(d)$ along it. Consider a local minimum, with uniquenesses given by $(s,d)$. It is a nonzero local minimum over the loadings, so by Lemma~\ref{lem:A-concentration} its loading is the concentrated one and its leading whitened eigenvalue exceeds one. Near this scale the concentrated loading is continuous in $s$, and the concentrated discrepancy is strictly convex in $s$ (Lemma~\ref{lem:A-scale}); a local minimum therefore has $e^s=Q(d)/\nu$. It lies on the curve, and $d$ is a local minimum of $\mathcal H$. By Lemma~\ref{lem:A-profile}, $\mathcal H$ has no local minimum other than its global ones. This excludes additional local minima of the full problem for $\varphi>0$. Every covariance obtained in this way has nonzero off-diagonal entries, and $l_i^2=\Sigma_{ij}\Sigma_{ik}/\Sigma_{jk}$ for distinct $i,j,k$. The loadings are therefore determined by the covariance up to a common sign; parameter nonuniqueness occurs only in the two-item endpoint family at $\varphi=0$.
 
 \subsection{The Endpoint and the Transition}
 
-At $\varphi=0$, $R=\diag(R_A,R_B)$ with $-\log\det R_A=-\log\det R_B=F_0$. For positive uniquenesses the whitened matrix $B$ is block diagonal. If its largest eigenvalue exceeds one and is taken from block A, the concentrated discrepancy is the sum of a one-factor discrepancy for A, which is nonnegative, and a diagonal-model discrepancy for B, which is at least $F_0$, with equality only at unit uniquenesses in B. If no eigenvalue exceeds one, the diagonal model gives at least $2F_0>F_0$. Fitting one block exactly and leaving the other diagonal attains $F_0$, for either choice of block. At equality the retained block's whitened leading eigenvalue strictly exceeds $b$, the leading eigenvalue of the other block, so the leading eigenspace cannot mix the two blocks. The off-diagonal equations then give the retained loading $\lambda$ for $m\ge3$ and the family $(t,L/t)$ for $m=2$. For $m\ge3$, Proposition~\ref{prop:boundary} excludes boundary minima, so the minimum is interior. For $m=2$, the only boundary candidates are the star covariances $\Sigma_\star$ of Proposition~\ref{prop:boundary}, which are the endpoints $t=1$ and $t=L$ of the family in Theorem~\ref{thm:ml}.
+At $\varphi=0$, $R=\diag(R_A,R_B)$ with $-\log\det R_A=-\log\det R_B=F_0$, and $F_0>0$ because $R_A$ is a correlation matrix that is not diagonal. For positive uniquenesses the whitened matrix $B$ is block diagonal. If its largest eigenvalue exceeds one and is taken from block A, Lemma~\ref{lem:A-concentration} makes the concentrated discrepancy the sum of a one-factor discrepancy for A, which is nonnegative, and a diagonal-model discrepancy for B, which is at least $F_0$, with equality only at unit uniquenesses in B. If the largest eigenvalue is tied across the blocks, either choice gives the same sum. If no eigenvalue exceeds one, the diagonal model gives at least $2F_0>F_0$. Fitting one block exactly and leaving the other diagonal attains $F_0$, for either choice of block.
 
-The symmetric point is stationary for every $0\le\varphi<1$: with all loadings $l_s$ and uniquenesses $1-l_s^2$, every row of $R$ sums to $b+h$, and equation~\eqref{eq:ml-scores} reduces to $b+h=1+\nu l_s^2$, which holds because $\nu l_s^2=L(n+m\varphi)$. For positive trait correlation below $\varphi^*$, equation~\eqref{eq:profile-sign} gives a direction that decreases the discrepancy at the symmetric solution. At zero correlation, the tied leading eigenvalue requires a separate argument. With equal uniquenesses, rotation of the fitted loading within the two-dimensional block-mean eigenspace leaves the discrepancy unchanged. Any nearby rotated point other than the symmetric one fails diagonal reproduction, and a change in its uniquenesses then decreases the discrepancy. A common rescaling of the covariance provides an increasing direction. The symmetric stationary solution is therefore a saddle throughout $0\le\varphi<\varphi^*$. Online Resource~1 also supplies a direct second-order expansion, with an exact symbolic verification.
+Suppose that equality holds at positive uniquenesses, with the largest eigenvalue taken from block A. The uniquenesses of B then equal one, and each nonleading eigenvalue of the whitened block A equals one. The whitened block A is therefore the identity plus a rank-one matrix, so there is a vector $l_A$ with $R_A=\Psi_A+l_Al_A^{\top}$. Its entries satisfy $l_il_j=L$ for distinct items of A and $l_i^2+\psi_i=1$, and the leading eigenvalue of the whitened block A is $1+\sum_{i\in A}l_i^2/\psi_i$, with eigenvector $\Psi_A^{-1/2}l_A$. Because $0<\psi_i<1$ and $l_i^2+l_j^2\ge2L$ for each pair of items in A, this eigenvalue exceeds $1+\sum_{i\in A}l_i^2\ge1+mL>b$. The leading eigenvalue of block B, whose uniquenesses equal one, is $b$. The two blocks are therefore not tied: the leading eigenvalue of $B$ is simple and its eigenvector lies in block A. A global minimizer with positive uniquenesses minimizes the discrepancy over the loadings, so by Lemma~\ref{lem:A-concentration} it has the concentrated loading. That loading is $l_A$ on block A, up to sign, and zero on block B, and the fitted covariance is $\diag(R_A,I_m)$. The off-diagonal equations $l_il_j=L$ give the retained loading $\lambda$ for $m\ge3$ and the family $(t,L/t)$ for $m=2$. For $m\ge3$, Lemma~\ref{lem:A-boundary} excludes boundary minima, so the minimum is interior. For $m=2$, the only boundary candidates are the star covariances $\Sigma_\star$ of Proposition~\ref{prop:boundary}, which are the endpoints $t=1$ and $t=L$ of the family in Theorem~\ref{thm:ml} and have discrepancy $F_0$.
 
-The identity in equation~\eqref{eq:loading-gap} gives the square-root closing of the loading difference in Corollary~\ref{cor:ml-transition}. Let $F_s$ and $F_a$ denote the symmetric and asymmetric expressions in equation~\eqref{eq:ml-minimum}, each continued across $\varphi^*$. At $\varphi^*$, the two branches have the same value and first derivative, but
+The symmetric point is stationary for every $0\le\varphi<1$: with all loadings $l_s$ and uniquenesses $1-l_s^2$, every row of $R$ sums to $b+h$, and equation~\eqref{eq:ml-scores} reduces to $b+h=1+\nu l_s^2$, which holds because $\nu l_s^2=L(n+m\varphi)$. For $\varphi>0$ it is the point $d=0$ of the curve $(l(d),\Psi(d))$. For positive trait correlation below $\varphi^*$, $q<q^*$, and equation~\eqref{eq:profile-sign} shows that $\mathcal H(d)=F(l(d),\Psi(d))$ decreases strictly as $d$ moves away from zero. The discrepancy therefore decreases along a feasible curve through the symmetric point.
+
+At zero correlation, the tied leading eigenvalue requires a separate argument. With $\Psi=(1-l_s^2)I$, the block-mean part of $R$ is $bI_2$, and the leading eigenspace of $B$ is spanned by the two normalized block-mean vectors $e_A$ and $e_B$. Consider the loadings $l(t)=c(\cos t\,e_A+\sin t\,e_B)$ with $c^2=2ml_s^2$; the symmetric point is $t=\pi/4$. The symmetric loading is stationary and lies in the leading eigenspace, so its norm is the optimal one of Lemma~\ref{lem:A-concentration}. Each $l(t)$ is a leading eigenvector with that norm and therefore minimizes the discrepancy over the loadings at these uniquenesses. The discrepancy is thus constant in $t$, and the derivatives with respect to the loadings vanish at each of these points. By Lemma~\ref{lem:A-scores}, $\partial F/\partial\psi_i=(\Sigma_{ii}-1)/\psi_i^2$ there. The diagonal entries are $1-l_s^2+c^2\cos^2t/m$ in block A and $1-l_s^2+c^2\sin^2t/m$ in block B; for $t\ne\pi/4$ in $[0,\pi/2]$ they differ from one. A small change in the uniquenesses at such a point then lowers the discrepancy below its value at the symmetric point. Such points lie arbitrarily close to the symmetric point, which is therefore not a local minimum.
+
+A common rescaling of the covariance provides an increasing direction. The path $t\Sigma$, $t>0$, is feasible. Stationarity along it gives $\tr(\Sigma^{-1}R)=p$, and then $F(t\Sigma)-F(\Sigma)=p(1/t-1+\log t)>0$ for $t\ne1$. The symmetric stationary solution is therefore a saddle throughout $0\le\varphi<\varphi^*$. Online Resource~1 also supplies a direct second-order expansion, with an exact symbolic verification.
+
+For Corollary~\ref{cor:ml-transition}, note first that $0<\varphi^*<1$: with $\varphi^*=b/\{m(2-L)\}$, the inequality $\varphi^*<1$ is $(2m-1)L<2m-1$. Equation~\eqref{eq:ml-asymmetric-loadings} gives $(\alpha-\beta)^2=L+(2-L)q^2-2q$, and the right side factors as $\{L-(2-L)q\}(1-q)=(2-L)(q^*-q)(1-q)$, which is equation~\eqref{eq:loading-gap}. As $\varphi\uparrow\varphi^*$, $q^*-q=(mL/b)(\varphi^*-\varphi)$ and $(2-L)(1-q)\to(2-L)(1-q^*)=2a$, so $(\alpha-\beta)^2\sim(2amL/b)(\varphi^*-\varphi)$. This is the square-root closing of the loading difference, with the stated constant. Let $F_s$ and $F_a$ denote the symmetric and asymmetric expressions in equation~\eqref{eq:ml-minimum}, each continued across $\varphi^*$. At $\varphi^*$, the two branches have the same value and first derivative, but
 \[
 F_s''(\varphi^*)-F_a''(\varphi^*)
 =\frac{nm^3L^2(2-L)^4}{4a^2\nu b^2}>0.
 \]
-Both continued expressions are smooth. Since $F_s=\mathcal H(q)$ and the continued $F_a$ equals $\mathcal H(q^*)$, the value of the expression for $\mathcal H(w)$ at its stationary point, $F_a<F_s$ on both sides of $\varphi^*$; above $\varphi^*$, however, $q^*<q$ lies outside the range of $w$. The minimum discrepancy therefore equals $F_a$ below $\varphi^*$ and $F_s$ above it, and it is $C^1$ but not $C^2$ at the transition. In the profiled coordinate $d$, the quadratic coefficient changes sign at $\varphi^*$ and the quartic coefficient is positive, giving a supercritical pitchfork. At $\varphi^*$ the full discrepancy also grows quartically along the path that moves the two block loadings apart with $\psi_i=1-l_i^2$: on that path it is even, has zero second derivative, and is bounded below by the profile (Online Resource~1, Section~7). The scalar sign comparison, rather than that local expansion alone, establishes the global classification.
+Both continued expressions are smooth. Since $F_s=\mathcal H(q)$ and the continued $F_a$ equals $\mathcal H(q^*)$, the value of the expression for $\mathcal H(w)$ at its stationary point, $F_a<F_s$ on both sides of $\varphi^*$; above $\varphi^*$, however, $q^*<q$ lies outside the range of $w$. The minimum discrepancy therefore equals $F_a$ below $\varphi^*$ and $F_s$ above it, and it is $C^1$ but not $C^2$ at the transition.
 
+In the profiled coordinate $d$, $w(d)=q+\{(1-q^2)/(2q)\}d^2+O(d^4)$ for $q>0$, so
+\[
+\mathcal H(d)-\mathcal H(0)=\frac{d\mathcal H}{dw}(q)\,\frac{1-q^2}{2q}\,d^2+O(d^4).
+\]
+By equation~\eqref{eq:profile-sign} the quadratic coefficient has the sign of $q-q^*$ and changes sign at $\varphi^*$. At $\varphi^*$ it vanishes, and the same expansion gives the quartic coefficient $\tfrac12\mathcal H''(q^*)\{(1-q^{*2})/(2q^*)\}^2$, where the second derivative is taken in $w$. It is positive because equation~\eqref{eq:profile-sign} gives $\mathcal H''(q^*)=(\nu k+2n)/\{(k+1-q^*)(1-q^{*2})\}>0$. This is a supercritical pitchfork.
+
+These coefficients describe the full discrepancy. At $\varphi^*$ the curve $(l(d),\Psi(d))$ is smooth, passes through the symmetric solution at $d=0$, and has $F=\mathcal H(d)$ along it. Its tangent $\tau$ at $d=0$ is not zero: the uniquenesses on the curve are $\{Q(d)/\nu\}e^{\pm d}$ with $Q$ even, so their derivatives at $d=0$ are $\pm(1-l_s^2)$. The interchange of the blocks maps the point at $d$ to the point at $-d$, so $\tau$ changes sign under the interchange. By a first-order perturbation of the leading eigenvector, the loadings on the curve have derivatives $\mp l_s(1-q)/(2q)$ at $d=0$, so, because $l_s^2=q^*$ at $\varphi^*$, $\tau$ is proportional to the direction that changes the two block loadings by $\pm1$ and the two block uniquenesses by $\mp2l_s$. This is the symmetry-breaking direction of Corollary~\ref{cor:ml-transition}. Because the symmetric solution is stationary, the second derivative of $F$ along the curve at $d=0$ equals the Hessian quadratic form at $\tau$. It also equals the second derivative of $\mathcal H$, which is zero at $\varphi^*$. The discrepancy therefore has zero curvature in the direction $\tau$, and along the curve it grows as the quartic term of $\mathcal H$. Zero curvature and quartic growth also hold on the straight line through the symmetric solution in the direction $\tau$. With step $t$, the point at $-t$ is the block interchange of the point at $t$, so $F$ is even in $t$; its second derivative at $t=0$ is the same quadratic form, zero. The uniquenesses on the line are $(1-l_s^2)(1\pm t)$, so $d=\tfrac12\log\{(1+t)/(1-t)\}=t+O(t^3)$, and Lemma~\ref{lem:A-scale} gives $F\ge\mathcal H(d)$ at each point of the line. Since $F$ is real analytic in $t$, its expansion is $Ct^4+O(t^6)$ above its value at $t=0$, with $C$ at least the quartic coefficient of $\mathcal H$ and hence positive. Online Resource~1, Section~7, computes the second-order coefficient on a third path, which moves the two block loadings apart with $\psi_i=1-l_i^2$ and is tangent to $\tau$ at $\varphi^*$; that coefficient is checked symbolically in \texttt{proofs/theorem1/check\_saddle\_7\_3\_sympy.py} and is not used here. The scalar sign comparison, rather than that local expansion alone, establishes the global classification.
+
+\textit{Deferred to Online Resource~1.} The following routine steps are omitted here: the rank-one inverse and determinant identities used in Lemmas~\ref{lem:A-concentration} and~\ref{lem:A-scores} (Section~3); the differentiation that leads from $\mathcal H(w)$ to equation~\eqref{eq:profile-sign}, and the derivation of the two uniqueness identities from $w=q^*$ and $e^s=Q/\nu$, with their discriminant (Section~6); the direct second-order expansion at the symmetric point with its symbolic verification, which this appendix does not use, and the derivation of the second-derivative difference (Section~7); and numerical checks that are not part of the proof (Section~12). The zero-correlation endpoint is argued in full above; Online Resource~1, Section~8, adds only the two-item family written out with its signs.
